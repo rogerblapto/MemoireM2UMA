@@ -1,0 +1,9 @@
+\babel@toc {french}{}\relax 
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\beamer@sectionintoc {2}{Préliminaires}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Sur les groupes}{4}{0}{2}
+\beamer@sectionintoc {3}{Notion de représentation linéaire de groupes finis}{17}{0}{3}
+\beamer@subsectionintoc {3}{1}{Définitions et exemples}{17}{0}{3}
+\beamer@sectionintoc {4}{Produit tensoriel et représentation linéaire d'un produit de groupes finis}{26}{0}{4}
+\beamer@sectionintoc {5}{Applications des Représentations Linéaires}{27}{0}{5}
+\beamer@sectionintoc {6}{Conclusion}{29}{0}{6}

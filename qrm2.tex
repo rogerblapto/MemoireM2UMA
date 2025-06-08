@@ -1,0 +1,263 @@
+\documentclass[a4paper, 14pt]{report}
+\usepackage[french]{babel}              %pour pour rediger un document en francais 
+\usepackage[utf8]{inputenc}             %pour les acsents
+\usepackage[T1]{fontenc}                %avec ca le texte est moins foncé
+\usepackage{graphicx}                    %pour inserer les images
+\usepackage{bibtopic}                     %pour inserer la bibliographie
+\usepackage{setspace}                     %pour inserer la bibliographie
+\singlespacing
+\usepackage{enumitem}
+\usepackage{pifont}
+\usepackage{hyperref}       % table de matieres avec lien
+\usepackage{titlesec}                  %pour les subsubsection
+\setcounter{secnumdepth}{4}            %pour les subsubsection egalemant
+\usepackage{fancyhdr}                 %PAGINATION
+\usepackage{lastpage}
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\frenchbsetup{StandardLists=true}           
+\usepackage{hyphenat}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb,amsthm}
+\usepackage{tcolorbox}
+\usepackage{xcolor} 
+\usepackage{times}
+\usepackage{caption}
+\usepackage{lmodern,tikz,lipsum}
+\usepackage[all,cmtip]{xy}
+\usetikzlibrary{arrows.meta, positioning}
+\usepackage{mathrsfs}
+\usepackage{tikz-cd} 
+\usepackage{mathpazo} 
+
+\newcommand{\divides}{\mid}
+
+
+
+\setcounter{tocdepth}{3} % Inclut jusqu’à subsubsection
+
+
+% Définition du style des corollaires
+\newtheorem{mycorollary}{Corollaire}[section] % Numérotation par section
+
+
+\newcommand\framethispage[1][1cm]{%
+	\tikz[overlay,remember picture,line width=5pt]
+	\draw([xshift=(#1),yshift=(-#1)]current page.north west)rectangle
+	([xshift=(-#1),yshift=(#1)]current page.south east);
+}
+\makeatletter
+\renewcommand\listoffigures{%
+	\section*{Liste des figures}%
+	\@mkboth{\MakeUppercase\listfigurename}%
+	{\MakeUppercase\listfigurename}%
+	\@starttoc{lof}%
+}
+\makeatother
+
+
+\titleformat{\chapter}[block] % Choix du format de titre (ici 'block' signifie que le titre est sur une ligne séparée)
+{\normalfont\huge\bfseries\centering}   % Style du titre centré (police normale, taille 14pt, en gras)
+{}                            % Pas de numéro de chapitre avant le titre
+{0pt}                         % Espace entre le numéro du chapitre et le titre
+{\titlerule[1mm]\vskip0.5ex\hspace{10pt}\bfseries\Huge} % Réduit l'espace au-dessus du titre
+[\vskip1ex\titlerule]          % Ajoute une ligne en dessous du titre
+
+
+
+% Personnalisation du pied de page
+\fancyfoot[C]{\thepage}  % Numéro de page centré
+\fancyfoot[L]{ \textit{Représentation linéaire, caractère et \\ 
+		représentations linéaires irréductibles \\ 
+		d’un groupe infini.}} % Texte à gauche dans le pied de page
+\fancyfoot[R]{SOUNKOUA Roger © 2023-2024}  % Copyright et nom à droite dans le pied de page
+
+
+
+\newtheorem{definition}{Définition}[section]
+\newtheorem{remark}{Remarque}[section]
+\newtheorem{example}{Exemple}[section]
+\newtheorem{notation}{Notation}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{propriety}{Propriété}[section]
+\newtheorem{theorem}{Théorème}[section]
+\newtheorem{lemma}{Lemme}
+\newtheorem{corollary}{Corollaire}[section] 
+
+
+\newenvironment{mylemma}{\begin{lemma}\ \newline}{\end{lemma}}
+\newenvironment{mydefinition}{\begin{definition}\ \newline}{\end{definition}}
+\newenvironment{myremark}{\begin{remark}\ \newline}{\end{remark}}
+\newenvironment{myexample}{\begin{example}\ \newline}{\end{example}}
+\newenvironment{mynotation}{\begin{notation}\ \newline}{\end{notation}}
+\newenvironment{myproposition}{\begin{proposition}\ \newline}{\end{proposition}}
+\newenvironment{mypropriety}{\begin{propriety}\ \newline}{\end{propriety}}
+\newenvironment{mytheorem}{\begin{theorem}\ \newline}{\end{theorem}}
+\newenvironment{myproof}[1][Démonstration]{%
+	\noindent \textbf{#1:}%
+}{%
+	\hfill $\square$ % Ajoute un carré à la fin de la preuve
+}
+
+
+% Survol dans la table des matières
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,    % Liens hypertextes en bleu
+	filecolor=magenta,     
+	urlcolor=cyan,
+	citecolor=blue,   % Références bibliographiques (\cite{}) en noir
+	anchorcolor=blue, % Références internes (\ref{}) en noir
+	pdfpagemode=FullScreen,
+	linktoc=all,
+}
+
+
+\makeatletter
+\renewcommand{\@pnumwidth}{3em} % Increase the space for the page numbers in the TOC
+\renewcommand{\@tocrmarg}{4em}  % Increase the right margin for the TOC
+\makeatother
+
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\@tocline}
+{\hfil}
+{\leaders\vrule height -0.4\baselineskip depth 0.4\baselineskip\hfil}
+{}{}
+\makeatother
+
+% Redéfinir une taille de police spécifique
+\newcommand{\applyfontsize}{%
+	\fontsize{12}{12}\selectfont
+}
+
+
+
+% Définition du style RogerChapitre avec épaisseur des traits ajustable
+\newcommand{\RogerChapitre}{%
+	\titleformat{\chapter}[display]
+	{\normalfont\centering}
+	{\normalsize CHAPITRE\vspace{1ex}\\
+		\rule[0.8mm]{3cm}{0.8mm} \quad \Large\thechapter\quad \rule[0.8mm]{3cm}{0.8mm}}
+	{1ex}
+	{\begin{tcolorbox}[colframe=black,colback=white,boxrule=0.8mm,arc=0pt]
+			\centering \Huge\bfseries}
+		[\end{tcolorbox}]
+}
+
+
+\begin{document}
+
+
+\section{Introduction}
+Merci M. le président du jury de m’avoir donné la parole.
+Très chers honorables membres du jury, à vos titres et grades respectifs,
+Chers amis et invités distingués, bienvenue à ma soutenance.
+Avant de poursuivre la présentation, je dédie ce travail à ma maman Massa Salomé.\\
+
+La théorie des représentations linéaires des groupes est un outil fondamental permettant de représenter les éléments d’un groupe abstrait par des matrices inversibles sur un corps donné. Cette approche, traduisant les problèmes d’algèbre abstraite complexes en des problèmes d’algèbre linéaire plus accessibles, repose sur la notion de représentation linéaire. Etant donné un corps $\mathbb{K}$, une représentation $\mathbb{K}$-linéaire d’un groupe fini $G$ est un homomorphisme de groupes \[ \rho : G \to \text{GL}(V) \]
+où $V$ est un $\mathbb{K}$-espace vectoriel et $\text{GL}(V)$ désigne le groupe des applications linéaires bijectives de $V$ sur lui-même. 
+La théorie des représentations linéaires des groupes finis a été développée pour la première fois par le mathématicien allemand Ferdinand Georg Frobenius en 1897. Il a introduit la notion de représentation linéaire des groupse finis et a jetté les bases sur la théorie des caractères de ces groupes. Ces travaux a ete approfondi par le mathématicien francais Jean-Pierre Serre où il a formalisé cette théorie dans son livre intitulé \textbf{"Représentations linéaires des groupes finis"} publié en 1968. Ces deux auteurs qu'on vient de voir ont travaille dans le cadre de groupes finis et il n y a pas de resultats recents accessibles generalisant cela au groupe infinis. D'où notre thème : \textbf{représentation linéaires, caractères et représentations linéaires irréductibles d'un groupe infini.}
+Le but principal de ce projet est d’étendre les représentations linéaires aux groupes infinis.\\
+
+Pour atteindre les objectifs de ce travail, nous allons suivre cette démarche dans la presentation: \\
+Nous allons commencer par placer le decor sur les bases essentielles pour l’étude des représentations linéaires des groupes. En suite, nous allons aborder l’étude des représentations linéaires des groupes finis.En fin, nous allons etendre notre étude aux groupes infinis vu comme produit infini de groupes finis.	
+	
+	
+	\section{pourquoi le choix de theme?}
+Nous avons choisi ce thème en partant d’un constat fondamental qui est celui de comprendre les groupes, leures structures, et leures lois de composition. La théorie des représentations linéaires a déjà apporté des outil pour étudier les groupes finis. Elle permet de “traduire” des structures abstraites en objets concrets comme des matrices et des opérateurs sur des espaces vectoriels. Grâce à ces représentations, on a pu classer les groupes finis et étudier leurs sous-groupes. Il est donc naturel de se poser la question suivante : peut-on faire de même avec les groupes infinis qui sont beaucoup plus complexes et moins classifiés?. Or, il existe encore peu de résultats récents accessibles sur les représentations linéaires de ces groupes. Cela nous a motivés à choisir notre thème qui est : \textbf{représentation linéaires, caractères et représentations linéaires irréductibles d'un groupe infini.}
+	
+\section{Contributions principales}
+Dans notre travail, nous avons proposé des ajouts  autour des représentations linéaires d’un produit infini de groupes finis. Nos apports s’organisent autour de trois axes principaux :
+
+\begin{enumerate}
+	\item \textbf{Construction de la représentation :} \\
+Nous avons fait construction des représentations d’un produit infini de groupes finis à partir des représentations de chaque facteur fini. Cela repose sur une approche inductive, en exploitant les résultats bien connus dans le cas fini pour les étendre au produit infini.
+	
+	\item \textbf{Construction du caractère associé :} \\
+	Une autre contribution est la construction du caractère d’une telle représentation. Nous avons précisé comment définir une fonction caractère dans ce cadre, en tenant compte des propriétés de convergence, et montré que, sous certaines hypothèses, ces caractères peuvent encore être utilisés pour distinguer les représentations irréductibles.
+	
+	\item \textbf{Caractérisation des représentations irréductibles :} \\
+	Nous avons ensuite abordé la question plus fine de la classification des représentations irréductibles du produit infini. Nous avons notamment établi un lien entre les représentations irréductibles du produit et celles de ses facteurs, en nous appuyant sur une décomposition adaptée. Cela nous a permis d’identifier des critères de réductibilité dans ce contexte.
+	
+	\item \textbf{Étude d’un cas concret : le complété profini de \( \mathbb{Z} \)} \\
+	Pour illustrer concrètement ces apports, nous avons étudié le cas particulier du complété profini de \( \mathbb{Z} \), noté \( \widehat{\mathbb{Z}} = \varprojlim \mathbb{Z}/n\mathbb{Z} \). Nous y avons construit explicitement des représentations linéaires, calculé les caractères associés, et discuté les conditions d’irréductibilité. Ce cas est particulièrement riche car il combine des aspects topologiques, algébriques et analytiques.
+\end{enumerate}
+
+
+\section{Questions auxquelles je n'ai pas de reponses}
+Nous n'avons pas eu à effectuer les recherches jusqu'à ce niveau, mais cela nous donne des opportunités d'apprendre et nous allons chercher les réponses à cette question.
+
+  
+
+\section{Conclusion}
+Parvenus au terme de notre travail, où il était principalement question pour nous d'étendre les représentations linéaires aux groupes infinis, il en ressort que nous avons construit les représentations linéaires des groupes infinis vus comme produits infinis de groupes finis.
+Les caractères de tels groupes sont construits comme des suites, dont l'existence est liée aux propriétés de convergence de ces suites. Nous avons donné quelques propriétés des représentations irréductibles de ces groupes.
+Enfin, nous avons étudié le cas particulier de \(\widehat{\mathbb{Z}}\) qui est le complété profini de \( \mathbb{Z} \). Ici, nous avons construit explicitement les représentations linéaires, calculé les caractères associés, et donné quelques proprietés d’irréductibilité.\\
+Excellence M. le president du jury, très chers honorables membres du jury, à vos titres et grades respectifs, nous n'avons pas la pretention d'avoir effectue un travail parfait. Nous admettons que notre travil puiss comporter des impertions et c'est pour cette raison que nous nous soumettons a vos differentes remarques et suggestion tout en vous rasurant de les prendre en consideration pour ameliorer le present travail.\\
+
+Merci pour votre aimable attention, J'en ai fini.
+
+\section{Construction du caractere infini}
+
+\textbf{Réponse :}
+
+Pour construire le caractère d'une représentation linéaire d’un \textit{produit infini de groupes}, on s’appuie sur une généralisation de la formule classique du caractère pour le produit tensoriel fini. 
+
+Soit, pour chaque \( i \in I \), une représentation linéaire \( \varphi_i : G_i \to GL(V_i) \), avec \( V_i \) un espace vectoriel complexe de dimension finie. On considère alors la représentation du produit infini de groupes \( \prod_{i \in I} G_i \) donnée par le produit tensoriel infini :
+
+\[
+\varphi_I = \bigotimes_{i \in I} \varphi_i : \prod_{i \in I} G_i \longrightarrow GL\left( \bigotimes_{i \in I} V_i \right).
+\]
+Dans le cas fini, le caractère \( \chi_{\varphi_J} \) est donné par :
+\[
+\chi_{\varphi_J}((g_i)_{i \in J}) = \prod_{i \in J} \chi_{\varphi_i}(g_i).
+\]
+Dans le cas infini, cette formule ne s’applique pas directement car un produit infini de scalaires n’est pas nécessairement convergent. Pour définir le caractère, on procède comme suit :
+\begin{enumerate}
+	\item On définit la suite des \textit{produits partiels} :
+	\[
+	P_N := \prod_{i=1}^{N} \chi_{\varphi_i}(g_i).
+	\]
+	
+	\item Si cette suite \( (P_N)_{N \in \mathbb{N}} \) converge lorsque \( N \to \infty \), alors on définit le caractère de la représentation \( \varphi_I \) comme la limite :
+	\[
+	\chi_{\varphi_I}((g_i)_{i \in I}) := \lim_{N \to \infty} P_N = \prod_{i \in I} \chi_{\varphi_i}(g_i).
+	\]
+	
+	\item Sinon, si la suite ne converge pas, alors le caractère \( \chi_{\varphi_I} \) n’est pas défini.
+\end{enumerate}
+Ainsi, l’existence du caractère dans le cas infini dépend des \textbf{propriétés de convergence} de la suite des produits partiels des caractères associés aux représentations \( \varphi_i \).
+
+
+
+\section{Quelles sont les propriétés des représentations linéaires irréductibles des groupes infinis que vous avez données ?}
+Voici quelques propriétés des représentations linéaires irréductibles des groupes infinis que nous avons données
+\begin{itemize}
+	\item \textbf{Si tous les groupes \( G_i \) sont abéliens}, alors leur produit
+	\[
+	G = \prod_{i \in I} G_i
+	\]
+	est aussi abélien. Il est bien connu que pour tout groupe abélien, les représentations irréductibles sont de degré 1.
+	
+	\item \textbf{Si chaque \( G_i \) est un groupe cyclique d’ordre premier}, ce sont alors des groupes abéliens élémentaires. Le théorème que nous avons démontré montre que toute représentation irréductible du produit \( G \) est encore de degré~1. Ce résultat généralise le cas fini au cas de produit infini.
+	
+	\item Dans un cadre plus subtil, nous avons étudié le cas où \textbf{presque toutes les représentations \( \varphi_i \) sont triviales}. Nous avons montré alors que le \textbf{produit tensoriel infini}
+	\[
+	\varphi_I = \bigotimes_{i \in I} \varphi_i
+	\]
+	définit une représentation de \( G \), et qu’elle est irréductible si et seulement si :
+	\begin{itemize}
+		\item chaque représentation \( \varphi_i \) non triviale est irréductible ;
+		\item leur produit tensoriel est irréductible.
+	\end{itemize}
+\end{itemize}
+
+
+
+
+
+\end{document}
+

@@ -1,0 +1,7 @@
+\babel@toc {french}{}\relax 
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\beamer@sectionintoc {2}{Pourquoi Étendre aux Groupes Infinis ?}{6}{0}{2}
+\beamer@sectionintoc {3}{Le Caractère d’un Groupe Infini}{8}{0}{3}
+\beamer@sectionintoc {4}{Représentations Linéaires Irréductibles}{9}{0}{4}
+\beamer@sectionintoc {5}{Applications Informatiques et Physiques}{10}{0}{5}
+\beamer@sectionintoc {6}{Conclusion}{12}{0}{6}

@@ -1,0 +1,2889 @@
+\documentclass[a4paper, 14pt]{report}
+\usepackage[french]{babel}              %pour pour rediger un document en francais 
+\usepackage[utf8]{inputenc}             %pour les acsents
+\usepackage[T1]{fontenc}                %avec ca le texte est moins foncé
+\usepackage{graphicx}                    %pour inserer les images
+\usepackage{bibtopic}                     %pour inserer la bibliographie
+\usepackage{setspace}                     %pour inserer la bibliographie
+\singlespacing
+\usepackage{enumitem}
+\usepackage{pifont}
+\usepackage{hyperref}       % table de matieres avec lien
+\usepackage{titlesec}                  %pour les subsubsection
+\setcounter{secnumdepth}{4}            %pour les subsubsection egalemant
+\usepackage{fancyhdr}                 %PAGINATION
+\usepackage{lastpage}
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\frenchbsetup{StandardLists=true}           
+\usepackage{hyphenat}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb,amsthm}
+\usepackage{tcolorbox}
+\usepackage{xcolor} 
+\usepackage{times}
+\usepackage{caption}
+\usepackage{lmodern,tikz,lipsum}
+\usepackage[all,cmtip]{xy}
+\usetikzlibrary{arrows.meta, positioning}
+\usepackage{mathrsfs}
+\usepackage{tikz-cd} 
+\usepackage{mathpazo} 
+
+\newcommand{\divides}{\mid}
+
+
+
+\setcounter{tocdepth}{3} % Inclut jusqu’à subsubsection
+
+
+% Définition du style des corollaires
+\newtheorem{mycorollary}{Corollaire}[section] % Numérotation par section
+
+
+\newcommand\framethispage[1][1cm]{%
+	\tikz[overlay,remember picture,line width=5pt]
+	\draw([xshift=(#1),yshift=(-#1)]current page.north west)rectangle
+	([xshift=(-#1),yshift=(#1)]current page.south east);
+}
+\makeatletter
+\renewcommand\listoffigures{%
+	\section*{Liste des figures}%
+	\@mkboth{\MakeUppercase\listfigurename}%
+	{\MakeUppercase\listfigurename}%
+	\@starttoc{lof}%
+}
+\makeatother
+
+
+\titleformat{\chapter}[block] % Choix du format de titre (ici 'block' signifie que le titre est sur une ligne séparée)
+{\normalfont\huge\bfseries\centering}   % Style du titre centré (police normale, taille 14pt, en gras)
+{}                            % Pas de numéro de chapitre avant le titre
+{0pt}                         % Espace entre le numéro du chapitre et le titre
+{\titlerule[1mm]\vskip0.5ex\hspace{10pt}\bfseries\Huge} % Réduit l'espace au-dessus du titre
+[\vskip1ex\titlerule]          % Ajoute une ligne en dessous du titre
+
+
+
+% Personnalisation du pied de page
+\fancyfoot[C]{\thepage}  % Numéro de page centré
+\fancyfoot[L]{ \textit{Représentation linéaire, caractère et \\ 
+		représentations linéaires irréductibles \\ 
+		d’un groupe infini.}} % Texte à gauche dans le pied de page
+\fancyfoot[R]{SOUNKOUA Roger © 2023-2024}  % Copyright et nom à droite dans le pied de page
+
+
+
+\newtheorem{definition}{Définition}[section]
+\newtheorem{remark}{Remarque}[section]
+\newtheorem{example}{Exemple}[section]
+\newtheorem{notation}{Notation}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{propriety}{Propriété}[section]
+\newtheorem{theorem}{Théorème}[section]
+\newtheorem{lemma}{Lemme}
+\newtheorem{corollary}{Corollaire}[section] 
+
+
+\newenvironment{mylemma}{\begin{lemma}\ \newline}{\end{lemma}}
+\newenvironment{mydefinition}{\begin{definition}\ \newline}{\end{definition}}
+\newenvironment{myremark}{\begin{remark}\ \newline}{\end{remark}}
+\newenvironment{myexample}{\begin{example}\ \newline}{\end{example}}
+\newenvironment{mynotation}{\begin{notation}\ \newline}{\end{notation}}
+\newenvironment{myproposition}{\begin{proposition}\ \newline}{\end{proposition}}
+\newenvironment{mypropriety}{\begin{propriety}\ \newline}{\end{propriety}}
+\newenvironment{mytheorem}{\begin{theorem}\ \newline}{\end{theorem}}
+\newenvironment{myproof}[1][Démonstration]{%
+	\noindent \textbf{#1:}%
+}{%
+	\hfill $\square$ % Ajoute un carré à la fin de la preuve
+}
+
+
+% Survol dans la table des matières
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,    % Liens hypertextes en bleu
+	filecolor=magenta,     
+	urlcolor=cyan,
+	citecolor=blue,   % Références bibliographiques (\cite{}) en noir
+	anchorcolor=blue, % Références internes (\ref{}) en noir
+	pdfpagemode=FullScreen,
+	linktoc=all,
+}
+
+
+\makeatletter
+\renewcommand{\@pnumwidth}{3em} % Increase the space for the page numbers in the TOC
+\renewcommand{\@tocrmarg}{4em}  % Increase the right margin for the TOC
+\makeatother
+
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\@tocline}
+{\hfil}
+{\leaders\vrule height -0.4\baselineskip depth 0.4\baselineskip\hfil}
+{}{}
+\makeatother
+
+% Redéfinir une taille de police spécifique
+\newcommand{\applyfontsize}{%
+	\fontsize{12}{12}\selectfont
+}
+
+
+
+% Définition du style RogerChapitre avec épaisseur des traits ajustable
+\newcommand{\RogerChapitre}{%
+	\titleformat{\chapter}[display]
+	{\normalfont\centering}
+	{\normalsize CHAPITRE\vspace{1ex}\\
+		\rule[0.8mm]{3cm}{0.8mm} \quad \Large\thechapter\quad \rule[0.8mm]{3cm}{0.8mm}}
+	{1ex}
+	{\begin{tcolorbox}[colframe=black,colback=white,boxrule=0.8mm,arc=0pt]
+			\centering \Huge\bfseries}
+		[\end{tcolorbox}]
+}
+
+
+\begin{document}
+	
+	\pagenumbering{roman} %POUR LA PAGINATION (pour preciser que la debut de la pagination est en romain
+	
+	\pagestyle{fancy}
+	\renewcommand\headrulewidth{1mm}
+	\renewcommand\footrulewidth{0.8mm}  %ppour le trait du bas de page 
+	\renewcommand{\baselinestretch}{1.5} %pour l'interligne
+	
+	\framethispage[1cm]% le cadre est à 2 cm des bords de la feuille
+	
+	\begin{tabularx}{\textwidth}{>{\centering}XcX<{\centering}}
+		
+		
+		REPUBLIC OF CAMEROON &  \multirow{3}{*}{$\quad\quad\quad$\includegraphics[scale=0.3]{../TPE_LATEX/img/LogoUMA.png}$\quad\quad\quad$} &   RÉPUBLIQUE DU CAMEROUN\\
+		PEACE-WORK-FATHERLAND &  & PAIX-TRAVAIL-PATRIE \\
+		******** &  & *********\\
+		UNIVERSITY OF MAROUA  &  & UNIVERSITÉ DE MAROUA \\
+		******** &  & *********\\
+		FACULTY OF SCIENCES &  & FACULTÉ DES SCIENCES \\
+		******** &  & *********\\
+		DEPARTEMENT OF &      \multirow{3}{*}{$\quad\quad\quad$\includegraphics[scale=0.12]{../TPE_LATEX/img/logo_fs.png}$\quad\quad\quad$}
+		& DEPARTEMENT DE \\
+		MATHEMATICS AND  &  & MATHÉMATIQUES ET\\
+		COMPUTER SCIENCES &  & D’ INFORMATIQUE \\
+		******** &  & *********\\
+		
+		
+		&   & \\
+		
+	\end{tabularx}
+	
+	\begin{center}
+		\begin{tabularx}{\textwidth}{>{\centering}XcX<{\centering}}
+			
+			& & \\
+			& DEPARTEMENT DE MATHÉMATIQUES - INFORMATIQUE & \\
+			
+		\end{tabularx}
+	\end{center}
+	\begin{tabularx}{\textwidth}{>{\centering}XcX<{\centering}}
+		& & \\
+		%& & \\
+		
+	\end{tabularx}\\
+	\begin{center}
+		
+		\textbf{ THEME :}
+		\begin{tcolorbox}[
+			colframe=blue!70,      % Couleur du contour
+			colback=blue!10,       % Couleur de fond
+			coltitle=black,        % Couleur du titre (si utilisé)
+			boxrule=1mm,         % Épaisseur du contour
+			arc=5mm,               % Arrondi des coins
+			width=\textwidth ,      % Largeur de la boîte  
+			center                 % Centrer la boîte
+			]
+			\centering
+			
+			{\textbf{\large \\
+					IMPLÉMENTATION D'UNE AUTHENTIFICATION MULTI-FACTEURS (MFA) ET CHIFFREMENT DES DONNÉES SENSIBLES : \\
+					CAS DE DYMO SARL.\\ }}
+		\end{tcolorbox}
+		
+		\vspace{1cm}
+		
+		
+		{\fontsize{14}{12}\selectfont
+			
+			Mémoire présenté en vue de l’obtention du diplôme de:
+			\begin{center}
+				\textbf{Master II mathématiques.}
+			\end{center}
+			
+			\textbf{Spécialité}: Algèbre et Géometrie (ALG).
+			
+			\begin{center}
+				\textbf{Option}: Algèbre.
+			\end{center}
+			
+			\begin{center}
+				Par
+			\end{center}
+			
+			\begin{center}
+				\textbf{SOUNKOUA Roger}
+			\end{center}
+			
+			\begin{center}
+				\textbf{Matricule }: 21A1754FS
+			\end{center}
+			
+			\begin{center}
+				Licence (en mathématiques)
+			\end{center}
+			
+			\begin{center}
+				Sous la Direction de:
+			\end{center}
+			
+			\begin{center}
+				\textbf{ Dr Gilbert MANTIKA }
+			\end{center}
+			\begin{center}
+				Chargé de Cours.
+			\end{center}
+			\begin{center}
+				
+				\begin{tabularx}{\textwidth}{>{\centering}XcX<{\centering}}
+					
+					& & \\
+					& & \\
+					
+				\end{tabularx}\\
+				
+				
+				\begin{tabularx}{\textwidth}{>{\centering}XcX<{\centering}}
+					
+					& & \\
+					& & \\
+				\end{tabularx}\
+				
+				\textbf{Année académique 2024-2025}
+				
+			\end{center} \thispagestyle{empty}
+			%\pagenumbering{none}
+		}
+		
+		\normalsize
+		
+		
+		
+		
+	\end{center} \thispagestyle{empty}
+	%\pagenumbering{none}
+	
+	\newpage
+	\begin{onehalfspace} %interligne
+		\lhead{}
+		\rhead{}
+		\chead{}
+		
+		
+		\chapter*{DEDICACE}
+		\addcontentsline{toc}{chapter}{DEDICACE. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  . . . . . . . . .  . . . .  . . . . . .  . . .  .}
+		
+		\begin{center}
+			\textbf{\textbf{ \LARGE À ma maman Massa Salomé.}}
+			\vspace{1cm} % Espace vertical
+		\end{center}
+		
+		\chapter*{REMERCIEMENTS}
+		\addcontentsline{toc}{chapter}{REMERCIEMENTS. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  . . . . . . . . .  . . . .  . .}
+		% Partie avec la taille personnalisée
+		{
+			\applyfontsize % Application locale de la taille de police 14pt
+			
+			Ce travail a été réalisé au laboratoire de Mathématiques de la Faculté des Sciences de l’Université de Maroua, sous l’encadrement du Dr Gilbert Mantika. Je tiens à lui exprimer ma profonde gratitude et mes sincères remerciements pour m’avoir offert l’opportunité de travailler sous sa direction.
+			
+			Je souhaite également exprimer mes remerciements à :
+			\begin{itemize}
+				\item Mme le Doyen de la Faculté des Sciences de l’Université de Maroua, Pr Ngo Bum Elisabeth, pour ses efforts constants visant à assurer une excellente qualité des enseignements, ainsi que pour l'attention particulière qu'elle nous a accordée à chaque fois que nous l'avons sollicitée ;
+				\item Pr Joseph Dongho, Chef du Département de Mathématiques et Informatique, pour son soutien et sa disponibilité tout au long de cette période ;
+				\item Dr Luc Emery Diekouam Fotso, pour ses enseignements, ses encouragements et ses précieux conseils ;
+				\item Dr Aminatou Pecha, pour ses enseignements et son accompagnement bienveillant ;
+				\item Dr Kemajou Théophile, pour ses encouragements constants à poursuivre dans le domaine de la géométrie ;
+				\item Ma mère Massa Salomé qui a sacrifié certains de ses besoins personnels pour la réussite de mes études ;
+				\item Mon père Koge André pour son soutien indéfectible et ses nombreuses aides ;
+				\item Mes frères et sœurs, pour leurs conseils avisés et leur soutien financier ;
+				\item Mes camarades de promotion, pour leur esprit d’entraide et leur amitié.
+			\end{itemize}
+			
+			Je remercie également tous les enseignants de la Faculté des Sciences de l’Université de Maroua ainsi que toutes les personnes, de près ou de loin, qui ont contribué à la réalisation de ce travail.
+			
+			
+		}
+		
+		% Partie avec la taille personnalisée
+		{
+			\applyfontsize % Application locale de la taille de police 14pt
+			
+			%\chapter*{Table de matières}
+			\tableofcontents
+		}
+		
+		
+		\chapter*{RESUMÉ}
+		\addcontentsline{toc}{chapter}{RESUMÉ. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  . . . . . . . . .  . . . .  . . . . . .  . . .  . .}
+		% Partie avec la taille personnalisée
+		{
+			\applyfontsize % Application locale de la taille de police 12pt
+			Ce mémoire explore les représentations linéaires des groupes infinis, en mettant un accent particulier sur les groupes profinis. Ces groupes, définis comme des limites projectives de groupes finis sont des sous-groupes de produits arbitraires de groupes finis. Dans une première partie, nous avons établi les bases des représentations linéaires des groupes finis, incluant les caractères et les représentations irréductibles. La seconde partie étend ces concepts aux groupes infinis à l’aide des produits tensoriels infinis, permettant de définir et d’étudier les représentations de ces structures complexes. L’étude du complété profini \( \widehat{\mathbb{Z}} \) illustre concrètement ces concepts et met en évidence des liens entre les propriétés topologiques et algébriques des groupes profinis. En conclusion, ce travail ouvre des perspectives prometteuses, notamment en théorie de Galois, en cryptographie, et dans l’analyse des interactions entre les structures algébriques et topologiques des groupes compacts.
+			
+			
+			\section*{Mots-clés}
+			Groupes infinis, groupes profinis, complété profini, représentations linéaires, caractères et produit tensoriel.
+			
+		}
+		
+		
+		\chapter*{ABSTRACT}
+		\addcontentsline{toc}{chapter}{ABSTRACT. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  . . . . . . . . .  . . . .  . . . . . .  . . . }
+		% Partie avec la taille personnalisée
+		{
+			\applyfontsize % Application locale de la taille de police 14pt
+			This thesis explores the linear representations of infinite groups, with a particular focus on profinite groups. These groups, defined as projective limits of finite groups, are subgroups of arbitrary products of finite groups. In the first part, we established the foundations of linear representations of finite groups, including characters and irreducible representations. The second part extends these concepts to infinite groups using infinite tensor products, enabling the definition and study of representations of these complex structures. The study of the profinite completion \( \widehat{\mathbb{Z}} \)
+			concretely illustrates these concepts and highlights the connections between the topological and algebraic properties of profinite groups. In conclusion, this work opens promising perspectives, particularly in Galois theory, cryptography, and the analysis of interactions between the algebraic and topological structures of compact groups.
+			
+			
+			
+			\section*{Keywords}
+			Infinite groups, profinite groups, profinite completion, linear representations, characters and tensor product.
+			
+		}
+		
+		
+		
+		
+		
+		\chapter*{INTRODUCTION}
+		% Partie avec la taille personnalisée
+		{
+			\applyfontsize % Application locale de la taille de police 12pt
+La théorie des représentations linéaires d’un groupe constitue un outil fondamental permettant de représenter les éléments d’un groupe abstrait par des matrices inversibles sur un corps donné. Cette approche, qui traduit des problèmes complexes d’algèbre abstraite en des problèmes d’algèbre linéaire plus accessibles, repose sur la notion de représentation linéaire. Etant donné un corps $\mathbb{K}$, une représentation $\mathbb{K}$-linéaire d’un groupe fini $G$ est un homomorphisme de groupes \[ \rho : G \to \text{GL}(V) \]
+où $V$ est un $\mathbb{K}$-espace vectoriel et $\text{GL}(V)$ désigne le groupe des applications linéaires bijectives de $V$ sur lui-même \cite{serre1971representation}. 
+La théorie des représentations linéaires des groupes finis a été développée pour la première fois par le mathématicien allemand Ferdinand Georg Frobenius en 1897. Il introduit notamment la notion de représentation linéaire d’un groupe fini et jette les bases de la théorie des caractères des groupes finis \cite{minkowski1911gesammelte}. Par la suite, le mathématicien francais Jean-Pierre Serre a approfondi ces travaux et a formalisé cette théorie dans son ouvrage \textbf{"Représentations linéaires des groupes finis"} publié en 1968. Ces deux auteurs qu'on vient de voir ont travaille dans le cadre de groupes finis et il n y a pas de resultats recents generalisant cela au groupe infinis. D'où notre thème : \textbf{représentation linéaires, caractères et représentations linéaires irréductibles d'un groupe infini.}
+Le but principal de ce projet est d’étendre les représentations linéaires aux groupes infinis.
+Pour atteindre les objectifs de ce travail, nous suivrons cette démarche dans la presentation: \\
+Nous allons commencer par placer le decor sur les bases essentielles pour l’étude des représentations linéaires des groupes. En suite, nous aborderons l’étude des représentations linéaires des groupes finis. Puis, nous etendrons notre étude au cadre des groupes infinis et nous finirons par une conclusion.
+			
+			
+			
+			
+		}
+		\pagenumbering{arabic}
+		\addcontentsline{toc}{section}{INTRODUCTION}
+		
+		
+		
+		\RogerChapitre
+		\chapter{Préliminaires}
+		
+		% Partie avec la taille personnalisée
+		{
+			\applyfontsize % Application locale de la taille de police 12pt
+			
+			\section*{Introduction}
+			
+			\section{Groupes, sous-groupes et homomorphismes de groupes}
+			\subsection{Sur les groupes}
+			
+			
+			\begin{definition} \cite{schaub1997} \\
+Un groupe est un couple  $(G,*)$ où $G$ un ensemble non vide et $*$ une loi de composition interne
+				\[
+				* : G \times G \longrightarrow G
+				\]
+				\[
+				(x, y) \longmapsto x * y
+				\]
+				vérifiant :
+				\begin{enumerate} [label=\roman*)]
+					\item $*$ est associative, c'est-à-dire, \(\forall x, y, z \in G, \ (x * y) * z = x * (y * z)\);
+					\item $G$ possède un élément neutre pour la loi $*$, c'est-à-dire, \(\exists e \in G\) tel que \(\forall x \in G, \\ \ x * e = e * x = x\);
+					\item tout  élément de $G$ est inversible (ou possède un  élément symetrique) dans $G$, c'est-à-dire \(\forall x \in G, \ \exists y \in G\) tel que \(x * y = y * x = e\).
+				\end{enumerate}
+			\end{definition}
+			
+			
+			
+			\begin{definition}  \cite{ribet2004graduate}\\
+Si \((G, \ast)\) est un groupe tel que la loi \(\ast\) satisfasse à la propriété
+				\[
+				\forall x, y \in G, \ x \ast y = y \ast x,
+				\]
+le groupe \((G, \ast)\) est dit commutatif ou encore abélien.
+			\end{definition}
+			
+			\begin{definition} \cite{schaub1997}\\
+Soit \( (G_i, \circ_i) \) une famille de groupes finis indexée par l'ensemble \( \{1, 2, \dots, n\} \), où \( n \in \mathbb{N}^{*} \). Le \textit{produit direct fini} de cette famille est un groupe \( \left( \prod_{i=1}^{n} G_i, \circ \right) \), défini par les propriétés suivantes : 
+				\begin{enumerate}[label=\roman*)]
+					\item \textbf{Ensemble sous-jacent.} \\
+L'ensemble sous-jacent est constitué des familles indexées par \( \{1, 2, \dots, n\} \) :  
+					\[
+					\prod_{i=1}^{n} G_i = \left\{ (g_i)_{i=1}^{n} \mid g_i \in G_i \text{ pour tout } i \in \{1, 2, \dots, n\} \right\}.
+					\]
+					\item \textbf{Loi de composition.} \\
+					La loi de composition \( \circ \) est définie composante par composante :  
+					\[
+					(g_i)_{i=1}^{n} \circ (g_i')_{i=1}^{n} = (g_i \circ_i g_i')_{i=1}^{n},
+					\]  
+					où \( \circ_i \) désigne l'opération du groupe \( G_i \) pour chaque \( i \in \{1, 2, \dots, n\} \).
+					\item \textbf{Élément neutre.} \\
+					L'élément neutre de \( \prod_{i=1}^{n} G_i \) est la famille \( (e_i)_{i=1}^{n} \), où \( e_i \) est l'élément neutre de \( G_i \) pour tout \( i \in \{1, 2, \dots, n\} \).
+					\item \textbf{Inverse.} \\
+					L'inverse d'une famille \( (g_i)_{i=1}^{n} \in \prod_{i=1}^{n} G_i \) est donné par :  
+					\[
+					(g_i)_{i=1}^{{n}^{-1}} = (g_i^{-1})_{i=1}^{n},
+					\]  
+					où \( g_i^{-1} \) est l'inverse de \( g_i \) dans \( G_i \) pour chaque \( i \in \{1, 2, \dots, n\} \).\\
+				\end{enumerate}
+			\end{definition}
+			
+			
+			\begin{remark} \cite{schaub1997} \\
+Les propriétés de groupe (\( \circ \) associative, existence d’un neutre et d’inverses) découlent directement des propriétés des groupes \( G_i \).
+La famille de groupes \( (G_i, \circ_i) \) satisfait :
+				\[
+				\left| \prod_{i=1}^{n} G_i \right| = \prod_{i=1}^{n} |G_i|,
+				\]
+				avec \( |G_i| \) le cardinal de \( G_i \).\\
+			\end{remark}
+			
+			\begin{propriety} \cite{schaub1997} \\
+Si chaque \( (G_i, \circ_i) \) est un groupe abélien, alors \( \left( \prod_{i=1}^{n} G_i, \circ \right) \) est aussi un groupe abélien.
+			\end{propriety}
+			
+			
+			\begin{definition} \cite{schaub1997} \\
+Soient $(G, \cdot)$ et $(G', *)$ deux groupes.\\
+Un homomorphisme de groupes de $G$ dans $G'$ est une application $f : G \rightarrow G'$ vérifiant :
+				\[
+				\forall (x, y) \in G \times G, \quad f(x \cdot y) = f(x) * f(y).
+				\]
+			\end{definition}
+			
+			\begin{notation} \
+				\begin{enumerate} [label=\roman*)]
+					\item On note $\mathrm{Hom}(G, G')$ l’ensemble des homomorphismes de groupes de $G$ dans $G'$.
+					\item  On note $\mathrm{End}(G)$ l’ensemble des homomorphismes de groupes de $G$ dans lui-même, qu’on appelle endomorphismes de $G$.
+				\end{enumerate}
+			\end{notation}
+
+		
+			
+			\begin{definition} \cite{schaub1997}  \\
+	Soit $G$ est un groupe.\\
+				\( G \) est dit monogène s'il admet un unique générateur \( a \in G \), c'est-à-dire si :
+				\[
+				G = \langle a \rangle = \{ a^k \mid k \in \mathbb{Z} \}.
+				\]
+				%/ ou  \(a^k = { si k>0 , si k=0 si k<0.}\)
+				
+				De plus, \( G \) est dit cyclique s'il est fini.
+			\end{definition}
+			
+			\begin{theorem} \cite{schaub1997} \\
+Si \( G \) est un groupe cyclique d’ordre \( n \geq 1 \), alors \( G \) est isomorphe au groupe additif \( \mathbb{Z}/n\mathbb{Z} \).
+			\end{theorem}
+			
+			\begin{theorem} \cite{schaub1997} \\
+				Tout groupe fini d’ordre premier est cyclique.
+			\end{theorem}
+			
+			\begin{definition} \cite{schaub1997} \\
+Soit \( G \) un groupe et \( g \in G \). La classe de conjugaison de \( g \) dans \( G \) est l’ensemble :
+				\[
+				\text{Cl}(g) = \{ hgh^{-1} \mid h \in G \}.
+				\]
+			\end{definition}
+			
+			\begin{propriety} \cite{schaub1997} \label{proprie0}\\
+Soit \( G \) un groupe fini. Si le nombre de classes de conjugaison de \( G \) est égal à l’ordre du groupe, alors \( G \) est abélien.
+			\end{propriety}
+			
+			\subsection{Sous-groupes}
+			\begin{definition} \cite{hall2018theory} \\
+Un sous-groupe d'un groupe $G$ est un sous-ensemble non vide $H$ de $G$ tel que $H$ muni  de la loi induite par celle de $G$ est un groupe.
+			\end{definition}
+			
+			\begin{definition} \cite{ribet2004graduate}\\
+Un sous-groupe \( H \) de \( G \) est distingué (on note \( H \triangleleft G \)) si pour tout \( g \in G \), \( Hg = gH \) (on dit aussi : invariant ou normal).
+			\end{definition}
+			
+			\begin{propriety} \cite{ribet2004graduate}\\
+Soit \( G \) un groupe abélien. Tout sous-groupe \( H \) de \( G \) est aussi abélien.
+			\end{propriety}
+			
+			
+			
+			\subsection{Notion d'espace topologique et de groupe topologique}
+			
+			\begin{definition} \cite{bourbaki2013general} \\
+On appelle structure \textit{topologique} (ou tout simplement une topologie) sur un ensemble \( X \) un ensemble \( \mathcal{O} \) de parties de \( X \) vérifiant :
+				\begin{enumerate} [label=\roman*)]
+					\item \( \emptyset \in \mathcal{O} \) et \( X \in \mathcal{O} \);
+					\item Toute réunion d'éléments de \( \mathcal{O} \) est dans \( \mathcal{O} \);
+					\item Toute intersection finie d'éléments de \( \mathcal{O} \) est dans \( \mathcal{O} \).
+				\end{enumerate}
+				Les éléments de \( \mathcal{O} \) sont appelés \textit{ouverts} et ceux de  \( X \) sont appelés \textit{points}.
+			\end{definition}
+			
+			
+			\begin{definition} \cite{bourbaki2013general} \\
+Un espace topologique est un couple \( (X, \mathcal{O}) \), où \( \mathcal{O} \) est une structure topologique définie sur \( X  \).
+			\end{definition}
+			
+			\begin{definition}  \cite{bourbaki2013general} \\
+Soit \( X \) un espace topologique et \( A \) une partie quelconque de \( X \). Un voisinage de \( A \) est tout sous-ensemble de \( X \) qui contient un ouvert contenant \( A \). Les voisinages d'un sous-ensemble \( \{ x \} \) constitué d'un seul point sont également appelés voisinages du point \( x \).
+			\end{definition}
+			
+			
+			\begin{proposition} \cite{bourbaki2013general} \\
+Un ensemble est un voisinage de chacun de ses points si et seulement si il est ouvert.
+			\end{proposition}
+			
+			
+			\begin{definition} \cite{bourbaki2013general} \\
+La clôture d'un sous-ensemble \( A \) d'un espace topologique \( X \) est l'ensemble de tous les points \( x \in X \) tels que tout voisinage de \( x \) intersecte \( A \), et est notée par \( \overline{A} \).
+			\end{definition}
+			
+			\begin{definition}  \cite{bourbaki2013general} \\
+Un sous-ensemble \( A \) d'un espace topologique \( X \) est dit dense dans \( X \) (ou simplement dense, s'il n'y a pas d'ambiguïté sur \( X \)) si \(\overline{A} = X\), c'est-à-dire si tout ouvert non vide \( U \) de \( X \) rencontre \( A \).
+			\end{definition}
+			
+			
+			
+			\begin{proposition} \cite{bourbaki2013general} \\
+Soit \( X \) un espace topologique, \( x \in X \) et \( \mathcal{B}(x) \) l'ensemble de tous les voisinages de \( x \). Les ensembles \( \mathcal{B}(x) \) satisfont les propriétés suivantes :
+				\begin{enumerate}
+					\item[(V$_1$)] Pour tout ensemble \( U \subset X \), si \( U \supset V \) pour un certain \( V \in \mathcal{B}(x) \), alors \( U \in \mathcal{B}(x) \).
+					\item[(V$_2$)] Pour tout entier naturel non nul \( n \), si \( V_1, V_2, \dots, V_n \in \mathcal{B}(x) \), alors \[ V_1 \cap V_2 \cap \dots \cap V_n \in \mathcal{B}(x) \]  .
+					\item[(V$_3$)] Pour tout \( V \in \mathcal{B}(x) \), on a \( x \in V \).
+					\item[(V$_4$)] Pour tout \( V \in \mathcal{B}(x) \), il existe un ensemble \( W \in \mathcal{B}(x) \) tel que \( W \subset V \) et, pour tout \( y \in W \), on a \( V \in \mathcal{B}(y) \).
+				\end{enumerate}
+			\end{proposition}
+			
+			
+			\begin{definition} \cite{bourbaki2013general} \\
+Une application \( f : E \to F \) entre espaces topologiques est dite continue en un point \( a \in E \) si l'image réciproque de tout voisinage de \( f(a) \) est un voisinage de \( a \).\\
+				Elle est dite continue si elle est continue en tout point de \( E \).
+			\end{definition}
+			
+			
+			\begin{definition} \cite{bourbaki2013general}\\
+Soit \(\{X_i\}_{i \in I}\) une famille d'espaces topologiques. Leur produit topologique est l'ensemble  
+				\[
+				X = \prod_{i \in I} X_i
+				\]
+muni de la topologie produit, qui est la topologie initiale engendrée par les projections canoniques :
+				\[
+				\pi_i : X \to X_i, \quad \text{où} \quad \pi_i((x_j)_{j \in I}) = x_i.
+				\]
+			\end{definition}
+			
+			\begin{remark} \cite{bourbaki2013general}\\
+La topologie produit \(X = \prod_{i \in I} X_i \) est la plus grossière (la plus faible) rendant toutes les projections \(\pi_i : X \to X_i\) continues.
+			\end{remark}
+			
+			\begin{propriety}  \cite{bourbaki2013general}\\
+Une application \( f:  \prod_{i \in I} Y_i \to \prod_{i \in I} X_i \) entre deux produits topologiques est continue si et seulement si chaque application  
+				\[
+				\pi_i \circ f: \prod_{i \in I} Y_i \to X_i
+				\]
+				est continue pour tout \( i \in I \).
+			\end{propriety}
+			
+			\begin{theorem}	\cite{bourbaki2013general}\\
+Soit \( \{ X_i \}_{i \in I} \) une famille d'espaces topologiques. Si chaque \( X_i \) est compact, alors le produit \( \prod_{i \in I} X_i \) est compact dans la topologie produit.	
+			\end{theorem}
+			
+Soient \( (X, \mathcal{O})\) un espace topologique et \( Y \) une partie de \( X \).
+			
+			\begin{definition}\cite{bourbaki2013general}\\
+\( (X, \mathcal{O}) \) est dit séparé (ou de Hausdorff) si pour tous points distincts \( x, y \in X \), il existe des ouverts \( U, V \in \mathcal{O} \) tels que \( x \in U \), \( y \in V \) et \( U \cap V = \emptyset \).
+			\end{definition}
+			
+			
+			\begin{definition} \cite{kuratowski2014topology}\\
+On appelle recouvrement de \( X \) une famille \( (A_i)_{i \in I} \) de parties de \( X \) telle que 
+				\[
+				X = \bigcup_{i \in I} A_i.
+				\]
+				Dans ce cas, un sous-recouvrement fini de \( (A_i)_{i \in I} \) est un recouvrement de \( X \) de la forme \( (A_j)_{j \in J} \) avec \( J \subseteq I \) et \(J\) fini.
+			\end{definition}
+			
+			\begin{definition} \cite{kuratowski2014topology}\\
+				On dit que \( (X, \mathcal{O})\) est compact si \( X \) est séparé et de tout recouvrement de \( X \) , on peut extraire un sous-recouvrement fini.
+			\end{definition}
+			
+			
+			\begin{definition} \cite{kuratowski2014topology}\\
+				La topologie induite sur \( Y \) est la famille d’ensembles définie par :
+				\[
+				\mathcal{O}_Y = \{ O \cap Y \mid O \in \mathcal{O}_X \}.
+				\]
+				Les éléments de \( \mathcal{O}_Y \) sont appelés les ouverts de \( Y \) pour la topologie induite.
+			\end{definition}
+			
+			
+			\section{Espaces vectoriels et applications linéaires}
+			\subsection{Espaces vectoriels}
+			
+			\begin{definition} \cite{lang2012algebra}\\
+				Un anneau est un ensemble \( A \) non vide muni de deux opérations binaires \( + \) (addition) et \( \cdot \) (multiplication), telles que :
+				\begin{enumerate} [label=\roman*)]
+					\item \( (A, +) \) est un groupe abélien;
+					\item La multiplication est associative : \(\forall a, b, c \in A, (a \cdot b) \cdot c = a \cdot (b \cdot c) \);
+					\item La multiplication est distributive par rapport à l'addition :
+					\begin{enumerate}
+						\item \(\forall a, b, c \in R, a \cdot (b + c) = a \cdot b + a \cdot c \);
+						\item \(\forall a, b, c \in R, (a + b) \cdot c = a \cdot c + b \cdot c \).
+					\end{enumerate}
+				\end{enumerate}
+			\end{definition}
+			
+			\begin{definition} \cite{lang2012algebra}\\
+				Un anneau \((A, +, \cdot)\) est appelé \emph{commutatif} ou \emph{abélien} si la multiplication est commutative, c'est-à-dire que pour tous \( a, b \in A \), on a \( a \cdot b = b \cdot a \).
+			\end{definition}
+			
+			\begin{definition} \cite{lang2012algebra}\\
+				Un anneau \((A, +, \cdot)\) est appelé anneau unitaire si la multiplication possède un élément neutre noté \( 1 \).
+			\end{definition}
+
+			\begin{definition} \cite{lang2012algebra}\\
+Un corps \(\mathbb{K}\) est un anneau dans lequel tout élément non nul admet un inverse pour la multiplication.\\
+Si de plus la loi $.$ est commutative, alors \(\mathbb{K}\) est un corps commutatif.
+			\end{definition}
+	
+			
+			
+			\begin{mynotation}
+Un corps ( \(\mathbb{K} ,+ ,\cdot \) ) sera noté \(\mathbb{K} \).
+			\end{mynotation}
+			
+
+			
+			\begin{definition} \cite{lang2012algebra}\\
+Un \(\mathbb{K}\)-espace vectoriel ou espace vectoriel sur \(\mathbb{K}\) est un tripet $( V,+ ,\cdot)$ tel que $( V,+)$ est un groupe abélien, $\cdot$ une multiplication par les scalaires, c'est-à-dire une application
+				\[
+				(a, x) \in \mathbb{K} \times V \mapsto a \cdot x \in V
+				\]
+				vérifiant les propriétés suivantes :
+				
+				\begin{enumerate} [label=\roman*)]
+					\item \( 1 \cdot x = x \);
+					\item \( a \cdot (x + y) = a \cdot x + a \cdot y \) (pour tout \( (a, b) \in K \times K \) et \( (x, y) \in V \times E \));
+					\item \( (a + b) \cdot x = a \cdot x + b \cdot x \);
+					\item \( (a \cdot b) \cdot x = a\cdot (b \cdot x) \).
+				\end{enumerate}
+			\end{definition}
+			
+			\begin{mynotation}
+	Un \(\mathbb{K}\)-espace vectoriel $( V,+ ,\cdot)$ sera noté $V$.
+			\end{mynotation}
+			
+
+			\begin{definition}\cite{chatterji1997cours} \\
+Une suite numérique à valeurs dans $\mathbb{C}$ est une application de $\mathbb{N}$ dans $\mathbb{C}$ :
+				\[
+				n \in \mathbb{N} \longmapsto u_n \in \mathbb{C}.
+				\]
+				On note cette suite $(u_n)_{n \in \mathbb{N}}$ ou $(u_n)_{n \geq 0}$, et l'on appelle $u_n$ le terme général de la suite.
+			\end{definition}
+			
+			
+			\begin{definition} \cite{chatterji1997cours}\\
+				Soit $(u_n)_{n \in \mathbb{N}}$ une suite sur $\mathbb{C}$ et $\ell \in \mathbb{C}$ . On dit que $(u_n)$ a pour limite $\ell$ si
+				\[
+				\forall \varepsilon > 0 ,\ \exists n_0 \in \mathbb{N} ,\ \forall n \geq n_0,\ |u_n - \ell| < \varepsilon.
+				\]
+			\end{definition}
+			
+			\begin{propriety} \cite{chatterji1997cours}\\
+				Si $(u_n)$ est une suite convergente, alors sa limite $\ell$ est unique.
+			\end{propriety}
+			
+			
+			\begin{definition} \cite{chatterji1997cours}\\
+Le produit infini des termes d'une suite \( (u_n)_{n \in \mathbb{N}} \) à valeurs dans $\mathbb{C}$ est la limite, si elle existe, de la suite des produits partiels 
+				\( \left( \prod_{n=0}^{N} u_n \right)_N \) quand N tend vers l'infini. Il est défini par :
+				
+				\[
+				\prod_{n=0}^{\infty} u_n \overset{\text{def}}{:=} \lim_{N \to \infty} \prod_{n=0}^{N} u_n.
+				\]
+			\end{definition}
+			
+			
+			
+			
+			\section{Notions de catégories, foncteurs, limites projectives et limites inductives}
+			
+			\subsection{Catégories}
+			
+			\begin{definition} \cite{maclane1971categories} \\
+				Une catégorie $\mathcal{C}$ consiste en les données suivantes :
+				\begin{enumerate} [label=\roman*)]
+					\item Une classe $|\mathcal{C}|$, dont les éléments sont appelés objets de $\mathcal{C}$;
+					\item À chaque couple d'objets $(X, Y)$ de $\mathcal{C}$, est associé un ensemble $\mathcal{C}(X, Y)$ (ou $\mathrm{Hom}_{\mathcal{C}}(X, Y)$), dont les éléments sont appelés morphismes (ou flèches) de $X$ dans $Y$;
+					\item À chaque triplet $(X, Y, Z)$ d'objets de $\mathcal{C}$, une application (appelée application de composition)
+					\[
+					\mathcal{C}(X, Y) \times \mathcal{C}(Y, Z) \to \mathcal{C}(X, Z), \quad (f, g) \mapsto g \circ f;
+					\]
+					\item À chaque objet $X \in \mathcal{C}$, est associé un élément $1_X \in \mathcal{C}(X, X)$ appelé morphisme d'identité de $X$.
+				\end{enumerate}
+				Ces données vérifient les axiomes suivants :
+				\begin{itemize}
+					\item \textbf{Associativité de la composition :}
+					si $X \xrightarrow{f} Y \xrightarrow{g} Z \xrightarrow{h} W$ sont des morphismes dans $\mathcal{C}$, alors on a
+					\[
+					h \circ (g \circ f) = (h \circ g) \circ f.
+					\]
+					\item \textbf{Neutralité de l'identité :}
+					pour tous $X, Y \in |\mathcal{C}|$, et pour tout $f \in \mathcal{C}(X, Y)$, on a
+					\[
+					f \circ 1_{X} = f,
+					\]
+					\[
+					\xymatrix{
+						X \ar[rr]^{1_{X}} \ar[dr]_{f} & & X \ar[dl]^{f} \\
+						& Y &
+					}
+					\]
+					et
+					\[
+					1_{Y} \circ f = f,
+					\]
+					\[
+					\xymatrix{
+						X \ar[rr]^{f} \ar[dr]_{f} & & Y \ar[dl]^{1_{Y}} \\
+						& Y &
+					}
+					\]
+				\end{itemize}
+			\end{definition}
+	
+			
+			\begin{myexample}
+				La catégorie des groupes, notée \textbf{Grp}, consiste en les données suivantes :
+				\begin{enumerate}[label=\roman*)]
+					\item \textbf{Objets} :\\
+					Les objets sont des groupes.
+					\item \textbf{Morphismes} : \\
+					Les morphismes sont des homomorphismes de groupes.
+					\item \textbf{Composition} : \\
+					La composition de deux homomorphismes de groupes est un autre homomorphisme de groupes.
+					\item \textbf{Identité} :\\
+					Pour chaque groupe \( G \), le morphisme d'identité est la fonction qui envoie chaque élément sur lui-même.
+				\end{enumerate}
+			\end{myexample}
+			
+			\textbf{Vérification des axiomes} :
+			\begin{itemize}
+				\item \textbf{Associativité} :\\
+				Pour tout \( f: G_1 \to G_2 \), \( g: G_2 \to G_3 \), et \( h: G_3 \to G_4 \), on a :  
+				\[
+				(g \circ f) \circ h = g \circ (f \circ h).
+				\]
+				\item \textbf{Identité} :\\
+				Pour tout homomorphisme \( f \) entre deux groupes, on a :  
+				\[
+				f \circ id_{G} = f \quad \text{et} \quad id_{H} \circ f = f.
+				\]
+			\end{itemize}
+			
+			
+			\subsection{Foncteurs}
+			Soient $\mathcal{C}$ et $\mathcal{D}$ deux catégories.
+			\begin{definition} \cite{maclane1971categories} \\
+				Un \textit{foncteur contravariant} est une règle de passage d'une catégorie $\mathcal{C}$ à une catégorie $\mathcal{D}$, \\
+				$F : \mathcal{C} \to \mathcal{D}$, qui :
+				\begin{enumerate} [label=\roman*)]
+					\item à tout objet $C$ de $\mathcal{C}$ associe un objet $F(C)$ de $\mathcal{D}$,
+					\item à tout morphisme $X \xrightarrow{f} Y$ de $\mathcal{C}$ associe un morphisme $F(Y) \xrightarrow{F(f)} F(X)$ de $\mathcal{D}$ satisfaisant :
+					\begin{enumerate}
+						\item pour tout objet $X$ de $\mathcal{C}$, on a $F(1_X) = 1_{F(X)}$ ;
+						\item pour tous morphismes $X \xrightarrow{f} Y \xrightarrow{g} Z$ de $\mathcal{C}$, on a $F(g \circ f) = F(f) \circ F(g)$.
+					\end{enumerate}
+				\end{enumerate}
+			\end{definition}
+			
+			
+			
+			\subsection{ Limites inductives}
+			
+			\begin{definition} \cite {maclane1971categories}\\
+Une propriété universelle (PU) est un énoncé sur les objets mathematiques qui stipule que sous certaines conditions, il existe un unique morphisme qui satisfait certaines propriétés.
+			\end{definition}
+			
+			\begin{definition} \cite{ribes-zalesskii} \\
+				Un ensemble partiellement ordonné est un couple \((I, \leq)\) où \(I\) est un ensemble non vide et \(\leq\) est une relation binaire sur \(I\) vérifiant les propriétés suivantes pour tous \(a, b, c \in I\) :
+				\begin{enumerate}[label=\roman*)]
+					\item \textbf{Réflexivité} : \(a \leq a\);
+					\item \textbf{Anti-symétrie} : \text{si } \(a \leq b\) \text{ et } \(b \leq a\), \text{ alors } \(a = b\);
+					\item \textbf{Transitivité} : \text{si } \(a \leq b\) \text{ et } \(b \leq c\), \text{ alors } \(a \leq c\).
+				\end{enumerate}
+			\end{definition}
+			
+			
+			\begin{definition} \cite{ribes-zalesskii} \\
+Un ensemble $(I,\leq)$ est dit ordonné filtrant si $(I,\leq)$ est un ensemble  partiellement ordonné et si pour tous $i,j \in I$ , il existe $k \in I$ vérifiant $i \leq k$ et $j \leq k$.
+			\end{definition}
+			
+			
+			\begin{myexample}
+				$(\mathbb{N}, \leq)$ est ordonné filtrant.
+			\end{myexample}
+			
+			
+			\begin{definition} \cite{ribes-zalesskii} \\
+Soit $(I, \leq)$ un ensemble ordonné filtrant. Un système inductif de groupes sur $I$ est la donnée d'un couple $(X_{i},\phi_{ij})_{i,j \in I}$ où les $X_{i}$ sont les groupes et les $\phi_{ij} : X_{i} \to X_{j}$ ($i \leq j$) les homomorphismes de groupes  , vérifiant :
+				\begin{enumerate} [label=\roman*)]
+					\item $ \forall i \in I, \ \phi_{ii} = \mathrm{Id}_{X_{i}} $;
+					\item $\forall (i, j, k) \in I^{3}, \ i \leq j \leq k \Rightarrow \phi_{jk} \circ \phi_{ij} = \phi_{ik} .$\\
+					Ce qui se traduit par le diagramme commutatif suivant:
+					\[
+					\xymatrix{
+						X_{i} \ar[rr]^{\phi_{ij}} \ar[dr]_{\phi_{ik}} & & X_{j} \ar[dl]^{\phi_{jk}} \\
+						& X_{k} &
+					}
+					\]
+					
+				\end{enumerate}
+			\end{definition}
+			
+			
+			\begin{definition} \cite{ribes-zalesskii} \\
+				Soient $X$ un groupe et $(X_i, \phi_{ij})$ un système inductif de groupes finis.\\
+				La famille $(X,\phi_i :X_i \rightarrow X)$ est dite compatible avec $(X_i, \phi_{ij})$ si pour tous $i,j \in I$ tels que $i \leq j$, on a $\phi_i = \phi_j \circ \phi_{ij}$. Ce qui est illustré par le diagramme commutatif suivant:
+				\[
+				\xymatrix{
+					X_{i} \ar[r]^{\phi_{ij}} \ar[dr]_{\phi_i} & X_{j} \ar[d]^{\phi_j} \\
+					& X
+				}
+				\]
+				
+			\end{definition}
+			
+			\begin{definition} \cite{ribes-zalesskii} \\
+				Soit $(X_i, \phi_{ij})$ un système inductif de groupes.
+				La limite inductive ou limite directe, lorsqu'elle existe, est une famille compatibile $(X,\phi_i :X_i \rightarrow X)$ avec $(X_i, \phi_{ij})$ vérifiant la PU : pour toute autre famille  $(X,\psi_i)_{i \in I}$ compatible avec $(X_i, \phi_{ij})$, il existe un unique homomorphisme de groupes $u : X \to Y$ telle que le diagramme :
+				
+				\begin{tikzpicture}[auto]
+					
+					% Nodes
+					\node (X_i) at (0, 2) {$X_i$};
+					\node (X_j) at (4, 2) {$X_j$};
+					\node (X) at (2, 0) {$X$};
+					\node (Y) at (2, -2) {$Y$};
+					
+					% Arrows
+					\draw[->] (X_i) -- node[above] {$\phi_{ij}$} (X_j);
+					\draw[->] (X_i) -- node[right] {$\phi_i$} (X);
+					\draw[->] (X_j) -- node[left] {$\phi_j$} (X);
+					\draw[->] (X_i) -- node[below left] {$\psi_i$} (Y);
+					\draw[->] (X_j) -- node[below right] {$\psi_j$} (Y);
+					\draw[->, dashed] (X) -- node[right] {$u$} (Y);
+					
+				\end{tikzpicture}
+				soit commutatif pour tous $i \leq j$.
+				
+			\end{definition}
+			
+			\begin{proposition} \cite{ribes-zalesskii} \\
+				La limite inductive lorsqu'elle existe est unique à isomorphisme près.
+			\end{proposition}
+			
+			
+			\begin{mynotation}
+				La limite inductive $(X,\phi_i)_{i \in I}$ d'un système inductif $(X_i, \phi_{ij})_{j \in I}$ est notée $X = \varinjlim X_i$.
+			\end{mynotation}
+			
+			\begin{myproposition}
+				Un ensemble ordonné filtrant \( (I, \leq) \) est une catégorie.
+			\end{myproposition}
+			
+			\textbf{\underline{Preuve}} : \\
+			Appelons \( \mathcal{I} \)  cette catégorie. Elle est donnée comme suit :
+			\begin{enumerate}[label=\roman*)]
+				\item Une classe \( |\mathcal{I}| \) dont les objets sont les éléments  \( I \) ;
+				\item À chaque couple \( (i, j) \in I \times I \) est associé un ensemble \( \mathcal{I}(i, j) \) défini par :
+				\[
+				\mathcal{I}(i, j) =
+				\begin{cases}
+					\{\ast\} & \text{si } i \leq j, \\
+					\varnothing & \text{sinon},
+				\end{cases}
+				\]
+				où \( \ast \) désigne un unique morphisme de \( i \) vers \( j \) lorsque \( i \leq j \) ;
+				\item À chaque triplet \( (i, j, k) \in I\times I\times I \), une application de composition
+				\[
+				\mathcal{I}(i, j) \times \mathcal{I}(j, k) \to \mathcal{I}(i, k), \quad (f, g) \mapsto g \circ f,
+				\]
+				définie par la transitivité de l’ordre : si \( i \leq j \) et \( j \leq k \), alors \( i \leq k \), donc \( g \circ f = \ast \) est le morphisme unique de \( i \) vers \( k \) ;
+				\item À chaque objet \( i \in I \), on associe un morphisme identité \( 1_i \in \mathcal{I}(i, i) \), défini par \( 1_i = \ast \), car \( i \leq i \) par réflexivité.
+			\end{enumerate}
+			
+			Ces données vérifient les axiomes suivants :
+			\begin{itemize}
+				\item \textbf{Associativité de la composition :} étant donné \( i \leq j \leq k \leq \ell \), les compositions possibles coïncident puisqu'il n’y a qu’un seul morphisme entre deux objets liés par \( \leq \). On a donc :
+				\[
+				h \circ (g \circ f) = (h \circ g) \circ f.
+				\]
+				\item \textbf{Neutralité de l'identité :} pour tout \( i \leq j \), le morphisme unique \( f \in \mathcal{I}(i, j) \) satisfait :
+				\[
+				f \circ 1_i = f \quad \text{et} \quad 1_j \circ f = f,
+				\]
+				car \( f = \ast \) est unique.
+			\end{itemize}
+			Donc tout ensemble ordonné filtrant \( (I, \leq) \) est une catégorie.
+			
+			
+			
+			\subsection{Limites projectives}
+			Soit $(I,\leq)$ est dit ordonné filtrant.
+			\begin{definition} \cite{maclane1971categories}\\
+Un système projectif de groupes sur $(I,\leq)$ est un couple $(X_{i},\phi_{ij})_{i,j \in I}$ où les $X_{i}$ sont les groupes et les $\phi_{ij}:X_{j} \rightarrow X_{i}$  ($i \leq j$) sont les homomorphismes de groupes vérifiant :
+				\begin{enumerate}[label=\roman*)]
+					\item $\phi_{ii} = \text{Id}_{X_{i}}$ pour tout $i \in I$;
+					\item pour tout $(i,j,k) \in I^{3}$ tels que $i \leq j \leq k$, on a $\phi_{ik} = \phi_{ij} \circ \phi_{jk}$.
+				\end{enumerate}
+				Autrement dit, le diagramme
+				\[
+				\xymatrix{
+					X_{k} \ar[rr]^{\phi_{jk}} \ar[dr]_{\phi_{ik}} & & X_{j} \ar[dl]^{\phi_{ij}} \\
+					& X_{i} &
+				}
+				\]
+				est commutatif.
+			\end{definition}
+			
+			
+			\begin{definition}  \cite{maclane1971categories}\\
+Soient $X$ un groupe et $(X_{i}, \phi_{ij})_{i,j \in I}$ un système projectif de groupes.La famille de homomorphismes $(\phi_{i} : X \rightarrow X_{i})_{i \in I}$ qu'on note $( X ,\phi_{i})$ est dite compatible avec le système projectif $(X_{i}, \phi_{ij})_{i,j \in I}$ si pour tous $i,j \in I$ tels que $i \leq j$, on a : $\phi_{ij} \circ \phi_{j} = \phi_{i}$.
+Ce qui se traduit par le diagramme commutatif suivant:
+				\[
+				\xymatrix{
+					X \ar[rr]^{\phi_{j}} \ar[dr]_{\phi_{i}} & & X_{j} \ar[dl]^{\phi_{ij}} \\
+					& X_{i} &
+				}
+				\]
+				
+			\end{definition}
+			
+			\begin{definition}  \cite{maclane1971categories}\\
+Soit $(X_{i},\phi_{ij})_{i,j \in I}$ un système projectif de groupes.La limite projective ou limite inverse du système projectif $(X_{i},\phi_{ij})_{i,j \in I}$  est une famille $(X,(\phi_{i})_{i \in I})$ de homomorphismes compatibles avec $(X_{i},\phi_{ij})_{i,j \in I}$ vérifiant la PU suivante: \\
+Si $(\psi _{i} : Y \rightarrow X_{i})_{i \in I}$ ($ Y \in |\mathcal{C}|$) est une famille de morphismes compatibles, alors il existe un unique morphisme $\psi : Y \rightarrow X $ tel que le diagramme suivant commute pour tous $i \leq j$:
+				
+				\begin{tikzpicture}[auto]
+					
+					% Nodes
+					\node (Y) at (0, 2) {$Y$};
+					\node (X) at (0, 0) {$X$};
+					\node (X_i) at (2, -2) {$X_i$};
+					\node (X_j) at (-2, -2) {$X_j$};
+					
+					% Arrows
+					\draw[->, dashed] (Y) -- node[right] {$\psi$} (X);  % Dashed arrow
+					\draw[->] (Y) -- node[left] {$\psi_j$} (X_j);
+					\draw[->] (Y) -- node[right] {$\psi_i$} (X_i);
+					\draw[->] (X) -- node[right] {$\phi_j$} (X_j);
+					\draw[->] (X) -- node[left] {$\phi_i$} (X_i);
+					\draw[->] (X_j) -- node[below] {$\phi_{ij}$} (X_i);
+					
+				\end{tikzpicture}
+				
+				\[ \psi_{i} = \phi_{i} \circ \psi \]
+				\[ \psi_{j} = \phi_{j} \circ \psi \]
+				
+			\end{definition}
+			
+			\begin{proposition}  \cite{maclane1971categories}\\
+Si une limite projective d'un système projectif existe, elle est unique à isomorphisme près.
+			\end{proposition}
+
+			
+			\begin{mynotation}
+Une telle limite est notée $\varprojlim_{I} X_i$ ou  $\varprojlim_{i \in I} X_i$.
+			\end{mynotation}
+			
+			
+			\begin{definition}  \cite{maclane1971categories}\\
+La limite projective d'un système projectif de groupe finis est appelé groupe profini.
+			\end{definition}
+			
+			
+			\begin{mytheorem} \label{the02}
+Soit \( F: \mathcal{C} \to \mathcal{D} \) un foncteur contravariant entre deux catégories \( \mathcal{C} \) et \( \mathcal{D} \). Alors, l'image d'une limite inductive par le foncteur $F$ est une limite projective.
+			\end{mytheorem}
+			
+			
+			\textbf{\underline{Preuve}} : \\
+Soit \( (X_i, f_{ij}) \) un syst\`eme inductif  index\'e par \( I \). On a \( f_{ij}: X_i \to X_j \)  \( (i \leq j  )\) satisfaisant :
+			\begin{itemize}
+				\item \( f_{ii} = \text{id}_{X_i} \) (identit\'e),
+				\item \( f_{jk} \circ f_{ij} = f_{ik} \) pour \( i \leq j \leq k \).
+			\end{itemize}
+			
+			La limite inductive de ce syst\`eme, not\'ee \( X = \varinjlim X_i \), est un objet $X$ de  \( \mathcal{C} \) muni de morphismes \( u_i: X_i \to X \) tels que :
+			\begin{enumerate}
+				\item Pour tout \( i \leq j \), on a \( u_j \circ f_{ij} = u_i \).
+				\item Si un autre objet \( Y \) et des morphismes \( v_i: X_i \to Y \) satisfont \( v_j \circ f_{ij} = v_i \), alors il existe un unique morphisme \( v: X \to Y \) tel que \( v \circ u_i = v_i \).
+			\end{enumerate}
+			
+			Soit \( F: \mathcal{C} \to \mathcal{D} \) un foncteur contravariant entre deux cat\'egories \( \mathcal{C} \) et \( \mathcal{D} \). \\
+			
+			\textbf{\underline{Montrons que \( (F(X_i), F(f_{ij}) ) \) est un système projectif dans \( \mathcal{D} \) }}: \\
+			
+			En appliquant \( F \) au système inductif \( (X_i, f_{ij}) \),  
+			\begin{itemize}
+				\item Chaque morphisme \( f_{ij}: X_i \to X_j \) dans \( \mathcal{C} \) devient un morphisme \\
+				\( F(f_{ij}): F(X_j) \to F(X_i) \) dans \( \mathcal{D} \).
+				\item L'identité \( f_{ii} = \text{id}_{X_i} \) dans \( \mathcal{C} \) devient \( F(f_{ii}) = \text{id}_{F(X_i)} \). En effet, \( F \) est contravariant et donc \( F(\text{id}_{X_i}) = \text{id}_{F(X_i)} \).
+				\item Pour \( i \leq j \leq k \), \( f_{jk} \circ f_{ij} = f_{ik} \) dans \( \mathcal{C} \) devient \( F(f_{ij}) \circ F(f_{jk}) = F(f_{ik}) \) dans \( \mathcal{D} \).
+			\end{itemize}
+			
+			\textbf{\underline{Montrons que \( (F(X), F(u_{i}) : F(X) \to F(X_i) ) \) est une famille de morphismes }} \\
+			
+			\textbf{\underline{compatibles dans \( \mathcal{D} \) }}: \\
+			
+			Les morphismes \( u_i: X_i \to X \) dans \( \mathcal{C} \) deviennent  \( F(u_i) : F(X) \to F(X_i) \) dans \( \mathcal{D} \). Il vient que pour tout \( i \leq j \), \( u_j \circ f_{ij} = u_i \) dans \( \mathcal{C} \) devient \( F(f_{ij}) \circ F(u_j) = F(u_i) \) dans \( \mathcal{D} \).\\
+			Donc \( (F(X), F(u_{i}) : F(X) \to F(X_i) ) \) est une famille de morphismes compatibles dans \( \mathcal{D} \). \\
+			
+			\textbf{\underline{Vérifions la propriété universelle }}: \\
+			
+			La Propriété universelle dans \( \mathcal{C} \) implique en appliquant \( F \) qu'on a \( F(v_i): F(Y) \to F(X_i) \) satisfont \( F(f_{ij}) \circ F(v_j) = F(v_i) \) et l'existence d'un morphisme unique \( F(v): F(Y) \to F(X) \) tel que \( F(u_i) \circ F(v) = F(v_i) \).\\
+			
+			Il en résulte que \( F(X) \) satisfait exactement la définition d’une limite projective et par conséquent \(F(\varinjlim X_i) = \varprojlim F(X_i).\)\\
+			
+			
+			
+			
+			\begin{definition} (Morphisme de systèmes projectifs) \cite{guglielmetti2025profinite}\\
+				Soit $\mathcal{C}$ une catégorie et $(G_i, \varphi_{ij})$, $(G'_i, \varphi'_{ij})$ deux systèmes projectifs d'objets de $\mathcal{C}$ sur un même ensemble filtrant $I$. Un morphisme de systèmes projectifs 
+				\[
+				\Theta : (G_i, \varphi_{ij}) \longrightarrow (G'_i, \varphi'_{ij})
+				\]
+				est la donnée pour chaque $i \in I$ d'un morphisme $\theta_i : G_i \to G'_i$ tel que pour tous $i \leq j$ le diagramme suivant commute :
+				
+				
+				\begin{center}
+					\begin{tikzpicture}[scale=1]
+						\matrix(m)[matrix of math nodes,row sep=3em,column sep=4em, text height=1.5ex, text depth=0.25ex]
+						{
+							G_j & G_i \\
+							G'_j & G'_i \\
+						};
+						
+						\path[->,font=\scriptsize]
+						(m-1-1) edge [above] node {$\varphi_{ij}$} (m-1-2) % de j vers i
+						(m-2-1) edge [below] node {$\varphi'_{ij}$} (m-2-2) % de j' vers i'
+						(m-1-2) edge [right] node {$\theta_i$} (m-2-2) % de G_i vers G'_i
+						(m-1-1) edge [left] node {$\theta_j$} (m-2-1); % de G_j vers G'_j
+					\end{tikzpicture}
+				\end{center}
+				
+			\end{definition}
+			
+			
+			\begin{remark} \cite{guglielmetti2025profinite}\\
+				On peut composer de manière naturelle deux morphismes de systèmes projectifs
+				\[
+				\Theta : (G_i, \varphi_{ij}) \longrightarrow (G'_i, \varphi'_{ij}) \quad \text{et} \quad \Psi : (G'_i, \varphi'_{ij}) \longrightarrow (G''_i, \varphi''_{ij})
+				\]
+				afin de donner le morphisme
+				\[
+				\Psi \circ \Theta : (G_i, \varphi_{ij}) \longrightarrow (G''_i, \varphi''_{ij})
+				\]
+				dont les composantes sont :
+				\[
+				(\Psi \circ \Theta)_i = \psi_i \circ \theta_i.
+				\]
+				On définit ainsi la catégorie des systèmes projectifs d'objets de $\mathcal{C}$, que l'on note $\mathbf{Proj}_{\mathcal{C}}$.
+			\end{remark}
+			
+			Dans ce qui suit, supposons que $\mathcal{C}$ est une catégorie dans laquelle le produit de toute famille d'objets ainsi que  les limites projectives existent.
+			
+			\begin{theorem}\cite{guglielmetti2025profinite} \label{prop0} \\
+				Soit $\Theta : (G_i, \varphi_{ij}) \longrightarrow (G'_i, \varphi'_{ij})$ un morphisme d'objets de $\mathbf{Proj}_{\mathcal{C}}$, $G = \varprojlim G_i$ et $G' = \varprojlim G'_i$. Pour tout $l \in I$, on peut définir un morphisme de $\varprojlim G_i$ dans $G'_l$ en faisant $\theta_l \circ \varphi_l$ 
+				et un morphisme de $\varprojlim G_i$ dans $G'_k$ en faisant $\theta_k \circ \varphi_k$ illustré par le diagramme commutatif suivant, pour $k \leq l$  \cite{guglielmetti2025profinite} :
+				
+				\begin{center}
+					\begin{tikzpicture}[scale=1]
+						\matrix(m)[matrix of math nodes,row sep=3em,column sep=5em, text height=1.5ex, text depth=0.25ex]
+						{
+							& G_k & & G'_k & \\
+							\varprojlim G_i & & \varprojlim G'_i & \\
+							& G_l & & G'_l & \\
+						};
+						
+						\path[->,font=\normalsize]
+						(m-2-1) edge [sloped, above] node {\quad $\varphi_k$}  	(m-1-2)
+						(m-2-1) edge [sloped, below] node {\quad $\varphi_l$}  	(m-3-2)
+						(m-1-2) edge [sloped, above] node {\quad $\theta_k$} (m-1-4)
+						(m-3-2) edge [sloped, below] node {\quad $\theta_l$} (m-3-4)
+						(m-3-2) edge [sloped, above] node {\quad $\varphi_{kl}$} (m-1-2) % Correction : l → k
+						(m-3-4) edge [sloped, above] node {\quad $\varphi'_{kl}$} (m-1-4) % Correction : l → k
+						(m-2-3) edge [sloped, above] node {\quad $\varphi'_k$} (m-1-4)
+						(m-2-3) edge [sloped, below] node {\quad $\varphi'_l$} (m-3-4);
+					\end{tikzpicture}
+				\end{center} Ces morphismes induisent un autre morphisme, noté $\varprojlim \theta_i$ ou $\varprojlim \Theta$, de $G$ dans $G'$. 
+				
+				
+			\end{theorem}
+			
+			
+			\textbf{\underline{Preuve}} : \\
+			Les morphismes $\theta_i \circ \varphi_i$ sont compatibles pour le système $(G'_i, \varphi'_{ij})$.
+			
+			\textbf{\underline{En effet}} :
+			
+			Définissons $\theta_i \circ \varphi_i$ comme étant la composée de morphismes:
+			\[
+			\theta_i \circ \varphi_i : G_j \to G'_i.
+			\]
+			Montrons que cette famille est compatible avec le système $(G'_i, \varphi'_{ij})$, c'est-à-dire que pour tout $i \leq j$ :
+			\[
+			\varphi'_{ij} \circ (\theta_j \circ \varphi_j) = (\theta_i \circ \varphi_i).
+			\]	
+			Alors, 
+			\[
+			\varphi'_{ij} \circ (\theta_j \circ \varphi_j) = (\varphi'_{ij} \circ \theta_j) \circ \varphi_j.
+			\]
+			
+			Or, d’après la commutativité du diagramme précédent, on obtient :
+			\[
+			\varphi'_{ij} \circ \theta_j = \theta_i \circ \varphi_{ij}.
+			\]
+			Donc, \((\theta_i \circ \varphi_{ij}) \circ \varphi_j = \theta_i \circ (\varphi_{ij} \circ \varphi_j).\)
+			Par compatibilité des morphismes du système $(G_i, \varphi_{ij})$, on a
+			\(\varphi_{ij} \circ \varphi_j = \varphi_i.\) \\
+			Ainsi,
+			\(
+			\theta_i \circ \varphi_i = \theta_i \circ \varphi_i.
+			\) \\
+			Ce qui prouve que 
+			\(
+			\varphi'_{ij} \circ (\theta_j \varphi_j) = \theta_i \circ \varphi_i.
+			\)
+			
+			La propriété universelle de la limite projective du système $(G'_i, \varphi'_{ij})$ assure donc l'existence d'un unique morphisme $\varprojlim \Theta : G \longrightarrow G'$.
+			
+			
+			\section{Complété Profini d'un Groupe }
+			
+			\begin{definition} \cite{herfort2012profinite}\\
+				Un complété profini d’un groupe abstrait \( G \) est la limite projective notée $\widehat{G}$ du système projectif \( (G/N)_{N \in \mathscr{N}} \) de groupes finis, où \( \mathscr{N} \) est la collection de tous les sous-groupes normaux d’indices finis de \( G \), c’est-à-dire
+				\[
+				\hat{G} = \varprojlim_{N \in \mathscr{N}} G/N.
+				\]
+			\end{definition}
+			
+			\begin{proposition} \cite{herfort2012profinite}\\
+				Le complété profini d’un groupe est unique à isomorphisme près, c’est-à-dire si $(\widehat{G_1}, j_1)$ et $(\widehat{G_2}, j_2)$ sont deux complétés de $G$, alors il existe un isomorphisme $\widehat{\alpha} : \widehat{G_1} \to \widehat{G_2}$ tel que $\widehat{\alpha} j_1 = j_2$.
+			\end{proposition}
+			
+			\begin{proposition} \cite{herfort2012profinite}\\
+				\[
+				\hat{G} = \varprojlim_{N \in \mathscr{N}} G/N \quad \text{est un sous-groupe du produit direct} \quad \prod_{N \in \mathscr{N}} G/N.
+				\]
+			\end{proposition}
+			
+			
+			\begin{propriety}  \cite{herfort2012profinite}\\
+				Lorsque $G$ est doté de la topologie profinie, alors on a un homomorphisme continu $j : G \to \widehat{G}$ vérifiant la propriété universelle suivante : pour tout $\theta : G \to H$ un homomorphisme continu dans un groupe discret $H$, il existe un unique homomorphisme continu $\widehat{\theta} : \widehat{G} \to H$ tel que $\theta = \widehat{\theta} j$. On dit que le couple $(\widehat{G}, j)$ est le complété profini de $G$.
+			\end{propriety}
+			On a les propriétés suivantes des complétés profinis.
+			
+			\begin{proposition} \cite{ribes-zalesskii}\\
+				Soit $(\widehat{G}, j)$ le complété profini de $G$. Alors :
+				\begin{itemize}
+					\item[(a)] $j(G)$ est dense dans $\widehat{G}$.
+					\item[(b)] $\ker j = \bigcap_{K \in \mathcal{N}} K$.
+				\end{itemize}	
+			\end{proposition}
+			
+			
+			\begin{definition} \cite{ribes-zalesskii}\\
+				On dit que les groupes $G_1$ et $G_2$ sont \textit{profiniment équivalents} si leurs complétés profinis sont isomorphes, c'est-à-dire si $\widehat{G_1} \cong \widehat{G_2}$.
+			\end{definition}
+			
+			\begin{theorem} \cite{herfort2012profinite}\\
+				Des groupes de type fini avec la même collection de quotients finis ont des complétions profinies isomorphes, autrement dit sont profiniment équivalents.
+			\end{theorem}
+
+			
+		}
+		
+		
+		\RogerChapitre
+		\chapter{Représentations linéaires d'un produit de deux groupes finis.}\label{sec:representations-lineaires-dun-produit-de-deux-groupes-finissec:representations-lineaires-dun-produit-de-deux-groupes-finissec:representations-lineaires-dun-produit-de-deux-groupes-finissec:representations-lineaires-dun-produit-de-deux-groupes-finis}
+		
+		% Partie avec la taille personnalisée
+		{
+			\applyfontsize % Application locale de la taille de police 12pt
+			
+
+			
+			
+			
+			
+			\section{Représentation et sous-représentation linéaire d'un groupe fini}
+Dans cette section sans mention contraire, \(\mathbb{K}\) désignera le corps \(\mathbb{C}\) ou \(\mathbb{R}\). Les espaces vectoriels seront définis sur \(\mathbb{K}\). Tout groupe sera aussi fini.
+			
+			\subsection{Définitions et exemples}
+			\begin{definition} \cite{serre1971representation} \\
+Une représentation \(\mathbb{K}\)-linéaire d'un groupe fini \(G\) est un homomorphisme de groupes \\
+\(\rho : G \rightarrow \mathrm{GL}(V)\) où  \(V\) est un \(\mathbb{K}\)-espace vectoriel et \(\mathrm{GL}(V)\) est le groupe des applications linéaires bijectives de \(V\) sur lui-même.
+			\end{definition}
+			
+			\begin{remark} \cite{serre1971representation} \\
+Si \(V\) est un \(\mathbb{K}\)-espace vectoriel de dimension finie \(n\), on dit que  \(n\) est le degré de la représentation. De plus, en choisissant une base  de \(V\), le groupe \(\mathrm{GL}(V)\) est isomorphe au groupe \\
+\(\mathrm{GL}(n, \mathbb{K}) = \left\{ A \in \mathrm{M}(n, \mathbb{K}) \mid \det(A) \neq 0 \right\}\), où \(\mathrm{GL}(n, \mathbb{K})\) est le groupe des matrices inversibles de taille  \(n \times n\) équipé de la multiplication des matrices à coefficients dans \(\mathbb{K}\), $\det(A)$ pour $A \in \mathrm{M}(n, \mathbb{K})$ désignant le déterminant de la matrice $A$.	
+			\end{remark}
+			
+			\begin{definition} \cite{cheung2018algebre}\\
+Une matrice de permutation de taille \( n \times n \) est une matrice obtenue de la matrice identité \( I_n \) en permutant ses lignes.	
+			\end{definition}
+			
+			
+			\begin{example}\
+				\begin{enumerate}
+					\item La représentation linéaire triviale définie par \(\forall g \in G, \ \rho(g) = \mathrm{Id}_V\).
+					\item Représentation linéaire standard du groupe symétrique \( S_3 \) :\\
+					Nous définissons une représentation linéaire du groupe symétrique \( S_3 \) sur \( \mathbb{R}^3 \) en associant à chaque permutation \( \sigma \in S_3 \) une matrice de permutation \( \rho(\sigma) \). Les éléments de \( S_3 = \{e, (12), (13), (23), (123), (132)\} \) sont utilisés pour définir la représentation \( \rho : S_3 \to \mathrm{GL}(3, \mathbb{R}) \) comme suit:
+					
+					\(	\rho(e) = \begin{pmatrix}
+						1 & 0 & 0 \\
+						0 & 1 & 0 \\
+						0 & 0 & 1
+					\end{pmatrix} 
+					\) 	
+					;
+					\(
+					\rho((12)) = \begin{pmatrix}
+						0 & 1 & 0 \\
+						1 & 0 & 0 \\
+						0 & 0 & 1
+					\end{pmatrix}
+					\)
+					;		
+					\(
+					\rho((13)) = \begin{pmatrix}
+						0 & 0 & 1 \\
+						0 & 1 & 0 \\
+						1 & 0 & 0
+					\end{pmatrix}
+					\)
+					
+					
+					\(
+					\rho((23)) = \begin{pmatrix}
+						1 & 0 & 0 \\
+						0 & 0 & 1 \\
+						0 & 1 & 0
+					\end{pmatrix}
+					\)
+					;
+					\(
+					\rho((123)) = \begin{pmatrix}
+						0 & 1 & 0 \\
+						0 & 0 & 1 \\
+						1 & 0 & 0
+					\end{pmatrix}
+					\)
+					;		
+					\(
+					\rho((132)) = \begin{pmatrix}
+						0 & 0 & 1 \\
+						1 & 0 & 0 \\
+						0 & 1 & 0
+					\end{pmatrix}
+					\)
+					
+				\end{enumerate}
+			\end{example}
+			
+			\begin{mynotation}
+				Dans la suite, une représentation linéaire \( \rho : G \to \mathrm{GL}(V) \) sera notée  par \( (V,\rho)_{G}\).
+			\end{mynotation}
+			
+			\begin{definition} \cite{renard2009groupes}\\
+				Soit \(V\) un  \(\mathbb{C}\)-espace vectoriel de dimension finie.\\
+				Une représentation \( (V,\rho)_{G}\) est dite unitaire si \( \rho \) prend ses valeurs dans le groupe des matrices unitaires.
+			\end{definition}
+			
+			\begin{definition} \cite{serre1971representation} \\
+				Soient \( (V, \rho)_{G} \) et \( (W, \psi)_{G} \) deux représentations linéaires. Un opérateur d'entrelacement, ou morphisme de représentations est une application linéaire \( \alpha : V \to W \) telle que \\
+				\(\alpha \circ \rho(g) = \psi (g) \circ \alpha \), pour tout \( g \in G \).\\
+				On dit que \( \alpha \) est équivariante.\\
+				Lorsque \( \alpha : V \to W \) est un isomorphisme, on dit que les représentations \( (V, \varphi)_{G} \) et \( (W, \psi)_{G} \) sont isomorphes.
+			\end{definition}
+			
+			
+			
+			\subsection{Sous-représentations}
+			Soient \( W \) un sous-espace vectoriel de \( V \) et \( G \) un groupe.
+			\begin{definition} \cite{serre1971representation} \\
+				Soit \( (V, \rho)_{G} \) une représentation linéaire. On dit que \( W \) est stable (ou invariant) sous l'action de \( G \) ou encore $G$-stable si pour tout \( g \in G \) et tout \( w \in W \), on a \( \rho_g(w) \in W \).
+			\end{definition}
+			
+			\begin{definition} \cite{serre1971representation}\\
+				Une sous-représentation d'une représentation linéaire \((V,\rho)_{G} \) est la restriction  \\
+				\( \rho_W : G \rightarrow \mathrm{GL}(W) \) où \( W \) est stable sous \( G \). Elle est définie par :
+				
+				\[
+				\rho_W(g) = \rho(g)|_W, \quad \forall g \in G.
+				\]
+				
+			\end{definition}
+			
+			
+			\begin{proposition} \cite{serre1971representation} \label{propo0} \\
+Soit \( \rho : G \rightarrow \mathrm{GL}(V) \) une représentation linéaire sur \( G \) tel que \( W \) soit un sous-espace vectoriel de \( V \) stable sous l'action de \( G \). Alors, l'application restreinte \( \rho_W : G \rightarrow \mathrm{GL}(W) \) définie par \( \rho_W(g) = \rho(g)|_W \) pour tout \( g \in G \) est un homomorphisme de groupes.	
+			\end{proposition}
+			
+			
+			\textbf{\underline{Preuve:}}  \\
+Pour démontrer que \( \rho_W \) est un homomorphisme de groupes, il suffit de vérifier que, pour tous \( g_1, g_2 \in G \) et tout \( w \in W \), l'égalité suivante est satisfaite dans \( W \) :  
+			\[
+			\rho_W(g_1 g_2)(w) = \rho_W(g_1) \circ \rho_W(g_2)(w).
+			\]
+Étant donné que \( \rho : G \rightarrow \mathrm{GL}(V) \) est un homomorphisme de groupes, nous avons :  
+			\[
+			\rho(g_1 g_2)(w) = \rho(g_1) \circ \rho(g_2)(w) \quad \text{dans } V.
+			\]
+Montrons que \( \rho(g_1 g_2)(w) = \rho(g_1) \circ \rho(g_2)(w) \) appartient à \( W \).  \\
+Puisque \( W \) est stable sous l'action de \( G \), nous savons que :  
+			\begin{itemize}
+				\item \( \rho(g_2)(w) \in W \), car \( w \in W \) et \( G \) agit sur \( W \).  
+				\item En posant \( w_0 = \rho(g_2)(w) \), on a également \( \rho(g_1)(w_0) \in W \), car \( W \) reste stable par l'action de \( G \).  
+			\end{itemize}
+Ainsi, pour tous \( g_1, g_2 \in G \) et tout \( w \in W \), l'égalité suivante est vérifiée dans \( W \) :  
+			\[
+			\rho_W(g_1 g_2)(w) = \rho_W(g_1) \circ \rho_W(g_2)(w).
+			\]  
+			Par conséquent, \( \rho_W : G \rightarrow \mathrm{GL}(W) \) est un homomorphisme de groupes.
+			
+			\begin{myremark}  
+l découle du résultat de la proposition \ref{propo0} que, pour établir que \( \rho_W : G \rightarrow \mathrm{GL}(W) \) est une sous-représentation linéaire de \( \rho : G \rightarrow \mathrm{GL}(V) \), il suffit de montrer que \( W \) est un sous-espace vectorel de \(V\) stable sous l’action du groupe \( G \).  
+			\end{myremark}  
+
+			
+			
+			\begin{lemma} \cite{renard2009groupes}\\
+Soient \( \varphi : G \to \mathrm{GL}(V_1) \) et \( \psi : G \to \mathrm{GL}(V_2) \) deux représentations linéaires de \(G\).\\
+Soit \( f : V_1 \rightarrow V_2 \) un morphisme de représentations linéaires. Alors:
+				
+				\begin{enumerate} [label=\roman*)]
+					\item \( \rho_{\ker(f)} : G \rightarrow \mathrm{GL}(\ker(f)) \) est une sous-représentation linéaire de \( \varphi : G \to \mathrm{GL}(V_1) \);
+					\item l'image \( \mathrm{im}(f) \)  \( \rho_{\mathrm{im}(f)} : G \rightarrow \mathrm{GL}(\mathrm{im}(f)) \) est une sous-représentation linéaire de \\
+					\( \psi : G \to \mathrm{GL}(V_2) \);
+					\item \(V_1 / \ker(f) \cong \mathrm{im}(f)  \).
+				\end{enumerate}
+			\end{lemma}
+
+			\subsection{Produit tensoriel de deux espaces vectoriels et représentation linéaire d'un produit de deux groupes finis.}
+			
+			
+			\subsubsection{Produit tensoriel de deux espaces vectoriels .}
+			
+			Soient \( V_1 , V_2 \) et \(V_3\) trois \(\mathbb{K}\)-espaces vectoriels.
+			\begin{definition} \cite{greub2012linear}\\
+Une application \(\varphi : V_1 \times V_2 \to V_3 \) est dite bilinéaire si elle satisfait les conditions suivantes :
+				\begin{enumerate}[label=\roman*)]
+					\item \(\varphi(\lambda v_1 + \mu v_2, w) = \lambda \varphi(v_1, w) + \mu \varphi(v_2, w), \quad \forall v_1, v_2 \in V_1, \, w \in V_2, \ \quad \forall \lambda, \mu \in \Gamma. \)
+					
+					\item \(\varphi(v, \lambda w_1 + \mu w_2) = \lambda \varphi(v, w_1) + \mu \varphi(v, w_2), \quad \forall v \in V_1, \quad \forall w_1, w_2 \in V_2.\)
+				\end{enumerate}
+			\end{definition}
+			
+			\begin{propriety}(\textbf{Propriété universelle}) \cite{greub2012linear}\\
+Soient \( E,F ,G \) et \(H\) quatre \(\mathbb{K}\)-espaces vectoriels et \(\otimes : E \times F \to G \) une application bilinéaire. \\
+On dit que $\otimes$ satisfait la \textit{propriété universelle} si elle vérifie les conditions suivantes :
+				\begin{enumerate} [label=\roman*)]
+					\item Les vecteurs $x \otimes y$ $(x \in E, \, y \in F)$ engendrent $G$, ou équivalemment, $\mathrm{Im} \, \otimes = G$.
+					\item Si \(\varphi : E \times F \to H \) est une application bilinéaire, alors il existe une application linéaire $f : G \to H$ telle que le diagramme suivant commute.
+					
+					\[
+					\xymatrix{
+						E \times F \ar[rr]^{\otimes} \ar[dr]_{\varphi} & & G \ar[dl]^{f} \\
+						& H &
+					}  \quad \quad \text{(1.1)}
+					\] 
+					Les deux conditions ci-dessus sont équivalentes à l'unique condition suivante :
+					\item pour toute application bilinéaire  $\varphi : E \times F \to H$,  il existe une unique application linéaire \(f : G \to H \text{ telle que le diagramme (1.1) commute.}\)
+				\end{enumerate}
+			\end{propriety}
+			
+			
+			\begin{definition} \cite{greub2012linear}\\
+				Le produit tensoriel de deux espaces vectoriels $E$ et $F$ est un couple $(G, \otimes)$, où $\otimes : E \times F \to G$ est une application bilinéaire vérifiant la propriété universelle.\\
+				L'espace $G$ est noté $E \otimes F$.
+			\end{definition}
+			
+			\begin{propriety} \cite{greub2012linear}\\
+				Le couple \( (E \otimes F, \otimes) \) est unique à un isomorphisme près.
+			\end{propriety}
+			
+			\begin{definition} \cite{axler2024linear}\\
+				Si \( \dim E = n \) et \( \dim F = m \), alors la dimension du produit tensoriel \( E \otimes F \) est
+				\[
+				\dim(E \otimes F) = (\dim E) (\dim F) = nm.
+				\]
+			\end{definition}
+
+			
+			\begin{propriety} \cite{greub2012linear}\\
+Si \(E\) et \(F\) sont deux espaces vectoriels, alors \(E \otimes F \ \cong \ F \otimes E.\)
+			\end{propriety}
+			
+			\subsubsection{Représentation linéaire d'un produit de deux groupes finis}
+			
+			\begin{definition} \cite{renard2009groupes} \\
+Soient \( \rho^1: G_1 \to \mathrm{GL}(V_1) \) et \( \rho^2: G_2 \to \mathrm{GL}(V_2) \) les représentations linéaires des groupes finis \( G_1 \) et \( G_2 \) respectivement. Le produit tensoriel des représentations \( \rho^1 \) et \( \rho^2 \) est une représentation linéaire 
+				\[
+				\rho_{V_1 \otimes V_2} : G_1 \times G_2 \to \mathrm{GL}(V_1 \otimes V_2)
+				\]
+				\[
+				(g_1, g_2) \mapsto (x \otimes y \mapsto (\rho^1(g_1)(x) \otimes \rho^2(g_2)(y))).
+				\]
+			\end{definition}
+			
+			
+Dans la suite sauf mention contraire, \( G \) désignera un groupe fini (pas forcément commutatif), noté multiplicativement avec pour élément neutre \( 1 \). La plupart des résultats utiliseront les propriétés des corps algébriquement clos de caractéristique zéro d'où nous supposerons par défaut le corps des nombres complexes $\mathbb{C}$. Les espaces vectoriels seront définis sur $\mathbb{C}$ et de dimension finie.
+			
+			\section{Caractère d'une représentation linéaire d'un groupe fini}
+			\begin{definition} \cite{serre1971representation} \\
+				Soit \( (\rho, V)_{G}\) une représentation linéaire sur \( G \). Le caractère de \( (\rho, V)_{G}\), noté \( \chi_V \), est la fonction 
+				\[
+				\chi_V : G \to \mathbb{C}
+				\]
+				définie pour tout \( g \in G \) par
+				\[
+				\chi_V(g) := \operatorname{Tr}(\rho(g)),
+				\]
+				où \( \operatorname{Tr} \) désigne la trace.
+			\end{definition}
+
+			
+			\begin{definition} \cite{serre1971representation} \\
+Soit $G$ un groupe fini. Une fonction centrale sur $G$ est une fonction $f : G \to \mathbb{C}$ telle que, pour tous $g, h \in G$, la relation suivante est satisfaite :
+				\[
+				f(ghg^{-1}) = f(h).
+				\]
+Autrement dit, une fonction centrale est une fonction qui reste constante sur les classes de conjugaison de $G$. L'ensemble des fonctions centrales sur $G$ forme un $\mathbb{C}$-espace vectoriel noté $C(G)$, dont la dimension est égale au nombre $c(G)$ de classes de conjugaison de $G$. 	
+			\end{definition}
+			
+			\begin{remark} \cite{renard2009groupes}\\
+Les fonctions centrales sont particulièrement importantes car tout caractère d'une représentation de $G$ est une fonction centrale. En effet, si $(V, \rho)$ est une représentation de $G$, le caractère $\chi_V$ associé satisfait la relation suivante pour tous $g, h \in G$ :
+				\begin{align*}
+					\chi_V(ghg^{-1}) &= \operatorname{Tr}(\rho(ghg^{-1})) \\
+					&= \operatorname{Tr}(\rho(g) \rho(h)\rho(g^{-1})) \\ 
+					&= \operatorname{Tr}(\rho(h)\rho(g^{-1}) \rho(g) ) \\ 
+					&= \operatorname{Tr}(\rho(h)\rho(g^{-1}g)) \\
+					&= \operatorname{Tr}(\rho(h)\rho(1)) \\
+					&= \operatorname{Tr}(\rho(h)) \\
+					&= \chi_V(h).
+				\end{align*}
+				ce qui montre que $\chi_V$ est constante sur les classes de conjugaison de $G$.
+			\end{remark}
+			
+			
+			\begin{proposition} \cite{serre1971representation} \\
+Soient \( \rho_V : G \rightarrow \mathrm{GL}(V) \) et \( \rho_w : G \rightarrow \mathrm{GL}(W) \) deux représentations linéaires sur \(G\) de dégres \(n\) et \(m\) (\(n,m \in \mathbb{N^*}\)), et de Caractères \( \chi_V \) et \(\chi_W \)  respectivemet.On a :
+				\begin{enumerate}[label=\roman*)]
+					\item \( \chi_V(1) = \dim V \);
+					\item \( \chi{(g)^*} = {\chi_{(g)}^{-1}} \) \quad \text{\(\forall g \in G\)}. 
+				\end{enumerate}
+			\end{proposition}
+			
+			\begin{theorem}[Frobenius] \cite{serre1971representation} \\
+Le nombre de représentations linéaires irréductibles non-isomorphes deux à deux d'un groupe \( G \) est égal au nombre \( c(G) \) de classes de conjugaison de \( G \).
+			\end{theorem}
+			
+			
+			\begin{proposition} \cite{renard2009groupes}\\
+Deux représentations linéaires d’un groupe \( G \) sont isomorphes si et seulement si elles ont le même caractère.
+			\end{proposition}
+			
+			
+			\section{Représentations linéaires irréductibles}
+			\begin{definition}  \cite{serre1971representation} \\
+On dit qu'une représentation linéaire \( \rho : G \rightarrow \mathrm{GL}(V) \) d'un groupe \(G\) est rréductible si l'espace vectoriel \( V \) n'est pas réduit à \( \{0\} \) et si \( V \) ne possède aucun sous-espace invariant par \( \rho \) autre que \( \{0\} \) et \( V \).	
+			\end{definition}
+			
+			\begin{example} 
+				\begin{enumerate} \
+					\item Toute représentation de degré 1 est irréductible.
+					\item Prenons le groupe cyclique d'ordre 3, \( G = C_3 = \langle g \ | \ g^3 = e \rangle \), où \( e \) est l'élément neutre.
+					Considérons \( V = \mathbb{R}^2 \). Définissons une représentation \( \rho \) de \( G \) sur \( V \) comme suit :
+					\[
+					\rho(g) =
+					\begin{pmatrix}
+						\cos\left(\frac{2\pi}{3}\right) & -\sin\left(\frac{2\pi}{3}\right) \\
+						\sin\left(\frac{2\pi}{3}\right) & \cos\left(\frac{2\pi}{3}\right)
+					\end{pmatrix}
+					=
+					\begin{pmatrix}
+						-\frac{1}{2} & -\frac{\sqrt{3}}{2} \\
+						\frac{\sqrt{3}}{2} & -\frac{1}{2}
+					\end{pmatrix}.
+					\]
+					Cette matrice représente une rotation dans \( \mathbb{R}^2 \) de \( 120^\circ \) dans le sens trigonométrique. Comme \( g^3 = e \), on a bien que \( \rho(g)^3 = I_2 \) (la matrice identité) et \(\det(\rho(g))=1 \neq 0\), la matrice \(\rho(g)\) est inversible et par consequent \( \rho \) est bien une représentation du groupe \( C_3 \).\\
+					Montrons que les sous-espaces vectoriels propres de \( \mathbb{R}^2 \) qui sont : 
+					\( W_1 = \{ (x, 0) \in \mathbb{R}^2 \setminus \{0\} \} \), 
+					\( W_2 = \{ (0, y) \in \mathbb{R}^2 \setminus \{0\} \} \), 
+					et 
+					\( W_3 = \{ (z, z) \in \mathbb{R}^2 \setminus \{0\} \} \) 
+					ne sont pas stables par \( \rho \).\\
+					Soient \( (x, 0) \in W_1 \), \( (0, y) \in W_2 \), et \( (z, z) \in W_3 \). On a :
+					\[
+					\rho(g) \begin{pmatrix} x \\ 0 \end{pmatrix} = 
+					\begin{pmatrix} -\frac{1}{2} & -\frac{\sqrt{3}}{2} \\ \frac{\sqrt{3}}{2} & -\frac{1}{2} \end{pmatrix} 
+					\begin{pmatrix} x \\ 0 \end{pmatrix} = 
+					\begin{pmatrix} -\frac{1}{2}x \\ \frac{\sqrt{3}}{2}x \end{pmatrix}
+					\notin W_1.
+					\]
+					Ce qui montre que \(W_1\) n'est pas stable par \(\rho\).		
+					\[
+					\rho(g) \begin{pmatrix} 0 \\ y \end{pmatrix} = 
+					\begin{pmatrix} -\frac{1}{2} & -\frac{\sqrt{3}}{2} \\ \frac{\sqrt{3}}{2} & -\frac{1}{2} \end{pmatrix} 
+					\begin{pmatrix} 0 \\ y \end{pmatrix} = 
+					\begin{pmatrix} -\frac{\sqrt{3}}{2}y \\ -\frac{1}{2}y \end{pmatrix}
+					\notin W_2.
+					\]
+					Donc \(W_2\) n'est pas stable par \(\rho\).
+					\[
+					\rho(g) \begin{pmatrix} z \\ z \end{pmatrix} = 
+					\begin{pmatrix} -\frac{1}{2} & -\frac{\sqrt{3}}{2} \\ \frac{\sqrt{3}}{2} & -\frac{1}{2} \end{pmatrix} 
+					\begin{pmatrix} z \\ z \end{pmatrix} = 
+					\begin{pmatrix} -\frac{\sqrt{3}}{2}z - \frac{1}{2}z \\ \frac{\sqrt{3}}{2}z - \frac{1}{2}z \end{pmatrix}
+					\notin W_3.
+					\]
+					Ce qui montre que \(W_3\) n'est pas stable par \(\rho\).\\
+					Il en resulte que \( \rho \) est irréductible.
+				\end{enumerate}
+			\end{example}
+			
+			
+			\begin{theorem}\cite{serre1971representation} \\
+				Soit $\rho : G \to GL(V)$ une représentation linéaire de $G$ dans $V$ et soit 
+				$W$ un sous-espace vectoriel de $V$ stable sous $G$. Alors, il existe un complément $W^0$ de $W$ dans $V$ qui est stable sous $G$.
+			\end{theorem}
+			
+			\textbf{\underline{Preuve:}}\\
+			Soit \( p : V \to V \) une projection linéaire sur \( W \), c’est-à-dire que \( p \circ p = p \) et \( \operatorname{Im}(p) = W \).\\
+			Considérons l'application
+			\[
+			p^0 : V \to V \quad \text{définie par} \quad  \text{\(	p^0 = \frac{1}{|G|} \sum_{g \in G} \rho(g) \circ p \circ \rho(g)^{-1}.\)} 
+			\]
+			où $|G|$ est l'ordre de $G$. Cette application est bien définie car, pour tout \( g \in G \), \( \rho(g) \circ p \circ \rho(g)^{-1} \in \operatorname{End}(V) \), et la somme d'endomorphismes est encore un endomorphisme. 
+			Montrons que $p^0$ est une projection.\\
+			$p^0$ est linéaire car somme finie d'applications linéaires.\\
+			Soit $x \in W$. Comme $W$ est stable par $\rho$, on a \( \rho(g)^{-1}(x) \in W \), donc :
+			
+			\[
+			p(\rho(g)^{-1}(x)) = \rho(g)^{-1}(x) \quad \text{car } p|_W = \operatorname{Id}_W.
+			\]
+			Ainsi, on a:
+			\[
+			\begin{aligned}
+				p^0(x) &= \frac{1}{|G|} \sum_{g \in G} \rho(g) \circ p(\rho(g)^{-1}(x)) \quad \text{(par définition de \( p^0 \))} \\
+				&= \frac{1}{|G|} \sum_{g \in G} \rho(g)(\rho(g)^{-1}(x)) \quad \text{(par définition de \( p \))} \\
+				&= \frac{1}{|G|} \sum_{g \in G} \rho(gg^{-1})(x) \quad \text{(par définition de \( \rho \))} \\
+				&= \frac{1}{|G|} \sum_{g \in G} \rho(1)(x) \\
+				&= \frac{|G|}{|G|} x \\
+				&= x.
+			\end{aligned}
+			\]
+			On en déduit que \( p^0(x) = x \) pour tout \( x \in W \). Il vient que \( p^0 \circ p^0(x) = p^0(x) \) pour tout \( x \in W \) et que \(W \subseteq \operatorname{Im}(p^0) \).\\
+			Soit \( y \in V \). Alors,
+			\[
+			p^0(y) = \frac{1}{|G|} \sum_{g \in G} \rho(g) \big( p(\rho(g)^{-1}(y)) \big).
+			\]
+			Puisque \( p(\rho(g)^{-1}(y)) \in W \) (car \( p \) prend ses valeurs dans \( W \)),
+			et comme \( W \) est stable sous \( \rho(g) \), on a
+			\[
+			\rho(g) \big( p(\rho(g)^{-1}(y)) \big) \in W.
+			\]
+			La somme finie d’éléments de \( W \) est aussi dans \( W \), donc
+			\[
+			p^0(y) \in W.
+			\]
+			Comme \( y \) est arbitraire, cela implique
+			\[
+			\operatorname{Im}(p^0) \subseteq W.
+			\]
+			Donc \( \operatorname{Im}(p^0) = W \), donc \( p^0 \) est une projection sur \( W \).\\
+			Définissons \( W^0 := \ker(p^0) = \{ x \in V \mid p^0(x) = 0 \} \).\\
+			Comme \( p^0 \) est une projection, on a la décomposition directe :
+			\[
+			V = \operatorname{Im}(p^0) \oplus \ker(p^0) = W \oplus W^0.
+			\]
+			Montrons maintenant que \( W^0 \) est stable sous l’action de \( G \).\\
+			Soit \( x \in W^0 \) et \( h \in G \). Alors :
+			\[
+			\begin{aligned}
+				\rho(h) \circ p^0 \circ \rho(h)^{-1}
+				&= \frac{1}{|G|} \sum_{g \in G} \rho(h) \circ \rho(g) \circ p \circ \rho(g)^{-1} \circ \rho(h)^{-1} \\
+				&= \frac{1}{|G|} \sum_{g \in G} \rho(hg) \circ p \circ \rho(hg)^{-1} \\
+				&= \frac{1}{|G|} \sum_{g' \in G} \rho(g') \circ p \circ \rho(g')^{-1} \quad \text{(en posant } g' = hg) \\
+				&= p^0.
+			\end{aligned}
+			\]
+			Donc \( \rho(h) \circ p^0 = p^0 \circ \rho(h) \), ce qui signifie que \( p^0 \) commute avec \( \rho(h) \) pour tout \( h \in G \).\\
+			En particulier, si \( x \in W^0 \), alors \( p^0(x) = 0 \Rightarrow p^0(\rho(h)(x)) = \rho(h)(p^0(x)) = \rho(h)(0) = 0 \), donc \( \rho(h)(x) \in W^0 \).\\
+			Il en résulte que \( W^0 \) est stable sous l’action de \( G \), et c’est un complément de \( W \) dans \( V \) stable sous \( G \).
+			
+			
+			\begin{theorem}[Théorème de Maschke] \cite{serre1971representation} \\
+				Toute représentation linéaire \(\rho : G \rightarrow \mathrm{GL}(V)\) sur \( G \) dans un espace vectoriel complexe de dimension finie se décompose en somme directe de représentations irréductibles.
+			\end{theorem}
+			
+			
+			\textbf{\underline{Preuve:}}\\
+			Soit \( \rho : G \rightarrow \mathrm{GL}(V) \) une représentation linéaire et \( W \) un sous-espace vectoriel stable par \( \rho \). Nous montrons que \( W \) admet un supplémentaire \( W' \) dans \( V \), également stable par \( \rho \). \\
+			Soient \(  p : V \to W \) et \( p^0 : V \to W \quad \text{définie par} \quad  \text{\(	p^0 = \frac{1}{|G|} \sum_{g \in G} \rho(g) \circ p \circ \rho(g)^{-1}\)}  \)  deux projections linéaires. \\
+			On a d'après le \textbf{théorème 2.3.1} \quad  \( V = W \oplus W^0 \) \quad avec \quad \( W^0 = \ker(p^0).\) (*) \\
+			Nous déduisons le résultat par récurrence sur \( \dim(V) \).
+			\begin{itemize}
+				\item Si \( \dim(V) = 1 \), le résultat est trivial.\\
+				Supposons que \( \dim(V) > 1 \).
+				\item Si \( V \) est irréductible, la situation est triviale.
+				\item  Si \( V \) n'est pas irréductible, alors il existe un sous-espace vectoriel \( W \) de \( V \) stable par \( \rho \) avec \( 0 < \dim(W) < \dim(V) \).
+				Par (*), il existe un sous-espace \( W' \) de \( V \) stable par \( \rho \) tel que \( V = W \oplus W' \). Ainsi, en appliquant ce processus à \( W \) et \( W' \) , on a le résultat. 
+			\end{itemize}
+			
+			
+			\begin{theorem}[Lemme de Schur]	 \cite{serre1971representation} \\
+				Soient \( \rho_1 : G \rightarrow V_1 \) et \( \rho_2 : G \rightarrow V_2 \) deux représentations irréductibles de \( G \). \\
+				Soit \( f : V_1 \rightarrow V_2 \) une application linéaire vérifiant
+				\[
+				\forall g \in G, \quad f \circ \rho_1(g) = \rho_2(g) \circ f.
+				\]
+				On a les propriétés suivantes :
+				\begin{enumerate} [label=\roman*)]
+					\item[(i)] Si \( \rho_1 \) et \( \rho_2 \) ne sont pas isomorphes, alors \( f = 0 \).
+					\item[(ii)] Si  \(V_1 = V_2 \) et \( \rho_1 = \rho_2 \), alors \( f \) est une homothétie.
+				\end{enumerate}
+			\end{theorem}
+			
+			
+			\textbf{\underline{Preuve:}}
+			\begin{enumerate} [label=\roman*)]
+				\item Supposons par la contraposée que \( f \neq 0 \) et montrons que \( \rho_1 \) et \( \rho_2 \) sont isomorphes.\\
+				Le sous-espace \( \ker(f) \) de \( V_1 \) est stable par \( \rho_1 \). Comme \( f \neq 0 \), on a \( \ker(f) = \{0\} \) par irréductibilité de \( \rho_1 \).\\
+				De même, le sous-espace \( \mathrm{Im}(f) \) de \( V_2 \) est stable par \( \rho_2 \). Comme \( f \neq 0 \), on en déduit que \( \mathrm{Im}(f) = V_2 \) par irréductibilité de \( \rho_2 \).\\
+				Par hypothèse, \( f \) est un morphisme de représentations linéaires. Donc \( \rho_1 \) et \( \rho_2 \) sont isomorphes. \\
+				Il en résulte que si \( \rho_1 \) et \( \rho_2 \) ne sont pas isomorphes, alors \( f = 0 \).	
+				\item Supposons que \( V_1 = V_2 = V \) et que \( \rho_1 = \rho_2 = \rho \). Soit \( f : V \to V \) un endomorphisme tel que :
+				\[
+				\forall g \in G, \quad f \circ \rho(g) = \rho(g) \circ f.
+				\]
+				Cela signifie que \( f \) commute avec la représentation \( \rho \).\\
+				Comme \( \mathbb{C} \) est un corps algébriquement clos, l'endomorphisme \( f \) possède au moins une valeur propre \( \lambda \in \mathbb{C} \). Cela signifie qu'il existe un vecteur non nul \( v \in V \) tel que \( f(v) = \lambda v \). Posons :
+				\[
+				f' := f - \lambda \, \mathrm{id}_V.
+				\]
+				Alors \( f' \) est un endomorphisme de \( V \) qui commute également avec \( \rho \), car pour tout \( g \in G \), on a :
+				\begin{align*}
+					f' \circ \rho(g) 
+					&= (f - \lambda \, \mathrm{id}_V) \circ \rho(g) \\
+					&= f \circ \rho(g) - \lambda \, \mathrm{id}_V \circ \rho(g) \\
+					&= f \circ \rho(g) - \lambda \rho(g) \\
+					&= \rho(g) \circ f - \lambda \rho(g) \\
+					&= \rho(g) \circ (f - \lambda \, \mathrm{id}_V) \\
+					&= \rho(g) \circ f'.
+				\end{align*}
+				\( f(v) = \lambda v \) implique que \( f'(v) = 0 \). Ainsi, \( f' \) n’est pas injectif. Il s'en suit que \(f'\) n'est pas bijectif et que \(\ker(f') \neq \{0\}.\)\\
+				Par ailleurs, pour tout \( g \in G \), et tout \( v \in \ker(f') \), on a :
+				\[
+				f'(\rho(g)(v)) = \rho(g)f'(v) = \rho(g) \cdot 0 = 0.
+				\]
+				Il vient que \( \ker(f') \) est stable par \( \rho \). Or, comme \( \rho \) est irréductible, le seul sous-espace non trivial stable par \( G \) est \( V \) lui-même. Donc, \(\ker(f') = V \). Cela signifie que \(\forall v \in V, \quad f'(v) = 0.\)\\
+				On en déduit que \( f = \lambda \, \mathrm{id}_V \), ce qui montre que \( f \) est une homothétie.
+				
+			\end{enumerate}
+			
+			
+			\begin{corollary} \cite{serre1971representation} \label{cor1}\\
+				Soient \( \rho_1 : G \rightarrow V_1 \) et \( \rho_2 : G \rightarrow V_2 \) deux représentations irréductibles de \( G \). \\
+				Soit \( h  : V_1 \to V_2 \) une application linéaire. Posons :
+				\[
+				h_0 = \frac{1}{|G|} \sum_{g \in G} (\rho_2(g))^{-1} \circ h \circ \rho_1(g).
+				\]
+				Alors :
+				\begin{enumerate}[label=\roman*)]
+					\item Si \( \rho_1 \) et \( \rho_2 \) ne sont pas isomorphes, on a \( h_0 = 0 \).
+					\item Si \( V_1 = V_2 \) et \( \rho_1 = \rho_2 \), \( h_0 \) est une homothétie de rapport \( \frac{1}{n} \text{Tr}(h)  \), où \( n = \dim(V) \).
+				\end{enumerate}
+			\end{corollary}
+			
+			
+			\textbf{\underline{Preuve:}}
+			\begin{enumerate}[label=\roman*)]
+				\item En appliquant le lemme de Schur à \( f = h_0 \), on a \( h_0 = 0 \).
+				\item \( h_0 \) est une homothétie par le lemme de Schur. De plus, \[
+				\begin{aligned}
+					\text{Tr}(h_0) &= \frac{1}{|G|} \sum_{g \in G} \text{Tr}((\rho_1(g))^{-1} \circ h \circ \rho_1(g)) \\
+					&= \text{Tr}(h).
+				\end{aligned}
+				\]
+On en déduit alors que \( h^0 = \frac{\text{Tr}(h)}{n} \mathrm{I_n} \), vu que la trace de l’identité est \( n \)
+			\end{enumerate}
+	
+			
+			\begin{definition} \cite{serre1971representation}\\
+Soit $G$ un groupe. Le produit scalaire hermitien sur l’espace vectoriel $\mathscr{F}(G, \mathbb{C})$ des fonctions de $G$ dans $\mathbb{C}$, par la formule :
+				\[
+				(\varphi | \psi) := \frac{1}{|G|} \sum_{g \in G} \varphi(g) \overline{\psi(g)}.
+				\]
+Ceci est un produit scalaire.\\
+Si $\varphi$ et $\psi$ sont des caractères, les deux formules coïncident car dans ce cas $\overline{\varphi(g)} = \varphi(g^{-1})$.
+			\end{definition}
+
+			
+			\begin{theorem} \cite{serre1971representation}
+				\begin{enumerate}[label=\roman*)]
+					\item Soit \( \chi \) le caractère d’une représentation irréductible \( \rho \) de \( G \). Alors, \( (\chi | \chi) = 1 \).
+					\item Soient \( \chi_1 \) et \( \chi_2 \) les caractères de deux représentations irréductibles non isomorphes \((V_1,\rho_1)_{G}\) et \((V_2,\rho_2)_{G}\). Alors, \( (\chi_1 | \chi_2) = 0 \).
+				\end{enumerate}
+			\end{theorem}
+			
+			
+			\begin{theorem}  \cite{serre1971representation} \\
+Soit  \( G \) un groupe.Les propriétés suivantes sont équivalentes :
+				\begin{enumerate}
+					\item[(i)] \( G \) est abélien.
+					\item[(ii)] Toutes les représentations irréductibles de \( G \) sont de degré 1.
+				\end{enumerate}
+			\end{theorem}
+
+			
+			
+		}
+		
+		
+		
+		\RogerChapitre
+		\chapter{Produit tensoriel arbitraire de représentation linéaire d'un produit arbitraire de groupes finis}\label{sec:produit-tensoriel-arbitraire-de-representation-lineaire-dun-produit-arbitraire-de-groupes-finis}
+		% Partie avec la taille personnalisée
+		{
+			\applyfontsize % Application locale de la taille de police 12pt
+			
+			
+			\section{Produit tensoriel arbitraire d'espaces vectoriels}
+Dans la suite, sauf mention contraire, tous les espaces vectoriels seront supposés de dimension finie et définis sur un corps commutatif \( \mathbb{K} \), où \( \mathbb{K} \in \{ \mathbb{R}, \mathbb{C} \} \).
+			
+			\begin{propriety}\textbf{(Propriété universelle.)} \cite{greub2012linear}\\
+				Soient \( V_1, V_2, ... ,V_p \) et T des espaces vectoriels , 
+				\[
+				\otimes : V_1 \times \cdots \times V_p \to T
+				\]
+				une application \( p \)-linéaire. Cette application est dite avoir la \textit{propriété universelle} si elle satisfait les conditions suivantes :
+				\begin{enumerate} [label=\roman*)]
+					\item Les vecteurs \( x_1 \otimes \cdots \otimes x_p \), (\( x_i \in V_i \)) engendrent \( T \).
+					\item Toute application \( p \)-linéaire \( \varphi : V_1 \times \cdots \times V_p \to H \) (\( H \) étant un espace vectoriel quelconque) peut s'écrire sous la forme
+					\[
+					\varphi(x_1, \ldots, x_p) = f(x_1 \otimes \cdots \otimes x_p)
+					\]
+					ou \( f : T \to H \) est une application linéaire.
+				\end{enumerate}
+			\end{propriety}
+			
+			\begin{definition} \cite{greub2012linear}\\
+				Le produit tensoriel des espaces \( V_1, V_2, ... ,V_p \) est un couple \( (T, \otimes) \) où
+				\[
+				\otimes : V_1 \times \cdots \times V_p \to T
+				\]
+				est une application \( p \)-linéaire avec la propriété universelle. \( T \) est également appelé le produit tensoriel des espaces \( V_i \) et est noté
+				\[
+				V_1 \otimes \cdots \otimes V_p.
+				\]
+			\end{definition}
+			
+			\begin{propriety} \cite{greub2012linear}\\
+				Le couple \( (T, \otimes) \) est unique à isomorphisme près.
+			\end{propriety}
+			
+			
+			\begin{definition} \cite{greub2012linear}\\
+				Si \( V_1, V_2, ... ,V_p \) sont des espaces vectoriels sur un corps \( \mathbb{K} \), alors la dimension du produit tensoriel \( V_1 \otimes \cdots \otimes V_p \) est donnée par :
+				\[
+				\dim(V_1 \otimes \cdots \otimes V_p) = \prod_{i=1}^p \dim(V_i).
+				\]
+			\end{definition}
+			
+			
+			
+			\begin{proposition}\cite{greub2012linear}\\
+				Étant donnés trois espaces \(V_1\), \(V_2\), \(V_3\), il existe un isomorphisme linéaire  
+				\[
+				f : V_1 \otimes V_2 \otimes V_3 \ \cong \ (V_1 \otimes V_2) \otimes V_3
+				\]
+				tel que
+				\[
+				f(x \otimes y \otimes z) = (x \otimes y) \otimes z.
+				\]
+			\end{proposition}
+			
+			
+			\begin{proposition}\textbf{(Généralisation)}  \cite{greub2012linear}\\
+				Étant donnés \(p\) \((p \geq 4)\) espaces vectoriels  \(V_1, V_2, \dots, V_p\), il existe un isomorphisme linéaire  
+				\[
+				f : V_1 \otimes V_2 \otimes \cdots \otimes V_p \ \cong \ ((\cdots((V_1 \otimes V_2) \otimes V_3) \cdots) \otimes E_p),
+				\]
+				défini récursivement, tel que pour tout \(x_1 \in V_1, x_2 \in V_2, \dots, x_p \in V_p\),
+				\[
+				f(x_1 \otimes x_2 \otimes \cdots \otimes x_p) = (((\cdots((x_1 \otimes x_2) \otimes x_3) \cdots) \otimes x_{p-1}) \otimes x_p).
+				\]
+			\end{proposition}
+			
+			
+			
+			\begin{proposition} \cite{Guichardet} \\
+				Soit $(V_i)_{i\in I}$ une famille non vide d’espaces vectoriels sur un même corps commutatif  $\mathbb{K}$. Soit $(u_i)_{i\in I}$ une famille non vide de vecteurs non nuls tels que, pour tout $i\in I$, le vecteur $u_i$ appartienne à $V_i$. Pour tous sous-ensembles finis $J$ et $K$ de $I$ tels que $J\subseteq K$, considérons l'application linéaire injective  
+				$$\begin{array}{rlll}
+					\varphi_{J,K}: \underset{i\in J}\otimes V_i& \longrightarrow& \underset{i\in K}\otimes V_i\\
+					\underset{i\in J}\otimes v_i&\longmapsto& \underset{i\in J}\otimes v_i\otimes(\underset{i\in K\setminus J}\otimes u_i).
+				\end{array}
+				$$
+				Soit $\mathcal{F}(I)$ l'ensemble de tous les sous-ensembles finis de $I$. 
+				\begin{enumerate}[label=\roman*)]
+					\item Le système $(\underset{i\in J}\otimes V_i, \varphi_{J,K})_{J\in \mathcal{F}(I)}$ est inductif.
+					\item La limite inductive du système inductif $(\underset{i\in J}\otimes V_i, \varphi_{J,K})_{J\in \mathcal{F}(I)}$, notée $\underset{i\in I}\otimes V_i$, est le produit tensoriel infini des espaces vectoriels $(V_i)_{i\in I}$.
+				\end{enumerate}
+			\end{proposition}
+			
+			
+			\subsection{Représentation linéaire d'un produit arbitraire de groupes finis}
+			
+			\begin{myproposition}\label{prop1}
+				Soit $(V_i)_{i\in I}$ une famille non vide d’espaces vectoriels sur un même corps commutatif  $\mathbb{K}$. Soit $(u_i)_{i\in I}$ une famille non vide de vecteurs non nuls tels que, pour tout $i\in I$, le vecteur $u_i$ appartienne à $V_i$. Pour tous sous-ensembles finis $J$ et $K$ de $I$ tels que $J\subseteq K$, l’application  
+				$$\begin{array}{rlll}
+					\psi_{J,K}: GL(\underset{i\in K}\otimes V_i)& \longrightarrow& GL(\underset{i\in J}\otimes V_i)\\
+					f&\longmapsto& \psi_{J,K} (f)= f_{J,K}
+				\end{array}
+				$$ 
+				avec $f_{J,K}$ défini comme suit : pour tout $f\in GL(\underset{i\in K}\otimes V_i)$ et tout $\underset{i\in J}\otimes v_i\in \underset{i\in J}\otimes V_i$,  
+				$$f_{J,K}(\underset{i\in J}\otimes v_i)= \underset{i\in J}\otimes v'_i \text{ si } f((\underset{i\in J}\otimes v_i)\otimes (\underset{i\in K\setminus J}\otimes t_i))= (\underset{i\in J}\otimes v'_i)\otimes (\underset{i\in K\setminus J}\otimes v'_i)= \underset{i\in K}\otimes v'_i,$$  
+				pour un certain $\underset{i\in K\setminus J}\otimes t_i\in \underset{i\in K\setminus J}\otimes V_i$, est un homomorphisme de groupes.
+			\end{myproposition}
+			
+			
+			\textbf{\underline{Preuve :}}
+			\begin{enumerate}
+				\item D'une part, prouvons que pour tout sous-ensemble fini $J$ et $K$ de $I$ tels que $J\subseteq K$, l'application $\psi_{J,K}$ est bien définie. Pour cela, nous procéderons selon les étapes suivantes :\\
+				$\bullet$ Pour tout $f\in GL(\underset{i\in K}\otimes V_i)$ et tout $\underset{i\in J}\otimes v_i\in \underset{i\in J}\otimes V_i$, si $f((\underset{i\in J}\otimes v_i)\otimes (\underset{i\in K\setminus J}\otimes t_i))= \underset{i\in K}\otimes w_i$ et $f((\underset{i\in J}\otimes v_i)\otimes (\underset{i\in K\setminus J}\otimes t'_i))= \underset{i\in K}\otimes w'_i$ pour tout $\underset{i\in K\setminus J}\otimes t_i$ et $\underset{i\in K\setminus J}\otimes t'_i$ dans $\underset{i\in K\setminus J}\otimes V_i$, alors $\underset{i\in J}\otimes w_i= \underset{i\in J}\otimes w'_i$. En effet, $f_{J,K}(\underset{i\in J}\otimes v_i)= \underset{i\in J}\otimes w_i$ et $f_{J,K}(\underset{i\in J}\otimes v_i)= \underset{i\in J}\otimes w'_i$. Ainsi, $\underset{i\in J}\otimes w_i= \underset{i\in J}\otimes w'_i$.\\
+				$\bullet$ Soit $f\in GL(\underset{i\in K}\otimes V_i)$. Pour tout $\underset{i\in J}\otimes v_i\in \underset{i\in J}\otimes V_i$, nous avons $(\underset{i\in J}\otimes v_i)\otimes (\underset{i\in K\setminus J}\otimes u_i)\in \underset{i\in K}\otimes V_i$. Puisque $f$ est bijective, il existe un unique $\underset{i\in K}\otimes w_i\in \underset{i\in K}\otimes V_i$ tel que :
+				$$\begin{array}{rlll}
+					f(\underset{i\in K}\otimes w_i)&=& f((\underset{i\in J}\otimes w_i)\otimes (\underset{i\in K\setminus J}\otimes w_i))\\
+					&=& (\underset{i\in J}\otimes v_i)\otimes (\underset{i\in K\setminus J}\otimes u_i)
+				\end{array}$$
+				Il en découle, par définition de $f_{J,K}$, que $f_{J,K}(\underset{i\in J}\otimes w_i))= \underset{i\in J}\otimes v_i$. Cela signifie clairement que l'application $f_{J,K}$ est surjective.\\
+				$\bullet$ Maintenant, considérons $\underset{i\in J}\otimes v_i\neq \underset{i\in J}\otimes t_i$ dans $\underset{i\in J}\otimes V_i$. Alors, nous avons $(\underset{i\in J}\otimes v_i)\otimes (\underset{i\in K\setminus J}\otimes u_i)\neq (\underset{i\in J}\otimes t_i)\otimes (\underset{i\in K\setminus J}\otimes u_i)$ dans $\underset{i\in K}\otimes V_i$. Et pour tout $f\in GL(\underset{i\in K}\otimes V_i)$, on observe facilement que $f((\underset{i\in J}\otimes v_i)\otimes (\underset{i\in K\setminus J}\otimes u_i))\neq f((\underset{i\in J}\otimes t_i)\otimes (\underset{i\in K\setminus J}\otimes u_i))$ puisque $f$ est injective. Il en résulte que $f_{J,K}(\underset{i\in J}\otimes v_i)\neq f_{J,K}(\underset{i\in J}\otimes t_i)$. Ainsi, $f_{J,K}$ est injective.\\
+				
+				$\bullet$
+				Prouvons que $f_{J,K}$ est linéaire. Considérons $\underset{i\in J}\otimes v_i$ et $\underset{i\in J}\otimes t_i$, deux éléments de $\underset{i\in J}\otimes V_i$, et soit $\alpha\in F$.
+				
+				Prouvons que :
+				\[
+				f_{J,K}(\underset{i\in J}\otimes v_i+ \alpha \underset{i\in J}\otimes t_i)= f_{J,K}(\underset{i\in J}\otimes v_i)+ \alpha f_{J,K}(\underset{i\in J}\otimes t_i).
+				\]
+				Considérons $f_{J,K}(\underset{i\in J}\otimes v_i)= \underset{i\in J}\otimes v'_i$ et $f_{J,K}(\underset{i\in J}\otimes t_i)= \underset{i\in J}\otimes t'_i$, où  
+				\[
+				f((\underset{i\in J}\otimes v_i)\otimes (\underset{i\in K\setminus J}\otimes h_i))= \underset{i\in K}\otimes v'_i
+				\]
+				et  
+				\[
+				f((\underset{i\in J}\otimes t_i)\otimes (\underset{i\in K\setminus J}\otimes k_i))= \underset{i\in K}\otimes t'_i
+				\]
+				pour certains éléments $\underset{i\in K\setminus J}\otimes h_i$ et $\underset{i\in K\setminus J}\otimes k_i$ de $\underset{i\in K\setminus J}\otimes V_i$. Nous avons :
+				
+				\[
+				\begin{array}{rlll}
+					f(((\underset{i\in J}\otimes v_i)\otimes (\underset{i\in K\setminus J}\otimes h_i))+ \alpha ((\underset{i\in J}\otimes t_i)\otimes (\underset{i\in K\setminus J}\otimes k_i)))=\\
+					f((\underset{i\in J}\otimes v_i)\otimes (\underset{i\in K\setminus J}\otimes h_i))+ \alpha f((\underset{i\in J}\otimes t_i)\otimes (\underset{i\in K\setminus J}\otimes k_i))
+				\end{array}
+				\]
+				puisque $f$ est linéaire. Et
+				\[
+				\begin{array}{rlll}
+					f((\underset{i\in J}\otimes v_i)\otimes (\underset{i\in K\setminus J}\otimes h_i))+ \alpha f((\underset{i\in J}\otimes t_i)\otimes (\underset{i\in K\setminus J}\otimes k_i))&=& (\underset{i\in K}\otimes v'_i)+(\underset{i\in K}\otimes \alpha t'_i))\\
+					&=& \underset{i\in K}\otimes (v'_i+ \alpha t'_i)\\
+					&=& (\underset{i\in J}\otimes (v'_i+ \alpha t'_i))\otimes (\underset{i\in K\setminus J}\otimes (v'_i+ \alpha t'_i)) 
+				\end{array}
+				\]
+				De plus,
+				\[
+				\begin{array}{rlll}
+					f(((\underset{i\in J}\otimes v_i)\otimes (\underset{i\in K\setminus J}\otimes h_i))+ \alpha ((\underset{i\in J}\otimes t_i)\otimes (\underset{i\in K\setminus J}\otimes k_i)))&=& f(\underset{i\in J}\otimes (v_i + \alpha t_i)+\underset{i\in K\setminus J}\otimes (h_i+ \alpha k_i))
+				\end{array}
+				\]
+				Ainsi,
+				\[
+				\begin{array}{rlll}
+					f_{J,K}(\underset{i\in J}\otimes (v_i+ \alpha t_i))&=& \underset{i\in J}\otimes (v'_i+ \alpha t'_i)\\
+					&=& (\underset{i\in J}\otimes v'_i)+ \alpha (\underset{i\in J}\otimes t'_i))\\
+					&=& f_{J,K}(\underset{i\in J}\otimes v_i)+ \alpha f_{J,K}(\underset{i\in J}\otimes t_i) 
+				\end{array}
+				\]
+				Par conséquent, $f_{J,K} \in GL(\underset{i\in K}\otimes V_i)$ pour tout $f \in GL(\underset{i\in K}\otimes V_i)$. \\  
+				Ainsi, $\psi_{J,K}$ est bien défini.
+				
+				
+				\item Prouvons maintenant que $\psi_{J,K}$ est un homomorphisme de groupe qui est surjectif. 
+				Soit $g \in GL(\underset{i\in J}\otimes V_i)$. Il est clair que 
+				$f = g\otimes 1_{\underset{i\in K\setminus J}\otimes V_i}$ appartient à 
+				$GL(\underset{i\in K}\otimes V_i)$.  
+				
+				Pour tout $\underset{i\in J}\otimes v_i \in \underset{i\in J}\otimes V_i$, on a  
+				$(\underset{i\in J}\otimes v_i)\otimes (\underset{i\in K\setminus J}\otimes u_i) 
+				\in \underset{i\in K}\otimes V_i$, et  
+				
+				\[
+				f((\underset{i\in J}\otimes v_i)\otimes (\underset{i\in K\setminus J}\otimes u_i))= 
+				g(\underset{i\in J}\otimes v_i)\otimes (\underset{i\in K\setminus J}\otimes u_i).
+				\]
+				Ainsi, $f_{J,K} (\underset{i\in J}\otimes v_i) = g(\underset{i\in J}\otimes v_i)$ et  
+				$\psi_{J,K} (f) = g$. Cela montre que $\psi_{J,K}$ est surjectif.  
+				
+				Il reste à prouver que $\psi_{J,K}$ est un homomorphisme de groupe. Considérons  
+				$f, g \in GL(\underset{i\in J}\otimes V_i)$. Nous devons montrer que  
+				\[
+				\psi_{J,K}(f\circ g) = \psi_{J,K}(f) \circ \psi_{J,K}(g).
+				\]
+				En effet, $(f\circ g)\otimes 1_{\underset{i\in K\setminus J}\otimes V_i} 
+				\in GL(\underset{i\in K}\otimes V_i)$ et, comme vu précédemment,  
+				
+				\[
+				\psi_{J,K}((f\circ g)\otimes 1_{\underset{i\in K\setminus J}\otimes V_i}) 
+				= f\circ g = \psi_{J,K}(f) \circ \psi_{J,K}(g).
+				\]
+				Cela conclut la démonstration.
+				
+			\end{enumerate}
+			
+			
+			\begin{myproposition}\label{prop2}
+				Le système $\big(GL(\underset{i \in J}{\otimes} V_i), \psi_{J,K} \big)$ est projectif, avec pour limite projective
+				\[
+				\varprojlim_{J \in \mathcal{F}(I)} GL\left(\underset{i \in J}{\otimes} V_i\right),
+				\]
+				où $\mathcal{F}(I)$ désigne l’ensemble des sous-ensembles finis de $I$.
+			\end{myproposition}
+			
+			\textbf{\underline{Preuve}} :
+			\begin{enumerate}
+				\item \textbf{Identité sur chaque composante :}\\
+				Montrons que $\psi_{J,J} = \mathrm{id}_{GL(\underset{i \in J}{\otimes} V_i)}$, c’est-à-dire que $\psi_{J,J}(f) = f$ pour tout $f \in GL(\underset{i \in J}{\otimes} V_i)$.\\
+				Soient $f \in GL(\underset{i \in J}{\otimes} V_i)$ et $\underset{i \in J}{\otimes} v_i \in \underset{i \in J}{\otimes} V_i$. Par définition de $\psi_{J,J}(f)$, on a :
+				\[
+				\psi_{J,J}(f)(\underset{i \in J}{\otimes} v_i) = f_{J,J}(\underset{i \in J}{\otimes} v_i) = f(\underset{i \in J}{\otimes} v_i).
+				\]
+				Donc $\psi_{J,J}(f) = f$.
+				
+				\item \textbf{Compatibilité des morphismes :}\\
+				Soient $J \subseteq K \subseteq L$ des sous-ensembles finis de $I$.\\
+				Montrons que le diagramme suivant commute :
+				\[
+				\xymatrix{
+					GL\left(\underset{i \in L}{\otimes} V_i\right) \ar[rr]^{\psi_{K,L}} \ar[rrdd]_{\psi_{J,L}} && GL\left(\underset{i \in K}{\otimes} V_i\right) \ar[dd]^{\psi_{J,K}} \\
+					\\
+					&& GL\left(\underset{i \in J}{\otimes} V_i\right)
+				}
+				\]
+				Soit $f \in GL(\underset{i \in L}{\otimes} V_i)$ et soit $\underset{i \in J}{\otimes} v_i \in \underset{i \in J}{\otimes} V_i$. Considérons un élément :
+				\[
+				\underset{i \in L}{\otimes} v_i = \left(\underset{i \in J}{\otimes} v_i\right) \otimes \left(\underset{i \in L \setminus J}{\otimes} u_i\right).
+				\]
+				Alors :
+				\[
+				f\left(\underset{i \in L}{\otimes} v_i\right) = \underset{i \in L}{\otimes} v'_i.
+				\]
+				Par définition, on a :
+				\[
+				\psi_{J,L}(f)(\underset{i \in J}{\otimes} v_i) = f_{J,L}(\underset{i \in J}{\otimes} v_i) = \underset{i \in J}{\otimes} v'_i.
+				\]
+				En notant que :
+				\[
+				\underset{i \in L}{\otimes} v_i = \left[\left(\underset{i \in J}{\otimes} v_i\right) \otimes \left(\underset{i \in K \setminus J}{\otimes} u_i\right)\right] \otimes \left(\underset{i \in L \setminus K}{\otimes} u_i\right),
+				\]
+				on obtient :
+				\[
+				f_{K,L}\left(\left(\underset{i \in J}{\otimes} v_i\right) \otimes \left(\underset{i \in K \setminus J}{\otimes} u_i\right)\right) = \left(\underset{i \in J}{\otimes} v'_i\right) \otimes \left(\underset{i \in K \setminus J}{\otimes} v'_i\right).
+				\]
+				Puis, par définition de $\psi_{J,K}$ :
+				\[
+				\psi_{J,K}\left(\psi_{K,L}(f)\right)(\underset{i \in J}{\otimes} v_i) = f_{J,L}(\underset{i \in J}{\otimes} v_i) = \underset{i \in J}{\otimes} v'_i.
+				\]
+				
+				Ainsi :
+				\[
+				\psi_{J,K} \circ \psi_{K,L}(f)(\underset{i \in J}{\otimes} v_i) = \psi_{J,L}(f)(\underset{i \in J}{\otimes} v_i),
+				\]
+				ce qui prouve la commutativité du diagramme.
+			\end{enumerate}
+			Le système $\big(GL(\underset{i \in J}{\otimes} V_i), \psi_{J,K} \big)$ est donc un système projectif.\\	
+			Puisque :
+			\begin{itemize}
+				\item chaque $GL\left( \bigotimes_{i \in J} V_i \right)$ est un objet de la catégorie des groupes $(\mathbf{Grp})$,
+				\item $\mathbf{Grp}$ admettant les limites projectives (elle est complète),
+			\end{itemize}
+			alors le système projectif $\left( GL\left( \bigotimes_{i \in J} V_i \right), \psi_{J,K} \right)$ admet une limite projective :
+			\[
+			\varprojlim_{J \in \mathcal{F}(I)} GL\left( \bigotimes_{i \in J} V_i \right).
+			\]
+			
+			
+			\begin{myproposition}
+				Soit \( \mathcal{F}(I) \) l’ensemble des sous-ensembles finis de \( I \), muni de l’inclusion, que l’on considère comme une catégorie.
+				Définissons une catégorie \( \text{Vect}_{\otimes V_i} \) associée à une famille d'espaces vectoriels \( (V_i)_{i \in I} \), de la manière suivante :
+				
+				\begin{enumerate}
+					\item Les objets de \( \text{Vect}_{\otimes V_i} \) sont les produits tensoriels finis \(	\bigotimes_{i \in J} V_i\) de la famille \( (V_i)_{i \in I} \)
+					où \( J \subseteq I \) est un sous-ensemble fini.
+					
+					\item pour chaque paire ordonnée d’objets \( \left( \bigotimes_{i \in J} V_i, \bigotimes_{i \in K} V_i \right) \), l’ensemble des morphismes de 
+					\( \bigotimes_{i \in J} V_i \) vers \( \bigotimes_{i \in K} V_i \) est défini comme :
+					
+					\[
+					\text{Vect}_{\otimes V_i}\left( \bigotimes_{i \in J} V_i, \bigotimes_{i \in K} V_i \right) = 
+					\left\{
+					\begin{array}{ll}
+						\{ \varphi_{J,K} \} & \text{si } J \subseteq K \\
+						\varnothing & \text{sinon}.
+					\end{array}
+					\right.
+					\]
+				\end{enumerate}
+			\end{myproposition}
+			
+			
+			\begin{myproposition}
+				Soit la correspondance \( GL : \text{Vect}_{\otimes V_i} \rightarrow \text{Grp} \) entre les catégories 
+				\( \text{Vect}_{\otimes V_i} \) et \( \text{Grp} \) où \( \text{Grp} \) désigne la catégorie des groupes. \( GL \) est un foncteur contravariant.
+				
+			\end{myproposition}
+			
+			\textbf{\underline{Preuve}} : \\
+			Soient \(J,K,L \in \mathcal{F}(I) \) tels que \( J \subseteq K \subseteq L \). On a :
+			\begin{enumerate}
+				\item \textbf{Objets :} \\
+				À chaque produit tensoriel 
+				\[
+				\bigotimes_{i \in J} V_i \in \text{Vect}_{\otimes V_i} \quad ,
+				\]
+				on associe 
+				\[
+				GL\left( \bigotimes_{i \in J} V_i \right) \in \mathrm{Grp}.
+				\]
+				
+				\item \textbf{Morphismes :} \\
+				À chaque application linéaire
+				\[
+				\varphi_{J,K} : \bigotimes_{i \in J} V_i \to \bigotimes_{i \in K} V_i
+				\quad ,
+				\]
+				on associe l'homomorphisme de groupes
+				\[
+				GL(\varphi_{J,K}) = \psi_{J,K} : GL\left( \bigotimes_{i \in K} V_i \right) \to GL\left( \bigotimes_{i \in J} V_i \right).
+				\]
+				Cela est bien un morphisme de la catégorie \( \text{Grp} \) d'après la proposition \ref{prop1}.
+			\end{enumerate}
+			
+			\textbf{ \underline{Vérification des deux axiomes :}}
+			
+			\begin{itemize}
+				\item[(i)] \textbf{Identité :} \\
+				On a 
+				\[
+				\psi_{J,J} = \mathrm{id}.
+				\] d'après la proposition  \ref{prop2}. 
+				Il vient que
+				\[
+				GL\left( \mathrm{id}_{\bigotimes_{i \in J} V_i} \right) = \mathrm{id}_{GL\left( \bigotimes_{i \in J} V_i \right)}.
+				\]
+				
+				\item[(ii)] \textbf{Compatibilité à la composition :} \\
+				Pour \( J \subseteq K \subseteq L \), on a : \\
+				\(\psi_{J,K} \circ \psi_{K,L} = \psi_{J,L}\) d'après \ref{prop2}. 
+				Ce qui correspond à
+				\[
+				GL(\varphi_{J,K}) \circ GL(\varphi_{K,L}) = GL(\varphi_{J,L}) = \psi_{J,L}.
+				\]
+				Donc
+				\[
+				GL(\varphi_{J,L}) = GL(\varphi_{K,L} \circ \varphi_{J,K}) = GL(\varphi_{J,K}) \circ GL(\varphi_{K,L}).
+				\]
+				Il en résulte que \(GL\) est un foncteur contravariant.
+			\end{itemize}
+			
+			
+			\begin{myproposition}\label{prop3} 
+				Soit $J$ un sous-ensemble fini d'un ensemble $I$ et $(G_i)_{i\in J}$ une famille finie de groupes finis. Soit $(V_i)_{i\in J}$ une famille finie d'espaces vectoriels de dimension finie sur le même corps $F$ et pour chaque $i \in J$, soit $\varphi_i: G_i\rightarrow GL(V_i)$ une représentation linéaire de $G_i$ dans $V_i$. Alors, le produit tensoriel $\varphi_{J}= \underset{i\in J}\otimes \varphi_i$ des applications $(\varphi_i)_{i\in J}$ défini par : 
+				$$\begin{array}{llll}
+					\varphi_{J}= \underset{i\in J}\otimes \varphi_i: \underset{i\in J}\Pi G_i&\longrightarrow& GL(\underset{i\in J}\otimes V_i)\\ 
+					(g_i)_{i\in J}&\longmapsto& \underset{i\in J}\otimes \varphi_i ((g_i)_{i\in J})= \underset{i\in J}\otimes \varphi_i(g_i)                                                                                                                                                                                                         
+				\end{array}
+				$$ 
+				avec
+				$$\begin{array}{rlll} 
+					\underset{i\in J}\otimes \varphi_i(g_i): \underset{i\in J}\otimes V_i&\longrightarrow& \underset{i\in J}\otimes V_i\\
+					\underset{i\in J}\otimes v_i&\longmapsto&(\underset{i\in J}\otimes \varphi_i(g_i))(\underset{i\in J}\otimes v_i)=\underset{i\in J}\otimes \varphi_i(g_i)(v_i)
+				\end{array} 
+				,$$ est une représentation linéaire du produit direct fini $\underset{i\in J}\prod G_i$ des groupes $(G_i)_{i\in J}$ dans le produit tensoriel fini $\underset{i\in J}\otimes V_i$.
+			\end{myproposition}
+			
+			\textbf{\underline{Preuve :}}\\
+			Pour tout ensemble fini $J$, $i\in J$ et tout $g_{i}\in G_i$, on a $\varphi_i (g_i)\in GL(V_i)$. Il en découle, par la définition du produit tensoriel d'applications, que $\underset{i\in J}\otimes \varphi_i(g_i)\in GL(\underset{i\in J}\otimes V_i)$. On obtient par induction que $\varphi_{J}= \underset{i\in J}\otimes \varphi_i$ est un homomorphisme de groupes. Ainsi, $\varphi_{J}$ est une représentation linéaire du produit direct fini $\underset{i\in J}\prod G_i$ des groupes $(G_i)_{i\in J}$ dans l'espace vectoriel $\underset{i\in J}\otimes V_i$ comme voulu, et la démonstration est terminée.
+			
+			
+			\begin{myproposition}
+				Soient $(I, \leq)$ un ensemble dirigé et $(G_i)_{i\in I}$ une famille non vide de groupes finis. Pour tout sous-ensemble fini $J$ de $I$, définissons $G_J = \underset{i\in J}\prod G_i$. Si $J$ et $K$ sont des sous-ensembles de $I$ tels que $J\subseteq K$, alors nous considérons la projection :
+				$$\begin{array}{rlll}\varphi_{J, K}: G_K&\longrightarrow &G_J\\
+					(g_i)_{i\in K}&\longmapsto&(g_i)_{i\in J}.
+				\end{array}
+				$$ Le système $(G_J,\varphi_{J, K})$ est projectif avec limite projective $\underset{i\in I} \prod G_i$.
+			\end{myproposition}
+			
+			\textbf{\underline{Preuve :}}\\
+			Soit $(I, \leq)$ un ensemble dirigé et $(G_i)_{i\in I}$ une famille non vide de groupes finis. Pour tout sous-ensemble fini $J$ de $I$, définissons $G_J = \prod_{i \in J} G_i$. Nous allons montrer que le système $(G_J, \varphi_{J, K})$ est un système projectif et que sa limite projective est $\prod_{i \in I} G_i$.
+			
+			\textbf{\underline{Vérification du système projectif}}\\
+			Le système projectif est défini par les ensembles $G_J$ indexés par les sous-ensembles finis $J \subseteq I$, et les applications de transition $\varphi_{J,K}$ définies pour $J \subseteq K$ par :
+			\[
+			\varphi_{J, K}: G_K \to G_J, \quad (g_i)_{i \in K} \mapsto (g_i)_{i \in J}.
+			\]
+			Les homomorphismes $\varphi_{J,K}$ sont bien définis et sont clairement des homomorphismes de groupes car ils consistent en des projections sur un sous-produit de groupes.\\
+			
+			\textbf{\underline{Identité :}} \\
+			Pour tout $J$, on a trivialement $\varphi_{J, J} = \operatorname{id}_{G_J}$.\\
+			
+			\textbf{\underline{Compatibilité avec l'inclusion :}} \\
+			Supposons $J \subseteq K \subseteq L$ et montrons que 
+			\[
+			\varphi_{J, L} = \varphi_{J, K} \circ \varphi_{K, L}.
+			\]
+			Pour tout élément $g = (g_i)_{i \in L} \in G_L$, on a :
+			\[
+			\varphi_{K, L}(g) = (g_i)_{i \in K} \in G_K,
+			\]
+			puis
+			\[
+			\varphi_{J, K}(\varphi_{K, L}(g)) = \varphi_{J, K}((g_i)_{i \in K}) = (g_i)_{i \in J}.
+			\]
+			Par définition de $\varphi_{J, L}$, nous avons bien $\varphi_{J, L}(g) = (g_i)_{i \in J}$. Ainsi, la compatibilité est vérifiée.\\
+			Ces deux propriétés assurent que $(G_J, \varphi_{J, K})$ forme bien un système projectif.\\
+			
+			
+			\textbf{\underline{Détermination de la limite projective}}\\
+			La limite projective d'un tel système est définie comme :
+			\[
+			\underset{\overleftarrow{J \in \mathcal{F}(I)}}\lim G_J = \left\{ (g_i)_{i \in I} \in \prod_{i \in I} G_i \mid \forall J \subseteq K, \varphi_{J, K}((g_i)_{i \in K}) = (g_i)_{i \in J} \right\}.
+			\]
+			Mais ici, les projections sont simplement les projections naturelles de $\prod_{i \in I} G_i$ sur les sous-produits indexés par les parties finies de $I$. Ainsi, tout élément de $\prod_{i \in I} G_i$ satisfait trivialement la condition de compatibilité, donc :
+			\[
+			\underset{\overleftarrow{J \in \mathcal{F}(I)}}\lim G_J = \prod_{i \in I} G_i.
+			\]
+			Par construction, les projections $\varphi_J : \prod_{i \in I} G_i \to G_J$ définies par $(g_i)_{i \in I} \mapsto (g_i)_{i \in J}$ vérifient $\varphi_{J, K} \circ \varphi_K = \varphi_J$, montrant que $\prod_{i \in I} G_i$ satisfait l'universalité de la limite projective.\\
+			Il en resulte que $(G_J, \varphi_{J, K})$ définit bien un système projectif, et que sa limite projective est $\prod_{i \in I} G_i$, ce qui conclut la preuve.\\
+			
+			Nous avons le résultat suivant d'après le théorème~\ref{the02}.
+			\begin{mylemma}\label{lem1}
+				Soit $(V_i)_{i\in I}$ une famille non vide d'espaces vecteurs de dimension finie sur le même corps \( \mathbb{K} \) et soit \( \underset{i\in I}\otimes V_i \) le produit tensoriel infini des espaces vectoriels \( (V_i)_{i\in I} \) où chaque \( V_i \) (\( i \in I \)) est un espace vectoriel non nul. Soit \( \mathcal{F}(I) \) l'ensemble des sous-ensembles finis de \( I \). Alors, 
+				
+				\[
+				\underset{\overleftarrow{J \in \mathcal{F}(I)}}{\lim} GL\left( \underset{i \in J}{\otimes} V_i \right) = GL\left( \underset{\longrightarrow}{\lim}_{J \in \mathcal{F}(I)} \left( \underset{i \in J}{\otimes} V_i \right) \right)
+				\]
+			\end{mylemma}
+			
+			
+			\begin{mytheorem} 
+				Soit \( (G_i)_{i \in I} \) une famille non vide de groupes et \( (\varphi_i)_{i \in I} \) une famille de représentations linéaires, où chaque  
+				\[
+				\varphi_i : G_i \to \operatorname{GL}(V_i)
+				\]
+				est une représentation du groupe \( G_i \) sur un espace vectoriel \( V_i \).  
+				Alors, la représentation linéaire sur le produit tensoriel des espaces \( V_i \) est donnée par :
+				\[
+				\varphi_I = \bigotimes_{i \in I} \varphi_i : \prod_{i \in I} G_i \longrightarrow \operatorname{GL} \left( \bigotimes_{i \in I} V_i \right).
+				\]
+			\end{mytheorem}
+			
+			
+			\textbf{\underline{Preuve }  :}\\ 
+			Soient \( J , K \in \mathcal{F}(I) \) avec $\mathcal{F}(I)$ l'ensemble de partie finie de \( I \) tels que \( J \subseteq K \). Le diagramme suivant commute :
+			
+			$$
+			\xymatrix{
+				\underset{i\in K} \prod G_i \ar@{->}[rr]^{\varphi_{K}} \ar@{->}[dd]_{\varphi_{_{J,K}}} && GL(\underset{i\in K} \otimes V_i) \ar@{->}[dd]^{\psi_{_{J,K}}} \\
+				&& \\
+				\underset{i\in J} \prod G_i \ar@{->}[rr]^{\varphi_{J}} && GL(\underset{i\in J} \otimes V_i)
+			}
+			$$
+			
+			En effet, soient \( J \) et \( K \) deux sous-ensembles finis de \( I \) tels que \( J \subseteq K \). Soit \( (g_i)_{i \in K} \) un élément de \( \underset{i\in K} \prod G_i \). Il est clair que :
+			
+			$$
+			\psi_{J,K} \circ \varphi_{K} ((g_i)_{i\in K}) = \psi_{J, K}(\varphi_{K} ((g_i)_{i\in J})) = \psi_{J,K}(\underset{i\in J} \otimes \varphi_{i}(g_i))
+			$$
+			et
+			
+			$$
+			\varphi_{J} \circ \varphi_{J,K} ((g_i)_{i\in K}) = \varphi_{J}(\varphi_{J,K}((g_i)_{i\in K})) = \varphi_{J} ((g_i)_{i\in J}) = \underset{i\in J} \otimes \varphi_{i}(g_i).
+			$$
+			
+			Soit \( \underset{i\in J} \otimes v_i \) un élément de \( \underset{i\in J} \otimes V_i \). Alors \( (\underset{i\in J} \otimes v_i) \otimes (\underset{i\in K \setminus J} \otimes u_i) \in \underset{i\in K} \otimes V_i \). Ainsi,
+			$$
+			\underset{i\in K} \otimes \varphi_{i}(g_i) \left( (\underset{i\in J} \otimes v_i) \otimes (\underset{i\in K \setminus J} \otimes u_i) \right) = (\underset{i\in J} \otimes \varphi_{i}(g_i)(v_i)) \otimes (\underset{i\in K \setminus J} \otimes \varphi_{i}(g_i)(u_i)).
+			$$
+			Cela découle de la définition de \( \psi_{J,K} \) que :
+			$$
+			\psi_{J,K}(\underset{i\in K} \otimes \varphi_{i}(g_i))(\underset{i\in J} \otimes v_{i}) = \underset{i\in J} \otimes \varphi_{i}(g_i)(v_i) = \underset{i\in J} \otimes \varphi_{i}(g_i)(\underset{i\in J} \otimes v_i).
+			$$
+			Par conséquent, le diagramme ci-dessus commute. Ainsi, d'après théorème \ref{prop0}, il existe un unique homomorphisme de groupes :
+			$$
+			\varphi_I = 	\underset{\overleftarrow{J \in \mathcal{F}(I)}}{\lim} ( \underset{i \in J}{\bigotimes} \varphi_i) : \underset{i\in I} \prod G_i \longrightarrow GL(\underset{i\in I} \otimes V_i),
+			$$
+			
+			qui est une représentation linéaire du produit direct infini \( \underset{i\in I} \prod G_i \) des groupes \( G_i \) dans \( \underset{i\in I} \otimes V_i \). Le théorème est donc démontré.
+			
+			
+			
+			\begin{mytheorem} 
+				Soit \( (G_i)_{i \in I} \) une famille non vide de groupes, et \( (\varphi_i)_{i \in I} \) une famille de représentations linéaires, où chaque  
+				\[
+				\varphi_i : G_i \to \operatorname{GL}(V_i)
+				\]
+				est une représentation du groupe \( G_i \) sur un espace vectoriel \( V_i \).  	
+				Alors, il existe une représentation linéaire naturelle sur le produit tensoriel des espaces \( V_i \), définie par :
+				\[
+				\varphi_I = \bigotimes_{i \in I} \varphi_i : \prod_{i \in I} G_i \longrightarrow \operatorname{GL} \left( \bigotimes_{i \in I} V_i \right).
+				\]
+			\end{mytheorem}
+			
+			\textbf{\underline{Preuve} :}\\
+			Soient \( J, K \in \mathcal{F}(I) \), l’ensemble des parties finies de \( I \), avec \( J \subseteq K \). Le diagramme suivant commute :
+			\[
+			\xymatrix{
+				\prod_{i\in K} G_i \ar[rr]^{\varphi_{K}} \ar[dd]_{\pi_{J,K}} && \operatorname{GL}\left( \bigotimes_{i\in K} V_i \right) \ar[dd]^{\psi_{J,K}} \\
+				&& \\
+				\prod_{i\in J} G_i \ar[rr]^{\varphi_{J}} && \operatorname{GL}\left( \bigotimes_{i\in J} V_i \right)
+			}
+			\]
+			où \( \pi_{J,K} \) est la projection de \( \prod_{i \in K} G_i \) sur \( \prod_{i \in J} G_i \) et \( \psi_{J,K} \) la restriction  de l’action de \( \bigotimes_{i \in K} \varphi_i(g_i) \) sur le sous-espace \( \bigotimes_{i \in J} V_i \).\\
+			Soit \( (g_i)_{i \in K} \in \prod_{i \in K} G_i \). Alors
+			\[
+			\psi_{J,K} \circ \varphi_{K}((g_i)_{i \in K}) = \psi_{J,K}\left( \bigotimes_{i \in K} \varphi_i(g_i) \right),
+			\]
+			et
+			\[
+			\varphi_J \circ \pi_{J,K}((g_i)_{i \in K}) = \varphi_J((g_i)_{i \in J}) = \bigotimes_{i \in J} \varphi_i(g_i).
+			\]
+			Soient\( \bigotimes_{i \in J} v_i \in \bigotimes_{i \in J} V_i \) et \( \bigotimes_{i \in K \setminus J} u_i \in \bigotimes_{i \in K \setminus J} V_i \). Leur produit tensoriel est dans \( \bigotimes_{i \in K} V_i \) et on a :
+			
+			\[
+			\left( \bigotimes_{i \in K} \varphi_i(g_i) \right) \left( \left( \bigotimes_{i \in J} v_i \right) \otimes \left( \bigotimes_{i \in K \setminus J} u_i \right) \right) = \left( \bigotimes_{i \in J} \varphi_i(g_i)(v_i) \right) \otimes \left( \bigotimes_{i \in K \setminus J} \varphi_i(g_i)(u_i) \right).
+			\]
+			Par définition de \( \psi_{J,K} \), on en déduit que :
+			\[
+			\psi_{J,K}\left( \bigotimes_{i \in K} \varphi_i(g_i) \right)\left( \bigotimes_{i \in J} v_i \right) = \bigotimes_{i \in J} \varphi_i(g_i)(v_i) = \varphi_J\left( (g_i)_{i \in J} \right) \left( \bigotimes_{i \in J} v_i \right).
+			\]
+			Par conséquent, le diagramme commute. Ainsi, d'après théorème \ref{prop0}, il existe un unique homomorphisme de groupes :
+			$$
+			\varphi_I = 	\underset{\overleftarrow{J \in \mathcal{F}(I)}}{\lim} ( \underset{i \in J}{\bigotimes} \varphi_i) : \underset{i\in I} \prod G_i \longrightarrow GL(\underset{i\in I} \otimes V_i),
+			$$
+			qui est une représentation linéaire du produit direct infini \( \underset{i\in I} \prod G_i \) des groupes \( G_i \) dans \( \underset{i\in I} \otimes V_i \).
+			
+			\subsection{Caractère d'une représentation linéaire d'un produit de groupes}
+			Dans cette section, sauf mention contraire, tous les espaces vectoriels considérés seront supposés de dimension finie et définis sur \( \mathbb{C} \). \\
+			
+			\begin{definition} \cite{serre1971representation}\\
+				Soient \( G_1 \) et \( G_2 \) des groupes, et \( \rho_1 \) et \( \rho_2 \) des représentations linéaires respectives de \( G_1 \) et \( G_2 \), avec \( \chi_1 \) et \( \chi_2 \) les caractères associés à ces représentations. Le caractère \( \chi \) du produit tensoriel des représentations \( \rho_1 \otimes \rho_2 \) de \( G_1 \times G_2 \) est défini par la formule :
+				
+				\[
+				\chi(g_1, g_2) = \chi_1(g_1) \chi_2(g_2),
+				\]
+				pour tout \( g_1 \in G_1 \) et \( g_2 \in G_2 \).
+			\end{definition}
+			
+			\begin{myproposition}
+				Soit $J$ un ensemble fini et  \( \varphi_J \) la représentation définie par :
+				\[
+				\varphi_{J} = \underset{i \in J}{\bigotimes} \varphi_i : \prod_{i \in J} G_i \longrightarrow GL\left( \underset{i \in J}{\bigotimes} V_i \right)
+				\]
+				où \(\forall i \in J\), \( \varphi_i : G_i \to GL(V_i) \) est une représentation de chaque groupe \( G_i \) et \( V_i \) est l'espace vectoriel associé.\\
+				Le caractère $\chi_{\varphi_J}$ de la représentation $\varphi_J$ du produit direct fini $\underset{i\in J}\prod G_i$ est donné par :
+				\[
+				\chi_{\varphi_J}((g_i)_{i\in J}) = \prod_{i\in J} \chi_{\varphi_i}(g_i), \quad \forall (g_i)_{i\in J} \in \underset{i\in J}\prod G_i,
+				\]
+				où  $\chi_{\varphi_i}$ est le caractère de la représentation $\varphi_i$ du groupe $G_i$.
+			\end{myproposition}
+			
+			\textbf{\underline{Preuve} :}\\
+			Par définition du caractère d'une représentation, on a :
+			\[
+			\chi_{\varphi_J}((g_i)_{i\in J}) = \mathrm{Tr}(\varphi_J((g_i)_{i\in J})).
+			\]
+			Or, par définition du produit tensoriel de représentations, on a :
+			\[
+			\varphi_J((g_i)_{i\in J}) = \bigotimes_{i\in J} \varphi_{i \in J }(g_{i \in J})
+			\]
+			avec $j$ une partie finie de $I$.
+			Comme la trace du produit tensoriel fini de matrices est le produit des traces, il vient que :
+			\[
+			\mathrm{Tr}(\varphi_J((g_i)_{i\in J})) = \prod_{i\in J} \mathrm{Tr}(\varphi_i(g_i)).
+			\]
+			D'où :
+			\[
+			\chi_{\varphi_J}((g_i)_{i\in J}) = \prod_{i\in J} \chi_{\varphi_i}(g_i).
+			\]
+			Ceci prouve la proposition.
+			
+			\begin{myproposition}
+				Soit \( \varphi_I \) la représentation définie par :
+				\[
+				\varphi_I = \underset{i \in I}{\bigotimes} \varphi_i : \prod_{i \in I} G_i \longrightarrow GL\left( \underset{i \in I}{\bigotimes} V_i \right),
+				\]
+				où \( \varphi_i : G_i \to GL(V_i) \) est une représentation linéaire de chaque groupe \( G_i \), et \( V_i \) est l'espace vectoriel complexe associé.\\
+				À chaque représentation linéaire \( \varphi_i \), associons le caractère (une fonction de i)
+				\[
+				\chi_{\varphi_i} : G_i \to \mathbb{C}
+				\]
+				défini pour tout \( g_i \in G_i \) par :
+				\[
+				\chi_{\varphi_i}(g_i) := \operatorname{Tr}(\varphi_i(g_i)).
+				\]
+				Définissons la suite \( (a_i)_{i \in \mathbb{N} \setminus \{0\} } \), dont chaque terme est donné par :
+				\[
+				a_i := \chi_{\varphi_i}(g_i), \quad i \in \mathbb{N} \setminus \{0\}.
+				\]
+				Considérons la suite des produits partiels associée à \( (a_i)_{i \in \mathbb{N} \setminus \{0\}} \), définie par :
+				\[
+				P_N = \prod_{i=1}^{N} \chi_{\varphi_i}(g_i), \quad N \in \mathbb{N} \setminus \{0\}.
+				\]
+				Si la suite \( (P_N)_{N \in \mathbb{N} \setminus \{0\}} \) converge, alors le caractère \( \chi_{\varphi_I} \) de la représentation tensorielle infinie \( \varphi_I \) est défini par :
+				\[
+				\chi_{\varphi_I}((g_i)_{i \in I}) = \lim_{N \to \infty} \prod_{i=1}^{N} \chi_{\varphi_i}(g_i) = \prod_{i \in I} \chi_{\varphi_i}(g_i).
+				\]	
+				Dans le cas contraire, le caractère \( \chi_{\varphi_I} \) n’est pas défini.
+			\end{myproposition}
+			
+			\subsection{Irréductibilité des représentations d'un produit de groupes}
+			Soient $G_1,G_2$ deux groupes finis et $V_1,V_2$ deux espaces vectoriels.
+			\begin{theorem} \cite{serre1971representation}
+				\begin{enumerate} [label=\roman*)]
+					\item Si \( \rho^1 : G_1 \to \mathrm{GL}(V_1) \) et \( \rho^2 : G_2 \to \mathrm{GL}(V_2) \) sont des représentations irréductibles de \( G_1 \) et \( G_2 \) respectivement, alors le produit tensoriel \( \rho^1 \otimes \rho^2 \) est une représentation irréductible de \( G_1 \times G_2 \).
+					\item Chaque représentation irréductible de \( G_1 \times G_2 \) est isomorphe à un produit tensoriel \( \rho^1 \otimes \rho^2 \), où \( \rho^1 \) est une représentation irréductible de \( G_1 \) et \( \rho^2 \) est une représentation irréductible de \( G_2 \).
+				\end{enumerate}
+			\end{theorem}
+			
+			\begin{mylemma} \label{prop3}
+				Soit \( (G_i)_{i \in I} \) une famille non vide de groupes finis abéliens et \( (\varphi_i)_{i \in I} \) une famille de représentations linéaires, où chaque  
+				\[
+				\varphi_i : G_i \to \operatorname{GL}(V_i)
+				\]
+				est une représentation du groupe \( G_i \) sur un espace vectoriel \( V_i \).  
+				Alors, toute représentation irréductible de \( G =  \prod_{i \in I} G_i \) est de degré 1.
+			\end{mylemma}
+			
+			\textbf{\underline{Preuve} :}\\   
+			Étant donné que chaque \( G_i \) est un groupe abélien, leur produit \( G = \prod_{i \in I} G_i \) est également un groupe abélien.
+			Il est connu que toute représentation irréductible d'un groupe abélien est de degré 1. 
+			Par conséquent, toute représentation irréductible de \( G = \prod_{i \in I} G_i \) est de degré 1.
+			\begin{mytheorem} 
+				Soit \( (G_i)_{i \in I} \) une famille non vide de groupes finis d'ordre premier chacun , \((V_i)_{i \in I} \) une famille  non vide d'espaces vectoriels sur  \(\mathbb{K}\), et  
+				\[ (
+				\varphi_i : G_i \to \operatorname{GL}(V_i) )_{i \in I}
+				\]
+				une famille de représentations linéaires
+				Soit \( G =  \prod_{i \in I} G_i \)
+				\begin{enumerate} [label=\roman*)]
+					\item Si chaque \(G_i\) est un groupe cyclique, alors toute représentation irréductible de \( G\) est de degré 1.
+					\item Si chaque \(G_i\) est un groupe d'ordre premier, alors toute représentation irréductible de \( G\) est de degré 1.
+					\item Si presque toutes les représentations \( \varphi_i \) sont triviales, alors la représentation induite sur le produit tensoriel des espaces \( V_i \)
+					\[
+					\varphi_I = \bigotimes_{i \in I} \varphi_i : G = \prod_{i \in I} G_i \longrightarrow \operatorname{GL} \left( \bigotimes_{i \in I} V_i \right),
+					\]
+					est irréductible si et seulement si chaque représentation \( \varphi_i \) non triviale est irréductible ainsi que leur produit tensoriel.
+				\end{enumerate} 	
+			\end{mytheorem}
+			
+			\textbf{\underline{Preuve} :}
+			\begin{enumerate} [label=\roman*)]
+				\item Chaque \( G_i \) est cyclique d'ordre fini, donc \( G_i \) est abélien.  
+				Le produit \( G = \prod_{i \in I} G_i \) est un groupe abélien. par le lemme \ref{prop3},  toute représentation irréductible de \( G\) est de degré 1.
+				
+				\item Chaque groupe d'ordre premier est cyclique. Par i), il vient que toute représentation irréductible de \( G\) est de degré 1.
+				
+				\item  \textbf{\underline{Sens direct}}\\
+				Supposons que \( \varphi_I \) est irréductible.\\ 		
+				\textbf{\underline{Montrons que chaque \( \varphi_i \) non triviale est irréductible} :}\\
+				Supposons par l'absurde que pour un certain \( j \in I \), la représentation non triviale \( \varphi_j \) ne soit pas irréductible.  Cela signifie qu'il existe un sous-espace propre non trivial \( W_j \subset V_j \) qui est stable sous \( \varphi_j \).\\
+				Soit
+				\(
+				W = \left( \bigotimes_{i \neq j} V_i \right) \otimes W_j \subset \bigotimes_{i \in I} V_i.
+				\)
+				Ce sous-espace est stable sous \( \varphi_I \).\\
+				\textbf{En effet :}\\
+				Soit \( g = (g_i)_{i \in I} \in G = \prod_{i \in I} G_i \) et \( v=\otimes_{i \in I} v_i \in \otimes_{i \in I} V_i\). On a
+				\[
+				\varphi_I(g)(v) = \varphi_I((g_i)_{i \in I})\left( \bigotimes_{i \in I} v_i \right) = \bigotimes_{i \in I} \varphi_i(g_i)(v_i).
+				\]
+				Si \( v \in W \), alors \( v = \left( \bigotimes_{i \neq j} v_i \right) \otimes w_j \) avec \( w_j \in W_j \). Il vient que
+				\[
+				\varphi_I(g)(v) = \left( \bigotimes_{i \neq j} \varphi_i(g_i)(v_i) \right) \otimes \varphi_j(g_j)(w_j).
+				\]
+				Étant donné que \( W_j \) est stable sous \( \varphi_j \), on a \( \varphi_j(g_j)(w_j) \in W_j \). Par conséquent,	
+				\[
+				\varphi(g)(v) \in \left( \bigotimes_{i \neq j} V_i \right) \otimes W_j = W.
+				\]
+				Ainsi, \( W \) est stable sous l'action de \( \varphi \). Cette stabilité contredit l'irréductibilité de \( \varphi \), car un sous-espace propre non trivial stable ne devrait pas exister dans une représentation irréductible.
+				Ainsi, chaque \( \varphi_i \) non triviale doit être irréductible.\\
+				
+				\textbf{\underline{Montrons que le produit tensoriel des représentations linéaires non triviales  \( \varphi_i \)  }}\\
+				\textbf{\underline{ est irréductible } :}\\			 
+				Soit \( J \subset I \) l'ensemble des indices correspondant aux représentations \( \varphi_i \) non triviales.  
+				On peut écrire :
+				\[
+				\bigotimes_{i \in I} V_i = \left( \bigotimes_{i \in J} V_i \right) \otimes \left( \bigotimes_{i \notin J} V_i \right).
+				\]
+				Puisque \( \bigotimes_{i \notin J} V_i \) est constitué de représentations triviales, il n’affecte pas l'irréductibilité. Par conséquent, l'irréductibilité de \( \varphi \) entraîne l'irréductibilité de \( \bigotimes_{i \in J} \varphi_i \).\\
+				
+				\textbf{\underline{	Sens réciproque}}\\
+				\textbf{\underline{Montrons que \( \varphi \) est irréductible. } :}\\	
+				Supposons que chaque \( \varphi_i \) non triviale est irréductible et que leur produit tensoriel est irréductible.  
+				Nous devons montrer que \( \varphi_I \) est irréductible.
+				Considérons un sous-espace stable \( W \subset \bigotimes_{i \in I} V_i \). Soit $J$ une partie finie de $I$.
+				Nous avons :
+				\[
+				\bigotimes_{i \in I} V_i = \left( \bigotimes_{i \in J} V_i \right) \otimes \left( \bigotimes_{i \notin J} V_i \right).
+				\]
+				Comme \( \bigotimes_{i \notin J} V_i \) est trivial, tout sous-espace stable sous \( \varphi_I \) est en réalité stable sous \( \bigotimes_{i \in J} \varphi_i \).  
+				L'irréductibilité de \( \bigotimes_{i \in J} \varphi_i \) entraîne l'irréductibilité de \( \varphi_I \). Par hypothèse, \( \bigotimes_{i \in J} \varphi_i \) est irréductible. Donc, \( W \) doit être soit \( \{0\} \), soit \( \bigotimes_{i \in J} V_i \).  
+				Cela montre que \( \varphi \) est irréductible.
+			\end{enumerate}
+			
+			
+			
+			\section{Traité du cas de $\widehat{\mathbb{Z}}$, le complété profini de $\mathbb{Z}$.}
+Le groupe \( \widehat{\mathbb{Z}} \), complété profini de \( \mathbb{Z} \), est un exemple des groupes profinis. Dans cette section, nous analysons ses propriétés, ses représentations linéaires, ses caractères, et ses représentations irréductibles, en exploitant sa structure spécifique.\\
+			
+			Dans cette section, sauf indication contraire, tous les espaces vectoriels seront supposés de dimension finie et définis sur \( \mathbb{C} \).
+			
+			\begin{definition} \cite{ribes-zalesskii}\\
+				Le complété profini $\widehat{\mathbb{Z}}$ est la limite projective du système $(\mathbb{Z}/n\mathbb{Z}, \varphi_{m,n})$, où :
+				\begin{enumerate} [label=\roman*)]
+					\item $\mathbb{Z}/n\mathbb{Z}$  est le groupe des classes d’équivalence modulo $n$, et
+					\item $\varphi_{m,n} : \mathbb{Z}/m\mathbb{Z} \to \mathbb{Z}/n\mathbb{Z}$ est la surjection canonique définie lorsque $n$ divise $m$.
+				\end{enumerate}
+			\end{definition}
+			
+			\begin{mynotation}
+				\[
+				\widehat{\mathbb{Z}} = \varprojlim_{n \in \mathbb{N}^*} \mathbb{Z}/n\mathbb{Z}.
+				\]
+			\end{mynotation}
+			
+			
+			\begin{definition} \cite{maclane1971categories}\\
+				Soit un système projectif d'ensembles \((E_n, \pi_{m,n})\), où :
+				\begin{enumerate} [label=\roman*)]
+					\item Chaque \(E_n\) est un ensemble indexé par \(n \geq 1\) , et
+					\item \(\pi_{m,n} : E_m \to E_n\) est une application de transition, définie pour \(n \mid m\), satisfaisant :
+					\begin{itemize} 
+						\item $\pi_{n,n} = \text{id}_{E_n}, \quad \text{(identité sur \(E_n\))}$ ,
+						\item $\pi_{m,n} \circ \pi_{k,m} = \pi_{k,n}, \quad \text{pour } k \mid m \mid n \quad \text{cohérence des projections.} $
+					\end{itemize}
+					
+				\end{enumerate}
+				
+Une suite cohérente est une suite \((x_n)_{n \geq 1} \in \prod_{n \geq 1} E_n\) telle que, pour tout \(n \mid m\), on a :
+				\[
+				\pi_{m,n}(x_m) = x_n.
+				\]
+Dans le cas de \(\widehat{\mathbb{Z}}\), une suite \((x_n)_{n \geq 1} \in \prod_{n \geq 1} \mathbb{Z}/n\mathbb{Z}\) est \textbf{cohérente} si, pour tout \(n \mid m\), on a :
+				\[
+				x_m \mod n = x_n.
+				\]
+Autrement dit, les éléments \(x_n \in \mathbb{Z}/n\mathbb{Z}\) doivent être compatibles entre eux via les projections modulo $n$. Cette condition garantit que les suites cohérentes forment une limite projective.Ainsi, 
+				\[
+				\widehat{\mathbb{Z}} = \left\{ (x_n) \in \prod_{n \geq 1} \mathbb{Z}/n\mathbb{Z} \mid \forall m, n, \text{ si } n \mid m, \text{ alors } x_m \equiv x_n \mod n \right\}.
+				\]	
+			\end{definition}
+			
+			\subsection{Propriétés du complété profini $\widehat{\mathbb{Z}}$ } 
+			\begin{enumerate} [label=\roman*)] 
+				\item $\widehat{\mathbb{Z}}$ est un groupe topologique compact et totalement discontinu  \cite{ribes-zalesskii}.
+				
+				\item $\widehat{\mathbb{Z}}$ est isomorphe au produit des groupes $\prod_{p \in \mathcal{P}} \mathbb{Z}_p$, où $\mathbb{Z}_p$ est le groupe des entiers $p$-adiques, et $\mathcal{P}$ est l’ensemble des nombres premiers  \cite{ribes-zalesskii}.
+				
+				\item L’homomorphisme canonique $\mathbb{Z} \to \widehat{\mathbb{Z}}$ est injectif, et l’image de $\mathbb{Z}$ est dense dans $\widehat{\mathbb{Z}}$ pour la topologie profinie  \cite{ribes-zalesskii}.
+			\end{enumerate}
+			
+			
+			\begin{myproposition}
+				\((\widehat{\mathbb{Z}} , +) \) est un sous-groupe fermé du groupe produit \((\prod_{n \geq 1} \mathbb{Z}/n\mathbb{Z},+)\)  avec \(+\) l'addition composante par composante définie par : \\
+				pour tous \( x = (x_n)_{n \geq 1} \) et \( y = (y_n)_{n \geq 1} \) dans \( \widehat{\mathbb{Z}} \), on a:
+				\[
+				x + y = (x_n + y_n)_{n \geq 1},
+				\]
+				où \( x_n + y_n \) est l'addition modulo \( n \).\\
+			\end{myproposition}
+
+			
+			\begin{remark} \cite{schaub1997}
+				\begin{enumerate} [label=\roman*)] 
+					\item Chaque \( \mathbb{Z}/n\mathbb{Z} \) est un groupe abélien, car l'addition dans \( \mathbb{Z}/n\mathbb{Z} \) est commutative.
+					\item \( \widehat{\mathbb{Z}} \) est un sous-groupe d'un groupe abélien (\(\prod_{n \geq 1} \mathbb{Z}/n\mathbb{Z}\) , +). Donc \( \widehat{\mathbb{Z}} \) est un groupe abélien.
+				\end{enumerate}
+			\end{remark}
+			
+			
+			\subsection{Représentations linéaires de $\widehat{\mathbb{Z}}$}
+			\begin{myproposition}
+Soit \( N \) un sous-ensemble fini de \( \mathbb{N} \) et soit \( (\mathbb{Z}/n\mathbb{Z})_{n \in N} \) une famille finie de groupes cycliques. Soit \( (V_n)_{n \in N} \) une famille finie non vide d'espaces vectoriels de dimension finie, et pour chaque \( n \in N \), soit 
+				\[
+				\varphi_n: \mathbb{Z}/n\mathbb{Z} \to \operatorname{GL}(V_n)
+				\]
+une représentation linéaire.\\  
+				Alors, on a la représentation linéaire :
+				\[
+				\varphi_N = \bigotimes_{n\in N} \varphi_n: \prod_{n \in N} \mathbb{Z}/n\mathbb{Z} \to \operatorname{GL} \left( \bigotimes_{n \in N} V_n \right)
+				\]
+				tel que :
+				\[
+				\varphi_N((g_n)_{n \in N}) = \bigotimes_{n \in N} \varphi_n(g_n).
+				\]
+De plus, en passant à la limite inverse, on a la représentation linéaire sur un produit tensoriel infini
+				\[
+				\varphi_\mathbb{N} = \bigotimes_{n\in \mathbb{N}} \varphi_n: 	\varprojlim_{N \in \mathcal{F}(\mathbb{N})} \prod \mathbb{Z}/n\mathbb{Z} = \prod_{n \in \mathbb{N}} \mathbb{Z}/n\mathbb{Z} \longrightarrow \operatorname{GL}\left( \bigotimes_{n \in \mathbb{N}} V_n \right).
+				\]
+			\end{myproposition}
+			
+			
+			
+			\begin{mylemma}
+Si $N, M \in \mathcal{F}(\mathbb{N})$ avec $\mathcal{F}(\mathbb{N}$) l'ensemble de partie finie de \( \mathbb{N} \) tel que $M \subseteq N$, alors nous avons une projection naturelle :
+				\[
+				\pi_{N,M} : \prod_{n \in N} \mathbb{Z}/n\mathbb{Z} \to \prod_{m \in M} \mathbb{Z}/m\mathbb{Z},
+				\]
+donnée par la restriction des coordonnées aux indices $M$.\\
+Ces projections sont compatibles, c'est-à-dire 
+				\(
+				\text{si } L \subseteq M \subseteq N  \text{,} \quad \text{on a :}\\	\pi_{M,L} \circ \pi_{N,M} = \pi_{N,L}.
+				\)	
+			\end{mylemma}
+			
+			
+			
+			\begin{mytheorem}
+				L'application
+				\[
+				\Phi : \widehat{\mathbb{Z}} \to \varprojlim_{N \in \mathcal{F}(\mathbb{N})} \prod_{n \in N} \mathbb{Z}/n\mathbb{Z}
+				\]
+				définie par :
+				\[
+				\Phi((x_n)_{n \geq 1}) = (x_N)_{N \in \mathcal{F}(\mathbb{N})}, \quad \text{où } x_N = (x_n)_{n \in N}
+				\]
+				est un isomorphisme de groupes .
+			\end{mytheorem}
+			
+			
+			Ainsi, d’après les résultats précédents, nous obtenons la représentation linéaire suivante :
+			\[
+			\varphi_{\mathbb{N}} : \widehat{\mathbb{Z}} = \prod_{n \in \mathbb{N}} \mathbb{Z}/n\mathbb{Z} \longrightarrow \operatorname{GL} \left( \bigotimes_{n \in \mathbb{N}} V_n \right).
+			\]
+			
+			
+			\subsection{Caractères de $\widehat{\mathbb{Z}}$}
+			
+			\begin{mydefinition}
+				Un caractère de $\widehat{\mathbb{Z}}$ est un homomorphisme de groupe continu :
+				\[
+				\chi : \widehat{\mathbb{Z}} \to \mathbb{C}^\times.
+				\]
+				
+			\end{mydefinition}
+			
+			\begin{remark} \cite{ribes-zalesskii}
+				\begin{enumerate}[label=\roman*)] 
+					\item Chaque groupe $\mathbb{Z}/n\mathbb{Z}$ étant cyclique d'ordre $n$, ses caractères sont donnés par :
+					\[
+					\chi_n(a) = e^{2i\pi a / n}, \quad \forall a \in \mathbb{Z}/n\mathbb{Z}.
+					\]
+					\item Puisque $\widehat{\mathbb{Z}}$ est la limite projective des $\mathbb{Z}/n\mathbb{Z}$, un tel $\chi$ est entièrement déterminé par ses valeurs sur chaque quotient $\mathbb{Z}/n\mathbb{Z}$.
+				\end{enumerate}
+			\end{remark}
+			
+			\begin{theorem} \cite{ribes-zalesskii}\\
+L'ensemble des caractères continus de $\widehat{\mathbb{Z}}$ est isomorphe à $\mathbb{Q}/\mathbb{Z}$ via la dualité de Pontryagin :
+				\[
+				\operatorname{Hom}_{\text{cont}}(\widehat{\mathbb{Z}}, \mathbb{C}^\times) \simeq \mathbb{Q}/\mathbb{Z}.
+				\]
+			\end{theorem}
+			
+			
+			\subsection{Représentations irréductibles de $\widehat{\mathbb{Z}}$}
+Chaque $\mathbb{Z}/n\mathbb{Z}$ est un groupe cyclique fini, et ses représentations irréductibles sont bien connues.\\
+$\mathbb{Z}/n\mathbb{Z}$ possède $n$ représentations irréductibles de degré $1$, correspondant aux caractères continus $\chi_k : \mathbb{Z}/n\mathbb{Z} \to \mathbb{C}^*$ définis par :
+			\[
+			\chi_k(a) = e^{2\pi i k a / n}, \quad k = 0, 1, \dots, n-1.
+			\]
+			
+			
+			\begin{proposition}
+				\begin{enumerate} [label=\roman*)] \
+					\item Toutes les représentations irréductibles de $\widehat{\mathbb{Z}}$ sont de degré $1$.
+					\item Soient $\operatorname{Irr}(\widehat{\mathbb{Z}})$ l'ensemble des représentations irréductibles de $\widehat{\mathbb{Z}}$ et $\operatorname{Hom}_{\text{cont}}(\widehat{\mathbb{Z}}, \mathbb{C}^\times)$ l'ensemble de ses caractères continus. Il existe un isomorphisme :
+					\[
+					\Phi : \operatorname{Irr}(\widehat{\mathbb{Z}}) \to \operatorname{Hom}_{\text{cont}}(\widehat{\mathbb{Z}}, \mathbb{C}^\times)),
+					\]
+					\item $\widehat{\mathbb{Z}}$ possède une infinité non dénombrable de représentations irréductibles.
+					\item Les représentations irréductibles de $\widehat{\mathbb{Z}}$ peuvent être interprétées comme des représentations sur chaque composante $\mathbb{Z}_p$.
+				\end{enumerate}
+			\end{proposition}
+			
+			
+			
+			\titleformat{\chapter}[block] % Choix du format de titre (ici 'block' signifie que le titre est sur une ligne séparée)
+			{\normalfont\huge\bfseries\centering}   % Style du titre centré (police normale, taille 14pt, en gras)
+			{}                            % Pas de numéro de chapitre avant le titre
+			{0pt}                         % Espace entre le numéro du chapitre et le titre
+			{\titlerule[1mm]\vskip0.5ex\hspace{10pt}\bfseries\Huge} % Réduit l'espace au-dessus du titre
+			[\vskip1ex\titlerule]          % Ajoute une ligne en dessous du titre
+			
+			
+			\chapter*{CONCLUSION}
+			% Partie avec la taille personnalisée
+			{
+				\applyfontsize % Application locale de la taille de police 12pt
+				
+				Ce mémoire a exploré les représentations linéaires des groupes finis et infinis, avec un accent particulier sur le complété profini des groupes. 
+				Nous avons étudié les notions de base des groupes, sous-groupes, homomorphismes, espaces vectoriels et applications linéaires. Cela a permis de poser une base solide pour comprendre les représentations linéaires, leurs caractères et leurs propriétés.
+				Les propriétés fondamentales des représentations irréductibles de groupes finis ont été détaillées, en mettant en évidence leur rôle dans la décomposition des représentations générales. Le lien avec les caractères, notamment à travers l’orthogonalité, a été particulièrement mis en avant.
+				Une partie significative du mémoire a été dédiée à l'étude du produit tensoriel d'espaces vectoriels et de son rôle dans la construction des représentations de produits de groupes finis. Les critères d’irréductibilité et les relations entre les caractères des produits ont été caractérisés.
+				L’étude du complété profini $\widehat{G}$ a permis de lier les propriétés algébriques et topologiques des groupes. Le cas particulier du complété profini de $\mathbb{Z}$ a été traité en détail, montrant la richesse de cette construction dans le contexte des représentations linéaires. Une voie naturelle serait d’étendre les concepts étudiés aux groupes localement compacts, en explorant leurs représentations unitaires et leurs applications en analyse harmonique. Les groupes profinis et leurs représentations trouvent des applications dans des domaines comme la cryptographie et la théorie des nombres. Cela pourrait constituer une extension pratique de ce travail. La simulation numérique des représentations linéaires des groupes infinis pourrait ouvrir de nouvelles perspectives, en permettant de tester expérimentalement certaines hypothèses.Nous avons donc  contribué à enrichir notre compréhension des représentations linéaires, en liant des notions abstraites à des constructions concrètes. Les résultats obtenus jettent les bases pour des recherches futures, aussi bien théoriques qu’appliquées, dans le domaine des mathématiques pures et de leurs applications.
+				
+			}
+			\addcontentsline{toc}{section}{CONCLUSION}
+			
+			
+		}
+		
+		
+		\titleformat{\chapter}[block] % Choix du format de titre (ici 'block' signifie que le titre est sur une ligne séparée)
+		{\normalfont\huge\bfseries\centering}   % Style du titre centré (police normale, taille 14pt, en gras)
+		{}                            % Pas de numéro de chapitre avant le titre
+		{0pt}                         % Espace entre le numéro du chapitre et le titre
+		{\titlerule[1mm]\vskip0.5ex\hspace{10pt}\bfseries\Huge} % Réduit l'espace au-dessus du titre
+		[\vskip1ex\titlerule]          % Ajoute une ligne en dessous du titre
+		
+		% Partie avec la taille personnalisée
+		{
+			\applyfontsize % Application locale de la taille de police 12pt
+			
+			\begin{thebibliography}{99}
+				
+				\bibitem{Guichardet}
+				Alain Guichardet.
+				\newblock {\em Tensor products of $\mathbb{C}^{*}-$Algebras, Part II. Infinite tensor products}.
+				\newblock Lecture Notes Series $N^0$ 13, 1969.
+				
+				\bibitem{savage2018linear}
+				Alistair SAVAGE.
+				\newblock {\em Linear Algebra I}.
+				\newblock 2018.
+				
+				\bibitem{deschamps}
+				Bruno Deschamps.
+				\newblock {\em Groupes profinis et théorie de Galois}.
+				\newblock Clarendon Press, Oxford, 1998.
+				
+				\bibitem{schwarzweller2009chinese}
+				Christoph Schwarzweller.
+				\newblock {\em The Chinese Remainder Theorem, its Proofs and its Generalizations in Mathematical Repositories}.
+				\newblock Studies in Logic, Grammar and Rhetoric, volume 18, number 31, pages 103--119, Bialystok University Press, 2009.
+				
+				\bibitem{schaub1997}
+				Daniel Schaub.
+				\newblock {\em Éléments de la Théorie de Groupes}.
+				\newblock Cours de licence de Mathématiques, Université d’Angers, 1997/98.
+				
+				\bibitem{harville1997trace}
+				David A. Harville.
+				\newblock {\em Matrix Algebra from a Statistician’s Perspective}.
+				\newblock Springer, 1997, pages 49--53.
+				
+				\bibitem{hararirepresentations}
+				David Harari.
+				\newblock {\em Représentations linéaires des groupes finis}.
+				
+				\bibitem{renard2009groupes}
+				David Renard and Laurent Schwartz.  
+				\newblock {\em Groupes et représentations}.  
+				\newblock École polytechnique, 2009.
+				
+				
+				\bibitem{Dragomir}
+				Dragomir Z. Dokovic.
+				\newblock {\em Pairs of Involutions in the General Linear Group}.
+				\newblock Journal of Algebra, 100, 214--223, 1986.
+				
+				\bibitem{farhi2024polycopie}
+				Farhi, Bakir.
+				\newblock \textit{Polycopié d'Algèbre bilinéaire (Algèbre 4)}.
+				\newblock National Higher School of Mathematics-Alger, 2024.
+				
+				
+				\bibitem{minkowski1911gesammelte}
+				Hermann Minkowski.
+				\newblock {\em Gesammelte Abhandlungen}.
+				\newblock BG Teubner, volume 2, 1911.
+				
+				\bibitem{cartan1999homological}
+				Henri Cartan and Samuel Eilenberg.
+				\newblock {\em Homological Algebra}.
+				\newblock Volume 19, Princeton University Press, 1999.
+				
+				\bibitem{serre1971representation}
+				Jean-Pierre Serre.
+				\newblock Repr{\'e}sentation lin{\'e}aire des groupes finis.
+				\newblock Hermann, Paris, 1971.
+				
+				\bibitem{kuratowski2014topology}
+				Kazimierz Kuratowski.  
+				\newblock {\em Topology: Volume I}.  
+				\newblock Academic Press, 2014.
+				
+				\bibitem{cheung2018algebre}
+				Kevin  Cheung et Mathieu Lemire.
+				\newblock {\em Algèbre Linéaire et Applications}.
+				\newblock 2018.
+				
+				
+				\bibitem{ribes-zalesskii}
+				Luis Ribes and Pavel Zalesskii.
+				\newblock Profinite Groups.
+				\newblock Springer, Berlin, 2010.
+				
+				
+				\bibitem{bridger2001limits}
+				Mark  Bridger.
+				\newblock Limits: A New Approach to Real Analysis.
+				\newblock Springer, New York, 2001.
+				
+				\bibitem{hall2018theory}
+				Marshall Hall.
+				\newblock {\em The theory of groups}.
+				\newblock Courier Dover Publications, 2018.
+				
+				
+				\bibitem{fried2023fieldarithmetic}
+				Michael David Fried and Moshe Jarden.
+				\newblock Infinite Galois Theory and Profinite Groups.
+				\newblock In {\em Field Arithmetic}, pages 1--19. Springer Nature Switzerland, Cham, 2023.
+				
+				\bibitem{bourbaki2013general}
+				Nicolas BOURBAKI. 
+				\newblock {\em General topology: chapters 1--4}.
+				\newblock Springer Science \& Business Media, 2013.
+				
+				\bibitem{pei1996chinese}
+				Pei, Dingyi, Salomaa, Arto, et Ding, Cunsheng.
+				\newblock {\em Chinese remainder theorem: applications in computing, coding, cryptography}.
+				\newblock World Scientific, 1996.
+				
+				\bibitem{guglielmetti2025profinite}
+				Rafael Guglielmetti  
+				\newblock {\em Groupes profinis et cohomologie galoisienne}.  
+				\newblock École Polytechnique Fédérale de Lausanne (EPFL), 2021. 
+				
+				\bibitem{maclane1971categories}
+				Saunders Mac Lane.
+				\newblock \emph{Categories for the Working Mathematician}.
+				\newblock Springer, New York, 1971.
+				
+				\bibitem{lang2012algebra}
+				Serge Lang.
+				\newblock \emph{Algebra}.
+				\newblock Volume 211, Springer Science \& Business Media, 2012.
+				
+				
+				\bibitem{axler2024linear}
+				Sheldon Axler.
+				\newblock {\em Linear algebra done right}.
+				\newblock Springer Nature, 2024.
+				
+				\bibitem{ribet2004graduate}
+				Sheldon Axler, Frederick Gehring , and Kenneth Alan Ribet.
+				\newblock {\em Graduate Texts in Mathematics 111}.
+				\newblock Springer, 2004.
+				
+				\bibitem{chatterji1997cours}
+				Srishti D. Chatterji  
+				\newblock {\em Cours d'analyse}.  
+				\newblock Volume 1, EPFL Press, 1997.
+				
+				\bibitem{rudin1976principles}
+				Walter Rudin.  
+				\newblock {\em Principles of Mathematical Analysis}.  
+				\newblock McGraw-Hill, 3rd edition, 1976.
+				
+				\bibitem{greub2012linear}
+				Werner H. Greub
+				\newblock {\em Linear Algebra}.
+				\newblock Springer Science \& Business Media, volume 23, 2012.
+				
+				
+				\bibitem{herfort2012profinite}
+				Wolfgang Herfort  
+				\newblock {\em Introduction to Profinite Groups}.  
+				\newblock Mimar Sinan Fine Arts University, 2012. 
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			\end{thebibliography}
+			
+		}
+		
+		
+	\end{onehalfspace} 
+	
+	
+	
+	
+	
+	
+\end{document}
+

@@ -1,0 +1,83 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{amsthm}
+\newtheorem{mylemma}{Lemme}
+
+
+\begin{document}
+	
+	\title{Transformation des colimites en limites par un foncteur contravariant}
+	\author{}
+	\date{}
+	\maketitle
+	
+	\section{\'Enonc\'e du r\'esultat}
+	Soit \( F: \mathcal{C} \to \mathcal{D} \) un foncteur \textbf{contravariant} entre deux cat\'egories \( \mathcal{C} \) et \( \mathcal{D} \). Alors, si \( X \) est une \textbf{colimite} dans \( \mathcal{C} \), alors \( F(X) \) est une \textbf{limite} dans \( \mathcal{D} \), c'est-\`a-dire :
+	
+	\[
+	F(\varinjlim X_i) = \varprojlim F(X_i).
+	\]
+	
+	\section{D\'efinitions et preuve}
+	
+	\subsection{Colimite dans \( \mathcal{C} \)}
+	Un syst\`eme inductif dans \( \mathcal{C} \) est une famille \( (X_i, f_{ij}) \) o\`u les objets \( X_i \) sont index\'es par un ensemble ordonn\'e \( I \), et o\`u les \( f_{ij}: X_i \to X_j \) sont des morphismes satisfaisant :
+	\begin{itemize}
+		\item \( f_{ii} = \text{id}_{X_i} \) (identit\'e),
+		\item \( f_{jk} \circ f_{ij} = f_{ik} \) pour \( i \leq j \leq k \).
+	\end{itemize}
+	
+	La colimite de ce syst\`eme, not\'ee \( X = \varinjlim X_i \), est un objet $X$ de  \( \mathcal{C} \) muni de morphismes \( u_i: X_i \to X \) tels que :
+	\begin{enumerate}
+		\item Pour tout \( i \leq j \), on a \( u_j \circ f_{ij} = u_i \).
+		\item Si un autre objet \( Y \) et des morphismes \( v_i: X_i \to Y \) satisfont \( v_j \circ f_{ij} = v_i \), alors il existe un unique morphisme \( v: X \to Y \) tel que \( v \circ u_i = v_i \).
+	\end{enumerate}
+	
+	Autrement dit, \( X \) est \textbf{universel} parmi les objets recevant des morphismes compatibles depuis les \( X_i \).
+	
+	\subsection{Application du foncteur contravariant}
+	Puisque \( F \) est contravariant, il applique chaque morphisme \( f_{ij}: X_i \to X_j \) \`a un morphisme invers\'e \( F(f_{ij}): F(X_j) \to F(X_i) \) dans \( \mathcal{D} \). Ainsi, \( (F(X_i), F(f_{ij})) \) forme un \textbf{syst\`eme projectif} dans \( \mathcal{D} \).
+	
+	Nous voulons montrer que l’objet \( F(X) \) est la \textbf{limite} de ce syst\`eme projectif.
+	
+	\subsection{Limite dans \( \mathcal{D} \)}
+	Un \textbf{syst\`eme projectif} dans \( \mathcal{D} \) est une famille \( (Y_i, g_{ij}) \) o\`u les \( g_{ij}: Y_j \to Y_i \) sont des morphismes satisfaisant :
+	\begin{itemize}
+		\item \( g_{ii} = \text{id}_{Y_i} \),
+		\item \( g_{ij} \circ g_{jk} = g_{ik} \) pour \( i \leq j \leq k \).
+	\end{itemize}
+	
+	Une \textbf{limite projective} de ce syst\`eme, not\'ee \( Y = \varprojlim Y_i \), est un objet muni de morphismes \( v_i: Y \to Y_i \) tels que :
+	\begin{enumerate}
+		\item Pour tout \( i \leq j \), on a \( g_{ij} \circ v_j = v_i \).
+		\item Si un autre objet \( Z \) et des morphismes \( w_i: Z \to Y_i \) satisfont \( g_{ij} \circ w_j = w_i \), alors il existe un unique morphisme \( w: Z \to Y \) tel que \( v_i \circ w = w_i \).
+	\end{enumerate}
+	
+	Autrement dit, \( Y \) est universel parmi les objets recevant des morphismes compatibles vers les \( Y_i \).
+	
+	\subsection{Preuve que \( F(X) = \varprojlim F(X_i) \)}
+	En appliquant \( F \) \`a la propri\'et\'e universelle de la colimite \( X = \varinjlim X_i \), on obtient :
+	\begin{itemize}
+		\item Pour chaque \( i \), le morphisme \( u_i: X_i \to X \) devient \( F(u_i): F(X) \to F(X_i) \).
+		\item La compatibilit\'e \( u_j \circ f_{ij} = u_i \) devient \( F(u_i) = F(f_{ij}) \circ F(u_j) \), ce qui signifie que les morphismes \( F(u_i) \) forment une \textbf{famille compatible de morphismes} sur le syst\`eme projectif \( (F(X_i), F(f_{ij})) \).
+		\item L’unicit\'e du morphisme \( v \) dans la propri\'et\'e universelle de \( X \) garantit que \( F(X) \) est bien l’objet universel pour cette famille compatible.
+	\end{itemize}
+	
+	Donc, \( F(X) \) satisfait exactement la \textbf{d\'efinition d’une limite projective}, et on conclut que :
+	
+	\[
+	F(\varinjlim X_i) = \varprojlim F(X_i).
+	\]
+	
+	\section{Conclusion}
+	Un \textbf{foncteur contravariant} \'echange syst\'ematiquement \textbf{limites inductives} (colimites) et \textbf{limites projectives} (limites). Cette propri\'et\'e d\'ecoule directement de la d\'efinition des colimites et limites via leurs propri\'et\'es universelles.
+	
+	\begin{mylemma}\label{lem1}
+		Soit $(V_i)_{i\in I}$ une famille non vide de vecteurs de dimension finie sur le même corps \( F \) et soit \( \underset{i\in I}\otimes V_i \) le produit tensoriel infini des espaces vectoriels \( (V_i)_{i\in I} \) où chaque \( V_i \) (\( i \in I \)) est un espace vectoriel non nul. Soit \( \mathcal{F}(I) \) l'ensemble des sous-ensembles finis de \( I \). Alors, 
+		
+		\[
+		\underset{\overleftarrow{J \in \mathcal{F}(I)}}{\lim} GL\left( \underset{i \in J}{\otimes} V_i \right) = GL\left( \underset{\longrightarrow}{\lim}_{J \in \mathcal{F}(I)} \left( \underset{i \in J}{\otimes} V_i \right) \right)
+		\]
+	\end{mylemma}
+	
+\end{document}
