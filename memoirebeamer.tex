@@ -1,5 +1,5 @@
 \documentclass[9pt]{beamer}
-\usepackage[french]{babel}
+\usepackage[french]{babel} % Pour la langue française
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
@@ -20,6 +20,8 @@
 \newtheorem{propriety}{Propriété}
 \newtheorem{remark}{Remarque}
 
+% Définir l'environnement "Théorème" en français
+\newtheorem{theoreme}{Théorème}
 
 
 
@@ -70,34 +72,30 @@ Pr. Dieukam \\
 		\titlepage
 	\end{frame}
 	
-	% Sommaire
-	\begin{frame}{Sommaire}
-		\tableofcontents
+
+	
+	\section*{Introduction}
+	\begin{frame}{Introduction}
+La théorie des représentations linéaires des groupes est un outil fondamental permettant de représenter les éléments d’un groupe abstrait par des matrices inversibles sur un corps donné. Cette approche, traduisant les problèmes d’algèbre abstraite complexes en des problèmes d’algèbre linéaire plus accessibles, repose sur la notion de représentation linéaire. Etant donné un corps $\mathbb{K}$, une représentation $\mathbb{K}$-linéaire d’un groupe fini $G$ est un homomorphisme de groupes \[ \rho : G \to \text{GL}(V) \]
+où $V$ est un $\mathbb{K}$-espace vectoriel et $\text{GL}(V)$ désigne le groupe des applications linéaires bijectives de $V$ sur lui-même. 
+La théorie des représentations linéaires des groupes finis a été développée pour la première fois par le mathématicien allemand Ferdinand Georg Frobenius en 1897. Il a introduit la notion de représentation linéaire des groupse finis et a jetté les bases sur la théorie des caractères de ces groupes. Ces travaux a ete approfondi par le mathématicien francais Jean-Pierre Serre où il a formalisé cette théorie dans son livre intitulé \textbf{"Représentations linéaires des groupes finis"} publié en 1968. Ces deux auteurs qu'on vient de voir ont travaille dans le cadre de groupes finis et il n y a pas de resultats recents accessibles generalisant cela au groupe infinis. D'où notre thème : \textbf{représentation linéaires, caractères et représentations linéaires irréductibles d'un groupe infini.}
+Le but principal de ce projet est d’étendre les représentations linéaires aux groupes infinis. Pour atteindre les objectifs de ce travail, nous allons suivre cette démarche dans la presentation:
 	\end{frame}
 	
-	\section{Introduction}
-	\begin{frame}{Introduction}
-		\begin{itemize}
-			\item Les représentations linéaires d'un groupe \( G \) sur un espace vectoriel \( V \) sont des homomorphismes \( \varphi: G \to \text{GL}(V) \).
-			\item Un groupe infini est un groupe qui possède une infinité d'éléments.
-			\item L'objectif est d'étudier les représentations linéaires des groupes infinis et leurs applications dans des domaines comme la physique théorique, la géométrie et la cryptographie.
-			\item Les représentations linéaires d'un groupe \( G \) sur un espace vectoriel \( V \) sont des homomorphismes \( \varphi: G \to \text{GL}(V) \).
-			\item Un groupe infini est un groupe qui possède une infinité d'éléments.
-			\item L'objectif est d'étudier les représentations linéaires des groupes infinis et leurs applications dans des domaines comme la physique théorique, la géométrie et la cryptographie.
-			\item Les représentations linéaires d'un groupe \( G \) sur un espace vectoriel \( V \) sont des homomorphismes \( \varphi: G \to \text{GL}(V) \).
-			\item Un groupe infini est un groupe qui possède une infinité d'éléments.
-			\item L'objectif est d'étudier les représentations linéaires des groupes infinis et leurs applications dans des domaines comme la physique théorique, la géométrie et la cryptographie.
-		\end{itemize}
-	\end{frame}
+
+	% Sommaire
+\begin{frame}{Sommaire}
+	\tableofcontents
+\end{frame}
+	
 	
 	\section{Préliminaires}
-	\subsection{Sur les groupes}
 	
 		\begin{frame}{Préliminaires}
 		  \frametitle{Définition d'un Groupe}
 		
 		\begin{definition} 
-			Un groupe est un couple  $(G, *)$ où $G$ est un ensemble non vide et $*$ est une loi de composition interne
+Un groupe est un couple  $(G, *)$ où $G$ est un ensemble non vide et $*$ est une loi de composition interne
 			\[
 			* : G \times G \longrightarrow G
 			\]
@@ -424,7 +422,7 @@ Des groupes de type fini avec la même collection de quotients finis ont des com
 \end{frame}
 
 	
-	\section{Notion de représentation linéaire de groupes finis}
+	\section{Représentations linéaires d'un produit de deux groupes.}
 	\subsection{Définitions et exemples}
 	
 	\begin{frame}
@@ -615,26 +613,26 @@ Soit \( \rho : G \rightarrow \mathrm{GL}(V) \) une représentation linéaire sur
 
 
 \begin{frame}
-	\begin{theorem}
+	\begin{theoreme}
 		\begin{enumerate}[label=\roman*)]
 			\item Soit \( \chi \) le caractère d’une représentation irréductible \( \rho \) de \( G \). Alors, \( (\chi | \chi) = 1 \).
 			\item Soient \( \chi_1 \) et \( \chi_2 \) les caractères de deux représentations irréductibles non isomorphes \( \rho_1 \) et \( \rho_2 \). Alors, \( (\chi_1 | \chi_2) = 0 \).
 		\end{enumerate}
-	\end{theorem}
+	\end{theoreme}
 
-\begin{theorem}  
+\begin{theoreme}  
 	Soit \( G \) un groupe. Les propriétés suivantes sont équivalentes :
 	\begin{enumerate}
 		\item[(i)] \( G \) est abélien.
 		\item[(ii)] Toutes les représentations irréductibles de \( G \) sont de degré 1.
 	\end{enumerate}
-\end{theorem}
+\end{theoreme}
 \end{frame}
 
 
 
 
-	\section{Produit tensoriel et représentation linéaire d'un produit de groupes finis}
+	\section{Résultats}
 	\begin{frame}{Produit tensoriel et représentation linéaire d'un produit de groupes finis}
 		\begin{itemize}
 			\item Les groupes non abéliens infinis, comme les groupes de Lie, sont plus complexes et ne se décomposent pas facilement.
@@ -642,32 +640,17 @@ Soit \( \rho : G \rightarrow \mathrm{GL}(V) \) une représentation linéaire sur
 			\item La théorie des représentations de ces groupes nécessite des outils avancés comme l'analyse spectrale et la cohomologie des groupes.
 		\end{itemize}
 	\end{frame}
-	
-	\section{Applications des Représentations Linéaires}
-	\begin{frame}{Applications en Physique}
-		\begin{itemize}
-			\item Les groupes de symétrie et leurs représentations jouent un rôle crucial en physique théorique, en particulier dans les théories quantiques.
-			\item Exemple : Les groupes de Lie sont utilisés pour décrire les symétries des systèmes physiques.
-			\item Les représentations unitaires des groupes de Lie sont fondamentales pour l'étude des particules élémentaires.
-		\end{itemize}
-	\end{frame}
-	
-	\begin{frame}{Applications en Cryptographie et Géométrie}
-		\begin{itemize}
-			\item En cryptographie, les représentations des groupes de matrices sont utilisées dans les systèmes de chiffrement et les algèbres de Lie.
-			\item En géométrie, les représentations des groupes de symétrie sont essentielles pour l'étude des surfaces de Riemann et des variétés.
-		\end{itemize}
-	\end{frame}
-	
-	
+
 
 	
 	\section{Conclusion}
 	\begin{frame}{Conclusion}
-		\begin{itemize}
-			\item Les représentations linéaires des groupes infinis sont essentielles pour la compréhension des symétries dans des domaines variés tels que la physique, la géométrie et la cryptographie.
-			\item Les méthodes modernes, comme la cohomologie des groupes et l'analyse catégorique, ouvrent de nouvelles perspectives dans ce domaine.
-		\end{itemize}
+	Parvenus au terme de notre travail, où il était principalement question pour nous d'étendre les représentations linéaires aux groupes infinis, il en ressort que nous avons construit les représentations linéaires des groupes infinis vus comme produits infinis de groupes finis.
+	Les caractères de tels groupes sont construits comme des suites, dont l'existence est liée aux propriétés de convergence de ces suites. Nous avons donné quelques propriétés des représentations irréductibles de ces groupes.
+	Enfin, nous avons étudié le cas particulier de \(\widehat{\mathbb{Z}}\) qui est le complété profini de \( \mathbb{Z} \). Ici, nous avons construit explicitement les représentations linéaires, calculé les caractères associés, et donné quelques proprietés d’irréductibilité.\\
+	Excellence M. le president du jury, très chers honorables membres du jury, à vos titres et grades respectifs, nous n'avons pas la pretention d'avoir effectue un travail parfait. Nous admettons que notre travil puiss comporter des impertions et c'est pour cette raison que nous nous soumettons a vos differentes remarques et suggestion tout en vous rasurant de les prendre en consideration pour ameliorer le present travail.\\
+	
+	Merci pour votre aimable attention, J'en ai fini.
 	\end{frame}
 	
 	

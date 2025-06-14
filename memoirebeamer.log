@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.5.13)  29 MAY 2025 02:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.5.13)  15 JUN 2025 01:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -984,6 +984,7 @@ File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \c@mynotation=\count376
 \c@propriety=\count377
 \c@remark=\count378
+\c@theoreme=\count379
 
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerthemeMadrid.sty
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemewhale.sty)
@@ -992,59 +993,59 @@ File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemeinfolines.sty))
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 44.
+(hyperref)                removing `\\' on input line 46.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 44.
+(hyperref)                removing `\\' on input line 46.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 44.
+(hyperref)                removing `\\' on input line 46.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 44.
+(hyperref)                removing `\\' on input line 46.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 44.
+(hyperref)                removing `\\' on input line 46.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 44.
+(hyperref)                removing `\\' on input line 46.
 
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 6
-3.
+5.
 (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count379
+\l__color_backend_stack_int=\count380
 \l__pdf_internal_box=\box87
 )
 (./memoirebeamer.aux)
 \openout1 = `memoirebeamer.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1082,16 +1083,16 @@ LaTeX Font Info:    ... okay on input line 63.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count380
+\scratchcounter=\count381
 \scratchdimen=\dimen357
 \scratchbox=\box88
-\nofMPsegments=\count381
-\nofMParguments=\count382
+\nofMPsegments=\count382
+\nofMParguments=\count383
 \everyMPshowfont=\toks59
-\MPscratchCnt=\count383
+\MPscratchCnt=\count384
 \MPscratchDim=\dimen358
-\MPnumerator=\count384
-\makeMPintoPDFobject=\count385
+\MPnumerator=\count385
+\makeMPintoPDFobject=\count386
 \everyMPtoPDFconversion=\toks60
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1102,58 +1103,58 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 63.
+Package hyperref Info: Link coloring OFF on input line 65.
 
 (./memoirebeamer.out) (./memoirebeamer.out)
 \@outlinefile=\write6
 \openout6 = `memoirebeamer.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 63.
+(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 65.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 63.
+(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 65.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 63.
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 65.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 63.
+(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 65.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmss/m/n --> T1/lmr/m/n on input line 63.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 63.
+(Font)                  OT1/lmss/m/n --> T1/lmr/m/n on input line 65.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 65.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 63.
+(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 65.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 63.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 63.
+(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 65.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 65.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 63.
+(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 65.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 63.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 63.
+(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 65.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 65.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 63.
+(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 65.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 63.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 63.
+(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 65.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 65.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 63.
+(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 65.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 63.
+(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 65.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 63.
+(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 65.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 63.
+(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 65.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/lmss/b/n --> T1/lmr/b/n on input line 63.
+(Font)                  OT1/lmss/b/n --> T1/lmr/b/n on input line 65.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/lmss/b/n --> T1/lmss/b/n on input line 63.
+(Font)                  T1/lmss/b/n --> T1/lmss/b/n on input line 65.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 63.
+(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 65.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 63.
+(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 65.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/lmtt/m/n --> T1/lmtt/b/n on input line 63.
+(Font)                  T1/lmtt/m/n --> T1/lmtt/b/n on input line 65.
 
 (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-basic-dictionary
 -English.dict
@@ -1179,72 +1180,73 @@ Dictionary: translator-numbers-dictionary, Language: English
 ry-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \degres on input line 63.
-LaTeX Info: Redefining \up on input line 63.
+LaTeX Info: Redefining \degres on input line 65.
+LaTeX Info: Redefining \up on input line 65.
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-63.
+65.
  (/usr/share/texmf/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 6
-3.
+5.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-63.
+65.
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-63.
+65.
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 63.
+(Font)              <9> on input line 65.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 63.
+(Font)              <6> on input line 65.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 63.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 63.
+(Font)              <5> on input line 65.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 65.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 63.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 65.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <9> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 63.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 65.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 63.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 65.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 63.
-Package xypdf Info: Line width: 0.39998pt on input line 63.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 65.
+Package xypdf Info: Line width: 0.39998pt on input line 65.
  (./memoirebeamer.nav)
 
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/
-dvips/lm/lm-ec.enc}] (./memoirebeamer.toc)
+dvips/lm/lm-ec.enc}]
 
 [2
 
-]
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/
+dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}]
+(./memoirebeamer.toc)
 
 [3
 
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/
-dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}]
-Overfull \vbox (6.85847pt too high) detected at line 124
+]
+Overfull \vbox (6.85847pt too high) detected at line 122
  []
 
 
@@ -1257,7 +1259,7 @@ Overfull \vbox (6.85847pt too high) detected at line 124
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}]
 
-LaTeX Warning: Citation `schaub1997' on page 6 undefined on input line 175.
+LaTeX Warning: Citation `schaub1997' on page 6 undefined on input line 173.
 
 
 
@@ -1265,7 +1267,7 @@ LaTeX Warning: Citation `schaub1997' on page 6 undefined on input line 175.
 
 ]
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 20
-4.
+2.
  (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1283,15 +1285,15 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ]
 
 LaTeX Warning: Citation `ribes-zalesskii' on page 10 undefined on input line 27
-5.
+3.
 
 <xymatrix 3x2 149>
 
 LaTeX Warning: Citation `ribes-zalesskii' on page 10 undefined on input line 27
-5.
+3.
 
 <xymatrix 2x2 141>
-Overfull \vbox (66.44867pt too high) detected at line 275
+Overfull \vbox (66.44867pt too high) detected at line 273
  []
 
 
@@ -1301,14 +1303,14 @@ Overfull \vbox (66.44867pt too high) detected at line 275
 ]
 
 LaTeX Warning: Citation `ribes-zalesskii' on page 11 undefined on input line 30
-6.
+4.
 
 
 LaTeX Warning: Citation `ribes-zalesskii' on page 11 undefined on input line 30
-6.
+4.
 
 
-Overfull \vbox (47.35089pt too high) detected at line 306
+Overfull \vbox (47.35089pt too high) detected at line 304
  []
 
 
@@ -1318,7 +1320,7 @@ Overfull \vbox (47.35089pt too high) detected at line 306
 ]
 
 LaTeX Warning: Citation `maclane1971categories' on page 12 undefined on input l
-ine 333.
+ine 331.
 
 <xymatrix 3x2 149>
 
@@ -1327,7 +1329,7 @@ ine 333.
 ]
 
 LaTeX Warning: Citation `maclane1971categories' on page 13 undefined on input l
-ine 347.
+ine 345.
 
 <xymatrix 3x2 149>
 
@@ -1336,10 +1338,10 @@ ine 347.
 ]
 
 LaTeX Warning: Citation `maclane1971categories' on page 14 undefined on input l
-ine 379.
+ine 377.
 
 
-Overfull \vbox (6.42172pt too high) detected at line 379
+Overfull \vbox (6.42172pt too high) detected at line 377
  []
 
 
@@ -1357,11 +1359,11 @@ Overfull \vbox (6.42172pt too high) detected at line 379
 ]
 
 LaTeX Warning: Citation `serre1971representation' on page 17 undefined on input
- line 449.
+ line 447.
 
 
 LaTeX Warning: Citation `serre1971representation' on page 17 undefined on input
- line 449.
+ line 447.
 
 
 
@@ -1370,18 +1372,18 @@ LaTeX Warning: Citation `serre1971representation' on page 17 undefined on input
 ]
 
 LaTeX Warning: Citation `serre1971representation' on page 18 undefined on input
- line 479.
+ line 477.
 
 
 LaTeX Warning: Citation `serre1971representation' on page 18 undefined on input
- line 479.
+ line 477.
 
 
 LaTeX Warning: Citation `serre1971representation' on page 18 undefined on input
- line 479.
+ line 477.
 
 
-Overfull \vbox (2.82947pt too high) detected at line 479
+Overfull \vbox (2.82947pt too high) detected at line 477
  []
 
 
@@ -1391,11 +1393,11 @@ Overfull \vbox (2.82947pt too high) detected at line 479
 ]
 
 LaTeX Warning: Citation `serre1971representation' on page 19 undefined on input
- line 498.
+ line 496.
 
 
 LaTeX Warning: Citation `renard2009groupes' on page 19 undefined on input line 
-498.
+496.
 
 
 
@@ -1404,7 +1406,7 @@ LaTeX Warning: Citation `renard2009groupes' on page 19 undefined on input line
 ]
 
 LaTeX Warning: Citation `serre1971representation' on page 20 undefined on input
- line 523.
+ line 521.
 
 
 
@@ -1439,14 +1441,6 @@ LaTeX Warning: Citation `serre1971representation' on page 20 undefined on input
 [27
 
 ]
-
-[28
-
-]
-
-[29
-
-]
 \tf@nav=\write7
 \openout7 = `memoirebeamer.nav'.
 
@@ -1465,33 +1459,51 @@ L3 programming layer <2024-12-25>
 
 LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: File `memoirebeamer.out' has not changed.
-(rerunfilecheck)             Checksum: 848AAB0801699FF1D5EE26FCFC559A73;1658.
+
+Package rerunfilecheck Warning: File `memoirebeamer.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `memoirebeamer.out':
+(rerunfilecheck)             Before: 6A1FE17A4E82B3437BDE504CEFE865F6;1190
+(rerunfilecheck)             After:  2F9411827556ECEFF8709467FFC8930A;922.
  ) 
 Here is how much of TeX's memory you used:
- 31291 strings out of 475149
- 611011 string characters out of 5765168
- 1026899 words of memory out of 5000000
- 53595 multiletter control sequences out of 15000+600000
+ 31295 strings out of 475149
+ 611100 string characters out of 5765168
+ 1026969 words of memory out of 5000000
+ 53602 multiletter control sequences out of 15000+600000
  610048 words of font info for 77 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  101i,19n,107p,3241b,976s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr
-/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/publi
-c/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/te
-xmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lms
-s9.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/f
-onts/type1/public/lm/lmsso8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso9.
-pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/t
-ype1/public/lm/lmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/xypic
-/xycmat10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/xypic/xycmbt10.
-pfb>
-Output written on memoirebeamer.pdf (29 pages, 389417 bytes).
+
+pdfTeX warning (dest): name{Navigation28} has been referenced but does not exis
+t, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Navigation29} has been referenced but does not exis
+t, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Outline0.6} has been referenced but does not exist,
+ replaced by a fixed one
+
+</usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type
+1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/s
+hare/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/
+lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texm
+f/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss9
+.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fon
+ts/type1/public/lm/lmsso8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso9.pf
+b></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/typ
+e1/public/lm/lmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/xypic/x
+ycmat10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/xypic/xycmbt10.pf
+b>
+Output written on memoirebeamer.pdf (27 pages, 388124 bytes).
 PDF statistics:
- 1549 PDF objects out of 1728 (max. 8388607)
- 1142 compressed objects within 12 object streams
- 67 named destinations out of 1000 (max. 500000)
- 1871 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1489 PDF objects out of 1728 (max. 8388607)
+ 1087 compressed objects within 11 object streams
+ 64 named destinations out of 1000 (max. 500000)
+ 1863 words of extra memory for PDF output out of 10000 (max. 10000000)
 

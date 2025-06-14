@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.5.13)  7 JUN 2025 20:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.5.13)  15 JUN 2025 00:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1202,7 +1202,7 @@ Package rerunfilecheck Info: File `qrm2.out' has not changed.
 Here is how much of TeX's memory you used:
  32267 strings out of 475149
  604245 string characters out of 5765168
- 1127503 words of memory out of 5000000
+ 1127501 words of memory out of 5000000
  54649 multiletter control sequences out of 15000+600000
  585497 words of font info for 106 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1215,7 +1215,7 @@ dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/mathpazo/fplmri.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
 w/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/u
 plr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on qrm2.pdf (3 pages, 101966 bytes).
+Output written on qrm2.pdf (3 pages, 101973 bytes).
 PDF statistics:
  109 PDF objects out of 1000 (max. 8388607)
  85 compressed objects within 1 object stream
