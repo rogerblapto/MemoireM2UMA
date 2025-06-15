@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.5.13)  15 JUN 2025 00:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.5.13)  15 JUN 2025 22:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1330,21 +1330,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 532--534
 
 [16] <xymatrix 3x2 149> <xymatrix 3x2 149>
 
-[17] <xymatrix 3x2 149>
+[17]
 
-[18] <xymatrix 2x2 141>
+[18] <xymatrix 3x2 149> <xymatrix 2x2 141>
 
-[19] <xymatrix 3x2 149> <xymatrix 3x2 149>
+[19] <xymatrix 3x2 149>
 
-[20]
-Underfull \hbox (badness 10000) in paragraph at lines 1565--1567
+[20] <xymatrix 3x2 149>
+
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 1590--1592
 
  []
 
 <xymatrix 3x2 149>
-
-[21]
-Overfull \hbox (2.18295pt too wide) in paragraph at lines 1596--1597
+Overfull \hbox (2.18295pt too wide) in paragraph at lines 1621--1622
 []\T1/ppl/m/n/12 Par la pro-priété uni-ver-selle de la li-mite pro-jec-tive $\O
 ML/zplm/m/it/12 X$\T1/ppl/m/n/12 , il existe un mor-phisme unique
  []
@@ -1352,110 +1352,112 @@ ML/zplm/m/it/12 X$\T1/ppl/m/n/12 , il existe un mor-phisme unique
 
 
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 1653--1654
+Underfull \hbox (badness 10000) in paragraph at lines 1678--1679
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1667--1668
+Underfull \hbox (badness 10000) in paragraph at lines 1692--1693
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1669--1670
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1679--1680
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1681--1682
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1683--1685
+Underfull \hbox (badness 10000) in paragraph at lines 1694--1695
 
  []
 
 
 
 [23]
-Underfull \hbox (badness 10000) in paragraph at lines 1686--1687
+Underfull \hbox (badness 10000) in paragraph at lines 1704--1705
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1688--1689
+Underfull \hbox (badness 10000) in paragraph at lines 1706--1707
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1690--1691
+Underfull \hbox (badness 10000) in paragraph at lines 1708--1710
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1711--1712
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1713--1714
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1715--1716
 
  []
 
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 1712.
+(Font)              scaled to size 5.21004pt on input line 1737.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 1712.
+(Font)              scaled to size 5.21004pt on input line 1737.
 
 
 [24]
 
 [25]
-Underfull \hbox (badness 10000) in paragraph at lines 1819--1820
+Underfull \hbox (badness 10000) in paragraph at lines 1844--1845
 
  []
 
 
 
 [26]
+
+[27]
 Chapitre 2.
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 1863.
+(hyperref)                be the same. Added a new anchor on input line 1888.
 
 
 
-[27
+[28
 
 ]
 
-[28]
-Underfull \hbox (badness 10000) in paragraph at lines 2024--2025
-
- []
-
-
-
 [29]
-Underfull \hbox (badness 10000) in paragraph at lines 2084--2087
+Underfull \hbox (badness 10000) in paragraph at lines 2049--2050
 
  []
 
 
 
 [30]
-Underfull \hbox (badness 10000) in paragraph at lines 2088--2092
+Underfull \hbox (badness 10000) in paragraph at lines 2109--2112
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2101--2103
+
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 2113--2117
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2104--2106
+Underfull \hbox (badness 10000) in paragraph at lines 2126--2128
 
  []
 
 
-Overfull \hbox (6.25105pt too wide) in paragraph at lines 2107--2112
+Underfull \hbox (badness 10000) in paragraph at lines 2129--2131
+
+ []
+
+
+Overfull \hbox (6.25105pt too wide) in paragraph at lines 2132--2137
 \T1/ppl/m/n/12 L'application $[]$ est donc un iso-mor-phisme d'es-paces vec-to-
 riels entre $\OML/zplm/m/it/12 V[]\OT1/zplm/m/n/12 / [](\OML/zplm/m/it/12 f\OT1
 /zplm/m/n/12 )$ \T1/ppl/m/n/12 et $[]\OT1/zplm/m/n/12 (\OML/zplm/m/it/12 f\OT1/
@@ -1464,25 +1466,23 @@ zplm/m/n/12 )$\T1/ppl/m/n/12 .
 
 
 
-[31] <xymatrix 3x2 149>
+[32] <xymatrix 3x2 149>
 
-[32]
-Underfull \hbox (badness 10000) in paragraph at lines 2228--2230
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 2253--2255
 
  []
 
 
 
-[33]
-
 [34]
-Overfull \hbox (39.50421pt too wide) detected at line 2283
+
+[35]
+Overfull \hbox (39.50421pt too wide) detected at line 2308
 []
  []
 
 
-
-[35]
 
 [36]
 
@@ -1491,7 +1491,9 @@ Overfull \hbox (39.50421pt too wide) detected at line 2283
 [38]
 
 [39]
-Overfull \hbox (0.69641pt too wide) in paragraph at lines 2537--2540
+
+[40]
+Overfull \hbox (0.69641pt too wide) in paragraph at lines 2562--2565
 \T1/ppl/m/n/12 Comme $\U/fplmbb/m/n/12 C$ \T1/ppl/m/n/12 est un corps al-gé-bri
 -que-ment clos, l'en-do-mor-phisme $\OML/zplm/m/it/12 f$ \T1/ppl/m/n/12 pos-sèd
 e au moins
@@ -1499,15 +1501,15 @@ e au moins
 
 
 
-[40]
-Underfull \hbox (badness 10000) in paragraph at lines 2605--2607
+[41]
+Underfull \hbox (badness 10000) in paragraph at lines 2630--2632
 
  []
 
 
 
-[41]
-Overfull \hbox (9.09715pt too wide) in paragraph at lines 2649--2650
+[42]
+Overfull \hbox (9.09715pt too wide) in paragraph at lines 2674--2675
 []\T1/ppl/m/it/12 Soient $\OML/zplm/m/it/12 ^^_[]$ \T1/ppl/m/it/12 et $\OML/zpl
 m/m/it/12 ^^_[]$ \T1/ppl/m/it/12 les ca-rac-tères de deux re-pré-sen-ta-tions i
 r-ré-duc-tibles non iso-morphes $\OT1/zplm/m/n/12 (\OML/zplm/m/it/12 V[]\OT1/pp
@@ -1516,54 +1518,54 @@ l/m/n/12 , \OML/zplm/m/it/12 ^^Z[]\OT1/zplm/m/n/12 )[]$
 
 
 
-[42]
-Underfull \hbox (badness 10000) in paragraph at lines 2721--2725
+[43]
+Underfull \hbox (badness 10000) in paragraph at lines 2746--2750
 
  []
 
 
 
-[43]
-
 [44]
+
+[45]
 Chapitre 3.
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 2762.
+(hyperref)                be the same. Added a new anchor on input line 2787.
 
 
-Overfull \hbox (2.21425pt too wide) in paragraph at lines 2763--2764
+Overfull \hbox (2.21425pt too wide) in paragraph at lines 2788--2789
 []\T1/ppl/m/n/12 Le pro-duit ten-so-riel et les re-pré-sen-ta-tions li-néaires 
 jouent un rôle cru-cial dans l'étude
  []
 
 
 
-[45
+[46
 
 ]
 
-[46]
-
 [47]
-Underfull \hbox (badness 10000) in paragraph at lines 2875--2878
-
- []
-
-
-Overfull \hbox (18.0229pt too wide) detected at line 2909
-[]
- []
-
-
-Overfull \hbox (19.27061pt too wide) detected at line 2915
-[]
- []
-
-
 
 [48]
-Overfull \hbox (8.81058pt too wide) in paragraph at lines 2971--2974
+Underfull \hbox (badness 10000) in paragraph at lines 2900--2903
+
+ []
+
+
+Overfull \hbox (18.0229pt too wide) detected at line 2934
+[]
+ []
+
+
+Overfull \hbox (19.27061pt too wide) detected at line 2940
+[]
+ []
+
+
+
+[49]
+Overfull \hbox (8.81058pt too wide) in paragraph at lines 2996--2999
 \T1/ppl/m/n/12 Montrons que $\OML/zplm/m/it/12  [] \OT1/zplm/m/n/12 = [][]$\T1/
 ppl/m/n/12 , c'est-à-dire que $\OML/zplm/m/it/12  []\OT1/zplm/m/n/12 (\OML/zplm
 /m/it/12 f\OT1/zplm/m/n/12 ) = \OML/zplm/m/it/12 f$ \T1/ppl/m/n/12 pour tout $\
@@ -1573,275 +1575,275 @@ OML/zplm/m/it/12 V[]\OT1/zplm/m/n/12 )$\T1/ppl/m/n/12 .
 
 
 
-[49] <xymatrix 3x3 153>
-
-[50]
+[50] <xymatrix 3x3 153>
 
 [51]
 
 [52]
-Underfull \hbox (badness 10000) in paragraph at lines 3150--3152
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3153--3155
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3168--3171
-
- []
-
-
 
 [53]
-Underfull \hbox (badness 10000) in paragraph at lines 3181--3184
+Underfull \hbox (badness 10000) in paragraph at lines 3175--3177
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3178--3180
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3193--3196
+
+ []
+
+
+
+[54]
+Underfull \hbox (badness 10000) in paragraph at lines 3206--3209
 
  []
 
 <xymatrix 3x3 202>
 
-[54]
+[55]
 
-[55] <xymatrix 3x3 202>
-Underfull \hbox (badness 10000) in paragraph at lines 3293--3294
+[56] <xymatrix 3x3 202>
+Underfull \hbox (badness 10000) in paragraph at lines 3318--3319
 
  []
 
 
-
-[56]
 
 [57]
 
 [58]
 
 [59]
-Underfull \hbox (badness 10000) in paragraph at lines 3434--3437
+
+[60]
+Underfull \hbox (badness 10000) in paragraph at lines 3459--3462
 
  []
 
 
-Overfull \hbox (4.53592pt too wide) in paragraph at lines 3438--3442
+Overfull \hbox (4.53592pt too wide) in paragraph at lines 3463--3467
 []$[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3444--3446
+Underfull \hbox (badness 10000) in paragraph at lines 3469--3471
 
  []
 
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 15.0049pt on input line 3463.
+(Font)              scaled to size 15.0049pt on input line 3488.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 3463.
+(Font)              scaled to size 8.33606pt on input line 3488.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 15.0049pt on input line 3463.
+(Font)              scaled to size 15.0049pt on input line 3488.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 3463.
+(Font)              scaled to size 8.33606pt on input line 3488.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3463.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\setbox' on input line 3463.
+(hyperref)                removing `math shift' on input line 3488.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 3463.
+(hyperref)                removing `\setbox' on input line 3488.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 3463.
+(hyperref)                removing `\z@' on input line 3488.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 3463.
+(hyperref)                removing `\hbox' on input line 3488.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 3463.
+(hyperref)                removing `\mathsurround' on input line 3488.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3463.
+(hyperref)                removing `\z@' on input line 3488.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\textstyle' on input line 3463.
+(hyperref)                removing `math shift' on input line 3488.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3463.
+(hyperref)                removing `\textstyle' on input line 3488.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathaccent' on input line 3463.
+(hyperref)                removing `math shift' on input line 3488.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3463.
+(hyperref)                removing `\mathaccent' on input line 3488.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3463.
+(hyperref)                removing `math shift' on input line 3488.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3463.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3464--3465
-
- []
-
-
-
-[60]
-Underfull \hbox (badness 10000) in paragraph at lines 3476--3477
-
- []
+(hyperref)                removing `math shift' on input line 3488.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3509.
+(hyperref)                removing `math shift' on input line 3488.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\setbox' on input line 3509.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 3509.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 3509.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 3509.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 3509.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3509.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\textstyle' on input line 3509.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3509.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathaccent' on input line 3509.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3509.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3524--3526
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3528--3529
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3530--3531
+Underfull \hbox (badness 10000) in paragraph at lines 3489--3490
 
  []
 
 
 
 [61]
-Underfull \hbox (badness 10000) in paragraph at lines 3537--3539
+Underfull \hbox (badness 10000) in paragraph at lines 3501--3502
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3544--3546
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3534.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\setbox' on input line 3534.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@' on input line 3534.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\hbox' on input line 3534.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathsurround' on input line 3534.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@' on input line 3534.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3534.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\textstyle' on input line 3534.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3534.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathaccent' on input line 3534.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3534.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3549--3551
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3552--3555
+Underfull \hbox (badness 10000) in paragraph at lines 3553--3554
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3555--3556
 
  []
 
 
 
 [62]
+Underfull \hbox (badness 10000) in paragraph at lines 3562--3564
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3569--3571
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3577--3580
+
+ []
+
+
 
 [63]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3632.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\setbox' on input line 3632.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 3632.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 3632.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 3632.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 3632.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3632.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\textstyle' on input line 3632.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3632.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathaccent' on input line 3632.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3632.
-
-
-
 [64]
-Overfull \hbox (10.53017pt too wide) detected at line 3694
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3657.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\setbox' on input line 3657.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@' on input line 3657.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\hbox' on input line 3657.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathsurround' on input line 3657.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@' on input line 3657.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3657.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\textstyle' on input line 3657.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3657.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathaccent' on input line 3657.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3657.
+
+
+
+[65]
+Overfull \hbox (10.53017pt too wide) detected at line 3719
 [] [] \U/fplmbb/m/n/12 Z\OT1/zplm/m/n/12 /\OML/zplm/m/it/12 n\U/fplmbb/m/n/12 Z
  \OT1/zplm/m/n/12 = [] \OT1/ppl/m/n/12 .
  []
 
 
 
-[65]
-Overfull \hbox (3.3625pt too wide) in paragraph at lines 3772--3779
+[66]
+Overfull \hbox (3.3625pt too wide) in paragraph at lines 3797--3804
 \T1/ppl/m/n/12 Il en re-sulte que $\OT1/zplm/m/n/12 ^^H$ \T1/ppl/m/n/12 est un 
 iso-mor-phisme de groupes. Donc $[] \OMS/zplm/m/n/12 ' [][] [][] \U/fplmbb/m/n/
 12 Z\OT1/zplm/m/n/12 /\OML/zplm/m/it/12 n\U/fplmbb/m/n/12 Z\OT1/ppl/m/n/12 .$ 
@@ -1849,52 +1851,52 @@ iso-mor-phisme de groupes. Donc $[] \OMS/zplm/m/n/12 ' [][] [][] \U/fplmbb/m/n/
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3786.
+(hyperref)                removing `math shift' on input line 3811.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\setbox' on input line 3786.
+(hyperref)                removing `\setbox' on input line 3811.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 3786.
+(hyperref)                removing `\z@' on input line 3811.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 3786.
+(hyperref)                removing `\hbox' on input line 3811.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 3786.
+(hyperref)                removing `\mathsurround' on input line 3811.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 3786.
+(hyperref)                removing `\z@' on input line 3811.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3786.
+(hyperref)                removing `math shift' on input line 3811.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\textstyle' on input line 3786.
+(hyperref)                removing `\textstyle' on input line 3811.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3786.
+(hyperref)                removing `math shift' on input line 3811.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathaccent' on input line 3786.
+(hyperref)                removing `\mathaccent' on input line 3811.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3786.
+(hyperref)                removing `math shift' on input line 3811.
 
 
 
-[66]
-Overfull \hbox (1.22054pt too wide) in paragraph at lines 3831--3833
+[67]
+Overfull \hbox (1.22054pt too wide) in paragraph at lines 3856--3858
 \T1/ppl/m/n/12 Donc $\OML/zplm/m/it/12 ^^_[]\OT1/zplm/m/n/12 (\OML/zplm/m/it/12
  a \OT1/zplm/m/n/12 + \OML/zplm/m/it/12 b\OT1/zplm/m/n/12 ) = \OML/zplm/m/it/12
  ^^_[]\OT1/zplm/m/n/12 (\OML/zplm/m/it/12 a\OT1/zplm/m/n/12 )\OML/zplm/m/it/12 
@@ -1904,82 +1906,82 @@ me de groupes.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3831--3833
+Underfull \hbox (badness 10000) in paragraph at lines 3856--3858
 
  []
 
 
 
-[67]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3872.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\setbox' on input line 3872.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 3872.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 3872.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 3872.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 3872.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3872.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\textstyle' on input line 3872.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3872.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathaccent' on input line 3872.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3872.
-
-
-
 [68]
 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3897.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\setbox' on input line 3897.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@' on input line 3897.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\hbox' on input line 3897.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathsurround' on input line 3897.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@' on input line 3897.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3897.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\textstyle' on input line 3897.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3897.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathaccent' on input line 3897.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3897.
+
+
+
 [69]
-Overfull \hbox (3.16699pt too wide) in paragraph at lines 3946--3947
+
+[70]
+Overfull \hbox (3.16699pt too wide) in paragraph at lines 3971--3972
 []\T1/ppl/m/n/12 Les re-pré-sen-ta-tions ir-ré-duc-tibles de $[]$ cor-res-ponde
 nt aux ca-rac-tères conti-nus.Donc 
  []
 
 
 
-[70]
-
 [71]
 
-[72
-
-]
+[72]
 
 [73
 
 ]
 
-[74] 
+[74
+
+]
+
+[75] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (./Memoire.aux)
  ***********
@@ -1998,9 +2000,9 @@ Package rerunfilecheck Info: File `Memoire.out' has not changed.
 (rerunfilecheck)             Checksum: B53AE4BE45238A7D02B709E5A6835815;13723.
  ) 
 Here is how much of TeX's memory you used:
- 33403 strings out of 475149
- 622497 string characters out of 5765168
- 1137430 words of memory out of 5000000
+ 33409 strings out of 475149
+ 622589 string characters out of 5765168
+ 1137431 words of memory out of 5000000
  55233 multiletter control sequences out of 15000+600000
  639775 words of font info for 244 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -2021,10 +2023,10 @@ xmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/urw/palatino/uplri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/xypic/xycmat10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/xypic
 /xycmbt10.pfb>
-Output written on Memoire.pdf (82 pages, 747778 bytes).
+Output written on Memoire.pdf (83 pages, 748892 bytes).
 PDF statistics:
- 1428 PDF objects out of 1440 (max. 8388607)
- 1293 compressed objects within 13 object streams
- 524 named destinations out of 1000 (max. 500000)
+ 1444 PDF objects out of 1728 (max. 8388607)
+ 1307 compressed objects within 14 object streams
+ 530 named destinations out of 1000 (max. 500000)
  383 words of extra memory for PDF output out of 10000 (max. 10000000)
 

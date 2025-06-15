@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.5.13)  15 JUN 2025 05:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.5.13)  15 JUN 2025 05:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1455,47 +1455,33 @@ L3 programming layer <2024-12-25>
 
 LaTeX Warning: There were undefined references.
 
-
-Package rerunfilecheck Warning: File `memoirebeamer.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `memoirebeamer.out':
-(rerunfilecheck)             Before: 2F9411827556ECEFF8709467FFC8930A;922
-(rerunfilecheck)             After:  01DC63E14423B44D9A7CF496D030F669;922.
+Package rerunfilecheck Info: File `memoirebeamer.out' has not changed.
+(rerunfilecheck)             Checksum: 01DC63E14423B44D9A7CF496D030F669;922.
  ) 
 Here is how much of TeX's memory you used:
- 31240 strings out of 475149
- 609107 string characters out of 5765168
+ 31236 strings out of 475149
+ 609064 string characters out of 5765168
  1025968 words of memory out of 5000000
- 53550 multiletter control sequences out of 15000+600000
+ 53548 multiletter control sequences out of 15000+600000
  610048 words of font info for 77 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  101i,19n,107p,3241b,976s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{Navigation27} has been referenced but does not exis
-t, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{Outline0.3.1.17} has been referenced but does not e
-xist, replaced by a fixed one
-
-</usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type
-1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/s
-hare/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/
-lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texm
-f/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss9
-.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fon
-ts/type1/public/lm/lmsso8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso9.pf
-b></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/typ
-e1/public/lm/lmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/xypic/x
-ycmat10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/xypic/xycmbt10.pf
-b>
-Output written on memoirebeamer.pdf (26 pages, 370122 bytes).
+</usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/ty
+pe1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr
+/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/publi
+c/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/te
+xmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lms
+s9.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/f
+onts/type1/public/lm/lmsso8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso9.
+pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/t
+ype1/public/lm/lmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/xypic
+/xycmat10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/xypic/xycmbt10.
+pfb>
+Output written on memoirebeamer.pdf (26 pages, 370079 bytes).
 PDF statistics:
- 1364 PDF objects out of 1440 (max. 8388607)
- 1011 compressed objects within 11 object streams
- 61 named destinations out of 1000 (max. 500000)
+ 1361 PDF objects out of 1440 (max. 8388607)
+ 1008 compressed objects within 11 object streams
+ 59 named destinations out of 1000 (max. 500000)
  1573 words of extra memory for PDF output out of 10000 (max. 10000000)
 
