@@ -34,43 +34,41 @@
 \headcommand {\beamer@framepages {14}{14}}
 \headcommand {\slideentry {2}{0}{12}{15/15}{}{0}}
 \headcommand {\beamer@framepages {15}{15}}
-\headcommand {\slideentry {2}{0}{13}{16/16}{}{0}}
+\headcommand {\beamer@sectionpages {4}{15}}
+\headcommand {\beamer@subsectionpages {4}{15}}
+\headcommand {\sectionentry {3}{Représentations linéaires d'un produit de deux groupes.}{16}{Représentations linéaires d'un produit de deux groupes.}{0}}
+\headcommand {\beamer@subsectionpages {16}{15}}
+\headcommand {\beamer@subsectionentry {0}{3}{1}{16}{Définitions et exemples}}
+\headcommand {\slideentry {3}{1}{1}{16/16}{Définitions et exemples}{0}}
 \headcommand {\beamer@framepages {16}{16}}
-\headcommand {\beamer@sectionpages {4}{16}}
-\headcommand {\beamer@subsectionpages {4}{16}}
-\headcommand {\sectionentry {3}{Représentations linéaires d'un produit de deux groupes.}{17}{Représentations linéaires d'un produit de deux groupes.}{0}}
-\headcommand {\beamer@subsectionpages {17}{16}}
-\headcommand {\beamer@subsectionentry {0}{3}{1}{17}{Définitions et exemples}}
-\headcommand {\slideentry {3}{1}{1}{17/17}{Définitions et exemples}{0}}
+\headcommand {\slideentry {3}{1}{2}{17/17}{Définitions et exemples}{0}}
 \headcommand {\beamer@framepages {17}{17}}
-\headcommand {\slideentry {3}{1}{2}{18/18}{Définitions et exemples}{0}}
+\headcommand {\slideentry {3}{1}{3}{18/18}{Définitions et exemples}{0}}
 \headcommand {\beamer@framepages {18}{18}}
-\headcommand {\slideentry {3}{1}{3}{19/19}{Définitions et exemples}{0}}
+\headcommand {\slideentry {3}{1}{4}{19/19}{Définitions et exemples}{0}}
 \headcommand {\beamer@framepages {19}{19}}
-\headcommand {\slideentry {3}{1}{4}{20/20}{Définitions et exemples}{0}}
+\headcommand {\slideentry {3}{1}{5}{20/20}{Définitions et exemples}{0}}
 \headcommand {\beamer@framepages {20}{20}}
-\headcommand {\slideentry {3}{1}{5}{21/21}{Définitions et exemples}{0}}
+\headcommand {\slideentry {3}{1}{6}{21/21}{Définitions et exemples}{0}}
 \headcommand {\beamer@framepages {21}{21}}
-\headcommand {\slideentry {3}{1}{6}{22/22}{Définitions et exemples}{0}}
+\headcommand {\slideentry {3}{1}{7}{22/22}{Définitions et exemples}{0}}
 \headcommand {\beamer@framepages {22}{22}}
-\headcommand {\slideentry {3}{1}{7}{23/23}{Définitions et exemples}{0}}
+\headcommand {\slideentry {3}{1}{8}{23/23}{Définitions et exemples}{0}}
 \headcommand {\beamer@framepages {23}{23}}
-\headcommand {\slideentry {3}{1}{8}{24/24}{Définitions et exemples}{0}}
+\headcommand {\slideentry {3}{1}{9}{24/24}{Définitions et exemples}{0}}
 \headcommand {\beamer@framepages {24}{24}}
-\headcommand {\slideentry {3}{1}{9}{25/25}{Définitions et exemples}{0}}
+\headcommand {\beamer@sectionpages {16}{24}}
+\headcommand {\beamer@subsectionpages {16}{24}}
+\headcommand {\sectionentry {4}{Résultats}{25}{Résultats}{0}}
+\headcommand {\slideentry {4}{0}{1}{25/25}{}{0}}
 \headcommand {\beamer@framepages {25}{25}}
-\headcommand {\beamer@sectionpages {17}{25}}
-\headcommand {\beamer@subsectionpages {17}{25}}
-\headcommand {\sectionentry {4}{Résultats}{26}{Résultats}{0}}
-\headcommand {\slideentry {4}{0}{1}{26/26}{}{0}}
+\headcommand {\beamer@sectionpages {25}{25}}
+\headcommand {\beamer@subsectionpages {25}{25}}
+\headcommand {\sectionentry {5}{Conclusion}{26}{Conclusion}{0}}
+\headcommand {\slideentry {5}{0}{1}{26/26}{}{0}}
 \headcommand {\beamer@framepages {26}{26}}
-\headcommand {\beamer@sectionpages {26}{26}}
+\headcommand {\beamer@partpages {1}{26}}
 \headcommand {\beamer@subsectionpages {26}{26}}
-\headcommand {\sectionentry {5}{Conclusion}{27}{Conclusion}{0}}
-\headcommand {\slideentry {5}{0}{1}{27/27}{}{0}}
-\headcommand {\beamer@framepages {27}{27}}
-\headcommand {\beamer@partpages {1}{27}}
-\headcommand {\beamer@subsectionpages {27}{27}}
-\headcommand {\beamer@sectionpages {27}{27}}
-\headcommand {\beamer@documentpages {27}}
-\headcommand {\gdef \inserttotalframenumber {27}}
+\headcommand {\beamer@sectionpages {26}{26}}
+\headcommand {\beamer@documentpages {26}}
+\headcommand {\gdef \inserttotalframenumber {26}}

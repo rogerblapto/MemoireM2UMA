@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.5.13)  15 JUN 2025 01:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.5.13)  15 JUN 2025 05:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1259,15 +1259,15 @@ Overfull \vbox (6.85847pt too high) detected at line 122
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}]
 
-LaTeX Warning: Citation `schaub1997' on page 6 undefined on input line 173.
+LaTeX Warning: Citation `schaub1997' on page 6 undefined on input line 167.
 
 
 
 [6
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 20
-2.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 19
+6.
  (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1284,16 +1284,16 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 ]
 
-LaTeX Warning: Citation `ribes-zalesskii' on page 10 undefined on input line 27
-3.
+LaTeX Warning: Citation `ribes-zalesskii' on page 10 undefined on input line 25
+4.
 
 <xymatrix 3x2 149>
 
-LaTeX Warning: Citation `ribes-zalesskii' on page 10 undefined on input line 27
-3.
+LaTeX Warning: Citation `ribes-zalesskii' on page 10 undefined on input line 25
+4.
 
 <xymatrix 2x2 141>
-Overfull \vbox (66.44867pt too high) detected at line 273
+Overfull \vbox (66.44867pt too high) detected at line 254
  []
 
 
@@ -1302,15 +1302,15 @@ Overfull \vbox (66.44867pt too high) detected at line 273
 
 ]
 
-LaTeX Warning: Citation `ribes-zalesskii' on page 11 undefined on input line 30
-4.
+LaTeX Warning: Citation `ribes-zalesskii' on page 11 undefined on input line 28
+5.
 
 
-LaTeX Warning: Citation `ribes-zalesskii' on page 11 undefined on input line 30
-4.
+LaTeX Warning: Citation `ribes-zalesskii' on page 11 undefined on input line 28
+5.
 
 
-Overfull \vbox (47.35089pt too high) detected at line 304
+Overfull \vbox (47.35089pt too high) detected at line 285
  []
 
 
@@ -1320,7 +1320,7 @@ Overfull \vbox (47.35089pt too high) detected at line 304
 ]
 
 LaTeX Warning: Citation `maclane1971categories' on page 12 undefined on input l
-ine 331.
+ine 312.
 
 <xymatrix 3x2 149>
 
@@ -1329,7 +1329,7 @@ ine 331.
 ]
 
 LaTeX Warning: Citation `maclane1971categories' on page 13 undefined on input l
-ine 345.
+ine 326.
 
 <xymatrix 3x2 149>
 
@@ -1338,10 +1338,10 @@ ine 345.
 ]
 
 LaTeX Warning: Citation `maclane1971categories' on page 14 undefined on input l
-ine 377.
+ine 358.
 
 
-Overfull \vbox (6.42172pt too high) detected at line 377
+Overfull \vbox (6.42172pt too high) detected at line 358
  []
 
 
@@ -1354,16 +1354,33 @@ Overfull \vbox (6.42172pt too high) detected at line 377
 
 ]
 
+LaTeX Warning: Citation `serre1971representation' on page 16 undefined on input
+ line 405.
+
+
+LaTeX Warning: Citation `serre1971representation' on page 16 undefined on input
+ line 405.
+
+
+
 [16
 
 ]
 
 LaTeX Warning: Citation `serre1971representation' on page 17 undefined on input
- line 447.
+ line 435.
 
 
 LaTeX Warning: Citation `serre1971representation' on page 17 undefined on input
- line 447.
+ line 435.
+
+
+LaTeX Warning: Citation `serre1971representation' on page 17 undefined on input
+ line 435.
+
+
+Overfull \vbox (2.82947pt too high) detected at line 435
+ []
 
 
 
@@ -1372,19 +1389,11 @@ LaTeX Warning: Citation `serre1971representation' on page 17 undefined on input
 ]
 
 LaTeX Warning: Citation `serre1971representation' on page 18 undefined on input
- line 477.
+ line 454.
 
 
-LaTeX Warning: Citation `serre1971representation' on page 18 undefined on input
- line 477.
-
-
-LaTeX Warning: Citation `serre1971representation' on page 18 undefined on input
- line 477.
-
-
-Overfull \vbox (2.82947pt too high) detected at line 477
- []
+LaTeX Warning: Citation `renard2009groupes' on page 18 undefined on input line 
+454.
 
 
 
@@ -1393,22 +1402,13 @@ Overfull \vbox (2.82947pt too high) detected at line 477
 ]
 
 LaTeX Warning: Citation `serre1971representation' on page 19 undefined on input
- line 496.
-
-
-LaTeX Warning: Citation `renard2009groupes' on page 19 undefined on input line 
-496.
+ line 479.
 
 
 
 [19
 
 ]
-
-LaTeX Warning: Citation `serre1971representation' on page 20 undefined on input
- line 521.
-
-
 
 [20
 
@@ -1437,10 +1437,6 @@ LaTeX Warning: Citation `serre1971representation' on page 20 undefined on input
 [26
 
 ]
-
-[27
-
-]
 \tf@nav=\write7
 \openout7 = `memoirebeamer.nav'.
 
@@ -1465,28 +1461,24 @@ Package rerunfilecheck Warning: File `memoirebeamer.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `memoirebeamer.out':
-(rerunfilecheck)             Before: 6A1FE17A4E82B3437BDE504CEFE865F6;1190
-(rerunfilecheck)             After:  2F9411827556ECEFF8709467FFC8930A;922.
+(rerunfilecheck)             Before: 2F9411827556ECEFF8709467FFC8930A;922
+(rerunfilecheck)             After:  01DC63E14423B44D9A7CF496D030F669;922.
  ) 
 Here is how much of TeX's memory you used:
- 31295 strings out of 475149
- 611100 string characters out of 5765168
- 1026969 words of memory out of 5000000
- 53602 multiletter control sequences out of 15000+600000
+ 31240 strings out of 475149
+ 609107 string characters out of 5765168
+ 1025968 words of memory out of 5000000
+ 53550 multiletter control sequences out of 15000+600000
  610048 words of font info for 77 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  101i,19n,107p,3241b,976s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-pdfTeX warning (dest): name{Navigation28} has been referenced but does not exis
+pdfTeX warning (dest): name{Navigation27} has been referenced but does not exis
 t, replaced by a fixed one
 
 
-pdfTeX warning (dest): name{Navigation29} has been referenced but does not exis
-t, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{Outline0.6} has been referenced but does not exist,
- replaced by a fixed one
+pdfTeX warning (dest): name{Outline0.3.1.17} has been referenced but does not e
+xist, replaced by a fixed one
 
 </usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type
 1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/s
@@ -1500,10 +1492,10 @@ e1/public/lm/lmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/xypic/x
 ycmat10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/xypic/xycmbt10.pf
 b>
-Output written on memoirebeamer.pdf (27 pages, 388124 bytes).
+Output written on memoirebeamer.pdf (26 pages, 370122 bytes).
 PDF statistics:
- 1489 PDF objects out of 1728 (max. 8388607)
- 1087 compressed objects within 11 object streams
- 64 named destinations out of 1000 (max. 500000)
- 1863 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1364 PDF objects out of 1440 (max. 8388607)
+ 1011 compressed objects within 11 object streams
+ 61 named destinations out of 1000 (max. 500000)
+ 1573 words of extra memory for PDF output out of 10000 (max. 10000000)
 
