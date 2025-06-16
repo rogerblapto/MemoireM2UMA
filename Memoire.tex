@@ -1829,6 +1829,118 @@ Ce qui prouve que
 La propriété universelle de la limite projective du système $(G'_i, \varphi'_{ij})$ assure donc l'existence d'un unique morphisme $\varprojlim \Theta : G \longrightarrow G'$.
 
 
+
+
+
+\newpage
+\begin{definition}[Morphisme de systèmes projectifs] \cite{guglielmetti2025profinite} \leavevmode\\
+	Soit $\mathcal{C}$ une catégorie et $(G_i, \varphi_{ij})$, $(G'_i, \varphi'_{ij})$ deux systèmes projectifs d'objets de $\mathcal{C}$ indexés par un même ensemble ordonné filtrant $(I, \leq)$. \\
+	Un \emph{morphisme de systèmes projectifs} 
+	\[
+	\Theta : (G_i, \varphi_{ij}) \longrightarrow (G'_i, \varphi'_{ij})
+	\]
+	est la donnée, pour chaque $i \in I$, d’un morphisme $\theta_i : G_i \to G'_i$ dans $\mathcal{C}$ tel que pour tous $i \leq j$, le diagramme suivant commute :
+	
+	\begin{center}
+		\begin{tikzpicture}[scale=1]
+			\matrix(m)[matrix of math nodes,row sep=3em,column sep=4em, text height=1.5ex, text depth=0.25ex]
+			{
+				G_j & G_i \\
+				G'_j & G'_i \\
+			};
+			\path[->,font=\scriptsize]
+			(m-1-1) edge [above] node {$\varphi_{ij}$} (m-1-2)
+			(m-2-1) edge [below] node {$\varphi'_{ij}$} (m-2-2)
+			(m-1-2) edge [right] node {$\theta_i$} (m-2-2)
+			(m-1-1) edge [left] node {$\theta_j$} (m-2-1);
+		\end{tikzpicture}
+	\end{center}
+\end{definition}
+
+\begin{remark}[Catégorie des systèmes projectifs] \cite{guglielmetti2025profinite} \leavevmode\\
+	Soient deux morphismes de systèmes projectifs :
+	\[
+	\Theta = (\theta_i) : (G_i, \varphi_{ij}) \longrightarrow (G'_i, \varphi'_{ij}) \quad \text{et} \quad \Psi = (\psi_i) : (G'_i, \varphi'_{ij}) \longrightarrow (G''_i, \varphi''_{ij}).
+	\]
+	Leur composée
+	\[
+	\Psi \circ \Theta := (\psi_i \circ \theta_i) : (G_i, \varphi_{ij}) \longrightarrow (G''_i, \varphi''_{ij})
+	\]
+	est encore un morphisme de systèmes projectifs.\\
+	On définit ainsi une catégorie $\mathbf{Proj}_{\mathcal{C}}$, dont les objets sont les systèmes projectifs d’objets de $\mathcal{C}$ et les morphismes sont les morphismes de systèmes projectifs.
+\end{remark}
+
+\begin{theorem} \cite{guglielmetti2025profinite} \label{theo:limite-morphisme} \leavevmode\\
+	Soit $\Theta = (\theta_i) : (G_i, \varphi_{ij}) \longrightarrow (G'_i, \varphi'_{ij})$ un morphisme de systèmes projectifs dans la catégorie $\mathbf{Proj}_{\mathcal{C}}$, où $\mathcal{C}$ est une catégorie admettant toutes les limites projectives.
+	
+	Soient $G := \varprojlim G_i$ et $G' := \varprojlim G'_i$ les limites projectives des deux systèmes. Alors, il existe un morphisme canonique
+	\[
+	\varprojlim \Theta : G \longrightarrow G',
+	\]
+	tel que, pour tout $i \in I$, le diagramme suivant commute :
+	\[
+	\begin{tikzcd}
+		G \arrow[r, "\varprojlim \Theta"] \arrow[d, "\varphi_i"'] & G' \arrow[d, "\varphi'_i"] \\
+		G_i \arrow[r, "\theta_i"] & G'_i
+	\end{tikzcd}
+	\]
+	où $\varphi_i : G \to G_i$ et $\varphi'_i : G' \to G'_i$ sont les morphismes canoniques de la limite projective.
+\end{theorem}
+
+\begin{proof}
+	Pour chaque $i \in I$, soit $\varphi_i : G \to G_i$ le morphisme canonique associé à la limite projective $G = \varprojlim G_i$. Définissons un morphisme :
+	\[
+	f_i := \theta_i \circ \varphi_i : G \longrightarrow G'_i.
+	\]
+	Nous affirmons que la famille $(f_i)_{i \in I}$ est compatible avec les morphismes de transition $(\varphi'_{ij})$ du système $(G'_i, \varphi'_{ij})$. Autrement dit, pour tous $i \leq j$, il faut montrer que :
+	\[
+	\varphi'_{ij} \circ f_j = f_i.
+	\]
+	
+	Calculons :
+	\[
+	\varphi'_{ij} \circ f_j = \varphi'_{ij} \circ (\theta_j \circ \varphi_j) = (\varphi'_{ij} \circ \theta_j) \circ \varphi_j.
+	\]
+	
+	Or, par définition d’un morphisme de systèmes projectifs, on a :
+	\[
+	\varphi'_{ij} \circ \theta_j = \theta_i \circ \varphi_{ij}.
+	\]
+	
+	D’où :
+	\[
+	(\varphi'_{ij} \circ \theta_j) \circ \varphi_j = (\theta_i \circ \varphi_{ij}) \circ \varphi_j = \theta_i \circ (\varphi_{ij} \circ \varphi_j).
+	\]
+	
+	Par la compatibilité des morphismes canoniques de la limite projective $G = \varprojlim G_i$, on a :
+	\[
+	\varphi_{ij} \circ \varphi_j = \varphi_i,
+	\]
+	ce qui donne finalement :
+	\[
+	\theta_i \circ \varphi_i = f_i.
+	\]
+	
+	Ainsi, on a bien :
+	\[
+	\varphi'_{ij} \circ f_j = f_i.
+	\]
+	
+	La famille $(f_i)_{i \in I}$ est donc compatible avec le système $(G'_i, \varphi'_{ij})$. Par la propriété universelle de la limite projective $G' = \varprojlim G'_i$, il existe un **unique** morphisme :
+	\[
+	\varprojlim \Theta : G \longrightarrow G'
+	\]
+	tel que, pour tout $i \in I$, on ait :
+	\[
+	\varphi'_i \circ \varprojlim \Theta = f_i = \theta_i \circ \varphi_i.
+	\]
+	
+	Cela conclut la démonstration.
+\end{proof}
+
+
+
+
 \section{Complété Profini d'un Groupe }
 
 \begin{definition} \cite{herfort2012profinite}\\
