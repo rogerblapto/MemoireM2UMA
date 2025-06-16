@@ -95,14 +95,14 @@ Le but principal de ce projet est d’étendre les représentations linéaires a
 		  \frametitle{Définition d'un Groupe}
 		
 		\begin{definition} 
-Un groupe est un couple  $(G, *)$ où $G$ est un ensemble non vide et $*$ est une loi de composition interne
+Un groupe est un couple  $(G, *)$ où $G$ est un ensemble non vide et  
 			\[
 			* : G \times G \longrightarrow G
 			\]
 			\[
 			(x, y) \longmapsto x * y
 			\]
-			vérifiant :
+une loi vérifiant :
 			\begin{enumerate} [label=\roman*)]
 				\item $*$ est associative, c'est-à-dire, $\forall x, y, z \in G, \ (x * y) * z = x * (y * z)$ ;
 				\item $G$ possède un élément neutre pour la loi $*$, c'est-à-dire, $\exists e \in G$ tel que $\forall x \in G, \ x * e = e * x = x$ ;
@@ -126,7 +126,7 @@ Un groupe est un couple  $(G, *)$ où $G$ est un ensemble non vide et $*$ est un
 	\begin{frame}
 		
 		\begin{definition} 
-			Soit \( (G_i, \circ_i) \) une famille de groupes finis indexée par l'ensemble \( \{1, 2, \dots, n\} \), où \( n \in \mathbb{N}^{*} \). Le \textit{produit direct fini} de cette famille est un groupe \( \left( \prod_{i=1}^{n} G_i, \circ \right) \), défini par les propriétés suivantes : 
+Soit \( (G_i, \circ_i) \) une famille de groupes finis indexée par l'ensemble \( \{1, 2, \dots, n\} \), où \( n \in \mathbb{N}^{*} \). Le \textit{produit direct fini} de cette famille est un groupe \( \left( \prod_{i=1}^{n} G_i, \circ \right) \), défini par les propriétés suivantes : 
 			\begin{enumerate}[label=\roman*)]
 				\item L'ensemble sous-jacent est constitué des familles indexées par \( \{1, 2, \dots, n\} \) :  
 				\[
@@ -145,17 +145,27 @@ Un groupe est un couple  $(G, *)$ où $G$ est un ensemble non vide et $*$ est un
 				où \( g_i^{-1} \) est l'inverse de \( g_i \) dans \( G_i \) pour chaque \( i \in \{1, 2, \dots, n\} \).
 			\end{enumerate}
 		\end{definition}
-		
-		
 	\end{frame}
 	
 	
 	\begin{frame}
-		\frametitle{Théorème}
+		
+	\begin{remark}
+Soit \( (G_i, \circ_i) \) une famille de groupes finis indexée par \( i = 1, \dots, n \).  
+Le cardinal du produit direct de ces groupes vérifie la relation suivante :
+		\[
+		\left| \prod_{i=1}^{n} G_i \right| = \prod_{i=1}^{n} |G_i|,
+		\]
+		où \( |G_i| \) désigne le cardinal du groupe \( G_i \).
+	\end{remark}
+	
 
+\begin{propriety}
+Si chaque \( (G_i, \circ_i) \) est un groupe abélien, alors \( \left( \prod_{i=1}^{n} G_i, \circ \right) \) est aussi un groupe abélien.
+\end{propriety}
 
 		
-		\begin{definition} \cite{schaub1997}
+		\begin{definition}
 Soient \( (G, \cdot) \) et \( (G', *) \) deux groupes. Un homomorphisme de groupes de \( G \) dans \( G' \) est une application \( f : G \rightarrow G' \) vérifiant :
 			\[
 			\forall (x, y) \in G \times G, \quad f(x \cdot y) = f(x) * f(y).
@@ -221,28 +231,29 @@ Soient \( (G, \cdot) \) et \( (G', *) \) deux groupes. Un homomorphisme de group
 Un ensemble \((I, \leq)\) est dit ordonné filtrant si \((I, \leq)\) est un ensemble partiellement ordonné et si pour tous \(i, j \in I\), il existe \(k \in I\) vérifiant \(i \leq k\) et \(j \leq k\).
 	\end{definition}
 	
+	\begin{definition}
+Soit \((I, \leq)\) un ensemble ordonné filtrant. Un système inductif de groupes sur \(I\) est la donnée d'un couple \((X_i, \phi_{ij})_{i,j \in I}\) où \(X_i\) sont les groupes et les \(\phi_{ij} : X_i \to X_j\) (pour \(i \leq j\)) sont des homomorphismes de groupes, vérifiant :
+	\begin{enumerate}[label=\roman*)]
+		\item Pour tout \(i \in I\), \(\phi_{ii} = \mathrm{Id}_{X_i}\) ;
+		\item Pour tous \((i, j, k) \in I^3\), \(i \leq j \leq k \Rightarrow \phi_{jk} \circ \phi_{ij} = \phi_{ik}\).
+	\end{enumerate}
+Ce qui se traduit par le diagramme commutatif suivant :
+	\[
+	\xymatrix{
+		X_i \ar[rr]^{\phi_{ij}} \ar[dr]_{\phi_{ik}} & & X_j \ar[dl]^{\phi_{jk}} \\
+		& X_k &
+	}
+	\]
+\end{definition}
+	
 \end{frame}
 
 \begin{frame}
-	\frametitle{Définitions}
 	
-	\begin{definition} \cite{ribes-zalesskii}
-		Soit \((I, \leq)\) un ensemble ordonné filtrant. Un système inductif de groupes sur \(I\) est la donnée d'un couple \((X_i, \phi_{ij})_{i,j \in I}\) où \(X_i\) sont les groupes et les \(\phi_{ij} : X_i \to X_j\) (pour \(i \leq j\)) sont des homomorphismes de groupes, vérifiant :
-		\begin{enumerate}[label=\roman*)]
-			\item Pour tout \(i \in I\), \(\phi_{ii} = \mathrm{Id}_{X_i}\) ;
-			\item Pour tous \((i, j, k) \in I^3\), \(i \leq j \leq k \Rightarrow \phi_{jk} \circ \phi_{ij} = \phi_{ik}\).
-		\end{enumerate}
-		Ce qui se traduit par le diagramme commutatif suivant :
-		\[
-		\xymatrix{
-			X_i \ar[rr]^{\phi_{ij}} \ar[dr]_{\phi_{ik}} & & X_j \ar[dl]^{\phi_{jk}} \\
-			& X_k &
-		}
-		\]
-	\end{definition}
+
 	
-	\begin{definition} \cite{ribes-zalesskii}
-		Soit \(X\) un groupe et \((X_i, \phi_{ij})\) un système inductif de groupes. La famille \((X, \phi_i : X_i \rightarrow X)\) est dite compatible avec \((X_i, \phi_{ij})\) si pour tous \(i, j \in I\) tels que \(i \leq j\), on a \(\phi_i = \phi_j \circ \phi_{ij}\). Ce qui est illustré par le diagramme commutatif suivant :
+	\begin{definition}
+Soit \(X\) un groupe et \((X_i, \phi_{ij})\) un système inductif de groupes. La famille \((X, \phi_i : X_i \rightarrow X)\) est dite compatible avec \((X_i, \phi_{ij})\) si pour tous \(i, j \in I\) tels que \(i \leq j\), on a \(\phi_i = \phi_j \circ \phi_{ij}\). Ce qui est illustré par le diagramme commutatif suivant :
 		\[
 		\xymatrix{
 			X_i \ar[r]^{\phi_{ij}} \ar[dr]_{\phi_i} & X_j \ar[d]^{\phi_j} \\
@@ -254,10 +265,9 @@ Un ensemble \((I, \leq)\) est dit ordonné filtrant si \((I, \leq)\) est un ense
 \end{frame}
 
 \begin{frame}
-	\frametitle{Définitions et Propositions}
-	
-	\begin{definition} \cite{ribes-zalesskii}
-		Soit \((X_i, \phi_{ij})\) un système inductif de groupes. La limite inductive ou limite directe, lorsqu'elle existe, est une famille compatible \((X, \phi_i : X_i \to X)\) avec \((X_i, \phi_{ij})\) vérifiant la propriété universelle (PU) suivante : 
+
+	\begin{definition}
+Soit \((X_i, \phi_{ij})\) un système inductif de groupes. La limite inductive ou limite directe, lorsqu'elle existe, est une famille compatible \((X, \phi_i : X_i \to X)\) avec \((X_i, \phi_{ij})\) vérifiant la propriété universelle (PU) suivante : 
 		\begin{quote}
 Pour toute autre famille \((X, \psi_i)_{i \in I}\) compatible avec \((X_i, \phi_{ij})\), il existe un unique homomorphisme de groupes \(u : X \to Y\) tel que le diagramme suivant soit commutatif pour tous \(i \leq j\) :
 		\end{quote}
@@ -278,29 +288,28 @@ Pour toute autre famille \((X, \psi_i)_{i \in I}\) compatible avec \((X_i, \phi_
 		\end{tikzpicture}
 	\end{definition}
 	
-	\begin{proposition} \cite{ribes-zalesskii}
-		La limite inductive, lorsqu'elle existe, est unique à isomorphisme unique près.
+	\begin{proposition}
+La limite inductive, lorsqu'elle existe, est unique à isomorphisme unique près.
 	\end{proposition}
 	
 \end{frame}
 
 \begin{frame}
-	\frametitle{Notations et Définitions}
+
 	
 	\begin{mynotation}
-		La limite inductive \((X, \phi_i)_{i \in I}\) d'un système inductif \((X_i, \phi_{ij})_{j \in I}\) est notée \(X = \varinjlim X_i\).
+La limite inductive \((X, \phi_i)_{i \in I}\) d'un système inductif \((X_i, \phi_{ij})_{j \in I}\) est notée \(X = \varinjlim X_i\).
 	\end{mynotation}
 	
 	Soit $(I, \leq)$ un ensemble ordonné filtrant.
 	
-	\begin{definition}[Système projectif de groupes]
-		\cite{maclane1971categories}
-		Un système projectif de groupes sur \((I, \leq)\) est un couple \((X_{i}, \phi_{ij})_{i,j \in I}\) où les \(X_{i}\) sont les groupes et les \(\phi_{ij}: X_{j} \rightarrow X_{i}\) (\(i \leq j\)) sont les homomorphismes de groupes vérifiant :
+	\begin{definition}
+Un système projectif de groupes sur \((I, \leq)\) est un couple \((X_{i}, \phi_{ij})_{i,j \in I}\) où les \(X_{i}\) sont les groupes et les \(\phi_{ij}: X_{j} \rightarrow X_{i}\) (\(i \leq j\)) sont les homomorphismes de groupes vérifiant :
 		\begin{enumerate}[label=\roman*)]
 			\item \(\phi_{ii} = \text{Id}_{X_{i}}\) pour tout \(i \in I\);
 			\item pour tout \((i,j,k) \in I^{3}\) tels que \(i \leq j \leq k\), on a \(\phi_{ik} = \phi_{ij} \circ \phi_{jk}\).
 		\end{enumerate}
-		Autrement dit, le diagramme suivant est commutatif :
+Autrement dit, le diagramme suivant est commutatif :
 		\[
 		\xymatrix{
 			X_{k} \ar[rr]^{\phi_{jk}} \ar[dr]_{\phi_{ik}} & & X_{j} \ar[dl]^{\phi_{ij}} \\
@@ -312,9 +321,8 @@ Pour toute autre famille \((X, \psi_i)_{i \in I}\) compatible avec \((X_i, \phi_
 \end{frame}
 
 \begin{frame}{Représentations des groupes infinis}
-\begin{definition}[Famille compatible avec le système projectif]
-	\cite{maclane1971categories}
-	Soient \(X\) un groupe et \((X_{i}, \phi_{ij})_{i,j \in I}\) un système projectif de groupes. La famille de homomorphismes \((\phi_{i} : X \rightarrow X_{i})_{i \in I}\), qu'on note \((X , \phi_{i})\), est dite compatible avec le système projectif \((X_{i}, \phi_{ij})_{i,j \in I}\) si pour tous \(i,j \in I\) tels que \(i \leq j\), on a : \(\phi_{ij} \circ \phi_{j} = \phi_{i}\).
+\begin{definition}
+Soient \(X\) un groupe et \((X_{i}, \phi_{ij})_{i,j \in I}\) un système projectif de groupes. La famille de homomorphismes \((\phi_{i} : X \rightarrow X_{i})_{i \in I}\), qu'on note \((X , \phi_{i})\), est dite compatible avec le système projectif \((X_{i}, \phi_{ij})_{i,j \in I}\) si pour tous \(i,j \in I\) tels que \(i \leq j\), on a : \(\phi_{ij} \circ \phi_{j} = \phi_{i}\).
 	Ce qui se traduit par le diagramme commutatif suivant :
 	\[
 	\xymatrix{
@@ -326,11 +334,9 @@ Pour toute autre famille \((X, \psi_i)_{i \in I}\) compatible avec \((X_i, \phi_
 \end{frame}
 
 \begin{frame}
-\begin{definition}[Limite projective]
-	\cite{maclane1971categories}
-	Soit $(X_{i}, \phi_{ij})_{i,j \in I}$ un système projectif de groupes. La limite projective ou limite inverse du système projectif \((X_{i}, \phi_{ij})_{i,j \in I}\) est une famille \((X, (\phi_{i})_{i \in I})\) de homomorphismes compatibles avec \((X_{i}, \phi_{ij})_{i,j \in I}\), vérifiant la propriété universelle suivante :
-	
-	Si \((\psi _{i} : Y \rightarrow X_{i})_{i \in I}\) (\(Y \in |\mathcal{C}|\)) est une famille de morphismes compatibles, alors il existe un unique morphisme \(\psi : Y \rightarrow X\) tel que le diagramme suivant commute pour tous \(i \leq j\) :
+\begin{definition}
+Soit $(X_{i}, \phi_{ij})_{i,j \in I}$ un système projectif de groupes. La limite projective ou limite inverse du système projectif \((X_{i}, \phi_{ij})_{i,j \in I}\) est une famille \((X, (\phi_{i})_{i \in I})\) de homomorphismes compatibles avec \((X_{i}, \phi_{ij})_{i,j \in I}\), vérifiant la propriété universelle suivante :
+Si \((\psi _{i} : Y \rightarrow X_{i})_{i \in I}\) (\(Y \in |\mathcal{C}|\)) est une famille de morphismes compatibles, alors il existe un unique morphisme \(\psi : Y \rightarrow X\) tel que le diagramme suivant commute pour tous \(i \leq j\) :
 	
 	\begin{tikzpicture}[auto]
 		% Nodes
@@ -386,21 +392,21 @@ Le complété profini d’un groupe est unique à isomorphisme près, c’est-à
 	\begin{frame}
 		\frametitle{Définitions et exemples}
 		
-		\begin{definition} \cite{serre1971representation}
-			Soit \(\mathbb{K}\) un corps. Une \emph{représentation \(\mathbb{K}\)-linéaire} d'un groupe fini \(G\) est un homomorphisme de groupes
+		\begin{definition} 
+Soit \(\mathbb{K}\) un corps. Une représentation \(\mathbb{K}\)-linéaire d'un groupe fini \(G\) est un homomorphisme de groupes
 			\[
 			\rho : G \rightarrow \mathrm{GL}(V)
 			\]
-			où \(V\) est un \(\mathbb{K}\)-espace vectoriel et \(\mathrm{GL}(V)\) est le groupe des applications linéaires bijectives de \(V\) sur lui-même.
+où \(V\) est un \(\mathbb{K}\)-espace vectoriel et \(\mathrm{GL}(V)\) est le groupe des applications linéaires bijectives de \(V\) sur lui-même.
 		\end{definition}
 
 		
-		\begin{block}{Remarque} \cite{serre1971representation}
-			Si \(V\) est un \(\mathbb{K}\)-espace vectoriel de dimension finie \(n\), on dit que \(n\) est le degré de la représentation. De plus, en choisissant une base de \(V\), le groupe \(\mathrm{GL}(V)\) est isomorphe au groupe
+		\begin{block}{Remarque} 
+Si \(V\) est un \(\mathbb{K}\)-espace vectoriel de dimension finie \(n\), on dit que \(n\) est le degré de la représentation. De plus, en choisissant une base de \(V\), le groupe \(\mathrm{GL}(V)\) est isomorphe au groupe
 			\[
 			\mathrm{GL}(n, \mathbb{K}) = \left\{ A \in \mathrm{M}(n, \mathbb{K}) \mid \det(A) \neq 0 \right\},
 			\]
-			où \(\mathrm{GL}(n, \mathbb{K})\) est le groupe des matrices inversibles de taille \(n \times n\) équipées de la multiplication des matrices à coefficients dans \(\mathbb{K}\), et \(\det(A)\) désigne le déterminant de la matrice \(A\).
+où \(\mathrm{GL}(n, \mathbb{K})\) est le groupe des matrices inversibles de taille \(n \times n\) équipées de la multiplication des matrices à coefficients dans \(\mathbb{K}\), et \(\det(A)\) désigne le déterminant de la matrice \(A\).
 		\end{block}
 	\end{frame}
 	
@@ -410,23 +416,23 @@ Le complété profini d’un groupe est unique à isomorphisme près, c’est-à
 	\frametitle{Représentations linéaires et sous-représentations}
 	
 	\begin{definition} \cite{serre1971representation}
-		Soient \( (V, \rho)_{G} \) et \( (W, \psi)_{G} \) deux représentations linéaires. Un opérateur d'entrelacement, ou morphisme de représentations, est une application linéaire \( \alpha : V \to W \) telle que
+Soient \( (V, \rho)_{G} \) et \( (W, \psi)_{G} \) deux représentations linéaires. Un opérateur d'entrelacement, ou morphisme de représentations, est une application linéaire \( \alpha : V \to W \) telle que
 		\[
 		\alpha \circ \rho(g) = \psi(g) \circ \alpha, \quad \forall g \in G.
 		\]
-		On dit que \( \alpha \) est équivariante. Lorsque \( \alpha : V \to W \) est un isomorphisme, on dit que les représentations \( (V, \varphi)_{G} \) et \( (W, \psi)_{G} \) sont isomorphes.
+On dit que \( \alpha \) est équivariante. Lorsque \( \alpha : V \to W \) est un isomorphisme, on dit que les représentations \( (V, \varphi)_{G} \) et \( (W, \psi)_{G} \) sont isomorphes.
 	\end{definition}
 	
 
 	
-	\begin{definition} \cite{serre1971representation}
-		Soit \( W \) un sous-espace vectoriel de \( V \) et \( G \) un groupe. On dit que \( W \) est stable (ou invariant) sous l'action de \( G \), ou encore \( G \)-stable, si pour tout \( g \in G \) et tout \( w \in W \), on a \( \rho_g(w) \in W \).
+	\begin{definition} 
+Soit \( W \) un sous-espace vectoriel de \( V \) et \( G \) un groupe. On dit que \( W \) est stable (ou invariant) sous l'action de \( G \), ou encore \( G \)-stable, si pour tout \( g \in G \) et tout \( w \in W \), on a \( \rho_g(w) \in W \).
 	\end{definition}
 	
 
 	
-	\begin{definition} \cite{serre1971representation}
-		Une sous-représentation de \( (V,\rho)_{G} \) est la restriction \( \rho_W : G \rightarrow \mathrm{GL}(W) \) où \( W \) est stable sous \( G \). Elle est définie par
+	\begin{definition}
+Une sous-représentation de \( (V,\rho)_{G} \) est la restriction \( \rho_W : G \rightarrow \mathrm{GL}(W) \) où \( W \) est stable sous \( G \). Elle est définie par
 		\[
 		\rho_W(g) = \rho(g)|_W, \quad \forall g \in G.
 		\]
@@ -437,14 +443,14 @@ Le complété profini d’un groupe est unique à isomorphisme près, c’est-à
 
 \begin{frame}
 	
-\begin{proposition} \cite{serre1971representation}
+\begin{proposition}
 Soit \( \rho : G \rightarrow \mathrm{GL}(V) \) une représentation linéaire sur \( G \) telle que \( W \) soit un sous-espace vectoriel de \( V \) stable sous l'action de \( G \). Alors, l'application restreinte \( \rho_W : G \rightarrow \mathrm{GL}(W) \) définie par \( \rho_W(g) = \rho(g)|_W \) pour tout \( g \in G \) est un homomorphisme de groupes.
 \end{proposition}
 
 
 	
-\begin{lemma} \cite{renard2009groupes}
-		Soient \( \varphi : G \to \mathrm{GL}(V_1) \) et \( \psi : G \to \mathrm{GL}(V_2) \) deux représentations linéaires de \( G \). Soit \( f : V_1 \to V_2 \) un morphisme de représentations linéaires. Alors :
+\begin{lemma}
+Soient \( \varphi : G \to \mathrm{GL}(V_1) \) et \( \psi : G \to \mathrm{GL}(V_2) \) deux représentations linéaires de \( G \). Soit \( f : V_1 \to V_2 \) un morphisme de représentations linéaires. Alors :
 		\begin{enumerate}[label=\roman*)]
 			\item \( \rho_{\ker(f)} : G \to \mathrm{GL}(\ker(f)) \) est une sous-représentation linéaire de \( \varphi : G \to \mathrm{GL}(V_1) \) ;
 			\item L'image \( \mathrm{im}(f) \), \( \rho_{\mathrm{im}(f)} : G \to \mathrm{GL}(\mathrm{im}(f)) \), est une sous-représentation linéaire de \( \psi : G \to \mathrm{GL}(V_2) \) ;
@@ -459,8 +465,8 @@ Soit \( \rho : G \rightarrow \mathrm{GL}(V) \) une représentation linéaire sur
 \begin{frame}
 	\frametitle{Caractère et Représentation Unitaire}
 	
-	\begin{definition} \cite{serre1971representation}
-		Soit \( \rho : G \to \mathrm{GL}(V) \) une représentation linéaire sur \( G \). Le caractère de \( V \), noté \( \chi_V \), est la fonction
+	\begin{definition}
+Soit \( \rho : G \to \mathrm{GL}(V) \) une représentation linéaire sur \( G \). Le caractère de \( V \), noté \( \chi_V \), est la fonction
 		\[
 		\chi_V : G \to \mathbb{C}
 		\]
@@ -473,7 +479,7 @@ Soit \( \rho : G \rightarrow \mathrm{GL}(V) \) une représentation linéaire sur
 	
 	
 	\begin{theorem} 
-		Soit \( (\rho, V)_G \) une représentation linéaire. On peut munir \( V \) d'un produit hermitien \( (.,.)_V \) qui rend la représentation linéaire \( (\rho, V)_G \) unitaire.
+Soit \( (\rho, V)_G \) une représentation linéaire. On peut munir \( V \) d'un produit hermitien \( (.,.)_V \) qui rend la représentation linéaire \( (\rho, V)_G \) unitaire.
 	\end{theorem}
 	
 \end{frame}
@@ -481,7 +487,7 @@ Soit \( \rho : G \rightarrow \mathrm{GL}(V) \) une représentation linéaire sur
 
 \begin{frame}
 \begin{proposition}
-	Soient \( \rho_V : G \rightarrow \mathrm{GL}(V) \) et \( \rho_W : G \rightarrow \mathrm{GL}(W) \) deux représentations linéaires sur \( G \) de degrés \( n \) et \( m \) (\( n, m \in \mathbb{N}^* \)), et de caractères \( \chi_V \) et \( \chi_W \) respectivement. On a :
+Soient \( \rho_V : G \rightarrow \mathrm{GL}(V) \) et \( \rho_W : G \rightarrow \mathrm{GL}(W) \) deux représentations linéaires sur \( G \) de degrés \( n \) et \( m \) (\( n, m \in \mathbb{N}^* \)), et de caractères \( \chi_V \) et \( \chi_W \) respectivement. On a :
 	\begin{enumerate}[label=\roman*)]
 		\item \( \chi_V(1) = \dim V \);
 		\item \( \chi_{V \oplus W} = \chi_V + \chi_W \);
@@ -490,11 +496,11 @@ Soit \( \rho : G \rightarrow \mathrm{GL}(V) \) une représentation linéaire sur
 \end{proposition}
 
 \begin{theorem}[Frobenius] 
-	Pour tout groupe fini \( G \), le nombre de représentations irréductibles non-isomorphes deux à deux de \( G \) est exactement égal au nombre \( c(G) \) de classes de conjugaison de \( G \).
+Pour tout groupe fini \( G \), le nombre de représentations irréductibles non-isomorphes deux à deux de \( G \) est exactement égal au nombre \( c(G) \) de classes de conjugaison de \( G \).
 \end{theorem}
 
 \begin{proposition} 
-	Deux représentations d’un groupe \( G \) sont isomorphes si et seulement si elles ont le même caractère.
+Deux représentations d’un groupe \( G \) sont isomorphes si et seulement si elles ont le même caractère.
 \end{proposition}
 
 \end{frame}
