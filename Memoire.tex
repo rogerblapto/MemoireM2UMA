@@ -754,36 +754,32 @@ Une application \( f:  \prod_{i \in I} Y_i \to \prod_{i \in I} X_i \) entre deux
 est continue pour tout \( i \in I \).
 \end{propriety}
 
-\begin{theorem}	\cite{bourbaki2013general}\\
-Soit \( \{ X_i \}_{i \in I} \) une famille d'espaces topologiques. Si chaque \( X_i \) est compact, alors le produit \( \prod_{i \in I} X_i \) est compact dans la topologie produit.	
-\end{theorem}
-
 Soient \( (X, \mathcal{O})\) un espace topologique et \( Y \) une partie de \( X \).
 
 \begin{definition}\cite{bourbaki2013general}\\
-\( (X, \mathcal{O}) \) est dit séparé (ou de Hausdorff) si pour tous points distincts \( x, y \in X \), il existe des ouverts \( U, V \in \mathcal{O} \) tels que \( x \in U \), \( y \in V \) et \( U \cap V = \emptyset \).
+	\( (X, \mathcal{O}) \) est dit séparé (ou de Hausdorff) si pour tous points distincts \( x, y \in X \), il existe des ouverts \( U, V \in \mathcal{O} \) tels que \( x \in U \), \( y \in V \) et \( U \cap V = \emptyset \).
 \end{definition}
 
 
 \begin{definition} \cite{kuratowski2014topology}\\
-On appelle recouvrement de \( X \) une famille \( (A_i)_{i \in I} \) de parties de \( X \) telle que 
-		\[
-		X = \bigcup_{i \in I} A_i.
-		\]
-Dans ce cas, un sous-recouvrement fini de \( (A_i)_{i \in I} \) est un recouvrement de \( X \) de la forme \( (A_j)_{j \in J} \) avec \( J \subseteq I \) et \(J\) fini.
+	On appelle recouvrement de \( X \) une famille \( (A_i)_{i \in I} \) de parties de \( X \) telle que 
+	\[
+	X = \bigcup_{i \in I} A_i.
+	\]
+	Dans ce cas, un sous-recouvrement fini de \( (A_i)_{i \in I} \) est un recouvrement de \( X \) de la forme \( (A_j)_{j \in J} \) avec \( J \subseteq I \) et \(J\) fini.
 \end{definition}
 
 \begin{definition} \cite{kuratowski2014topology}\\
-On dit que \( (X, \mathcal{O})\) est compact si \( X \) est séparé et de tout recouvrement de \( X \) , on peut extraire un sous-recouvrement fini.
+	On dit que \( (X, \mathcal{O})\) est compact si \( X \) est séparé et de tout recouvrement de \( X \) , on peut extraire un sous-recouvrement fini.
 \end{definition}
 
 
 \begin{definition} \cite{kuratowski2014topology}\\
-La topologie induite sur \( Y \) est la famille d’ensembles définie par :
+	La topologie induite sur \( Y \) est la famille d’ensembles définie par :
 	\[
 	\mathcal{O}_Y = \{ O \cap Y \mid O \in \mathcal{O}_X \}.
 	\]
-Les éléments de \( \mathcal{O}_Y \) sont appelés les ouverts de \( Y \) pour la topologie induite.
+	Les éléments de \( \mathcal{O}_Y \) sont appelés les ouverts de \( Y \) pour la topologie induite.
 \end{definition}
 
 \begin{definition} \cite{kuratowski2014topology}\\
@@ -807,6 +803,11 @@ On dit que \( X \) est un espace topologie discrète si tout sous-ensemble de \(
 \begin{definition} \cite{bourbaki2013general}\\
 Une topologie profinie est une topologie compacte et totalement discontinue.
 \end{definition}
+
+\begin{theorem}	\cite{bourbaki2013general}\\
+Soit \( \{ X_i \}_{i \in I} \) une famille d'espaces topologiques. Si chaque \( X_i \) est compact, alors le produit \( \prod_{i \in I} X_i \) est compact dans la topologie produit.	
+\end{theorem}
+
 
 
 
@@ -1438,7 +1439,7 @@ La famille $(X,\phi_i :X_i \rightarrow X)$ est dite compatible avec $(X_i, \phi_
 
 \begin{definition} \cite{ribes-zalesskii} \\
 Soit $(X_i, \phi_{ij})$ un système inductif de groupes.
-La limite inductive ou limite directe, lorsqu'elle existe, est une famille compatibile $(X,\phi_i :X_i \rightarrow X)$ avec $(X_i, \phi_{ij})$ vérifiant la PU : pour toute autre famille  $(X,\psi_i)_{i \in I}$ compatible avec $(X_i, \phi_{ij})$, il existe un unique homomorphisme de groupes $u : X \to Y$ telle que le diagramme :
+La limite inductive ou limite directe, lorsqu'elle existe, est une famille compatibile $(X,\phi_i :X_i \rightarrow X)$ avec $(X_i, \phi_{ij})$ vérifiant la PU : pour toute autre famille  $(Y,\psi_i)_{i \in I}$ compatible avec $(X_i, \phi_{ij})$, il existe un unique homomorphisme de groupes $u : X \to Y$ telle que le diagramme :
 	
 	\begin{tikzpicture}[auto]
 		
