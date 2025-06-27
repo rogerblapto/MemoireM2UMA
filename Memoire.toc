@@ -1,8 +1,8 @@
 \babel@toc {french}{}\relax 
 \contentsline {chapter}{DEDICACE. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .}{ii}{chapter*.1}%
 \contentsline {chapter}{REMERCIEMENTS. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .}{iii}{chapter*.2}%
-\contentsline {chapter}{RESUMÉ. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .}{vi}{chapter*.4}%
-\contentsline {chapter}{ABSTRACT. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . }{vii}{chapter*.5}%
+\contentsline {chapter}{RESUMÉ. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .}{vii}{chapter*.4}%
+\contentsline {chapter}{ABSTRACT. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . }{viii}{chapter*.5}%
 \contentsline {section}{INTRODUCTION}{1}{chapter*.6}%
 \contentsline {chapter}{\numberline {1}Préliminaires}{2}{chapter.1}%
 \contentsline {section}{Introduction}{2}{section*.7}%
