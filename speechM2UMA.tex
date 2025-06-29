@@ -697,7 +697,7 @@ Le produit infini des termes d'une suite \( (u_n)_{n \in \mathbb{N}} \) à valeu
 				Ces données vérifient les axiomes suivants :
 				\begin{itemize}
 					\item \textbf{Associativité de la composition :}
-					si $X \xrightarrow{f} Y \xrightarrow{g} Z \xrightarrow{h} W$ sont des morphismes dans $\mathcal{C}$, alors on a
+si $X \xrightarrow{f} Y \xrightarrow{g} Z \xrightarrow{h} W$ sont des morphismes dans $\mathcal{C}$, alors on a
 					\[
 					h \circ (g \circ f) = (h \circ g) \circ f.
 					\]
@@ -727,28 +727,28 @@ Le produit infini des termes d'une suite \( (u_n)_{n \in \mathbb{N}} \) à valeu
 	
 			
 			\begin{myexample}
-				La catégorie des groupes, notée \textbf{Grp}, consiste en les données suivantes :
+La catégorie des groupes, notée \textbf{Grp}, consiste en les données suivantes :
 				\begin{enumerate}[label=\roman*)]
 					\item \textbf{Objets} :\\
 					Les objets sont des groupes.
 					\item \textbf{Morphismes} : \\
 					Les morphismes sont des homomorphismes de groupes.
 					\item \textbf{Composition} : \\
-					La composition de deux homomorphismes de groupes est un autre homomorphisme de groupes.
+La composition de deux homomorphismes de groupes est un autre homomorphisme de groupes.
 					\item \textbf{Identité} :\\
-					Pour chaque groupe \( G \), le morphisme d'identité est la fonction qui envoie chaque élément sur lui-même.
+Pour chaque groupe \( G \), le morphisme d'identité est la fonction qui envoie chaque élément sur lui-même.
 				\end{enumerate}
 			\end{myexample}
 			
 			\textbf{Vérification des axiomes} :
 			\begin{itemize}
 				\item \textbf{Associativité} :\\
-				Pour tout \( f: G_1 \to G_2 \), \( g: G_2 \to G_3 \), et \( h: G_3 \to G_4 \), on a :  
+Pour tout \( f: G_1 \to G_2 \), \( g: G_2 \to G_3 \), et \( h: G_3 \to G_4 \), on a :  
 				\[
 				(g \circ f) \circ h = g \circ (f \circ h).
 				\]
 				\item \textbf{Identité} :\\
-				Pour tout homomorphisme \( f \) entre deux groupes, on a :  
+Pour tout homomorphisme \( f \) entre deux groupes, on a :  
 				\[
 				f \circ id_{G} = f \quad \text{et} \quad id_{H} \circ f = f.
 				\]
@@ -758,7 +758,7 @@ Le produit infini des termes d'une suite \( (u_n)_{n \in \mathbb{N}} \) à valeu
 			\subsection{Foncteurs}
 			Soient $\mathcal{C}$ et $\mathcal{D}$ deux catégories.
 			\begin{definition} \cite{maclane1971categories} \\
-				Un \textit{foncteur contravariant} est une règle de passage d'une catégorie $\mathcal{C}$ à une catégorie $\mathcal{D}$, \\
+Un \textit{foncteur contravariant} est une règle de passage d'une catégorie $\mathcal{C}$ à une catégorie $\mathcal{D}$, \\
 				$F : \mathcal{C} \to \mathcal{D}$, qui :
 				\begin{enumerate} [label=\roman*)]
 					\item à tout objet $C$ de $\mathcal{C}$ associe un objet $F(C)$ de $\mathcal{D}$,
@@ -778,23 +778,14 @@ Le produit infini des termes d'une suite \( (u_n)_{n \in \mathbb{N}} \) à valeu
 Une propriété universelle (PU) est un énoncé sur les objets mathematiques qui stipule que sous certaines conditions, il existe un unique morphisme qui satisfait certaines propriétés.
 			\end{definition}
 			
-			\begin{definition} \cite{ribes-zalesskii} \\
-				Un ensemble partiellement ordonné est un couple \((I, \leq)\) où \(I\) est un ensemble non vide et \(\leq\) est une relation binaire sur \(I\) vérifiant les propriétés suivantes pour tous \(a, b, c \in I\) :
-				\begin{enumerate}[label=\roman*)]
-					\item \textbf{Réflexivité} : \(a \leq a\);
-					\item \textbf{Anti-symétrie} : \text{si } \(a \leq b\) \text{ et } \(b \leq a\), \text{ alors } \(a = b\);
-					\item \textbf{Transitivité} : \text{si } \(a \leq b\) \text{ et } \(b \leq c\), \text{ alors } \(a \leq c\).
-				\end{enumerate}
-			\end{definition}
-			
-			
+
 			\begin{definition} \cite{ribes-zalesskii} \\
 Un ensemble $(I,\leq)$ est dit ordonné filtrant si $(I,\leq)$ est un ensemble  partiellement ordonné et si pour tous $i,j \in I$ , il existe $k \in I$ vérifiant $i \leq k$ et $j \leq k$.
 			\end{definition}
 			
 			
 			\begin{myexample}
-				$(\mathbb{N}, \leq)$ est ordonné filtrant.
+$(\mathbb{N}, \leq)$ est ordonné filtrant.
 			\end{myexample}
 			
 			
@@ -816,8 +807,8 @@ Soit $(I, \leq)$ un ensemble ordonné filtrant. Un système inductif de groupes 
 			
 			
 			\begin{definition} \cite{ribes-zalesskii} \\
-				Soient $X$ un groupe et $(X_i, \phi_{ij})$ un système inductif de groupes finis.\\
-				La famille $(X,\phi_i :X_i \rightarrow X)$ est dite compatible avec $(X_i, \phi_{ij})$ si pour tous $i,j \in I$ tels que $i \leq j$, on a $\phi_i = \phi_j \circ \phi_{ij}$. Ce qui est illustré par le diagramme commutatif suivant:
+Soient $X$ un groupe et $(X_i, \phi_{ij})$ un système inductif de groupes finis.\\
+La famille $(X,\phi_i :X_i \rightarrow X)$ est dite compatible avec $(X_i, \phi_{ij})$ si pour tous $i,j \in I$ tels que $i \leq j$, on a $\phi_i = \phi_j \circ \phi_{ij}$. Ce qui est illustré par le diagramme commutatif suivant:
 				\[
 				\xymatrix{
 					X_{i} \ar[r]^{\phi_{ij}} \ar[dr]_{\phi_i} & X_{j} \ar[d]^{\phi_j} \\
@@ -1176,11 +1167,7 @@ Une représentation \(\mathbb{K}\)-linéaire d'un groupe fini \(G\) est un homom
 Si \(V\) est un \(\mathbb{K}\)-espace vectoriel de dimension finie \(n\), on dit que  \(n\) est le degré de la représentation. De plus, en choisissant une base  de \(V\), le groupe \(\mathrm{GL}(V)\) est isomorphe au groupe \\
 \(\mathrm{GL}(n, \mathbb{K}) = \left\{ A \in \mathrm{M}(n, \mathbb{K}) \mid \det(A) \neq 0 \right\}\), où \(\mathrm{GL}(n, \mathbb{K})\) est le groupe des matrices inversibles de taille  \(n \times n\) équipé de la multiplication des matrices à coefficients dans \(\mathbb{K}\), $\det(A)$ pour $A \in \mathrm{M}(n, \mathbb{K})$ désignant le déterminant de la matrice $A$.	
 			\end{remark}
-			
-			\begin{definition} \cite{cheung2018algebre}\\
-Une matrice de permutation de taille \( n \times n \) est une matrice obtenue de la matrice identité \( I_n \) en permutant ses lignes.	
-			\end{definition}
-			
+
 			
 			\begin{example}\
 				\begin{enumerate}
@@ -1240,19 +1227,19 @@ Une matrice de permutation de taille \( n \times n \) est une matrice obtenue de
 			\end{example}
 			
 			\begin{mynotation}
-				Dans la suite, une représentation linéaire \( \rho : G \to \mathrm{GL}(V) \) sera notée  par \( (V,\rho)_{G}\).
+Dans la suite, une représentation linéaire \( \rho : G \to \mathrm{GL}(V) \) sera notée  par \( (V,\rho)_{G}\).
 			\end{mynotation}
 			
 			\begin{definition} \cite{renard2009groupes}\\
-				Soit \(V\) un  \(\mathbb{C}\)-espace vectoriel de dimension finie.\\
-				Une représentation \( (V,\rho)_{G}\) est dite unitaire si \( \rho \) prend ses valeurs dans le groupe des matrices unitaires.
+Soit \(V\) un  \(\mathbb{C}\)-espace vectoriel de dimension finie.\\
+Une représentation \( (V,\rho)_{G}\) est dite unitaire si \( \rho \) prend ses valeurs dans le groupe des matrices unitaires.
 			\end{definition}
 			
 			\begin{definition} \cite{serre1971representation} \\
-				Soient \( (V, \rho)_{G} \) et \( (W, \psi)_{G} \) deux représentations linéaires. Un opérateur d'entrelacement, ou morphisme de représentations est une application linéaire \( \alpha : V \to W \) telle que \\
-				\(\alpha \circ \rho(g) = \psi (g) \circ \alpha \), pour tout \( g \in G \).\\
-				On dit que \( \alpha \) est équivariante.\\
-				Lorsque \( \alpha : V \to W \) est un isomorphisme, on dit que les représentations \( (V, \varphi)_{G} \) et \( (W, \psi)_{G} \) sont isomorphes.
+Soient \( (V, \rho)_{G} \) et \( (W, \psi)_{G} \) deux représentations linéaires. Un opérateur d'entrelacement, ou morphisme de représentations est une application linéaire \( \alpha : V \to W \) telle que \\
+\(\alpha \circ \rho(g) = \psi (g) \circ \alpha \), pour tout \( g \in G \).\\
+On dit que \( \alpha \) est équivariante.\\
+Lorsque \( \alpha : V \to W \) est un isomorphisme, on dit que les représentations \( (V, \varphi)_{G} \) et \( (W, \psi)_{G} \) sont isomorphes.
 			\end{definition}
 			
 			
@@ -1260,12 +1247,12 @@ Une matrice de permutation de taille \( n \times n \) est une matrice obtenue de
 			\subsection{Sous-représentations}
 			Soient \( W \) un sous-espace vectoriel de \( V \) et \( G \) un groupe.
 			\begin{definition} \cite{serre1971representation} \\
-				Soit \( (V, \rho)_{G} \) une représentation linéaire. On dit que \( W \) est stable (ou invariant) sous l'action de \( G \) ou encore $G$-stable si pour tout \( g \in G \) et tout \( w \in W \), on a \( \rho_g(w) \in W \).
+Soit \( (V, \rho)_{G} \) une représentation linéaire. On dit que \( W \) est stable (ou invariant) sous l'action de \( G \) ou encore $G$-stable si pour tout \( g \in G \) et tout \( w \in W \), on a \( \rho_g(w) \in W \).
 			\end{definition}
 			
 			\begin{definition} \cite{serre1971representation}\\
-				Une sous-représentation d'une représentation linéaire \((V,\rho)_{G} \) est la restriction  \\
-				\( \rho_W : G \rightarrow \mathrm{GL}(W) \) où \( W \) est stable sous \( G \). Elle est définie par :
+Une sous-représentation d'une représentation linéaire \((V,\rho)_{G} \) est la restriction  \\
+\( \rho_W : G \rightarrow \mathrm{GL}(W) \) où \( W \) est stable sous \( G \). Elle est définie par :
 				
 				\[
 				\rho_W(g) = \rho(g)|_W, \quad \forall g \in G.
@@ -1353,7 +1340,7 @@ On dit que $\otimes$ satisfait la \textit{propriété universelle} si elle véri
 			
 			
 			\begin{definition} \cite{greub2012linear}\\
-				Le produit tensoriel de deux espaces vectoriels $E$ et $F$ est un couple $(G, \otimes)$, où $\otimes : E \times F \to G$ est une application bilinéaire vérifiant la propriété universelle.\\
+Le produit tensoriel de deux espaces vectoriels $E$ et $F$ est un couple $(G, \otimes)$, où $\otimes : E \times F \to G$ est une application bilinéaire vérifiant la propriété universelle.\\
 				L'espace $G$ est noté $E \otimes F$.
 			\end{definition}
 			
@@ -1723,7 +1710,7 @@ Dans la suite, sauf mention contraire, tous les espaces vectoriels seront suppos
 					\[
 					\varphi(x_1, \ldots, x_p) = f(x_1 \otimes \cdots \otimes x_p)
 					\]
-					ou \( f : T \to H \) est une application linéaire.
+					avec \( f : T \to H \) est une application linéaire.
 				\end{enumerate}
 			\end{propriety}
 			

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.5.13)  17 JUN 2025 01:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.5.13)  29 JUN 2025 12:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1388,7 +1388,7 @@ Package rerunfilecheck Info: File `memoirebeamer.out' has not changed.
 Here is how much of TeX's memory you used:
  31250 strings out of 475149
  609650 string characters out of 5765168
- 1022968 words of memory out of 5000000
+ 1022969 words of memory out of 5000000
  53562 multiletter control sequences out of 15000+600000
  610048 words of font info for 77 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1405,7 +1405,7 @@ ype1/public/lm/lmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/xypic
 /xycmat10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/xypic/xycmbt10.
 pfb>
-Output written on memoirebeamer.pdf (26 pages, 373498 bytes).
+Output written on memoirebeamer.pdf (26 pages, 373496 bytes).
 PDF statistics:
  1385 PDF objects out of 1440 (max. 8388607)
  1020 compressed objects within 11 object streams

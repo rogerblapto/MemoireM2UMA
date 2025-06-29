@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.5.13)  27 JUN 2025 15:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.5.13)  29 JUN 2025 14:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2008,7 +2008,7 @@ xmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/urw/palatino/uplri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/xypic/xycmat10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/xypic
 /xycmbt10.pfb>
-Output written on Memoire.pdf (84 pages, 751501 bytes).
+Output written on Memoire.pdf (84 pages, 751521 bytes).
 PDF statistics:
  1451 PDF objects out of 1728 (max. 8388607)
  1313 compressed objects within 14 object streams

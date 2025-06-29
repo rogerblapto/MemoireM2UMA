@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.5.13)  7 JUN 2025 20:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.5.13)  29 JUN 2025 12:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1011,7 +1011,7 @@ Here is how much of TeX's memory you used:
 ppen/ec/ecss1095.600pk> </home/rogerblapto/.texlive2024/texmf-var/fonts/pk/ljfo
 ur/jknappen/ec/ecss1440.600pk></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/symbols/msam10.pfb>
-Output written on qr.pdf (12 pages, 68703 bytes).
+Output written on qr.pdf (12 pages, 68786 bytes).
 PDF statistics:
  516 PDF objects out of 1000 (max. 8388607)
  355 compressed objects within 4 object streams
