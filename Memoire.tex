@@ -791,7 +791,7 @@ Dans ce cas, un sous-recouvrement fini de \( (A_i)_{i \in I} \) est un recouvrem
 \end{definition}
 
 \begin{definition} \cite{kuratowski2014topology}\\
-	On dit que \( (X, \mathcal{O})\) est compact si \( X \) est séparé et de tout recouvrement de \( X \) , on peut extraire un sous-recouvrement fini.
+On dit que \( (X, \mathcal{O})\) est compact si \( X \) est séparé et de tout recouvrement de \( X \) , on peut extraire un sous-recouvrement fini.
 \end{definition}
 
 
@@ -800,7 +800,7 @@ Dans ce cas, un sous-recouvrement fini de \( (A_i)_{i \in I} \) est un recouvrem
 	\[
 	\mathcal{O}_Y = \{ O \cap Y \mid O \in \mathcal{O} \}.
 	\]
-	Les éléments de \( \mathcal{O}_Y \) sont appelés les ouverts de \( Y \) pour la topologie induite.
+Les éléments de \( \mathcal{O}_Y \) sont appelés les ouverts de \( Y \) pour la topologie induite.
 \end{definition}
 
 \begin{definition} \cite{kuratowski2014topology}\\
@@ -1639,7 +1639,7 @@ Cela définit un objet \(X\) avec des homomorphismes \(\pi_i\) satisfaisant \(\v
 
 
 \textbf{\underline{Propriété Universelle:}}\\
-Soit \(Y\) un autre objet avec des morphismes \(\psi_i : Y \to X_i\) satisfaisant \(\varphi_{ij} \circ \psi_j = \psi_i\) pour tout \(i \leq j\). Définissons un morphisme \(\psi : Y \to X\) par :
+Soit \(Y\) un autre objet avec des morphismes \(\psi_i : Y \to Y_i\) satisfaisant \(\varphi_{ij} \circ \psi_j = \psi_i\) pour tout \(i \leq j\). Définissons un morphisme \(\psi : Y \to X\) par :
 \[
 \psi(y) = (\psi_i(y))_{i \in I}.
 \]
@@ -1742,7 +1742,7 @@ Donc \( (F(X), F(u_{i}) : F(X) \to F(X_i) ) \) est une famille de morphismes com
 
 \textbf{\underline{Vérifions la propriété universelle }}: \\
 
-La Propriété universelle dans \( \mathcal{C} \) implique en appliquant \( F \) qu'on a \( F(v_i): F(Y) \to F(X_i) \) satisfont \( F(f_{ij}) \circ F(v_j) = F(v_i) \) et l'existence d'un morphisme unique \( F(v): F(Y) \to F(X) \) tel que \( F(u_i) \circ F(v) = F(v_i) \).\\
+La Propriété universelle dans \( \mathcal{C} \) implique en appliquant \( F \) qu'on a \( F(v_i): F(Y) \to F(Y_i) \) satisfont \( F(f_{ij}) \circ F(v_j) = F(v_i) \) et l'existence d'un morphisme unique \( F(v): F(Y) \to F(X) \) tel que \( F(u_i) \circ F(v) = F(v_i) \).\\
 
 Il en résulte que \( F(X) \) satisfait exactement la définition d’une limite projective et par conséquent \(F(\varinjlim X_i) = \varprojlim F(X_i).\)\\
 
@@ -3322,7 +3322,7 @@ Soient \( J, K \in \mathcal{F}(I) \), l’ensemble des parties finies de \( I \)
 	\prod_{i\in J} G_i \ar[rr]^{\varphi_{J}} && \operatorname{GL}\left( \bigotimes_{i\in J} V_i \right)
 }
 \]
-où \( \pi_{J,K} \) est la projection de \( \prod_{i \in K} G_i \) sur \( \prod_{i \in J} G_i \) et \( \psi_{J,K} \) la restriction  de l’action de \( \bigotimes_{i \in K} \varphi_i(g_i) \) sur le sous-espace \( \bigotimes_{i \in J} V_i \).\\
+où \( \pi_{J,K} \) est la projection de \( \prod_{i \in K} G_i \) sur \( \prod_{i \in J} G_i \) et \( \psi_{J,K} \) la restriction  de l’action de \( \bigotimes_{i \in K} \varphi_i(g_i) \) sur le sous-espace \( \bigotimes_{i \in J} V_i \). En effet, \\
 Soit \( (g_i)_{i \in K} \in \prod_{i \in K} G_i \). Alors
 \[
 \psi_{J,K} \circ \varphi_{K}((g_i)_{i \in K}) = \psi_{J,K}\left( \bigotimes_{i \in K} \varphi_i(g_i) \right),
@@ -3345,6 +3345,8 @@ $$
 \varphi_I = 	\underset{\overleftarrow{J \in \mathcal{F}(I)}}{\lim} ( \underset{i \in J}{\bigotimes} \varphi_i) : \underset{i\in I} \prod G_i \longrightarrow GL(\underset{i\in I} \otimes V_i),
 $$
 qui est une représentation linéaire du produit direct infini \( \underset{i\in I} \prod G_i \) des groupes \( G_i \) dans \( \underset{i\in I} \otimes V_i \).
+
+
 
 \subsection{Caractère d'une représentation linéaire d'un produit de groupes}
 Dans cette section, sauf mention contraire, tous les espaces vectoriels considérés seront supposés de dimension finie et définis sur \( \mathbb{C} \). \\
