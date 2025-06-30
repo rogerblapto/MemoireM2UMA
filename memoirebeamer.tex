@@ -684,14 +684,104 @@ Dans la suite, sauf mention contraire, tous les espaces vectoriels seront suppos
 		V_1 \otimes \cdots \otimes V_p.
 		\]
 	\end{definition}
-\begin{block}{\textbf{Propriété} \cite{greub2012linear}}
+\begin{block}{\textbf{Propriété}}
 	Le couple \( (T, \otimes) \) est \textbf{unique à isomorphisme près}.
 \end{block}
+
+	\begin{definition}
+Si \( V_1, V_2, ... ,V_p \) sont des espaces vectoriels sur un corps \( \mathbb{K} \), alors la dimension du produit tensoriel \( V_1 \otimes \cdots \otimes V_p \) est donnée par :
+	\[
+	\dim(V_1 \otimes \cdots \otimes V_p) = \prod_{i=1}^p \dim(V_i).
+	\]
+\end{definition}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{proposition}
+Soit $(V_i)_{i\in I}$ une famille non vide d’espaces vectoriels sur un même corps commutatif  $\mathbb{K}$. Soit $(u_i)_{i\in I}$ une famille non vide de vecteurs non nuls tels que, pour tout $i\in I$, le vecteur $u_i$ appartienne à $V_i$. Pour tous sous-ensembles finis $J$ et $K$ de $I$ tels que $J\subseteq K$, considérons l'application linéaire injective  
+	$$\begin{array}{rlll}
+		\varphi_{J,K}: \underset{i\in J}\otimes V_i& \longrightarrow& \underset{i\in K}\otimes V_i\\
+		\underset{i\in J}\otimes v_i&\longmapsto& \underset{i\in J}\otimes v_i\otimes(\underset{i\in K\setminus J}\otimes u_i).
+	\end{array}
+	$$
+	Soit $\mathcal{F}(I)$ l'ensemble de tous les sous-ensembles finis de $I$. 
+	\begin{enumerate}[label=\roman*)]
+		\item Le système $(\underset{i\in J}\otimes V_i, \varphi_{J,K})_{J\in \mathcal{F}(I)}$ est inductif.
+		\item La limite inductive du système inductif $(\underset{i\in J}\otimes V_i, \varphi_{J,K})_{J\in \mathcal{F}(I)}$, notée $\underset{i\in I}\otimes V_i$, est le produit tensoriel infini des espaces vectoriels $(V_i)_{i\in I}$.
+	\end{enumerate}
+\end{proposition}
+\end{frame}
+
+
+\begin{frame}
+\begin{proposition}\label{prop1}
+Soit $(V_i)_{i\in I}$ une famille non vide d’espaces vectoriels sur un même corps commutatif  $\mathbb{K}$. Soit $(u_i)_{i\in I}$ une famille non vide de vecteurs non nuls tels que, pour tout $i\in I$, le vecteur $u_i$ appartienne à $V_i$. Pour tous sous-ensembles finis $J$ et $K$ de $I$ tels que $J\subseteq K$, l’application  
+	$$\begin{array}{rlll}
+		\psi_{J,K}: GL(\underset{i\in K}\otimes V_i)& \longrightarrow& GL(\underset{i\in J}\otimes V_i)\\
+		f&\longmapsto& \psi_{J,K} (f)= f_{J,K}
+	\end{array}
+	$$ 
+	avec $f_{J,K}$ défini comme suit : pour tout $f\in GL(\underset{i\in K}\otimes V_i)$ et tout $\underset{i\in J}\otimes v_i\in \underset{i\in J}\otimes V_i$,  
+	$$f_{J,K}(\underset{i\in J}\otimes v_i)= \underset{i\in J}\otimes v'_i \text{ si } f((\underset{i\in J}\otimes v_i)\otimes (\underset{i\in K\setminus J}\otimes t_i))= (\underset{i\in J}\otimes v'_i)\otimes (\underset{i\in K\setminus J}\otimes v'_i)= \underset{i\in K}\otimes v'_i,$$  
+	pour un certain $\underset{i\in K\setminus J}\otimes t_i\in \underset{i\in K\setminus J}\otimes V_i$, est un homomorphisme de groupes.
+\end{proposition}
+\end{frame}
+
+\begin{frame}
+\begin{proposition}\label{prop2}
+Le système $\big(GL(\underset{i \in J}{\otimes} V_i), \psi_{J,K} \big)$ est projectif, avec pour limite projective
+	\[
+	\varprojlim_{J \in \mathcal{F}(I)} GL\left(\underset{i \in J}{\otimes} V_i\right),
+	\]
+	où $\mathcal{F}(I)$ désigne l’ensemble des sous-ensembles finis de $I$.
+\end{proposition}
 
 \end{frame}
 
 
+\begin{frame}{Esquisse de la preuve}
+	Pour chaque \( J \in \mathcal{F}(I) \), on considère le groupe :
+	\[
+	GL\left( \bigotimes_{i \in J} V_i \right)
+	\]
 	
+
+	Pour tout \( J \subseteq K \), on définit un morphisme :
+	\[
+	\psi_{J,K} :
+	GL\left( \bigotimes_{i \in K} V_i \right)
+	\longrightarrow
+	GL\left( \bigotimes_{i \in J} V_i \right)
+	\]
+On vérifie deux propriétés fondamentales :
+	\begin{itemize}
+		\item Identité : \( \psi_{J,J} = \mathrm{id} \)
+		\item Compatibilité : \( \psi_{J,K} \circ \psi_{K,L} = \psi_{J,L} \) pour \( J \subseteq K \subseteq L \)
+	\end{itemize}
+	
+	On obtient un système projectif :
+	\[
+	\left( GL\left( \bigotimes_{i \in J} V_i \right),\ \psi_{J,K} \right)
+	\]	
+Comme \( \mathbf{Grp} \) est complète, la limite projective existe :
+\[
+\varprojlim_{J \in \mathcal{F}(I)} GL\left( \bigotimes_{i \in J} V_i \right)
+\]
+\end{frame}
+
+\begin{frame}
+\begin{proposition}
+	Soit la correspondance \( GL : \text{Vect}_{\otimes V_i} \rightarrow \text{Grp} \) entre les catégories 
+	\( \text{Vect}_{\otimes V_i} \) et \( \text{Grp} \) où \( \text{Grp} \) désigne la catégorie des groupes. \( GL \) est un foncteur contravariant.
+	
+\end{proposition}
+\end{frame}
+
+
+
+
 	\section{Conclusion}
 	\begin{frame}{Conclusion}
 	Parvenus au terme de notre travail, où il était principalement question pour nous d'étendre les représentations linéaires aux groupes infinis, il en ressort que nous avons construit les représentations linéaires des groupes infinis vus comme produits infinis de groupes finis.
