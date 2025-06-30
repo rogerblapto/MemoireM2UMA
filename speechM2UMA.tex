@@ -1000,20 +1000,20 @@ Soit \( (X_i, f_{ij}) \) un syst\`eme inductif  index\'e par \( I \). On a \( f_
 			
 			\textbf{\underline{compatibles dans \( \mathcal{D} \) }}: \\
 			
-			Les morphismes \( u_i: X_i \to X \) dans \( \mathcal{C} \) deviennent  \( F(u_i) : F(X) \to F(X_i) \) dans \( \mathcal{D} \). Il vient que pour tout \( i \leq j \), \( u_j \circ f_{ij} = u_i \) dans \( \mathcal{C} \) devient \( F(f_{ij}) \circ F(u_j) = F(u_i) \) dans \( \mathcal{D} \).\\
-			Donc \( (F(X), F(u_{i}) : F(X) \to F(X_i) ) \) est une famille de morphismes compatibles dans \( \mathcal{D} \). \\
+Les morphismes \( u_i: X_i \to X \) dans \( \mathcal{C} \) deviennent  \( F(u_i) : F(X) \to F(X_i) \) dans \( \mathcal{D} \). Il vient que pour tout \( i \leq j \), \( u_j \circ f_{ij} = u_i \) dans \( \mathcal{C} \) devient \( F(f_{ij}) \circ F(u_j) = F(u_i) \) dans \( \mathcal{D} \).\\
+Donc \( (F(X), F(u_{i}) : F(X) \to F(X_i) ) \) est une famille de morphismes compatibles dans \( \mathcal{D} \). \\
 			
 			\textbf{\underline{Vérifions la propriété universelle }}: \\
 			
-			La Propriété universelle dans \( \mathcal{C} \) implique en appliquant \( F \) qu'on a \( F(v_i): F(Y) \to F(X_i) \) satisfont \( F(f_{ij}) \circ F(v_j) = F(v_i) \) et l'existence d'un morphisme unique \( F(v): F(Y) \to F(X) \) tel que \( F(u_i) \circ F(v) = F(v_i) \).\\
+La Propriété universelle dans \( \mathcal{C} \) implique en appliquant \( F \) qu'on a \( F(v_i): F(Y) \to F(X_i) \) satisfont \( F(f_{ij}) \circ F(v_j) = F(v_i) \) et l'existence d'un morphisme unique \( F(v): F(Y) \to F(X) \) tel que \( F(u_i) \circ F(v) = F(v_i) \).\\
 			
-			Il en résulte que \( F(X) \) satisfait exactement la définition d’une limite projective et par conséquent \(F(\varinjlim X_i) = \varprojlim F(X_i).\)\\
+Il en résulte que \( F(X) \) satisfait exactement la définition d’une limite projective et par conséquent \(F(\varinjlim X_i) = \varprojlim F(X_i).\)\\
 			
 			
 			
 			
 			\begin{definition} (Morphisme de systèmes projectifs) \cite{guglielmetti2025profinite}\\
-				Soit $\mathcal{C}$ une catégorie et $(G_i, \varphi_{ij})$, $(G'_i, \varphi'_{ij})$ deux systèmes projectifs d'objets de $\mathcal{C}$ sur un même ensemble filtrant $I$. Un morphisme de systèmes projectifs 
+Soit $\mathcal{C}$ une catégorie et $(G_i, \varphi_{ij})$, $(G'_i, \varphi'_{ij})$ deux systèmes projectifs d'objets de $\mathcal{C}$ sur un même ensemble filtrant $I$. Un morphisme de systèmes projectifs 
 				\[
 				\Theta : (G_i, \varphi_{ij}) \longrightarrow (G'_i, \varphi'_{ij})
 				\]
@@ -1052,10 +1052,10 @@ Soit \( (X_i, f_{ij}) \) un syst\`eme inductif  index\'e par \( I \). On a \( f_
 				\[
 				(\Psi \circ \Theta)_i = \psi_i \circ \theta_i.
 				\]
-				On définit ainsi la catégorie des systèmes projectifs d'objets de $\mathcal{C}$, que l'on note $\mathbf{Proj}_{\mathcal{C}}$.
+On définit ainsi la catégorie des systèmes projectifs d'objets de $\mathcal{C}$, que l'on note $\mathbf{Proj}_{\mathcal{C}}$.
 			\end{remark}
 			
-			Dans ce qui suit, supposons que $\mathcal{C}$ est une catégorie dans laquelle le produit de toute famille d'objets ainsi que  les limites projectives existent.
+Dans ce qui suit, supposons que $\mathcal{C}$ est une catégorie dans laquelle le produit de toute famille d'objets ainsi que  les limites projectives existent.
 			
 			\begin{theorem}\cite{guglielmetti2025profinite} \label{prop0} \\
 				Soit $\Theta : (G_i, \varphi_{ij}) \longrightarrow (G'_i, \varphi'_{ij})$ un morphisme d'objets de $\mathbf{Proj}_{\mathcal{C}}$, $G = \varprojlim G_i$ et $G' = \varprojlim G'_i$. Pour tout $l \in I$, on peut définir un morphisme de $\varprojlim G_i$ dans $G'_l$ en faisant $\theta_l \circ \varphi_l$ 

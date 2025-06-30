@@ -371,20 +371,66 @@ Une telle limite est notée $\varprojlim_{I} X_i$ ou  $\varprojlim_{i \in I} X_i
 \end{mynotation}
 
  \begin{definition}[Groupe profini]
-Un complété profini d’un groupe abstrait \( G \) est la limite projective notée $\widehat{G}$ du système projectif \( (G/N)_{N \in \mathscr{N}} \) de groupes finis, où \( \mathscr{N} \) est la collection de tous les sous-groupes normaux d’indices finis de \( G \), c’est-à-dire
-	\[
-	\hat{G} = \varprojlim_{N \in \mathscr{N}} G/N.
-	\]
+La limite projective d'un système projectif de groupes finis est appelée groupe profini.
 \end{definition}
 
+
+ \frametitle{Proposition sur le Complété Profini}
 \begin{proposition} 
 Le complété profini d’un groupe est unique à isomorphisme près, c’est-à-dire si \( (\widehat{G_1}, j_1) \) et \( (\widehat{G_2}, j_2) \) sont deux complétés de \( G \), alors il existe un isomorphisme \( \widehat{\alpha} : \widehat{G_1} \to \widehat{G_2} \) tel que \( \widehat{\alpha} j_1 = j_2 \).
 \end{proposition}
 
 \end{frame}
 
+\begin{frame}
+ \begin{theorem}
+Soit \( F: \mathcal{C} \to \mathcal{D} \) un foncteur contravariant entre deux catégories \( \mathcal{C} \) et \( \mathcal{D} \). Alors, l'image d'une limite inductive par le foncteur $F$ est une limite projective.
+ \end{theorem}
+
+	1. Départ : système inductif \((X_i, f_{ij})\) dans \( \mathcal{C} \)
+\begin{itemize}
+	\item \( f_{ii} = \text{id}_{X_i} \)
+	\item \( f_{jk} \circ f_{ij} = f_{ik} \)
+	\item \( X = \varinjlim X_i \), avec \( u_i: X_i \to X \)
+\end{itemize}
+Par définition de la limite inductive \( X = \varinjlim X_i \), on a :
+\begin{itemize}
+	\item Pour toute famille compatible \( v_i: X_i \to Y \) dans \( \mathcal{C} \), c’est-à-dire \( v_j \circ f_{ij} = v_i \),
+	\item Il existe un unique morphisme \( v: X \to Y \) tel que \( v \circ u_i = v_i \)
+\end{itemize}
+
+2. Application du foncteur contravariant \( F \)
+\begin{itemize}
+	\item \( f_{ij}: X_i \to X_j \Rightarrow F(f_{ij}): F(X_j) \to F(X_i) \)
+	\item On obtient un système projectif dans \( \mathcal{D} \) et 
+\end{itemize}
+
+3. Famille compatible \((F(X), F(u_i))\)
+\begin{itemize}
+	\item \( u_j \circ f_{ij} = u_i \Rightarrow F(f_{ij}) \circ F(u_j) = F(u_i) \)
+\end{itemize}
+
+\end{frame}
 
 
+\begin{frame}
+	4. Propriété universelle
+\begin{itemize}
+	\item Par la propriété universelle dans \( \mathcal{C} \), il existe \( v: X \to Y \) tel que \( v \circ u_i = v_i \)
+	\item En appliquant \( F \), on obtient un morphisme \( F(v): F(Y) \to F(X) \) tel que :
+	\[
+	F(u_i) \circ F(v) = F(v_i)
+	\]
+\end{itemize}
+
+	Conclusion : \( F(X) \) satisfait la définition d'une limite projective, donc :
+\[
+F\left( \varinjlim X_i \right) = \varprojlim F(X_i)
+\]
+
+
+
+\end{frame}
 
 	
 	\section{Représentations linéaires d'un produit de deux groupes.}
