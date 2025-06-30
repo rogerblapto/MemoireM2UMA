@@ -210,7 +210,7 @@ Soient \( (G, \cdot) \) et \( (G', *) \) deux groupes. Un homomorphisme de group
 	\frametitle{Définition d'un foncteur contravariant}
 	
 	\begin{definition}
-		Un \textit{foncteur contravariant} est une loi de passage d'une catégorie \( \mathcal{C} \) à une catégorie \( \mathcal{D} \), \( F : \mathcal{C} \to \mathcal{D} \), qui satisfait les propriétés suivantes :
+Un \textit{foncteur contravariant} est une loi de passage d'une catégorie \( \mathcal{C} \) à une catégorie \( \mathcal{D} \), \( F : \mathcal{C} \to \mathcal{D} \), qui satisfait les propriétés suivantes :
 		\begin{enumerate}[label=\roman*)]
 			\item À tout objet \( C \) de \( \mathcal{C} \) associe un objet \( F(C) \) de \( \mathcal{D} \),
 			\item À tout morphisme \( X \xrightarrow{f} Y \) de \( \mathcal{C} \) associe un morphisme \( F(Y) \xrightarrow{F(f)} F(X) \) de \( \mathcal{D} \), et les conditions suivantes doivent être vérifiées :
@@ -221,15 +221,15 @@ Soient \( (G, \cdot) \) et \( (G', *) \) deux groupes. Un homomorphisme de group
 		\end{enumerate}
 	\end{definition}
 	
+\begin{definition} 
+Un ensemble \((I, \leq)\) est dit ordonné filtrant si \((I, \leq)\) est un ensemble partiellement ordonné et si pour tous \(i, j \in I\), il existe \(k \in I\) vérifiant \(i \leq k\) et \(j \leq k\).
+\end{definition}
+	
 \end{frame}
 
 
 \begin{frame}
 	\frametitle{Définitions}
-	
-	\begin{definition} 
-Un ensemble \((I, \leq)\) est dit ordonné filtrant si \((I, \leq)\) est un ensemble partiellement ordonné et si pour tous \(i, j \in I\), il existe \(k \in I\) vérifiant \(i \leq k\) et \(j \leq k\).
-	\end{definition}
 	
 	\begin{definition}
 Soit \((I, \leq)\) un ensemble ordonné filtrant. Un système inductif de groupes sur \(I\) est la donnée d'un couple \((X_i, \phi_{ij})_{i,j \in I}\) où \(X_i\) sont les groupes et les \(\phi_{ij} : X_i \to X_j\) (pour \(i \leq j\)) sont des homomorphismes de groupes, vérifiant :
@@ -290,13 +290,11 @@ Pour toute autre famille \((X, \psi_i)_{i \in I}\) compatible avec \((X_i, \phi_
 	
 	\begin{proposition}
 La limite inductive, lorsqu'elle existe, est unique à isomorphisme unique près.
-	\end{proposition}
-	
+	\end{proposition}	
 \end{frame}
 
-\begin{frame}
 
-	
+\begin{frame}
 	\begin{mynotation}
 La limite inductive \((X, \phi_i)_{i \in I}\) d'un système inductif \((X_i, \phi_{ij})_{j \in I}\) est notée \(X = \varinjlim X_i\).
 	\end{mynotation}
@@ -320,7 +318,7 @@ Autrement dit, le diagramme suivant est commutatif :
 
 \end{frame}
 
-\begin{frame}{Représentations des groupes infinis}
+\begin{frame}
 \begin{definition}
 Soient \(X\) un groupe et \((X_{i}, \phi_{ij})_{i,j \in I}\) un système projectif de groupes. La famille de homomorphismes \((\phi_{i} : X \rightarrow X_{i})_{i \in I}\), qu'on note \((X , \phi_{i})\), est dite compatible avec le système projectif \((X_{i}, \phi_{ij})_{i,j \in I}\) si pour tous \(i,j \in I\) tels que \(i \leq j\), on a : \(\phi_{ij} \circ \phi_{j} = \phi_{i}\).
 	Ce qui se traduit par le diagramme commutatif suivant :
@@ -373,16 +371,19 @@ Une telle limite est notée $\varprojlim_{I} X_i$ ou  $\varprojlim_{i \in I} X_i
 \end{mynotation}
 
  \begin{definition}[Groupe profini]
-	La limite projective d'un système projectif de groupes finis est appelée groupe profini.
+Un complété profini d’un groupe abstrait \( G \) est la limite projective notée $\widehat{G}$ du système projectif \( (G/N)_{N \in \mathscr{N}} \) de groupes finis, où \( \mathscr{N} \) est la collection de tous les sous-groupes normaux d’indices finis de \( G \), c’est-à-dire
+	\[
+	\hat{G} = \varprojlim_{N \in \mathscr{N}} G/N.
+	\]
 \end{definition}
 
-
- \frametitle{Proposition sur le Complété Profini}
 \begin{proposition} 
 Le complété profini d’un groupe est unique à isomorphisme près, c’est-à-dire si \( (\widehat{G_1}, j_1) \) et \( (\widehat{G_2}, j_2) \) sont deux complétés de \( G \), alors il existe un isomorphisme \( \widehat{\alpha} : \widehat{G_1} \to \widehat{G_2} \) tel que \( \widehat{\alpha} j_1 = j_2 \).
 \end{proposition}
 
 \end{frame}
+
+
 
 
 	
