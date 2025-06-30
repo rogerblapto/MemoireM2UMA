@@ -428,11 +428,10 @@ Par définition de la limite inductive \( X = \varinjlim X_i \), on a :
 F\left( \varinjlim X_i \right) = \varprojlim F(X_i)
 \]
 
-
-
 \end{frame}
 
-	
+
+
 	\section{Représentations linéaires d'un produit de deux groupes.}
 	\subsection{Définitions et exemples}
 	
@@ -644,13 +643,52 @@ Deux représentations d’un groupe \( G \) sont isomorphes si et seulement si e
 
 
 	\section{Résultats}
-	\begin{frame}{Produit tensoriel et représentation linéaire d'un produit de groupes finis}
-		\begin{itemize}
-			\item Les groupes non abéliens infinis, comme les groupes de Lie, sont plus complexes et ne se décomposent pas facilement.
-			\item Exemple : Le groupe de Heisenberg, utilisé en mécanique quantique.
-			\item La théorie des représentations de ces groupes nécessite des outils avancés comme l'analyse spectrale et la cohomologie des groupes.
-		\end{itemize}
-	\end{frame}
+\begin{frame}{Convention générale}
+Dans la suite, sauf mention contraire, tous les espaces vectoriels seront supposés de dimension finie et définis sur un corps commutatif \( \mathbb{K} \), où :
+	\[
+	\mathbb{K} \in \{ \mathbb{R}, \mathbb{C} \}.
+	\]
+\end{frame}
+
+	% --- Propriété universelle ---
+\begin{frame}{Propriété Universelle du Produit Tensoriel}
+	\begin{block}{\textbf{Propriété Universelle}}
+		Soient \( V_1, V_2, \ldots, V_p \) et \( T \) des espaces vectoriels, et
+		\[
+		\otimes : V_1 \times \cdots \times V_p \to T
+		\]
+		une application \( p \)-linéaire. Cette application a la \textbf{propriété universelle} si :
+		\begin{enumerate}[label=\roman*)]
+			\item Les vecteurs \( x_1 \otimes \cdots \otimes x_p \), pour \( x_i \in V_i \), engendrent \( T \).
+			\item Toute application \( p \)-linéaire \( \varphi : V_1 \times \cdots \times V_p \to H \) (où \( H \) est un espace vectoriel quelconque) s’écrit :
+			\[
+			\varphi(x_1, \ldots, x_p) = f(x_1 \otimes \cdots \otimes x_p)
+			\]
+			avec \( f : T \to H \) linéaire.
+		\end{enumerate}
+	\end{block}
+	
+\end{frame}
+
+% --- Définition du produit tensoriel ---
+\begin{frame}{Définition du Produit Tensoriel}
+	\begin{definition}
+		Le \textbf{produit tensoriel} des espaces \( V_1, V_2, \ldots, V_p \) est un couple \( (T, \otimes) \) tel que :
+		\[
+		\otimes : V_1 \times \cdots \times V_p \to T
+		\]
+		est une application \( p \)-linéaire vérifiant la propriété universelle.
+		
+		L’espace \( T \) est noté :
+		\[
+		V_1 \otimes \cdots \otimes V_p.
+		\]
+	\end{definition}
+\begin{block}{\textbf{Propriété} \cite{greub2012linear}}
+	Le couple \( (T, \otimes) \) est \textbf{unique à isomorphisme près}.
+\end{block}
+
+\end{frame}
 
 
 	

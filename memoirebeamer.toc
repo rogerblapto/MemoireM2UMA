@@ -3,4 +3,4 @@
 \beamer@sectionintoc {3}{Représentations linéaires d'un produit de deux groupes.}{18}{0}{2}
 \beamer@subsectionintoc {3}{1}{Définitions et exemples}{18}{0}{2}
 \beamer@sectionintoc {4}{Résultats}{27}{0}{3}
-\beamer@sectionintoc {5}{Conclusion}{28}{0}{4}
+\beamer@sectionintoc {5}{Conclusion}{30}{0}{4}
