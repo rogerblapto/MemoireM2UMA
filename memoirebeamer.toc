@@ -1,7 +1,5 @@
 \babel@toc {french}{}\relax 
 \beamer@sectionintoc {2}{Préliminaires}{4}{0}{1}
-\beamer@sectionintoc {3}{Représentations linéaires d'un produit de deux groupes.}{18}{0}{2}
-\beamer@subsectionintoc {3}{1}{Définitions et exemples}{18}{0}{2}
-\beamer@sectionintoc {4}{Résultats}{27}{0}{3}
-\beamer@sectionintoc {5}{Traité du cas de $\setbox \z@ \hbox {\mathsurround \z@ $\textstyle \mathbb {Z}$}\mathaccent "0362{\mathbb {Z}}$, le complété profini de $\mathbb {Z}$}{47}{0}{4}
-\beamer@sectionintoc {6}{Conclusion}{52}{0}{5}
+\beamer@sectionintoc {3}{Représentations linéaires d'un produit de deux groupes}{12}{0}{2}
+\beamer@sectionintoc {4}{Représentations linéaires d'un produit arbitraire des groupes}{14}{0}{3}
+\beamer@sectionintoc {5}{Conclusion}{31}{0}{4}

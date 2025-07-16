@@ -76,10 +76,7 @@ Pr. Dieukam \\
 	
 	\section*{Introduction}
 	\begin{frame}{Introduction}
-La théorie des représentations linéaires des groupes est un outil fondamental permettant de représenter les éléments d’un groupe abstrait par des matrices inversibles sur un corps donné. Cette approche, traduisant les problèmes d’algèbre abstraite complexes en des problèmes d’algèbre linéaire plus accessibles, repose sur la notion de représentation linéaire. Etant donné un corps $\mathbb{K}$, une représentation $\mathbb{K}$-linéaire d’un groupe fini $G$ est un homomorphisme de groupes \[ \rho : G \to \text{GL}(V) \]
-où $V$ est un $\mathbb{K}$-espace vectoriel et $\text{GL}(V)$ désigne le groupe des applications linéaires bijectives de $V$ sur lui-même. 
-La théorie des représentations linéaires des groupes finis a été développée pour la première fois par le mathématicien allemand Ferdinand Georg Frobenius en 1897. Il a introduit la notion de représentation linéaire des groupse finis et a jetté les bases sur la théorie des caractères de ces groupes. Ces travaux a ete approfondi par le mathématicien francais Jean-Pierre Serre où il a formalisé cette théorie dans son livre intitulé \textbf{"Représentations linéaires des groupes finis"} publié en 1968. Ces deux auteurs qu'on vient de voir ont travaille dans le cadre de groupes finis et il n y a pas de resultats recents accessibles generalisant cela au groupe infinis. D'où notre thème : \textbf{représentation linéaires, caractères et représentations linéaires irréductibles d'un groupe infini.}
-Le but principal de ce projet est d’étendre les représentations linéaires aux groupes infinis. Pour atteindre les objectifs de ce travail, nous allons suivre cette démarche dans la presentation:
+Introduction.
 	\end{frame}
 	
 
@@ -102,7 +99,7 @@ Un groupe est un couple  $(G, *)$ où $G$ est un ensemble non vide et
 			\[
 			(x, y) \longmapsto x * y
 			\]
-une loi vérifiant :
+est une loi telle que :
 			\begin{enumerate} [label=\roman*)]
 				\item $*$ est associative, c'est-à-dire, $\forall x, y, z \in G, \ (x * y) * z = x * (y * z)$ ;
 				\item $G$ possède un élément neutre pour la loi $*$, c'est-à-dire, $\exists e \in G$ tel que $\forall x \in G, \ x * e = e * x = x$ ;
@@ -124,57 +121,17 @@ une loi vérifiant :
 	
 	
 	\begin{frame}
-		
-		\begin{definition} 
-Soit \( (G_i, \circ_i) \) une famille de groupes finis indexée par l'ensemble \( \{1, 2, \dots, n\} \), où \( n \in \mathbb{N}^{*} \). Le \textit{produit direct fini} de cette famille est un groupe \( \left( \prod_{i=1}^{n} G_i, \circ \right) \), défini par les propriétés suivantes : 
-			\begin{enumerate}[label=\roman*)]
-				\item L'ensemble sous-jacent est constitué des familles indexées par \( \{1, 2, \dots, n\} \) :  
-				\[
-				\prod_{i=1}^{n} G_i = \left\{ (g_i)_{i=1}^{n} \mid g_i \in G_i \text{ pour tout } i \in \{1, 2, \dots, n\} \right\}.
-				\]
-				\item La loi de composition \( \circ \) est définie composante par composante :  
-				\[
-				(g_i)_{i=1}^{n} \circ (g_i')_{i=1}^{n} = (g_i \circ_i g_i')_{i=1}^{n},
-				\]  
-				où \( \circ_i \) désigne l'opération du groupe \( G_i \) pour chaque \( i \in \{1, 2, \dots, n\} \).
-				\item L'élément neutre de \( \prod_{i=1}^{n} G_i \) est la famille \( (e_i)_{i=1}^{n} \), où \( e_i \) est l'élément neutre de \( G_i \) pour tout \( i \in \{1, 2, \dots, n\} \).
-				\item L'inverse d'une famille \( (g_i)_{i=1}^{n} \in \prod_{i=1}^{n} G_i \) est donné par :  
-				\[
-				(g_i)_{i=1}^{n}{}^{-1} = (g_i^{-1})_{i=1}^{n},
-				\]  
-				où \( g_i^{-1} \) est l'inverse de \( g_i \) dans \( G_i \) pour chaque \( i \in \{1, 2, \dots, n\} \).
-			\end{enumerate}
-		\end{definition}
-	\end{frame}
-	
-	
-	\begin{frame}
-		
-	\begin{remark}
+\begin{remark}
 Soit \( (G_i, \circ_i) \) une famille de groupes finis indexée par \( i = 1, \dots, n \).  
-Le cardinal du produit direct de ces groupes vérifie la relation suivante :
-		\[
-		\left| \prod_{i=1}^{n} G_i \right| = \prod_{i=1}^{n} |G_i|,
-		\]
-		où \( |G_i| \) désigne le cardinal du groupe \( G_i \).
-	\end{remark}
+	Le cardinal du produit direct de ces groupes vérifie la relation suivante :
+	\[
+	\left| \prod_{i=1}^{n} G_i \right| = \prod_{i=1}^{n} |G_i|,
+	\]
+	où \( |G_i| \) désigne le cardinal du groupe \( G_i \).
+\end{remark}
+\end{frame}
 	
 
-\begin{propriety}
-Si chaque \( (G_i, \circ_i) \) est un groupe abélien, alors \( \left( \prod_{i=1}^{n} G_i, \circ \right) \) est aussi un groupe abélien.
-\end{propriety}
-
-		
-		\begin{definition}
-Soient \( (G, \cdot) \) et \( (G', *) \) deux groupes. Un homomorphisme de groupes de \( G \) dans \( G' \) est une application \( f : G \rightarrow G' \) vérifiant :
-			\[
-			\forall (x, y) \in G \times G, \quad f(x \cdot y) = f(x) * f(y).
-			\]
-		\end{definition}
-		
-		
-		
-	\end{frame}
 	
 	
 	
@@ -221,48 +178,9 @@ Un \textit{foncteur contravariant} est une loi de passage d'une catégorie \( \m
 		\end{enumerate}
 	\end{definition}
 	
-\begin{definition} 
-Un ensemble \((I, \leq)\) est dit ordonné filtrant si \((I, \leq)\) est un ensemble partiellement ordonné et si pour tous \(i, j \in I\), il existe \(k \in I\) vérifiant \(i \leq k\) et \(j \leq k\).
-\end{definition}
 	
 \end{frame}
 
-
-\begin{frame}
-	\frametitle{Définitions}
-	
-	\begin{definition}
-Soit \((I, \leq)\) un ensemble ordonné filtrant. Un système inductif de groupes sur \(I\) est la donnée d'un couple \((X_i, \phi_{ij})_{i,j \in I}\) où \(X_i\) sont les groupes et les \(\phi_{ij} : X_i \to X_j\) (pour \(i \leq j\)) sont des homomorphismes de groupes, vérifiant :
-	\begin{enumerate}[label=\roman*)]
-		\item Pour tout \(i \in I\), \(\phi_{ii} = \mathrm{Id}_{X_i}\) ;
-		\item Pour tous \((i, j, k) \in I^3\), \(i \leq j \leq k \Rightarrow \phi_{jk} \circ \phi_{ij} = \phi_{ik}\).
-	\end{enumerate}
-Ce qui se traduit par le diagramme commutatif suivant :
-	\[
-	\xymatrix{
-		X_i \ar[rr]^{\phi_{ij}} \ar[dr]_{\phi_{ik}} & & X_j \ar[dl]^{\phi_{jk}} \\
-		& X_k &
-	}
-	\]
-\end{definition}
-	
-\end{frame}
-
-\begin{frame}
-	
-
-	
-	\begin{definition}
-Soit \(X\) un groupe et \((X_i, \phi_{ij})\) un système inductif de groupes. La famille \((X, \phi_i : X_i \rightarrow X)\) est dite compatible avec \((X_i, \phi_{ij})\) si pour tous \(i, j \in I\) tels que \(i \leq j\), on a \(\phi_i = \phi_j \circ \phi_{ij}\). Ce qui est illustré par le diagramme commutatif suivant :
-		\[
-		\xymatrix{
-			X_i \ar[r]^{\phi_{ij}} \ar[dr]_{\phi_i} & X_j \ar[d]^{\phi_j} \\
-			& X
-		}
-		\]
-	\end{definition}
-	
-\end{frame}
 
 \begin{frame}
 
@@ -287,49 +205,9 @@ Pour toute autre famille \((X, \psi_i)_{i \in I}\) compatible avec \((X_i, \phi_
 			\draw[->, dashed] (X) -- node[right] {$u$} (Y);
 		\end{tikzpicture}
 	\end{definition}
-	
-	\begin{proposition}
-La limite inductive, lorsqu'elle existe, est unique à isomorphisme unique près.
-	\end{proposition}	
+		
 \end{frame}
 
-
-\begin{frame}
-	\begin{mynotation}
-La limite inductive \((X, \phi_i)_{i \in I}\) d'un système inductif \((X_i, \phi_{ij})_{j \in I}\) est notée \(X = \varinjlim X_i\).
-	\end{mynotation}
-	
-	Soit $(I, \leq)$ un ensemble ordonné filtrant.
-	
-	\begin{definition}
-Un système projectif de groupes sur \((I, \leq)\) est un couple \((X_{i}, \phi_{ij})_{i,j \in I}\) où les \(X_{i}\) sont les groupes et les \(\phi_{ij}: X_{j} \rightarrow X_{i}\) (\(i \leq j\)) sont les homomorphismes de groupes vérifiant :
-		\begin{enumerate}[label=\roman*)]
-			\item \(\phi_{ii} = \text{Id}_{X_{i}}\) pour tout \(i \in I\);
-			\item pour tout \((i,j,k) \in I^{3}\) tels que \(i \leq j \leq k\), on a \(\phi_{ik} = \phi_{ij} \circ \phi_{jk}\).
-		\end{enumerate}
-Autrement dit, le diagramme suivant est commutatif :
-		\[
-		\xymatrix{
-			X_{k} \ar[rr]^{\phi_{jk}} \ar[dr]_{\phi_{ik}} & & X_{j} \ar[dl]^{\phi_{ij}} \\
-			& X_{i} &
-		}
-		\]
-	\end{definition}
-
-\end{frame}
-
-\begin{frame}
-\begin{definition}
-Soient \(X\) un groupe et \((X_{i}, \phi_{ij})_{i,j \in I}\) un système projectif de groupes. La famille de homomorphismes \((\phi_{i} : X \rightarrow X_{i})_{i \in I}\), qu'on note \((X , \phi_{i})\), est dite compatible avec le système projectif \((X_{i}, \phi_{ij})_{i,j \in I}\) si pour tous \(i,j \in I\) tels que \(i \leq j\), on a : \(\phi_{ij} \circ \phi_{j} = \phi_{i}\).
-	Ce qui se traduit par le diagramme commutatif suivant :
-	\[
-	\xymatrix{
-		X \ar[rr]^{\phi_{j}} \ar[dr]_{\phi_{i}} & & X_{j} \ar[dl]^{\phi_{ij}} \\
-		& X_{i} &
-	}
-	\]
-\end{definition}
-\end{frame}
 
 \begin{frame}
 \begin{definition}
@@ -362,30 +240,9 @@ Si \((\psi _{i} : Y \rightarrow X_{i})_{i \in I}\) (\(Y \in |\mathcal{C}|\)) est
 \end{frame}
 
 \begin{frame}
-\begin{proposition}[Unicité de la limite projective]
-Si une limite projective d'un système projectif existe, elle est unique à isomorphisme près.
-\end{proposition}
-
-\begin{mynotation}
-Une telle limite est notée $\varprojlim_{I} X_i$ ou  $\varprojlim_{i \in I} X_i$.
-\end{mynotation}
-
- \begin{definition}[Groupe profini]
-La limite projective d'un système projectif de groupes finis est appelée groupe profini.
-\end{definition}
-
-
- \frametitle{Proposition sur le Complété Profini}
-\begin{proposition} 
-Le complété profini d’un groupe est unique à isomorphisme près, c’est-à-dire si \( (\widehat{G_1}, j_1) \) et \( (\widehat{G_2}, j_2) \) sont deux complétés de \( G \), alors il existe un isomorphisme \( \widehat{\alpha} : \widehat{G_1} \to \widehat{G_2} \) tel que \( \widehat{\alpha} j_1 = j_2 \).
-\end{proposition}
-
-\end{frame}
-
-\begin{frame}
- \begin{theorem}
+ \begin{theoreme}
 Soit \( F: \mathcal{C} \to \mathcal{D} \) un foncteur contravariant entre deux catégories \( \mathcal{C} \) et \( \mathcal{D} \). Alors, l'image d'une limite inductive par le foncteur $F$ est une limite projective.
- \end{theorem}
+ \end{theoreme}
 
 	1. Départ : système inductif \((X_i, f_{ij})\) dans \( \mathcal{C} \)
 \begin{itemize}
@@ -432,8 +289,7 @@ F\left( \varinjlim X_i \right) = \varprojlim F(X_i)
 
 
 
-	\section{Représentations linéaires d'un produit de deux groupes.}
-	\subsection{Définitions et exemples}
+	\section{Représentations linéaires d'un produit de deux groupes}
 	
 	\begin{frame}
 		\frametitle{Définitions et exemples}
@@ -461,174 +317,18 @@ où \(\mathrm{GL}(n, \mathbb{K})\) est le groupe des matrices inversibles de tai
 \begin{frame}
 	\frametitle{Représentations linéaires et sous-représentations}
 	
-	\begin{definition} \cite{serre1971representation}
-Soient \( (V, \rho)_{G} \) et \( (W, \psi)_{G} \) deux représentations linéaires. Un opérateur d'entrelacement, ou morphisme de représentations, est une application linéaire \( \alpha : V \to W \) telle que
-		\[
-		\alpha \circ \rho(g) = \psi(g) \circ \alpha, \quad \forall g \in G.
-		\]
-On dit que \( \alpha \) est équivariante. Lorsque \( \alpha : V \to W \) est un isomorphisme, on dit que les représentations \( (V, \varphi)_{G} \) et \( (W, \psi)_{G} \) sont isomorphes.
-	\end{definition}
-	
 
-	
-	\begin{definition} 
-Soit \( W \) un sous-espace vectoriel de \( V \) et \( G \) un groupe. On dit que \( W \) est stable (ou invariant) sous l'action de \( G \), ou encore \( G \)-stable, si pour tout \( g \in G \) et tout \( w \in W \), on a \( \rho_g(w) \in W \).
-	\end{definition}
-	
-
-	
 	\begin{definition}
-Une sous-représentation de \( (V,\rho)_{G} \) est la restriction \( \rho_W : G \rightarrow \mathrm{GL}(W) \) où \( W \) est stable sous \( G \). Elle est définie par
-		\[
-		\rho_W(g) = \rho(g)|_W, \quad \forall g \in G.
-		\]
-	\end{definition}
-	
-\end{frame}
-
-
-\begin{frame}
-	
-\begin{proposition}
-Soit \( \rho : G \rightarrow \mathrm{GL}(V) \) une représentation linéaire sur \( G \) telle que \( W \) soit un sous-espace vectoriel de \( V \) stable sous l'action de \( G \). Alors, l'application restreinte \( \rho_W : G \rightarrow \mathrm{GL}(W) \) définie par \( \rho_W(g) = \rho(g)|_W \) pour tout \( g \in G \) est un homomorphisme de groupes.
-\end{proposition}
-
-
-	
-\begin{lemma}
-Soient \( \varphi : G \to \mathrm{GL}(V_1) \) et \( \psi : G \to \mathrm{GL}(V_2) \) deux représentations linéaires de \( G \). Soit \( f : V_1 \to V_2 \) un morphisme de représentations linéaires. Alors :
-		\begin{enumerate}[label=\roman*)]
-			\item \( \rho_{\ker(f)} : G \to \mathrm{GL}(\ker(f)) \) est une sous-représentation linéaire de \( \varphi : G \to \mathrm{GL}(V_1) \) ;
-			\item L'image \( \mathrm{im}(f) \), \( \rho_{\mathrm{im}(f)} : G \to \mathrm{GL}(\mathrm{im}(f)) \), est une sous-représentation linéaire de \( \psi : G \to \mathrm{GL}(V_2) \) ;
-			\item \( V_1 / \ker(f) \cong \mathrm{im}(f) \) au sens de représentations linéaires de \( G \).
-		\end{enumerate}
-\end{lemma}
-\end{frame}	
-
-
-
-
-\begin{frame}
-	\frametitle{Caractère et Représentation Unitaire}
-	
-	\begin{definition}
-Soit \( \rho : G \to \mathrm{GL}(V) \) une représentation linéaire sur \( G \). Le caractère de \( V \), noté \( \chi_V \), est la fonction
-		\[
-		\chi_V : G \to \mathbb{C}
-		\]
-		définie pour tout \( g \in G \) par
-		\[
-		\chi_V(g) := \operatorname{Tr}(\rho(g)),
-		\]
-		où \( \operatorname{Tr} \) désigne la trace.
-	\end{definition}
-	
-	
-	\begin{theorem} 
-Soit \( (\rho, V)_G \) une représentation linéaire. On peut munir \( V \) d'un produit hermitien \( (.,.)_V \) qui rend la représentation linéaire \( (\rho, V)_G \) unitaire.
-	\end{theorem}
-	
-\end{frame}
-
-
-\begin{frame}
-\begin{proposition}
-Soient \( \rho_V : G \rightarrow \mathrm{GL}(V) \) et \( \rho_W : G \rightarrow \mathrm{GL}(W) \) deux représentations linéaires sur \( G \) de degrés \( n \) et \( m \) (\( n, m \in \mathbb{N}^* \)), et de caractères \( \chi_V \) et \( \chi_W \) respectivement. On a :
-	\begin{enumerate}[label=\roman*)]
-		\item \( \chi_V(1) = \dim V \);
-		\item \( \chi_{V \oplus W} = \chi_V + \chi_W \);
-		\item \( \chi_V(g^{-1}) = \overline{\chi_V(g)} \) \quad pour \( \forall g \in G \).
-	\end{enumerate}
-\end{proposition}
-
-\begin{theorem}[Frobenius] 
-Pour tout groupe fini \( G \), le nombre de représentations irréductibles non-isomorphes deux à deux de \( G \) est exactement égal au nombre \( c(G) \) de classes de conjugaison de \( G \).
-\end{theorem}
-
-\begin{proposition} 
-Deux représentations d’un groupe \( G \) sont isomorphes si et seulement si elles ont le même caractère.
-\end{proposition}
-
-\end{frame}
-
-
-
-\begin{frame}
-\begin{definition}
-	On dit qu'une représentation linéaire \( \rho : G \rightarrow \mathrm{GL}(V) \) est \emph{irréductible} si l'espace vectoriel \( V \) n'est pas réduit à \( \{0\} \) et si \( V \) ne possède aucun sous-espace invariant par \( \rho \) autre que \( \{0\} \) et \( V \).
+	Soit \( \rho : G \to \mathrm{GL}(V) \) une représentation linéaire sur \( G \). Le caractère de \( V \), noté \( \chi_V \), est la fonction
+	\[
+	\chi_V : G \to \mathbb{C}
+	\]
+	définie pour tout \( g \in G \) par
+	\[
+	\chi_V(g) := \operatorname{Tr}(\rho(g)),
+	\]
+	où \( \operatorname{Tr} \) désigne la trace.
 \end{definition}
-
-\begin{theorem} 
-	Soit \( \rho : G \to \mathrm{GL}(V) \) une représentation linéaire de \( G \) dans \( V \) et soit \( W \) un sous-espace vectoriel de \( V \) stable sous \( G \). Alors, il existe un complément \( W^0 \) de \( W \) dans \( V \) qui est stable sous \( G \).
-\end{theorem}
-
-\begin{theorem}[Théorème de Maschke] 
-	Toute représentation linéaire \( \rho : G \to \mathrm{GL}(V) \) sur \( G \) dans un espace vectoriel complexe de dimension finie se décompose en somme directe de représentations irréductibles.
-\end{theorem}
-
-\end{frame}
-
-
-
-\begin{frame}
-\begin{theorem}[Lemme de Schur] 
-	Soient \( \rho_1 : G \rightarrow V_1 \) et \( \rho_2 : G \rightarrow V_2 \) deux représentations irréductibles de \( G \). \\
-	Soit \( f : V_1 \rightarrow V_2 \) une application linéaire vérifiant
-	\[
-	\forall g \in G, \quad f \circ \rho_1(g) = \rho_2(g) \circ f.
-	\]
-	On a les propriétés suivantes :
-	\begin{enumerate} [label=\roman*)]
-		\item[(i)] Si \( \rho_1 \) et \( \rho_2 \) ne sont pas isomorphes, alors \( f = 0 \).
-		\item[(ii)] Si \(V_1 = V_2 \) et \( \rho_1 = \rho_2 \), alors \( f \) est une homothétie.
-	\end{enumerate}
-\end{theorem}
-
-\begin{corollary}
-	Soit \( h  : V \to W \) une application linéaire. Posons :
-	\[
-	h_0 = \frac{1}{N} \sum_{g \in G} (\rho_W(g))^{-1} \circ h \circ \rho_V(g),
-	\]
-	où \( N = \mathrm{Card}(G) \).
-	Alors :
-	\begin{enumerate}[label=\roman*)]
-		\item Si \( \rho_V \) et \( \rho_W \) ne sont pas isomorphes, on a \( h_0 = 0 \).
-		\item Si \( V = W \) et \( \rho_V = \rho_W \), alors \( h_0 \) est une homothétie de rapport \( \frac{1}{n} \text{Tr}(h) \), où \( n = \dim(V) \).
-	\end{enumerate}
-\end{corollary}
-\end{frame}
-
-
-
-\begin{frame}
-\begin{remark} 
-	Une traduction matricielle du corollaire précédent est: 
-	si \( \varphi \) et \( \psi \) sont des fonctions \( G \to \mathbb{C} \), alors
-	\[
-	\langle \varphi, \psi \rangle = \frac{1}{g} \sum_{t \in G} \varphi(t^{-1})\psi(t) 
-	= \frac{1}{g} \sum_{t \in G} \varphi(t)\psi(t^{-1}). \tag{1}
-	\]
-\end{remark}
-
-\begin{proposition} 
-	Pour \( g \in G \), soient \( (r_{i_1 j_1}(g)) \) et \( (u_{i_2 j_2}(g)) \) les matrices respectives de \( \rho_V(g) \) et \( \rho_W(g) \) dans les bases \( \mathcal{B}_1 \), \( \mathcal{B}_2 \) de \( V_1 \), \( V_2 \). Alors :
-	\begin{enumerate}[label=\roman*)]
-		\item Si \( \rho_V \) et \( \rho_W \) ne sont pas isomorphes, on a \( \langle u_{i_2 j_2}, r_{j_1 i_1} \rangle = 0 \) pour tous indices \( i_1, j_1, i_2, j_2 \).
-		\item Si \( V_1 = V_2 \) est de dimension \( n \) et \( \rho_V = \rho_W \) (auquel cas on prend \( \mathcal{B}_1 = \mathcal{B}_2 \) et on a \( r_{ij} = u_{ij} \) pour tous indices \( i, j \)), alors \( \langle r_{i_2 j_2}, r_{j_1 i_1} \rangle = 0 \) si \( i_1 \neq i_2 \) ou \( j_1 \neq j_2 \), et \( \langle r_{ij}, r_{ji} \rangle = \frac{1}{n} \) pour tous indices \( i, j \).
-	\end{enumerate}
-\end{proposition}
-
-
-\end{frame}
-
-
-\begin{frame}
-	\begin{theoreme}
-		\begin{enumerate}[label=\roman*)]
-			\item Soit \( \chi \) le caractère d’une représentation irréductible \( \rho \) de \( G \). Alors, \( (\chi | \chi) = 1 \).
-			\item Soient \( \chi_1 \) et \( \chi_2 \) les caractères de deux représentations irréductibles non isomorphes \( \rho_1 \) et \( \rho_2 \). Alors, \( (\chi_1 | \chi_2) = 0 \).
-		\end{enumerate}
-	\end{theoreme}
 
 \begin{theoreme}  
 	Soit \( G \) un groupe. Les propriétés suivantes sont équivalentes :
@@ -637,68 +337,13 @@ Deux représentations d’un groupe \( G \) sont isomorphes si et seulement si e
 		\item[(ii)] Toutes les représentations irréductibles de \( G \) sont de degré 1.
 	\end{enumerate}
 \end{theoreme}
-\end{frame}
-
-
-
-
-	\section{Résultats}
-\begin{frame}{Convention générale}
-Dans la suite, sauf mention contraire, tous les espaces vectoriels seront supposés de dimension finie et définis sur un corps commutatif \( \mathbb{K} \), où :
-	\[
-	\mathbb{K} \in \{ \mathbb{R}, \mathbb{C} \}.
-	\]
-\end{frame}
-
-	% --- Propriété universelle ---
-\begin{frame}{Propriété Universelle du Produit Tensoriel}
-	\begin{block}{\textbf{Propriété Universelle}}
-		Soient \( V_1, V_2, \ldots, V_p \) et \( T \) des espaces vectoriels, et
-		\[
-		\otimes : V_1 \times \cdots \times V_p \to T
-		\]
-		une application \( p \)-linéaire. Cette application a la \textbf{propriété universelle} si :
-		\begin{enumerate}[label=\roman*)]
-			\item Les vecteurs \( x_1 \otimes \cdots \otimes x_p \), pour \( x_i \in V_i \), engendrent \( T \).
-			\item Toute application \( p \)-linéaire \( \varphi : V_1 \times \cdots \times V_p \to H \) (où \( H \) est un espace vectoriel quelconque) s’écrit :
-			\[
-			\varphi(x_1, \ldots, x_p) = f(x_1 \otimes \cdots \otimes x_p)
-			\]
-			avec \( f : T \to H \) linéaire.
-		\end{enumerate}
-	\end{block}
 	
 \end{frame}
 
-% --- Définition du produit tensoriel ---
-\begin{frame}{Définition du Produit Tensoriel}
-	\begin{definition}
-		Le \textbf{produit tensoriel} des espaces \( V_1, V_2, \ldots, V_p \) est un couple \( (T, \otimes) \) tel que :
-		\[
-		\otimes : V_1 \times \cdots \times V_p \to T
-		\]
-		est une application \( p \)-linéaire vérifiant la propriété universelle.
-		
-		L’espace \( T \) est noté :
-		\[
-		V_1 \otimes \cdots \otimes V_p.
-		\]
-	\end{definition}
-\begin{block}{\textbf{Propriété}}
-	Le couple \( (T, \otimes) \) est \textbf{unique à isomorphisme près}.
-\end{block}
 
-	\begin{definition}
-Si \( V_1, V_2, ... ,V_p \) sont des espaces vectoriels sur un corps \( \mathbb{K} \), alors la dimension du produit tensoriel \( V_1 \otimes \cdots \otimes V_p \) est donnée par :
-	\[
-	\dim(V_1 \otimes \cdots \otimes V_p) = \prod_{i=1}^p \dim(V_i).
-	\]
-\end{definition}
-
-\end{frame}
+\section{Représentations linéaires d'un produit arbitraire des groupes}
 
 \begin{frame}
-
 \begin{proposition}
 Soit $(V_i)_{i\in I}$ une famille non vide d’espaces vectoriels sur un même corps commutatif  $\mathbb{K}$. Soit $(u_i)_{i\in I}$ une famille non vide de vecteurs non nuls tels que, pour tout $i\in I$, le vecteur $u_i$ appartienne à $V_i$. Pour tous sous-ensembles finis $J$ et $K$ de $I$ tels que $J\subseteq K$, considérons l'application linéaire injective  
 	$$\begin{array}{rlll}
@@ -716,7 +361,7 @@ Soit $(V_i)_{i\in I}$ une famille non vide d’espaces vectoriels sur un même c
 
 
 \begin{frame}
-\begin{proposition}\label{prop1}
+\begin{proposition}
 Soit $(V_i)_{i\in I}$ une famille non vide d’espaces vectoriels sur un même corps commutatif  $\mathbb{K}$. Soit $(u_i)_{i\in I}$ une famille non vide de vecteurs non nuls tels que, pour tout $i\in I$, le vecteur $u_i$ appartienne à $V_i$. Pour tous sous-ensembles finis $J$ et $K$ de $I$ tels que $J\subseteq K$, l’application  
 	$$\begin{array}{rlll}
 		\psi_{J,K}: GL(\underset{i\in K}\otimes V_i)& \longrightarrow& GL(\underset{i\in J}\otimes V_i)\\
@@ -730,7 +375,7 @@ Soit $(V_i)_{i\in I}$ une famille non vide d’espaces vectoriels sur un même c
 \end{frame}
 
 \begin{frame}
-\begin{proposition}\label{prop2}
+\begin{proposition}
 Le système $\big(GL(\underset{i \in J}{\otimes} V_i), \psi_{J,K} \big)$ est projectif, avec pour limite projective
 	\[
 	\varprojlim_{J \in \mathcal{F}(I)} GL\left(\underset{i \in J}{\otimes} V_i\right),
@@ -773,7 +418,7 @@ Comme \( \mathbf{Grp} \) est complète, la limite projective existe :
 
 \begin{frame}
 \begin{proposition}
-	Soit la correspondance \( GL : \text{Vect}_{\otimes V_i} \rightarrow \text{Grp} \) entre les catégories 
+Soit la correspondance \( GL : \text{Vect}_{\otimes V_i} \rightarrow \text{Grp} \) entre les catégories 
 	\( \text{Vect}_{\otimes V_i} \) et \( \text{Grp} \) où \( \text{Grp} \) désigne la catégorie des groupes. \( GL \) est un foncteur contravariant.
 	
 \end{proposition}
@@ -817,7 +462,7 @@ Soit $(V_i)_{i\in I}$ une famille non vide d'espaces vecteurs de dimension finie
 
 
 \begin{frame}
-\begin{theorem} 
+\begin{theoreme} 
 Soit \( (G_i)_{i \in I} \) une famille non vide de groupes et \( (\varphi_i)_{i \in I} \) une famille de représentations linéaires, où chaque  
 	\[
 	\varphi_i : G_i \to \operatorname{GL}(V_i)
@@ -827,7 +472,7 @@ Soit \( (G_i)_{i \in I} \) une famille non vide de groupes et \( (\varphi_i)_{i 
 	\[
 	\varphi_I = \bigotimes_{i \in I} \varphi_i : \prod_{i \in I} G_i \longrightarrow \operatorname{GL} \left( \bigotimes_{i \in I} V_i \right).
 	\]
-\end{theorem}
+\end{theoreme}
 \end{frame}
 
 \begin{frame}
@@ -933,36 +578,10 @@ Si la suite \( (P_N)_{N \in \mathbb{N} \setminus \{0\}} \) converge, alors le ca
 Dans le cas contraire, le caractère \( \chi_{\varphi_I} \) n’est pas défini.
 \end{frame}
 
-\begin{frame}{Représentations irréductibles du produit de groupes}
-	Soient \( G_1, G_2 \) deux groupes finis et \( V_1, V_2 \) deux espaces vectoriels.
-	
-	\vspace{0.5em}
-	\begin{theorem}
-		\begin{enumerate}[label=\roman*)]
-			\item Si \( \rho^1 : G_1 \to \mathrm{GL}(V_1) \) et \( \rho^2 : G_2 \to \mathrm{GL}(V_2) \) sont des représentations irréductibles respectives de \( G_1 \) et \( G_2 \), alors
-			\[
-			\rho^1 \otimes \rho^2 : G_1 \times G_2 \to \mathrm{GL}(V_1 \otimes V_2)
-			\]
-			est une représentation irréductible de \( G_1 \times G_2 \).
-			
-			\item Réciproquement, toute représentation irréductible de \( G_1 \times G_2 \) est isomorphe à un produit tensoriel \( \rho^1 \otimes \rho^2 \), avec \( \rho^1 \) irréductible de \( G_1 \) et \( \rho^2 \) irréductible de \( G_2 \).
-		\end{enumerate}
-	\end{theorem}
-	
-		\begin{lemma} 
-Soit \( (G_i)_{i \in I} \) une famille non vide de groupes finis abéliens et \( (\varphi_i)_{i \in I} \) une famille de représentations linéaires, où chaque  
-		\[
-		\varphi_i : G_i \to \operatorname{GL}(V_i)
-		\]
-est une représentation du groupe \( G_i \) sur un espace vectoriel \( V_i \).  
-Alors, toute représentation irréductible de \( G =  \prod_{i \in I} G_i \) est de degré 1.
-	\end{lemma}
-	
-\end{frame}
 
 \begin{frame}
-	\begin{theorem} 
-	Soit \( (G_i)_{i \in I} \) une famille non vide de groupes finis d'ordre premier chacun , \((V_i)_{i \in I} \) une famille  non vide d'espaces vectoriels sur  \(\mathbb{K}\), et  
+	\begin{theoreme} 
+Soit \( (G_i)_{i \in I} \) une famille non vide de groupes finis d'ordre premier chacun , \((V_i)_{i \in I} \) une famille  non vide d'espaces vectoriels sur  \(\mathbb{K}\), et  
 	\[ (
 	\varphi_i : G_i \to \operatorname{GL}(V_i) )_{i \in I}
 	\]
@@ -977,68 +596,9 @@ Alors, toute représentation irréductible de \( G =  \prod_{i \in I} G_i \) est
 		\]
 		est irréductible si et seulement si chaque représentation \( \varphi_i \) non triviale est irréductible ainsi que leur produit tensoriel.
 	\end{enumerate} 	
-\end{theorem}
+\end{theoreme}
 \end{frame}
 
-\begin{frame}{Esquisse de la preuve : irréductibilité de \texorpdfstring{$\varphi_I$}{phi\_I} (1/2)}
-	\textbf{\underline{Preuve} :}
-	\begin{enumerate} [label=\roman*)]
-		\item Chaque \( G_i \) est cyclique d'ordre fini, donc \( G_i \) est abélien.  
-		Le produit \( G = \prod_{i \in I} G_i \) est un groupe abélien. Il vient que toute représentation irréductible de \( G \) est de degré 1.
-		
-		\item Chaque groupe d'ordre premier est cyclique. Par i), il vient que toute représentation irréductible de \( G \) est de degré 1.
-		
-		\item \textbf{\underline{Sens direct}}\\
-		Supposons que \( \varphi_I \) est irréductible.\\
-		\textbf{\underline{Montrons que chaque \( \varphi_i \) non triviale est irréductible} :}\\
-		Supposons par l'absurde que pour un certain \( j \in I \), la représentation non triviale \( \varphi_j \) ne soit pas irréductible. Cela signifie qu'il existe un sous-espace propre non trivial \( W_j \subset V_j \) qui est stable sous \( \varphi_j \).\\
-		Soit
-		\(
-		W = \left( \bigotimes_{i \neq j} V_i \right) \otimes W_j \subset \bigotimes_{i \in I} V_i.
-		\)
-		Ce sous-espace est stable sous \( \varphi_I \).\\
-		Cette stabilité contredit l'irréductibilité de \( \varphi \), car un sous-espace propre non trivial stable ne devrait pas exister dans une représentation irréductible.
-		Ainsi, chaque \( \varphi_i \) non triviale doit être irréductible.
-	\end{enumerate}
-\end{frame}
-
-\begin{frame}{Esquisse de la preuve : irréductibilité de \texorpdfstring{$\varphi_I$}{phi\_I} (2/2)}
-	\begin{enumerate} [label=\roman*), start=3]
-		\item[] \textbf{\underline{Montrons que le produit tensoriel des représentations linéaires non triviales}\\
-		\item[] \textbf{ \( \varphi_i \) est irréductible} :}\\
-		Soit \( J \subset I \) l'ensemble des indices correspon
-		Soit \( J \subset I \) l'ensemble des indices correspondant aux représentations \( \varphi_i \) non triviales.\\
-		On peut écrire :
-		\[
-		\bigotimes_{i \in I} V_i = \left( \bigotimes_{i \in J} V_i \right) \otimes \left( \bigotimes_{i \notin J} V_i \right).
-		\]
-		Puisque \( \bigotimes_{i \notin J} V_i \) est constitué de représentations triviales, il n’affecte pas l'irréductibilité. Par conséquent, l'irréductibilité de \( \varphi \) entraîne celle de \( \bigotimes_{i \in J} \varphi_i \).\\
-		
-		\textbf{\underline{Sens réciproque}}\\
-		\textbf{Montrons que \( \varphi \) est irréductible :}\\
-		Supposons que chaque \( \varphi_i \) non triviale est irréductible et que leur produit tensoriel est irréductible.\\
-		Considérons un sous-espace stable \( W \subset \bigotimes_{i \in I} V_i \). Soit \( J \) une partie finie de \( I \).\\
-		On a :
-		\[
-		\bigotimes_{i \in I} V_i = \left( \bigotimes_{i \in J} V_i \right) \otimes \left( \bigotimes_{i \notin J} V_i \right).
-		\]
-	
-	
-	\end{enumerate}
-\end{frame}
-
-\begin{frame}
-Comme \( \bigotimes_{i \notin J} V_i \) est trivial, tout sous-espace stable sous \( \varphi_I \) est en réalité stable sous \( \bigotimes_{i \in J} \varphi_i \).\\
-Par hypothèse, \( \bigotimes_{i \in J} \varphi_i \) est irréductible. Donc \( W = \{0\} \) ou \( \bigotimes_{i \in I} V_i \).\\
-	Cela montre que \( \varphi \) est irréductible.
-\end{frame}
-
-
-\section{Traité du cas de $\widehat{\mathbb{Z}}$, le complété profini de $\mathbb{Z}$}
-
-\begin{frame}
-	\textbf{Convention :} Tous les espaces vectoriels sont supposés de dimension finie et définis sur \( \mathbb{C} \), sauf mention contraire.
-\end{frame}
 
 \begin{frame}{Définition de \texorpdfstring{$\widehat{\mathbb{Z}}$}{Z-chapeau}}
 	\begin{definition}
@@ -1077,7 +637,7 @@ Le complété profini \( \widehat{\mathbb{Z}} \) est défini comme la limite pro
 \end{frame}
 
 \begin{frame}
-	\begin{theorem}
+	\begin{theoreme}
 	L'application
 	\[
 	\Phi : \widehat{\mathbb{Z}} \to \varprojlim_{N \in \mathcal{F}(\mathbb{N})} \prod_{n \in N} \mathbb{Z}/n\mathbb{Z}
@@ -1087,7 +647,7 @@ Le complété profini \( \widehat{\mathbb{Z}} \) est défini comme la limite pro
 	\Phi((x_n)_{n \geq 1}) = (x_N)_{N \in \mathcal{F}(\mathbb{N})}, \quad \text{où } x_N = (x_n)_{n \in N}
 	\]
 	est un isomorphisme de groupes .
-\end{theorem}
+\end{theoreme}
 
 
 Ainsi, d’après les résultats précédents, nous obtenons la représentation linéaire suivante :
@@ -1105,12 +665,12 @@ Ainsi, d’après les résultats précédents, nous obtenons la représentation 
 	
 \end{definition}
 
-\begin{theorem}
+\begin{theoreme}
 	L'ensemble des caractères continus de $\widehat{\mathbb{Z}}$ est isomorphe à $\mathbb{Q}/\mathbb{Z}$ via la dualité de Pontryagin :
 	\[
 	\operatorname{Hom}_{\text{cont}}(\widehat{\mathbb{Z}}, \mathbb{C}^\times) \simeq \mathbb{Q}/\mathbb{Z}.
 	\]
-\end{theorem}
+\end{theoreme}
 
 
 \begin{proposition}
@@ -1121,7 +681,6 @@ Ainsi, d’après les résultats précédents, nous obtenons la représentation 
 		\Phi : \operatorname{Irr}(\widehat{\mathbb{Z}}) \to \operatorname{Hom}_{\text{cont}}(\widehat{\mathbb{Z}}, \mathbb{C}^\times)),
 		\]
 		\item $\widehat{\mathbb{Z}}$ possède une infinité non dénombrable de représentations irréductibles.
-		\item Les représentations irréductibles de $\widehat{\mathbb{Z}}$ peuvent être interprétées comme des représentations sur chaque composante $\mathbb{Z}_p$.
 	\end{enumerate}
 \end{proposition}
 
@@ -1129,10 +688,6 @@ Ainsi, d’après les résultats précédents, nous obtenons la représentation 
 
 	\section{Conclusion}
 	\begin{frame}{Conclusion}
-	Parvenus au terme de notre travail, où il était principalement question pour nous d'étendre les représentations linéaires aux groupes infinis, il en ressort que nous avons construit les représentations linéaires des groupes infinis vus comme produits infinis de groupes finis.
-	Les caractères de tels groupes sont construits comme des suites, dont l'existence est liée aux propriétés de convergence de ces suites. Nous avons donné quelques propriétés des représentations irréductibles de ces groupes.
-	Enfin, nous avons étudié le cas particulier de \(\widehat{\mathbb{Z}}\) qui est le complété profini de \( \mathbb{Z} \). Ici, nous avons construit explicitement les représentations linéaires, calculé les caractères associés, et donné quelques proprietés d’irréductibilité.\\
-	Excellence M. le president du jury, très chers honorables membres du jury, à vos titres et grades respectifs, nous n'avons pas la pretention d'avoir effectue un travail parfait. Nous admettons que notre travil puiss comporter des impertions et c'est pour cette raison que nous nous soumettons a vos differentes remarques et suggestion tout en vous rasurant de les prendre en consideration pour ameliorer le present travail.\\
 	
 	Merci pour votre aimable attention, J'en ai fini.
 	\end{frame}
