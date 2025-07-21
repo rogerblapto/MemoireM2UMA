@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.5.13)  17 JUL 2025 00:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.7.20)  21 JUL 2025 20:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **Memoire.tex
 (./Memoire.tex
-LaTeX2e <2024-11-01> patch level 1
-L3 programming layer <2024-12-25>
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2024/06/29 v1.4n Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
@@ -25,11 +25,11 @@ File: size10.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
 \bibindent=\dimen141
 )
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2025/01/01 v25.1 The multilingual framework for pdfLaTeX, LuaLaT
+Package: babel 2025/02/14 v25.4 The multilingual framework for pdfLaTeX, LuaLaT
 eX and XeLaTeX
 \babel@savecnt=\count271
 \U@D=\dimen142
-\l@unhyphenated=\language7
+\l@unhyphenated=\language5
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
@@ -38,9 +38,9 @@ eX and XeLaTeX
 (/usr/share/texlive/texmf-dist/tex/generic/babel-french/french.ldf
 Language: french 2024-07-25 v3.6c French support from the babel system
 Package babel Info: Hyphen rules for 'acadian' set to \l@french
-(babel)             (\language6). Reported on input line 91.
+(babel)             (\language3). Reported on input line 91.
 Package babel Info: Hyphen rules for 'canadien' set to \l@french
-(babel)             (\language6). Reported on input line 92.
+(babel)             (\language3). Reported on input line 92.
 \FB@stdchar=\count273
 Package babel Info: Making : an active character on input line 421.
 Package babel Info: Making ; an active character on input line 422.
@@ -185,7 +185,7 @@ Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 \c@section@level=\count283
 )
 (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count284
 )
 (/usr/share/texlive/texmf-dist/tex/generic/stringenc/stringenc.sty
@@ -290,8 +290,8 @@ Package: titlesec 2025/01/04 v2.17 Sectioning titles
 \titlewidthfirst=\dimen163
 )
 (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-Package: fancyhdr 2025/01/07 v5.1.1 Extensive control of page headers and foote
-rs
+Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
+
 \f@nch@headwidth=\skip55
 \f@nch@offset@elh=\skip56
 \f@nch@offset@erh=\skip57
@@ -340,7 +340,7 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/hyphenat/hyphenat.sty
 Package: hyphenat 2009/09/02 v2.3c hyphenation utilities
-\langwohyphens=\language8
+\langwohyphens=\language6
 LaTeX Info: Redefining \_ on input line 43.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
@@ -836,7 +836,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
 (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2024-12-25 L3 programming layer (loader) 
+Package: expl3 2025-01-18 L3 programming layer (loader) 
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
@@ -1970,8 +1970,8 @@ nt aux ca-rac-tères conti-nus.Donc
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (./Memoire.aux)
  ***********
-LaTeX2e <2024-11-01> patch level 1
-L3 programming layer <2024-12-25>
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
  ***********
 
 
@@ -1981,13 +1981,13 @@ Package rerunfilecheck Info: File `Memoire.out' has not changed.
 (rerunfilecheck)             Checksum: 40EB5FD7CB9392AE8CB0F59E26E170FC;13726.
  ) 
 Here is how much of TeX's memory you used:
- 33373 strings out of 475149
- 622093 string characters out of 5765168
- 1137476 words of memory out of 5000000
- 55205 multiletter control sequences out of 15000+600000
+ 33405 strings out of 475149
+ 622645 string characters out of 5765270
+ 1138292 words of memory out of 5000000
+ 55241 multiletter control sequences out of 15000+600000
  629661 words of font info for 218 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 98i,26n,107p,3259b,1372s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 98i,26n,105p,3259b,1372s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texli
