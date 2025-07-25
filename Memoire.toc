@@ -3,7 +3,7 @@
 \contentsline {chapter}{Remerciements. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .}{iii}{chapter*.2}%
 \contentsline {chapter}{Resumé. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .}{vii}{chapter*.4}%
 \contentsline {chapter}{Abstract. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . }{viii}{chapter*.5}%
-\contentsline {section}{INTRODUCTION}{1}{chapter*.6}%
+\contentsline {chapter}{Introduction. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .}{ix}{chapter*.6}%
 \contentsline {chapter}{\numberline {1}Préliminaires}{2}{chapter.1}%
 \contentsline {section}{Introduction}{2}{section*.7}%
 \contentsline {section}{\numberline {1.1}Groupes, sous-groupes et homomorphismes de groupes}{2}{section.1.1}%
