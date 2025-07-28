@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.7.20)  28 JUL 2025 19:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.7.20)  28 JUL 2025 19:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -213,7 +213,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [2]
 
 [3]
-Overfull \hbox (150.66046pt too wide) detected at line 126
+Overfull \hbox (150.66046pt too wide) detected at line 128
 \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^_[] \OMS/cmsy/m/n/12 ^^A \OML/cmm/m/it/12 ^
 ^_[]\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 gh\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 ^
 ^_[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 gh\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ^^_[]
@@ -232,7 +232,7 @@ T1/cmr/m/n/12 )(\OML/cmm/m/it/12 h\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 :
  []
 
 
-Overfull \hbox (9.07825pt too wide) detected at line 134
+Overfull \hbox (9.07825pt too wide) detected at line 136
 \OT1/cmr/m/n/12 ((\OML/cmm/m/it/12 ^^_[] \OMS/cmsy/m/n/12 ^^A \OML/cmm/m/it/12 
 ^^_[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^A \OML/cmm/m/it/12 ^^_[]\OT1/cmr/m/n/
 12 )(\OML/cmm/m/it/12 g\OT1/cmr/m/n/12 ) = (\OML/cmm/m/it/12 ^^_[]\OT1/cmr/m/n/
@@ -282,7 +282,7 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on ajout.pdf (6 pages, 148027 bytes).
+Output written on ajout.pdf (6 pages, 148118 bytes).
 PDF statistics:
  237 PDF objects out of 1000 (max. 8388607)
  60 compressed objects within 1 object stream
