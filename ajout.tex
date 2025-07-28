@@ -8,6 +8,8 @@
 \author{}
 \date{}
 
+
+\newtheorem{propriete}{Propriété}
 \newtheorem{theoreme}{Théorème}
 \newtheorem{lemme}{Lemme}
 
@@ -55,5 +57,158 @@
 		Ainsi, \( \rho \cong \rho' \).
 		
 	\end{proof}
+	
+	
+	\newpage
+	
+	
+	\begin{theoreme}
+		Le degré d’un caractère irréductible est égal à la dimension de la représentation irréductible dont il est le caractère.
+	\end{theoreme}
+	
+	\begin{proof}
+		Soit \( G \) un groupe fini, et soit \( \rho : G \to \mathrm{GL}(V) \) une représentation irréductible complexe de \( G \), où \( V \) est un espace vectoriel complexe de dimension finie.
+		
+		On note \( \chi_\rho : G \to \mathbb{C} \) le caractère associé à la représentation \( \rho \). Le \emph{degré} du caractère \( \chi_\rho \) est défini par sa valeur en l’élément neutre du groupe :
+		\[
+		\chi_\rho(1) = \chi_\rho(e),
+		\]
+		où \( e \) est l’élément neutre de \( G \).
+		
+		Par définition du caractère :
+		\[
+		\chi_\rho(g) = \mathrm{Tr}(\rho(g)) \quad \text{pour tout } g \in G.
+		\]
+		
+		En particulier, pour \( g = e \), on a :
+		\[
+		\chi_\rho(e) = \mathrm{Tr}(\rho(e)).
+		\]
+		
+		Or, comme \( \rho \) est une représentation, on a \( \rho(e) = \mathrm{Id}_V \), donc :
+		\[
+		\chi_\rho(e) = \mathrm{Tr}(\mathrm{Id}_V) = \dim V.
+		\]
+		
+		Ainsi,
+		\[
+		\chi_\rho(1) = \dim V.
+		\]
+		
+		Cela montre que le degré du caractère irréductible est égal à la dimension de la représentation irréductible.
+		
+	\end{proof}
+	
+	
+	\newpage
+	
+	\begin{propriete}
+		Soit \( G \) un groupe. On note
+		\[
+		\widehat{G} := \mathrm{Hom}(G, \mathbb{C}^\times)
+		\]
+		l’ensemble des caractères de \( G \), c’est-à-dire l’ensemble des morphismes de groupes de \( G \) dans le groupe multiplicatif des complexes non nuls \( \mathbb{C}^\times \). Alors \( \widehat{G} \) muni de la multiplication point par point :
+		\[
+		(\chi_1 \cdot \chi_2)(g) := \chi_1(g) \cdot \chi_2(g), \quad \forall g \in G,
+		\]
+		forme un groupe abélien.
+	\end{propriete}
+	
+	\begin{proof}
+		\textbf{1. Fermeture.} Soient \( \chi_1, \chi_2 \in \widehat{G} \), c’est-à-dire deux morphismes de groupes \( G \to \mathbb{C}^\times \). On définit :
+		\[
+		(\chi_1 \cdot \chi_2)(g) := \chi_1(g) \cdot \chi_2(g), \quad \forall g \in G.
+		\]
+		Pour montrer que \( \chi_1 \cdot \chi_2 \in \widehat{G} \), vérifions que c’est un morphisme :
+		\[
+		(\chi_1 \cdot \chi_2)(gh) = \chi_1(gh) \chi_2(gh) = \chi_1(g)\chi_1(h) \cdot \chi_2(g)\chi_2(h)
+		= (\chi_1(g)\chi_2(g))(\chi_1(h)\chi_2(h)) = (\chi_1 \cdot \chi_2)(g)(\chi_1 \cdot \chi_2)(h).
+		\]
+		
+		\textbf{2. Associativité.} La multiplication dans \( \mathbb{C}^\times \) étant associative, on a pour \( \chi_1, \chi_2, \chi_3 \in \widehat{G} \) :
+		\[
+		((\chi_1 \cdot \chi_2) \cdot \chi_3)(g)
+		= (\chi_1(g) \cdot \chi_2(g)) \cdot \chi_3(g)
+		= \chi_1(g) \cdot (\chi_2(g) \cdot \chi_3(g))
+		= (\chi_1 \cdot (\chi_2 \cdot \chi_3))(g).
+		\]
+		
+		\textbf{3. Élément neutre.} L’application constante \( \mathbf{1}_G : G \to \mathbb{C}^\times \) définie par \( \mathbf{1}_G(g) = 1 \) pour tout \( g \in G \) est un morphisme de groupes (trivialement). Elle vérifie :
+		\[
+		(\chi \cdot \mathbf{1}_G)(g) = \chi(g) \cdot 1 = \chi(g), \quad \forall \chi \in \widehat{G}, \ \forall g \in G.
+		\]
+		
+		\textbf{4. Inverses.} Pour \( \chi \in \widehat{G} \), définissons \( \chi^{-1} : G \to \mathbb{C}^\times \) par \( \chi^{-1}(g) = \chi(g)^{-1} \). On a :
+		\[
+		\chi^{-1}(gh) = (\chi(gh))^{-1} = (\chi(g)\chi(h))^{-1} = \chi(h)^{-1} \chi(g)^{-1} = \chi^{-1}(g)\chi^{-1}(h),
+		\]
+		(car \( \mathbb{C}^\times \) est abélien). Donc \( \chi^{-1} \in \widehat{G} \) et :
+		\[
+		(\chi \cdot \chi^{-1})(g) = \chi(g) \cdot \chi(g)^{-1} = 1 = \mathbf{1}_G(g).
+		\]
+		
+		\textbf{5. Commutativité.} Pour \( \chi_1, \chi_2 \in \widehat{G} \), et \( g \in G \), on a :
+		\[
+		(\chi_1 \cdot \chi_2)(g) = \chi_1(g)\chi_2(g) = \chi_2(g)\chi_1(g) = (\chi_2 \cdot \chi_1)(g).
+		\]
+		
+		\noindent
+		Ainsi, \( \widehat{G} \) est un groupe abélien pour la multiplication point par point.
+		
+	\end{proof}
+	
+	\newpage
+	
+	
+	\begin{theoreme}
+		Soient \( E \) et \( F \) deux espaces vectoriels sur un corps \( \mathbb{K} \).  
+		Alors il existe un isomorphisme canonique :
+		\[
+		E \otimes F \cong F \otimes E.
+		\]
+	\end{theoreme}
+	
+	\begin{proof}
+		Nous construisons un isomorphisme linéaire entre \( E \otimes F \) et \( F \otimes E \), sans choisir de bases.
+		
+		\textbf{Étape 1 : Définition d'une application bilinéaire.}
+		
+		Considérons l'application :
+		\[
+		\beta : E \times F \to F \otimes E, \quad (e, f) \mapsto f \otimes e.
+		\]
+		Elle est bilinéaire car la multiplication tensorielle est linéaire en chaque variable. Par la propriété universelle du produit tensoriel, cette application induit un unique morphisme linéaire :
+		\[
+		T : E \otimes F \to F \otimes E, \quad \text{défini par } T(e \otimes f) = f \otimes e.
+		\]
+		
+		\textbf{Étape 2 : Construction de l'inverse.}
+		
+		De façon symétrique, on définit :
+		\[
+		\gamma : F \times E \to E \otimes F, \quad (f, e) \mapsto e \otimes f,
+		\]
+		qui est également bilinéaire, et induit un morphisme linéaire :
+		\[
+		S : F \otimes E \to E \otimes F, \quad \text{défini par } S(f \otimes e) = e \otimes f.
+		\]
+		
+		\textbf{Étape 3 : Vérification que \( T \) et \( S \) sont inverses.}
+		
+		Pour tout \( e \in E \), \( f \in F \) :
+		\[
+		(S \circ T)(e \otimes f) = S(f \otimes e) = e \otimes f,
+		\]
+		\[
+		(T \circ S)(f \otimes e) = T(e \otimes f) = f \otimes e.
+		\]
+		Donc \( S \circ T = \mathrm{id}_{E \otimes F} \) et \( T \circ S = \mathrm{id}_{F \otimes E} \), ce qui prouve que \( T \) est un isomorphisme, avec inverse \( S \).
+		
+		\textbf{Conclusion :} L'application \( T \) est un isomorphisme canonique :
+		\[
+		\boxed{E \otimes F \cong F \otimes E}.
+		\]
+	\end{proof}
+	
 	
 \end{document}
