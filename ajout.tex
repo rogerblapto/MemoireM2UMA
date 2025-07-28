@@ -1,0 +1,59 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\title{Isomorphisme de représentations et caractères}
+\author{}
+\date{}
+
+\newtheorem{theoreme}{Théorème}
+\newtheorem{lemme}{Lemme}
+
+\begin{document}
+	
+	\maketitle
+	
+	\begin{theoreme}
+		Soient \( \rho, \rho' : G \to \mathrm{GL}(V), \mathrm{GL}(V') \) deux représentations complexes de dimension finie d’un groupe fini \( G \). Alors :
+		\[
+		\rho \cong \rho' \quad \Leftrightarrow \quad \chi_\rho = \chi_{\rho'},
+		\]
+		où \( \chi_\rho \) et \( \chi_{\rho'} \) sont les caractères des représentations \( \rho \) et \( \rho' \).
+	\end{theoreme}
+	
+	\begin{proof}
+		\textbf{Sens direct} : Supposons que \( \rho \cong \rho' \). Il existe alors un isomorphisme d’espaces vectoriels \( T : V \to V' \) tel que :
+		\[
+		T \circ \rho(g) = \rho'(g) \circ T \quad \text{pour tout } g \in G.
+		\]
+		Cela implique que \( \rho(g) \) et \( \rho'(g) \) sont semblables, donc ont la même trace :
+		\[
+		\chi_\rho(g) = \mathrm{Tr}(\rho(g)) = \mathrm{Tr}(\rho'(g)) = \chi_{\rho'}(g),
+		\]
+		pour tout \( g \in G \). Ainsi, \( \chi_\rho = \chi_{\rho'} \).
+		
+		\vspace{1em}
+		\textbf{Sens réciproque} : Supposons que \( \chi_\rho = \chi_{\rho'} \). On sait que toute représentation complexe d’un groupe fini est complètement réductible (théorème de Maschke). On peut donc écrire :
+		\[
+		\rho \cong \bigoplus_{i} n_i \rho_i, \quad \rho' \cong \bigoplus_{i} n_i' \rho_i,
+		\]
+		où les \( \rho_i \) sont des représentations irréductibles non isomorphes deux à deux, et \( n_i, n_i' \in \mathbb{N} \) sont les multiplicités.
+		
+		Le caractère d’une somme directe est la somme des caractères :
+		\[
+		\chi_\rho = \sum_i n_i \chi_i, \quad \chi_{\rho'} = \sum_i n_i' \chi_i,
+		\]
+		où \( \chi_i \) est le caractère de \( \rho_i \).
+		
+		Comme \( \chi_\rho = \chi_{\rho'} \) et que les caractères irréductibles \( \chi_i \) sont linéairement indépendants dans l’espace des fonctions de classe, on en déduit que :
+		\[
+		n_i = n_i' \quad \text{pour tout } i.
+		\]
+		
+		Ainsi, \( \rho \cong \rho' \).
+		
+	\end{proof}
+	
+\end{document}
