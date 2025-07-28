@@ -210,5 +210,56 @@
 		\]
 	\end{proof}
 	
+	\newpage
+	
+	\begin{theoreme}
+		Soient \( E \) et \( F \) deux espaces vectoriels sur un corps \( \mathbb{K} \).  
+		Alors le couple \( (E \otimes F, \otimes) \), constitué de l’espace tensoriel et de l’application bilinéaire canonique, est unique à isomorphisme près.  
+		Autrement dit, si \( (T, \varphi) \) est un autre couple avec \( \varphi : E \times F \to T \) bilinéaire vérifiant la même propriété universelle, alors il existe un unique isomorphisme linéaire \( u : E \otimes F \to T \) tel que :
+		\[
+		u(e \otimes f) = \varphi(e, f), \quad \forall (e, f) \in E \times F.
+		\]
+	\end{theoreme}
+	
+	\begin{proof}
+		Par définition, le couple \( (E \otimes F, \otimes) \) vérifie la propriété universelle suivante :
+		
+		\emph{Pour tout espace vectoriel \( G \) et toute application bilinéaire \( B : E \times F \to G \), il existe un unique morphisme linéaire \( \tilde{B} : E \otimes F \to G \) tel que \( \tilde{B}(e \otimes f) = B(e, f) \).}
+		
+		Soit maintenant \( (T, \varphi) \) un autre couple vérifiant la même propriété universelle.  
+		On applique cette propriété dans deux directions :
+		
+		\textbf{1. Application de la propriété universelle de \( E \otimes F \) à \( B = \varphi \).}
+		
+		Il existe un unique morphisme linéaire \( u : E \otimes F \to T \) tel que :
+		\[
+		u(e \otimes f) = \varphi(e, f), \quad \forall (e,f) \in E \times F.
+		\]
+		
+		\textbf{2. Application de la propriété universelle de \( T \) à \( B = \otimes \).}
+		
+		Il existe un unique morphisme linéaire \( v : T \to E \otimes F \) tel que :
+		\[
+		v(\varphi(e, f)) = e \otimes f, \quad \forall (e,f) \in E \times F.
+		\]
+		
+		\textbf{3. Vérification que \( u \) et \( v \) sont inverses.}
+		
+		Pour tout \( e \otimes f \in E \otimes F \), on a :
+		\[
+		(v \circ u)(e \otimes f) = v(u(e \otimes f)) = v(\varphi(e, f)) = e \otimes f,
+		\]
+		donc \( v \circ u = \mathrm{id}_{E \otimes F} \).
+		
+		Pour tout \( \varphi(e, f) \in T \), on a :
+		\[
+		(u \circ v)(\varphi(e, f)) = u(v(\varphi(e, f))) = u(e \otimes f) = \varphi(e, f),
+		\]
+		donc \( u \circ v = \mathrm{id}_T \).
+		
+		Ainsi, \( u \) est un isomorphisme, et il est unique par unicité dans la propriété universelle.
+		
+	\end{proof}
+	
 	
 \end{document}
