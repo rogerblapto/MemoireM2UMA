@@ -385,15 +385,18 @@ Infinite groups, profinite groups, profinite completion, linear representations,
 \addcontentsline{toc}{chapter}{Introduction. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  . . . . . . . . .  . . . .  . . . . .} 
 {
 	\applyfontsize % Application locale de la taille de police 12pt
-La théorie des représentations linéaires d’un groupe constitue un outil fondamental permettant de représenter les éléments d’un groupe abstrait par des matrices inversibles sur un corps donné. Cette approche, qui traduit des problèmes complexes d’algèbre abstraite en des problèmes d’algèbre linéaire plus accessibles, repose sur la notion de représentation linéaire. Etant donné un corps $\mathbb{K}$, une représentation $\mathbb{K}$-linéaire d’un groupe fini $G$ est un homomorphisme de groupes \[ \rho : G \to \text{GL}(V) \]
+La théorie des représentations linéaires d’un groupe constitue un outil fondamental permettant de représenter les éléments d’un groupe abstrait par des matrices \\
+inversibles sur un corps donné. Cette approche repose sur la notion de représentation linéaire. Etant donné un corps $\mathbb{K}$, une représentation $\mathbb{K}$-linéaire d’un groupe fini $G$ est un homomorphisme de groupes  $\rho : G \to \text{GL}(V) $
 où $V$ est un $\mathbb{K}$-espace vectoriel et $\text{GL}(V)$ désigne le groupe des applications linéaires bijectives de $V$ sur lui-même \cite{serre1971representation}. 
-La théorie des représentations linéaires des groupes finis a été développée pour la première fois par le mathématicien allemand Ferdinand Georg Frobenius en 1897. Il introduit notamment la notion de représentation linéaire d’un groupe fini et jette les bases de la théorie des caractères des groupes \cite{minkowski1911gesammelte}. Par la suite, Jean-Pierre Serre a approfondi ces travaux et a formalisé cette théorie dans son ouvrage \textbf{"Représentations linéaires des groupes finis"}, publié en 1968, où il développe une analyse détaillée des représentations linéaires et des caractères des groupes finis \cite{serre1971representation}. Il existe peu de résultats récents généralisant ce concept aux groupes infinis, d’où le choix de notre thème : \textbf{représentations linéaires, caractères et représentations linéaires irréductibles d’un produit infini de groupes finis.}
-Le but principal de ce projet est d’étendre les représentations linéaires aux groupes infinis.
+La théorie des représentations linéaires des groupes finis a été développée pour la première fois par le mathématicien allemand Ferdinand Georg Frobenius en 1897. Il introduit notamment la notion de représentation linéaire d’un groupe fini et jette les bases de la théorie des caractères des groupes \cite{minkowski1911gesammelte}. Par la suite, Jean-Pierre Serre a \\
+approfondi ces travaux et a formalisé cette théorie dans son ouvrage \textbf{"Représentations linéaires des groupes finis"}, publié en 1968, où il développe une analyse détaillée des représentations linéaires et des caractères des groupes finis \cite{serre1971representation}. Il existe peu de résultats récents généralisant ce concept aux groupes infinis, d’où le choix de notre thème : \textbf{représentations linéaires, caractères et représentations linéaires irréductibles d’un produit infini de groupes finis.}
+Le but principal de ce projet est d’étendre les représentations linéaires aux groupes infinis vus comme produit infini de groupes finis.
 Pour atteindre les objectifs de ce travail, nous suivrons une démarche en trois chapitres.\\
-Dans le premier chapitre, nous présenterons les préliminaires nécessaires à notre étude. Il s’agira notamment de rappeler les notions de groupes, de sous-groupes, de topologie, de groupes topologiques, ainsi que celles d’espaces vectoriels et d’applications linéaires. Ce chapitre introduisera également les concepts de catégories, foncteurs, limites inductives et projectives, et se terminera par une première approche du complété profini d’un groupe. Ces notions fondamentales permettront d’aborder les représentations linéaires avec un socle théorique solide.\\
+Dans le premier chapitre, nous présenterons les préliminaires nécessaires à notre étude. Il s’agira notamment de rappeler les notions de groupes, de sous-groupes, de topologie, de groupes topologiques, ainsi que celles d’espaces vectoriels et d’applications linéaires. Ce chapitre introduisera également les concepts de catégories, foncteurs, limites inductives et projectives, et se terminera par une première approche du complété profini d’un groupe.\\
 Dans le deuxième chapitre, nous aborderons l’étude des représentations linéaires des groupes finis.
 Il va s’agir de définir quelques concepts de base et quelques résultats immédiats relatifs aux représentations linéaires des groupes finis ; ensuite définir la notion de caractère d’une représentation linéaire d’un groupe fini et donner quelques unes de ses propriétés. Aussi, il sera question de définir les notions de représentation linéaire irréductible d’un groupe fini, puis donner quelques propriétés relatives.\\
-Dans le troisième chapitre, nous élargirons notre étude au cadre des groupes infinis. Ainsi, nous rappellerons le produit tensoriel infini d’espaces vectoriels sur un même corps comme une limite inductive. Puis nous définirons une représentation linéaire d’un produit arbitraire de groupes finis sur un produit tensoriel infini d’espaces vectoriels sur un même corps, définir son caractère ; puis caractériser les représentations irréductibles de ce groupe infini. Enfin, nous déterminerons une représentation linéaire du complété profini d’un groupe qui est une construction d’un groupe profini.
+Dans le troisième chapitre, nous élargirons notre étude au cadre des groupes infinis. Ainsi, nous rappellerons le produit tensoriel infini d’espaces \\
+ vectoriels sur un même corps comme une limite inductive. Puis nous définirons une représentation linéaire d’un produit arbitraire de groupes finis sur un produit tensoriel infini d’espaces vectoriels sur un même corps, définir son caractère ; puis caractériser les représentations irréductibles de ce groupe infini. Enfin, nous déterminerons une représentation linéaire du complété profini d’un groupe qui est une construction d’un groupe profini.
 
 
 
@@ -616,6 +619,8 @@ Soit \( G \) un groupe fini. Si le nombre de classes de conjugaison de \( G \) e
 \begin{definition} \cite{hall2018theory} \\
 Un sous-groupe d'un groupe $G$ est un sous-ensemble non vide $H$ de $G$ tel que $H$ muni  de la loi induite par celle de $G$ est un groupe.
 \end{definition}
+
+\newpage
 
 \begin{theorem}  \cite{hall2018theory} \\
 Une partie $H$ non vide de $G$ est un sous-groupe de $(G,*)$ si :
@@ -994,8 +999,6 @@ Soit \( E_1, E_2, \dots, E_n \) une famille d'espaces vectoriels sur un corps \(
 \end{definition}
 
 
-\newpage
-
 \begin{definition} \cite{lang2012algebra}\\
 Soit \( V \) est \(\mathbb{K}\)-espace vectoriel . Si \( v_1, v_2, \dots, v_n \in V \) et \( c_1, c_2, \dots, c_n \in \mathbb{K} \), alors le vecteur
 	\[
@@ -1051,8 +1054,6 @@ Supposons que \( V \) soit un \(\mathbb{K}\)-espace vectoriel de dimension finie
 \begin{lemma} \cite{lang2012algebra} \\
 Soit que \( V \) un espace vectoriel. Si \( \{v_1, \dots, v_n\} \) engendre \( V \), alors \( \dim V \leq n \). Si \( \{w_1, \dots, w_m\} \) est une famille libre, alors \( m \leq \dim V \).
 \end{lemma}
-
-\newpage
 
 \begin{lemma} \cite{lang2012algebra} \\
 Soit \( \{v_1, \dots, v_n\} \) une famille libre d'un espace vectoriel $V$ et que \( v \) soit un vecteur de $V$. Alors la famille  \( \{ v_1, \dots, v_n\} \) est liée si et seulement si \( v \notin \mathrm{Span}\{v_1, \dots, v_n\} \).
@@ -3455,6 +3456,8 @@ qui est une représentation linéaire du produit direct infini \( \underset{i\in
 \subsection{Caractère d'une représentation linéaire d'un produit de groupes}
 Dans cette section, sauf mention contraire, tous les espaces vectoriels considérés seront supposés de dimension finie et définis sur \( \mathbb{C} \). \\
 
+\newpage
+
 \begin{definition} \cite{serre1971representation}\\
 Soient \( G_1 \) et \( G_2 \) des groupes, et \( \rho_1 \) et \( \rho_2 \) des représentations linéaires respectives de \( G_1 \) et \( G_2 \), avec \( \chi_1 \) et \( \chi_2 \) les caractères associés à ces représentations. Le caractère \( \chi \) du produit tensoriel des représentations \( \rho_1 \otimes \rho_2 \) de \( G_1 \times G_2 \) est défini par la formule :
 	
@@ -3627,6 +3630,8 @@ Cela montre que \( \varphi \) est irréductible.
 Le groupe \( \widehat{\mathbb{Z}} \), complété profini de \( \mathbb{Z} \), est un exemple des groupes profinis. Dans cette section, nous analysons ses propriétés, ses représentations linéaires, ses caractères, et ses représentations irréductibles, en exploitant sa structure spécifique.\\
 
 Dans cette section, sauf indication contraire, tous les espaces vectoriels seront supposés de dimension finie et définis sur \( \mathbb{C} \).
+
+\newpage
 
 \begin{definition} \cite{ribes-zalesskii}\\
 Le complété profini $\widehat{\mathbb{Z}}$ est la limite projective du système $(\mathbb{Z}/n\mathbb{Z}, \varphi_{m,n})$, où :
@@ -4178,29 +4183,35 @@ D. A. Harville, \emph{Matrix Algebra from a Statistician’s Perspective}, Sprin
 \bibitem{ribes-zalesskii}
 L. Ribes and P. Zalesskii, \emph{Profinite Groups}, Springer, Berlin, 2010.
 
-\bibitem{cheung2018algebre}
-K. Cheung and M. Lemire, \emph{Algèbre Linéaire et Applications}, 2018.
-
 \bibitem{guglielmetti2025profinite}
 R. Guglielmetti, \emph{Groupes profinis et cohomologie galoisienne}, École Polytechnique Fédérale de Lausanne (EPFL), 2021.
 
 \bibitem{herfort2012profinite}
 W. Herfort, \emph{Introduction to Profinite Groups}, Mimar Sinan Fine Arts University, 2012.
 
+\bibitem{cheung2018algebre}
+K. Cheung and M. Lemire, \emph{Algèbre Linéaire et Applications}, 2018.
+
 \bibitem{renard2009groupes}
 D. Renard and L. Schwartz, \emph{Groupes et représentations}, École Polytechnique, 2009.
 
-\bibitem{deschamps}
-B. Deschamps, \emph{Groupes profinis et théorie de Galois}, Clarendon Press, Oxford, 1998.
-
 \bibitem{greub2012linear}
 W. H. Greub, \emph{Linear Algebra}, vol. 23, Springer Science \& Business Media, 2012.
+
+\bibitem{Guichardet}
+A. Guichardet, \emph{Tensor Products of $\mathbb{C}^{*}$-Algebras, Part II. Infinite Tensor Products}, Lecture Notes Series no. 13, 1969.
+
+\bibitem{minkowski1911gesammelte}
+H. Minkowski, \emph{Gesammelte Abhandlungen}, vol. 2, BG Teubner, 1911.
+
+\bibitem{deschamps}
+B. Deschamps, \emph{Groupes profinis et théorie de Galois}, Clarendon Press, Oxford, 1998.
 
 \bibitem{fried2023fieldarithmetic}
 M. D. Fried and M. Jarden, “Infinite Galois Theory and Profinite Groups,” in \emph{Field Arithmetic}, Springer Nature Switzerland, Cham, 2023, pp. 1--19.
 
 \bibitem{hararirepresentations}
-D. Harari, \emph{Représentations linéaires des groupes finis}.
+D. Harari, \emph{Représentations linéaires des groupes finis}, Agrégation, 2015.
 
 \bibitem{bridger2001limits}
 M. Bridger, \emph{Limits: A New Approach to Real Analysis}, Springer, New York, 2001.
@@ -4208,14 +4219,10 @@ M. Bridger, \emph{Limits: A New Approach to Real Analysis}, Springer, New York, 
 \bibitem{cartan1999homological}
 H. Cartan and S. Eilenberg, \emph{Homological Algebra}, vol. 19, Princeton University Press, 1999.
 
-\bibitem{minkowski1911gesammelte}
-H. Minkowski, \emph{Gesammelte Abhandlungen}, vol. 2, BG Teubner, 1911.
 
 \bibitem{Dragomir}
 D. Z. Dokovic, “Pairs of Involutions in the General Linear Group,” \emph{Journal of Algebra}, vol. 100, pp. 214--223, 1986.
 
-\bibitem{Guichardet}
-A. Guichardet, \emph{Tensor Products of $\mathbb{C}^{*}$-Algebras, Part II. Infinite Tensor Products}, Lecture Notes Series no. 13, 1969.
 
 
 \end{thebibliography}
