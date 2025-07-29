@@ -994,6 +994,7 @@ Soit \( E_1, E_2, \dots, E_n \) une famille d'espaces vectoriels sur un corps \(
 \end{definition}
 
 
+\newpage
 
 \begin{definition} \cite{lang2012algebra}\\
 Soit \( V \) est \(\mathbb{K}\)-espace vectoriel . Si \( v_1, v_2, \dots, v_n \in V \) et \( c_1, c_2, \dots, c_n \in \mathbb{K} \), alors le vecteur
@@ -1050,6 +1051,8 @@ Supposons que \( V \) soit un \(\mathbb{K}\)-espace vectoriel de dimension finie
 \begin{lemma} \cite{lang2012algebra} \\
 Soit que \( V \) un espace vectoriel. Si \( \{v_1, \dots, v_n\} \) engendre \( V \), alors \( \dim V \leq n \). Si \( \{w_1, \dots, w_m\} \) est une famille libre, alors \( m \leq \dim V \).
 \end{lemma}
+
+\newpage
 
 \begin{lemma} \cite{lang2012algebra} \\
 Soit \( \{v_1, \dots, v_n\} \) une famille libre d'un espace vectoriel $V$ et que \( v \) soit un vecteur de $V$. Alors la famille  \( \{ v_1, \dots, v_n\} \) est liée si et seulement si \( v \notin \mathrm{Span}\{v_1, \dots, v_n\} \).
@@ -1837,25 +1840,6 @@ Une matrice de permutation de taille \( n \times n \) est une matrice obtenue de
 \begin{example}\
 	\begin{enumerate}
 		\item La représentation linéaire triviale définie par \(\forall g \in G, \ \rho(g) = \mathrm{Id}_V\).\\
-	\textbf{\underline{Preuve:}}  \\		
-Soit \( \rho : G \to \mathrm{GL}(V) \) une représentation linéaire de \( G \) de degré \( 1 \), c’est-à-dire telle que \( \dim V = 1 \). 
-Dans ce cas, \( V \cong \mathbb{C} \), et le groupe général linéaire \( \mathrm{GL}(V) \) s’identifie à \( \mathbb{C}^\times \), le groupe multiplicatif des complexes non nuls. Ainsi, \( \rho \) peut être vu comme un morphisme de groupes :
-		\[
-		\rho : G \to \mathbb{C}^\times.
-		\]
-		
-		L'action de \( G \) sur \( V \) est donnée par multiplication scalaire :
-		\[
-		\rho(g)(v) = \lambda_g v, \quad \text{où } \lambda_g \in \mathbb{C}^\times \text{ et } v \in V.
-		\]
-		
-		Soit \( W \subseteq V \) un sous-espace vectoriel stable par \( \rho \), c’est-à-dire tel que \( \rho(g)(w) \in W \) pour tout \( g \in G \) et tout \( w \in W \).
-		
-		Or, comme \( \dim V = 1 \), les seuls sous-espaces vectoriels de \( V \) sont \( \{0\} \) et \( V \) lui-même.
-		
-		Donc, les seuls sous-espaces stables par \( \rho \) sont triviaux.
-		
-		Par définition, une représentation est dite irréductible si elle ne possède aucun sous-espace \( G \)-stable non trivial. Ainsi, \( \rho \) est irréductible
 		
 		
 		\item Représentation linéaire standard du groupe symétrique \( S_3 \) :\\
@@ -2002,12 +1986,12 @@ Cela définit une représentation linéaire \( \rho : S_3 \rightarrow \mathrm{GL
 	\( \rho_W : S_3 \rightarrow \mathrm{GL}(W) \) est une sous-représentation linéaire de \((V,\rho)_{S_3} \).\\
 	
 	\textbf{\underline{En effet:}}\\
-	Pour toute permutation \( \sigma \in S_3 \) et pour tout \( v \in W \), nous devons avoir \( \sigma \cdot v \in W \).\\
+Pour toute permutation \( \sigma \in S_3 \) et pour tout \( v \in W \), nous devons avoir \( \sigma \cdot v \in W \).\\
 	Soient \( v = (x, x, x) \in W \) et \( \sigma \in S_3 \), alors :
 	\[
 	\rho_W(\sigma) ((x, x, x))  = (x, x, x) \in W.
 	\]
-	Donc \( W \) est stable sous l'action de \( S_3 \). Ce qui montre que  \( \rho_W : S_3 \rightarrow \mathrm{GL}(W) \) est une sous-représentation de \((V,\rho)_{S_3} \).
+Donc \( W \) est stable sous l'action de \( S_3 \). Ce qui montre que  \( \rho_W : S_3 \rightarrow \mathrm{GL}(W) \) est une sous-représentation de \((V,\rho)_{S_3} \).
 \end{myexample}
 
 
@@ -2047,6 +2031,9 @@ Donc \( \varphi(g) \cdot v \in \ker(f) \). Ce qui prouve que \( \ker(f) \) est s
 Par ailleurs, \( \ker(f) \) est un \( \mathbb{K} \)-sous-espace vectoriel de \( V_1 \). Ainsi, 
 \[ \rho_{\ker(f)} : G \to \mathrm{GL}(\ker(f))\]  
 est une sous-représentation linéaire de \( \varphi : G \to \mathrm{GL}(V_1) \).\\
+
+\vspace{1cm}
+
 \textbf{(ii)} Soit \( w \in \operatorname{im}(f) \), c’est-à-dire qu’il existe \( v \in V_1 \) tel que \( f(v) = w \). Nous devons montrer que, pour tout \( g \in G \), \( \psi(g) \cdot w \in \operatorname{im}(f) \).  \\
 On a:  
 \[
@@ -2150,18 +2137,20 @@ Nous voulons montrer que : si \( (T, \varphi) \) est un autre couple avec \( \va
 u(e \otimes f) = \varphi(e, f), \quad \forall (e, f) \in E \times F.
 \]
 
-	Par définition, le couple \( (E \otimes F, \otimes) \) vérifie la propriété universelle suivante :
+Par définition, le couple \( (E \otimes F, \otimes) \) vérifie la propriété universelle suivante :
 
 \emph{Pour tout espace vectoriel \( G \) et toute application bilinéaire \( B : E \times F \to G \), il existe un unique morphisme linéaire \( \tilde{B} : E \otimes F \to G \) tel que \( \tilde{B}(e \otimes f) = B(e, f) \).}
 
 Soit maintenant \( (T, \varphi) \) un autre couple vérifiant la même propriété universelle.  
 On applique cette propriété dans deux directions :
 
+
 \textbf{Appliquons la propriété universelle de \( E \otimes F \) à \( B = \varphi \).}\\
 Il existe un unique morphisme linéaire \( u : E \otimes F \to T \) tel que :
 \[
 u(e \otimes f) = \varphi(e, f), \quad \forall (e,f) \in E \times F.
 \]
+
 
 \textbf{Appliquons également la propriété universelle de \( T \) à \( B = \otimes \).}\\
 Il existe un unique morphisme linéaire \( v : T \to E \otimes F \) tel que :
@@ -2267,7 +2256,7 @@ Soient \( \rho^1: G_1 \to \mathrm{GL}(V_1) \) et \( \rho^2: G_2 \to \mathrm{GL}(
 	\]
 \end{definition}
 
-\vspace{2cm}
+\newpage
 
 Dans la suite sauf mention contraire, \( G \) désignera un groupe fini (pas forcément commutatif), noté multiplicativement avec pour élément neutre \( 1 \). La plupart des résultats utiliseront les propriétés des corps algébriquement clos de caractéristique zéro d'où nous supposerons par défaut le corps des nombres complexes $\mathbb{C}$. Les espaces vectoriels seront définis sur $\mathbb{C}$ et de dimension finie.
 
@@ -2295,6 +2284,7 @@ Munissons \( V \) d’un produit hermitien \( (.,.)_0 \) quelconque. Définisson
 (v, w)_1 = \frac{1}{|G|} \sum_{g \in G} (\rho(g) (v), \rho(g) (w))_0, \quad \forall v, w \in V.
 \]
 C'est un produit hermitien.\\
+\vspace{0,2cm}
 \textbf{\underline{En effet:}}\\ 
 \textbf{\underline{Sesquilinéarité}}\\   
 Nous avons déjà supposé que \( (.,.)_0 \) est un produit hermitien, donc il est sesquilinéaire, c'est-à-dire linéaire à gauche et semi-linéaire à droite. 
@@ -2306,6 +2296,9 @@ L'opérateur \( \rho(g) \) étant linéaire, on en déduit que la somme pondér�
 (v, w)_1 = \frac{1}{|G|} \sum_{g \in G} (\rho(g) (v), \rho(g) (w))_0
 \]
 hérite donc de cette propriété.\\
+
+\newpage
+
 \textbf{\underline{Symétrie hermitienne}}\\  
 Par définition du produit hermitien, nous avons :  
 \[
@@ -2319,6 +2312,7 @@ En appliquant cette propriété à chaque terme de la somme, on obtient :
 	&= \overline{(w, v)_1}. \\
 \end{align*}
 Donc \( (.,.)_1 \) vérifie la symétrie hermitienne.\\
+
 \textbf{\underline{Positivité }}\\  
 Nous devons montrer que \( (v, v)_1 \geq 0 \) avec égalité si et seulement si \( v = 0 \).\\
 Par définition :
@@ -2327,6 +2321,7 @@ Par définition :
 \]
 Chaque terme de la somme est positif ou nul car \( (.,.)_0 \) est un produit hermitien.\\
 De plus, si \( (v, v)_1 = 0 \), alors chaque terme de la somme est nul, ce qui implique que \( (\rho(g) (v), \rho(g) (v))_0 = 0 \) pour tout \( g \in G\). Puisque \( (.,.)_0 \) est un produit hermitien, cela entraîne \( \rho(g) \cdot v = 0 \) pour tout \( g \in G\), et en particulier \( v = 0 \). Ainsi, \( (.,.)_1 \) est un produit hermitien défini positif.\\
+
 \textbf{\underline{Invariance par \( \rho \)} }\\
 Il reste à prouver que \( (.,.)_1 \) est invariant sous l'action de \( \rho \), c’est-à-dire que  
 \[
@@ -2502,6 +2497,8 @@ Pour \( \chi \in \widehat{G} \), définissons \( \chi^{-1} : G \to \mathbb{C}^\t
 \[
 (\chi \cdot \chi^{-1})(g) = \chi(g) \cdot \chi(g)^{-1} = 1 = \mathbf{1}_G(g).
 \]
+
+\newpage
 
 \textbf{5. Commutativité.}\\
  Pour \( \chi_1, \chi_2 \in \widehat{G} \), et \( g \in G \), on a :
@@ -2740,6 +2737,9 @@ Soit \( h  : V_1 \to V_2 \) une application linéaire. Posons :
 	\[
 	h_0 = \frac{1}{|G|} \sum_{g \in G} (\rho_2(g))^{-1} \circ h \circ \rho_1(g).
 	\]
+
+\newpage
+
 Alors :
 	\begin{enumerate}[label=\roman*)]
 		\item Si \( \rho_1 \) et \( \rho_2 \) ne sont pas isomorphes, on a \( h_0 = 0 \).
@@ -2785,6 +2785,8 @@ Dans le cas ii), on a de même  $x^0_{i_2 i_1} = \frac{1}{n} \text{Tr}(h) \delta
 = \frac{1}{n} \sum_{j_1, j_2} \delta_{i_2 i_1} \delta_{j_2 j_1} x_{j_2 j_1}.
 \]
 En identifiant les coefficients des $x_{j_2 j_1}$, on obtient:
+
+\newpage
 
 \begin{corollary} \cite{serre1971representation} \label{cor3}\\
 	
@@ -2907,6 +2909,8 @@ Alors, la somme des carrés des degrés des représentations irréductibles de \
 	\end{enumerate}
 \end{theorem}
 
+\newpage
+
 \textbf{\underline{Preuve:}}\\
  \( \rho : G \to \mathrm{GL}(V) \) une représentation irréductible de \( G \) tel que \( \dim(V) = n \).\\
 \textbf{(i) \(\Rightarrow\) (ii)}\\
@@ -2945,7 +2949,7 @@ Comme toutes les représentations irréductibles sont de degré 1, alors on a :
 \]
 Puisque \(|\widehat{G}| = |G|\), \( G \) est abélien d'après la propriété \ref{proprie0}.
 
-
+\newpage
 
 \section*{Conclusion}
 \addcontentsline{toc}{section}{Conclusion}
@@ -4120,190 +4124,99 @@ Une partie significative du mémoire a été dédiée à l'étude du produit ten
 
 \begin{thebibliography}{99}
 	
-	\bibitem{schaub1997}
-		Daniel Schaub.
-	\newblock {\em Éléments de la Théorie de Groupes}.
-	\newblock Cours de licence de Mathématiques, Université d’Angers, 1997/98.
-	
-	\bibitem{lang2012algebra}
-		Serge Lang.
-	\newblock \emph{Algebra}.
-	\newblock Volume 211, Springer Science \& Business Media, 2012.
-	
-	\bibitem{maclane1971categories}
-		Saunders Mac Lane.
-	\newblock \emph{Categories for the Working Mathematician}.
-	\newblock Springer, New York, 1971.
-	
-	\bibitem{ribet2004graduate}
-		Sheldon Axler, Frederick Gehring , and Kenneth Alan Ribet.
-	\newblock {\em Graduate Texts in Mathematics 111}.
-	\newblock Springer, 2004.
-	
-	
-		
-	\bibitem{pei1996chinese}
-		Pei, Dingyi, Salomaa, Arto, et Ding, Cunsheng.
-	\newblock {\em Chinese remainder theorem: applications in computing, coding, cryptography}.
-	\newblock World Scientific, 1996.
-	
-	
-	
-	\bibitem{schwarzweller2009chinese}
-	Christoph Schwarzweller.
-	\newblock {\em The Chinese Remainder Theorem, its Proofs and its Generalizations in Mathematical Repositories}.
-	\newblock Studies in Logic, Grammar and Rhetoric, volume 18, number 31, pages 103--119, Bialystok University Press, 2009.
-	
-	\bibitem{hall2018theory}
-		Marshall Hall.
-	\newblock {\em The theory of groups}.
-	\newblock Courier Dover Publications, 2018.
-	
-	
-	\bibitem{bourbaki2013general}
-		Nicolas BOURBAKI. 
-	\newblock {\em General topology: chapters 1--4}.
-	\newblock Springer Science \& Business Media, 2013.
-	
-	
-	\bibitem{kuratowski2014topology}
-	Kazimierz Kuratowski.  
-	\newblock {\em Topology: Volume I}.  
-	\newblock Academic Press, 2014.
-	
-	
-	\bibitem{husain2018introduction}
-		Taqdir Husain  
-	\newblock {\em Introduction to Topological Groups}.  
-	\newblock Courier Dover Publications, 2018.
-	
-	\bibitem{axler2024linear}
-	Sheldon Axler.
-	\newblock {\em Linear algebra done right}.
-	\newblock Springer Nature, 2024.
-	
-	\bibitem{farhi2024polycopie}
-	Farhi, Bakir.
-	\newblock \textit{Polycopié d'Algèbre bilinéaire (Algèbre 4)}.
-	\newblock National Higher School of Mathematics-Alger, 2024.
-	
-		
-	\bibitem{rudin1976principles}
-	Walter Rudin.  
-	\newblock {\em Principles of Mathematical Analysis}.  
-	\newblock McGraw-Hill, 3rd edition, 1976.
-	
-	
-	\bibitem{chatterji1997cours}
-	Srishti D. Chatterji  
-	\newblock {\em Cours d'analyse}.  
-	\newblock Volume 1, EPFL Press, 1997.
-	
-		
-	\bibitem{savage2018linear}
-	Alistair SAVAGE.
-	\newblock {\em Linear Algebra I}.
-	\newblock 2018.
-	
-	
-	
-	\bibitem{serre1971representation}
-	Jean-Pierre Serre.
-	\newblock Repr{\'e}sentation lin{\'e}aire des groupes finis.
-	\newblock Hermann, Paris, 1971.
-	
-	\bibitem{harville1997trace}
-	David A. Harville.
-	\newblock {\em Matrix Algebra from a Statistician’s Perspective}.
-	\newblock Springer, 1997, pages 49--53.
-	
-	
-	\bibitem{ribes-zalesskii}
-	Luis Ribes and Pavel Zalesskii.
-	\newblock Profinite Groups.
-	\newblock Springer, Berlin, 2010.
-	
-	\bibitem{cheung2018algebre}
-	Kevin  Cheung et Mathieu Lemire.
-	\newblock {\em Algèbre Linéaire et Applications}.
-	\newblock 2018.
-	
-		
-	\bibitem{guglielmetti2025profinite}
-	Rafael Guglielmetti  
-	\newblock {\em Groupes profinis et cohomologie galoisienne}.  
-	\newblock École Polytechnique Fédérale de Lausanne (EPFL), 2021. 
-	
-		
-	\bibitem{herfort2012profinite}
-	Wolfgang Herfort  
-	\newblock {\em Introduction to Profinite Groups}.  
-	\newblock Mimar Sinan Fine Arts University, 2012. 
-	
-	\bibitem{renard2009groupes}
-	David Renard and Laurent Schwartz.  
-	\newblock {\em Groupes et représentations}.  
-	\newblock École polytechnique, 2009.
-	
-	
-	\bibitem{deschamps}
-	Bruno Deschamps.
-	\newblock {\em Groupes profinis et théorie de Galois}.
-	\newblock Clarendon Press, Oxford, 1998.
-	
-	
-	\bibitem{greub2012linear}
-	Werner H. Greub
-	\newblock {\em Linear Algebra}.
-	\newblock Springer Science \& Business Media, volume 23, 2012.
-	
-			
-	\bibitem{fried2023fieldarithmetic}
-	Michael David Fried and Moshe Jarden.
-	\newblock Infinite Galois Theory and Profinite Groups.
-	\newblock In {\em Field Arithmetic}, pages 1--19. Springer Nature Switzerland, Cham, 2023.
-	
-	\bibitem{hararirepresentations}
-	David Harari.
-	\newblock {\em Représentations linéaires des groupes finis}.
-	
-	
-	\bibitem{bridger2001limits}
-	Mark  Bridger.
-	\newblock Limits: A New Approach to Real Analysis.
-	\newblock Springer, New York, 2001.
-		
-	\bibitem{cartan1999homological}
-	Henri Cartan and Samuel Eilenberg.
-	\newblock {\em Homological Algebra}.
-	\newblock Volume 19, Princeton University Press, 1999.
-	
-	
-	
-	
-	
-	
+\bibitem{schaub1997}
+D. Schaub, \emph{Éléments de la Théorie de Groupes}, Cours de licence de Mathématiques, Université d’Angers, 1997/98.
 
-	
-	
-	\bibitem{minkowski1911gesammelte}
-	Hermann Minkowski.
-	\newblock {\em Gesammelte Abhandlungen}.
-	\newblock BG Teubner, volume 2, 1911.
-	
-	
-	\bibitem{Dragomir}
-	Dragomir Z. Dokovic.
-	\newblock {\em Pairs of Involutions in the General Linear Group}.
-	\newblock Journal of Algebra, 100, 214--223, 1986.
-	
+\bibitem{lang2012algebra}
+S. Lang, \emph{Algebra}, vol. 211, Springer Science \& Business Media, 2012.
 
+\bibitem{maclane1971categories}
+S. Mac Lane, \emph{Categories for the Working Mathematician}, Springer, New York, 1971.
 
-	\bibitem{Guichardet}
-	Alain Guichardet.
-	\newblock {\em Tensor products of $\mathbb{C}^{*}-$Algebras, Part II. Infinite tensor products}.
-	\newblock Lecture Notes Series $N^0$ 13, 1969.
-	
+\bibitem{ribet2004graduate}
+S. Axler, F. Gehring, and K. A. Ribet, \emph{Graduate Texts in Mathematics 111}, Springer, 2004.
+
+\bibitem{pei1996chinese}
+D. Pei, A. Salomaa, and C. Ding, \emph{Chinese Remainder Theorem: Applications in Computing, Coding, Cryptography}, World Scientific, 1996.
+
+\bibitem{schwarzweller2009chinese}
+C. Schwarzweller, “The Chinese Remainder Theorem, its Proofs and its Generalizations in Mathematical Repositories,” \emph{Studies in Logic, Grammar and Rhetoric}, vol. 18, no. 31, pp. 103--119, Bialystok University Press, 2009.
+
+\bibitem{hall2018theory}
+M. Hall, \emph{The Theory of Groups}, Courier Dover Publications, 2018.
+
+\bibitem{bourbaki2013general}
+N. Bourbaki, \emph{General Topology: Chapters 1--4}, Springer Science \& Business Media, 2013.
+
+\bibitem{kuratowski2014topology}
+K. Kuratowski, \emph{Topology: Volume I}, Academic Press, 2014.
+
+\bibitem{husain2018introduction}
+T. Husain, \emph{Introduction to Topological Groups}, Courier Dover Publications, 2018.
+
+\bibitem{axler2024linear}
+S. Axler, \emph{Linear Algebra Done Right}, Springer Nature, 2024.
+
+\bibitem{farhi2024polycopie}
+B. Farhi, \emph{Polycopié d'Algèbre bilinéaire (Algèbre 4)}, National Higher School of Mathematics-Alger, 2024.
+
+\bibitem{rudin1976principles}
+W. Rudin, \emph{Principles of Mathematical Analysis}, 3rd ed., McGraw-Hill, 1976.
+
+\bibitem{chatterji1997cours}
+S. D. Chatterji, \emph{Cours d'Analyse}, vol. 1, EPFL Press, 1997.
+
+\bibitem{savage2018linear}
+A. Savage, \emph{Linear Algebra I}, 2018.
+
+\bibitem{serre1971representation}
+J.-P. Serre, \emph{Représentation linéaire des groupes finis}, Hermann, Paris, 1971.
+
+\bibitem{harville1997trace}
+D. A. Harville, \emph{Matrix Algebra from a Statistician’s Perspective}, Springer, 1997, pp. 49--53.
+
+\bibitem{ribes-zalesskii}
+L. Ribes and P. Zalesskii, \emph{Profinite Groups}, Springer, Berlin, 2010.
+
+\bibitem{cheung2018algebre}
+K. Cheung and M. Lemire, \emph{Algèbre Linéaire et Applications}, 2018.
+
+\bibitem{guglielmetti2025profinite}
+R. Guglielmetti, \emph{Groupes profinis et cohomologie galoisienne}, École Polytechnique Fédérale de Lausanne (EPFL), 2021.
+
+\bibitem{herfort2012profinite}
+W. Herfort, \emph{Introduction to Profinite Groups}, Mimar Sinan Fine Arts University, 2012.
+
+\bibitem{renard2009groupes}
+D. Renard and L. Schwartz, \emph{Groupes et représentations}, École Polytechnique, 2009.
+
+\bibitem{deschamps}
+B. Deschamps, \emph{Groupes profinis et théorie de Galois}, Clarendon Press, Oxford, 1998.
+
+\bibitem{greub2012linear}
+W. H. Greub, \emph{Linear Algebra}, vol. 23, Springer Science \& Business Media, 2012.
+
+\bibitem{fried2023fieldarithmetic}
+M. D. Fried and M. Jarden, “Infinite Galois Theory and Profinite Groups,” in \emph{Field Arithmetic}, Springer Nature Switzerland, Cham, 2023, pp. 1--19.
+
+\bibitem{hararirepresentations}
+D. Harari, \emph{Représentations linéaires des groupes finis}.
+
+\bibitem{bridger2001limits}
+M. Bridger, \emph{Limits: A New Approach to Real Analysis}, Springer, New York, 2001.
+
+\bibitem{cartan1999homological}
+H. Cartan and S. Eilenberg, \emph{Homological Algebra}, vol. 19, Princeton University Press, 1999.
+
+\bibitem{minkowski1911gesammelte}
+H. Minkowski, \emph{Gesammelte Abhandlungen}, vol. 2, BG Teubner, 1911.
+
+\bibitem{Dragomir}
+D. Z. Dokovic, “Pairs of Involutions in the General Linear Group,” \emph{Journal of Algebra}, vol. 100, pp. 214--223, 1986.
+
+\bibitem{Guichardet}
+A. Guichardet, \emph{Tensor Products of $\mathbb{C}^{*}$-Algebras, Part II. Infinite Tensor Products}, Lecture Notes Series no. 13, 1969.
+
 
 \end{thebibliography}
 	
