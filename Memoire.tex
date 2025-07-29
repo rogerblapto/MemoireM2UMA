@@ -310,11 +310,11 @@ Sous la Direction de:
 {
 	\applyfontsize % Application locale de la taille de police 14pt
 	
-Ce travail a été réalisé au laboratoire de Mathématiques de la Faculté des Sciences de l’Université de Maroua, sous l’encadrement du Dr Gilbert Mantika. Je tiens à lui exprimer ma profonde gratitude et mes sincères remerciements pour m’avoir offert l’opportunité de travailler sous sa direction.
+Ce travail a été réalisé au laboratoire de Mathématiques de la Faculté des Sciences de l’Université de Maroua, sous l’encadrement du \textbf{Dr. GILBERT MANTIKA}.
 
-Je souhaite également exprimer mes remerciements à :
+Je souhaite exprimer mes remerciements à :
 \begin{itemize}
-	\item À \textbf{Madame le Doyen de la Faculté des Sciences de l’Université de Maroua}, \textbf{Pr NGO BUM ELISABETH}, pour son engagement constant en faveur de la qualité de l’enseignement et pour l’attention bienveillante qu’elle nous a toujours accordée ;
+	\item À \textbf{Madame le Doyen de la Faculté des Sciences de l’Université de Maroua}, \textbf{Pr. NGO BUM ELISABETH}, pour son engagement constant en faveur de la qualité de l’enseignement et pour l’attention bienveillante qu’elle nous a toujours accordée ;
 	
 	\item À \textbf{Dr. GILBERT MANTIKA}, mon encadreur, pour son accompagnement, ses conseils avisés, sa disponibilité et son engagement constant tout au long de la réalisation de ce mémoire. Sa rigueur scientifique et sa bienveillance ont grandement contribué à la qualité de ce travail ;
 	
@@ -324,9 +324,9 @@ Je souhaite également exprimer mes remerciements à :
 	\item À \textbf{Monsieur l'éxaminateur}, \textbf{Pr. DIEKOUAM FOTSO L.E.}, pour la qualité de ses enseignements, ses encouragements soutenus et ses orientations constructives dans la réalisation de ce mémoire ;
 
 	
-	\item À \textbf{Dr AMINATOU PECHA}, pour son accompagnement pédagogique et sa bienveillance constante ;
+	\item À \textbf{Dr. AMINATOU PECHA}, pour son accompagnement pédagogique et sa bienveillance constante ;
 	
-	\item À \textbf{Dr KEMAJOU THEOPHILE}, pour ses encouragements continus à persévérer dans le domaine de la géométrie et son soutien académique ;
+	\item À \textbf{Dr. KEMAJOU THEOPHILE}, pour ses encouragements continus à persévérer dans le domaine de la géométrie et son soutien académique ;
 	
 	\item À ma chère mère, \textbf{MASSA SALOME}, dont les sacrifices personnels ont été essentiels à la poursuite de mes études ;
 	
@@ -336,10 +336,6 @@ Je souhaite également exprimer mes remerciements à :
 	
 	\item À mes camarades de promotion, pour leur esprit d’entraide, leur solidarité et leur amitié sincère tout au long de notre formation commune.
 \end{itemize}
-
-
-Je remercie également tous les enseignants de la Faculté des Sciences de l’Université de Maroua ainsi que toutes les personnes, de près ou de loin, qui ont contribué à la réalisation de ce travail.
-
 
 }
 
@@ -2525,7 +2521,28 @@ On dit qu'une représentation linéaire \( \rho : G \rightarrow \mathrm{GL}(V) \
 
 \begin{example} 
 	\begin{enumerate} \
-		\item Toute représentation de degré 1 est irréductible.
+		\item Toute représentation de degré 1 est irréductible. \\
+	\textbf{\underline{Preuve:}}\\	
+Soit \( \rho : G \to \mathrm{GL}(V) \) une représentation linéaire de \( G \) de degré \( 1 \), c’est-à-dire telle que \( \dim V = 1 \). 
+		
+Dans ce cas, \( V \cong \mathbb{C} \), et le groupe général linéaire \( \mathrm{GL}(V) \) s’identifie à \( \mathbb{C}^\times \), le groupe multiplicatif des complexes non nuls. Ainsi, \( \rho \) peut être vu comme un morphisme de groupes :
+		\[
+		\rho : G \to \mathbb{C}^\times.
+		\]
+		
+		L'action de \( G \) sur \( V \) est donnée par multiplication scalaire :
+		\[
+		\rho(g)(v) = \lambda_g v, \quad \text{où } \lambda_g \in \mathbb{C}^\times \text{ et } v \in V.
+		\]
+		
+		Soit \( W \subseteq V \) un sous-espace vectoriel stable par \( \rho \), c’est-à-dire tel que \( \rho(g)(w) \in W \) pour tout \( g \in G \) et tout \( w \in W \).
+		
+		Or, comme \( \dim V = 1 \), les seuls sous-espaces vectoriels de \( V \) sont \( \{0\} \) et \( V \) lui-même.
+		
+		Donc, les seuls sous-espaces stables par \( \rho \) sont triviaux.
+		
+		Par définition, une représentation est dite irréductible si elle ne possède aucun sous-espace \( G \)-stable non trivial. Ainsi, \( \rho \) est irréductible
+		
 		\item Prenons le groupe cyclique d'ordre 3, \( G = C_3 = \langle g \ | \ g^3 = e \rangle \), où \( e \) est l'élément neutre.
 		Considérons \( V = \mathbb{R}^2 \). Définissons une représentation \( \rho \) de \( G \) sur \( V \) comme suit :
 		\[

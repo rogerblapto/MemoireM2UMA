@@ -1,9 +1,9 @@
 \babel@toc {french}{}\relax 
 \contentsline {chapter}{Dédicace. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .}{ii}{chapter*.1}%
 \contentsline {chapter}{Remerciements. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .}{iii}{chapter*.2}%
-\contentsline {chapter}{Resumé. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .}{vii}{chapter*.4}%
-\contentsline {chapter}{Abstract. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . }{viii}{chapter*.5}%
-\contentsline {chapter}{Introduction. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .}{ix}{chapter*.6}%
+\contentsline {chapter}{Resumé. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .}{vi}{chapter*.4}%
+\contentsline {chapter}{Abstract. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . }{vii}{chapter*.5}%
+\contentsline {chapter}{Introduction. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .}{viii}{chapter*.6}%
 \contentsline {chapter}{\numberline {1}Préliminaires}{2}{chapter.1}%
 \contentsline {section}{Introduction}{2}{section*.7}%
 \contentsline {section}{\numberline {1.1}Groupes, sous-groupes et homomorphismes de groupes}{2}{section.1.1}%
@@ -31,16 +31,16 @@
 \contentsline {section}{\numberline {2.2}Caractère d'une représentation linéaire d'un groupe fini}{34}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Représentations linéaires irréductibles}{39}{section.2.3}%
 \contentsline {section}{Conclusion}{47}{theorem.2.3.5}%
-\contentsline {chapter}{\numberline {3}Produit tensoriel arbitraire de représentation linéaire d'un produit arbitraire de groupes finis}{48}{chapter.3}%
-\contentsline {section}{Introduction}{48}{section*.9}%
-\contentsline {section}{\numberline {3.1}Produit tensoriel arbitraire d'espaces vectoriels}{49}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Représentation linéaire d'un produit arbitraire de groupes finis}{50}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Caractère d'une représentation linéaire d'un produit de groupes}{58}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Irréductibilité des représentations d'un produit de groupes}{60}{subsection.3.1.3}%
-\contentsline {section}{\numberline {3.2}Traité du cas de $\setbox \z@ \hbox {\mathsurround \z@ $\textstyle \PazoBB {Z}$}\mathaccent "0362{\PazoBB {Z}}$, le complété profini de $\PazoBB {Z}$.}{62}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Propriétés du complété profini $\setbox \z@ \hbox {\mathsurround \z@ $\textstyle \PazoBB {Z}$}\mathaccent "0362{\PazoBB {Z}}$ }{63}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Représentations linéaires de $\setbox \z@ \hbox {\mathsurround \z@ $\textstyle \PazoBB {Z}$}\mathaccent "0362{\PazoBB {Z}}$}{66}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Caractères de $\setbox \z@ \hbox {\mathsurround \z@ $\textstyle \PazoBB {Z}$}\mathaccent "0362{\PazoBB {Z}}$}{69}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Représentations irréductibles de $\setbox \z@ \hbox {\mathsurround \z@ $\textstyle \PazoBB {Z}$}\mathaccent "0362{\PazoBB {Z}}$}{69}{subsection.3.2.4}%
-\contentsline {section}{Conclusion}{71}{Item.156}%
-\contentsline {section}{Conclusion}{72}{chapter*.10}%
+\contentsline {chapter}{\numberline {3}Produit tensoriel arbitraire de représentation linéaire d'un produit arbitraire de groupes finis}{49}{chapter.3}%
+\contentsline {section}{Introduction}{49}{section*.9}%
+\contentsline {section}{\numberline {3.1}Produit tensoriel arbitraire d'espaces vectoriels}{50}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Représentation linéaire d'un produit arbitraire de groupes finis}{51}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Caractère d'une représentation linéaire d'un produit de groupes}{59}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Irréductibilité des représentations d'un produit de groupes}{61}{subsection.3.1.3}%
+\contentsline {section}{\numberline {3.2}Traité du cas de $\setbox \z@ \hbox {\mathsurround \z@ $\textstyle \PazoBB {Z}$}\mathaccent "0362{\PazoBB {Z}}$, le complété profini de $\PazoBB {Z}$.}{63}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Propriétés du complété profini $\setbox \z@ \hbox {\mathsurround \z@ $\textstyle \PazoBB {Z}$}\mathaccent "0362{\PazoBB {Z}}$ }{64}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Représentations linéaires de $\setbox \z@ \hbox {\mathsurround \z@ $\textstyle \PazoBB {Z}$}\mathaccent "0362{\PazoBB {Z}}$}{67}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Caractères de $\setbox \z@ \hbox {\mathsurround \z@ $\textstyle \PazoBB {Z}$}\mathaccent "0362{\PazoBB {Z}}$}{70}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Représentations irréductibles de $\setbox \z@ \hbox {\mathsurround \z@ $\textstyle \PazoBB {Z}$}\mathaccent "0362{\PazoBB {Z}}$}{70}{subsection.3.2.4}%
+\contentsline {section}{Conclusion}{72}{Item.156}%
+\contentsline {section}{Conclusion}{73}{chapter*.10}%
