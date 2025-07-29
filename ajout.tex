@@ -261,4 +261,34 @@ Supposons que \( \chi_\rho = \chi_{\rho'} \). par le théorème de Maschke, on p
 	\end{proof}
 	
 	
+	
+	
+	\begin{theoreme}
+		Toute représentation de degré \(1\) est irréductible.
+	\end{theoreme}
+	
+	\textbf{preuve}\\
+		Soit \( \rho : G \to \mathrm{GL}(V) \) une représentation linéaire de \( G \) de degré \( 1 \), c’est-à-dire telle que \( \dim V = 1 \). 
+		
+		Dans ce cas, \( V \cong \mathbb{C} \), et le groupe général linéaire \( \mathrm{GL}(V) \) s’identifie à \( \mathbb{C}^\times \), le groupe multiplicatif des complexes non nuls. Ainsi, \( \rho \) peut être vu comme un morphisme de groupes :
+		\[
+		\rho : G \to \mathbb{C}^\times.
+		\]
+		
+		L'action de \( G \) sur \( V \) est donnée par multiplication scalaire :
+		\[
+		\rho(g)(v) = \lambda_g v, \quad \text{où } \lambda_g \in \mathbb{C}^\times \text{ et } v \in V.
+		\]
+		
+		Soit \( W \subseteq V \) un sous-espace vectoriel stable par \( \rho \), c’est-à-dire tel que \( \rho(g)(w) \in W \) pour tout \( g \in G \) et tout \( w \in W \).
+		
+		Or, comme \( \dim V = 1 \), les seuls sous-espaces vectoriels de \( V \) sont \( \{0\} \) et \( V \) lui-même.
+		
+		Donc, les seuls sous-espaces stables par \( \rho \) sont triviaux.
+		
+		Par définition, une représentation est dite irréductible si elle ne possède aucun sous-espace \( G \)-stable non trivial. Ainsi, \( \rho \) est irréductible.
+		
+
+	
+	
 \end{document}

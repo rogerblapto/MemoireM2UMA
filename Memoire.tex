@@ -193,6 +193,7 @@
         %& & \\
            
 \end{tabularx}\\
+
 \begin{center}
 
 \begin{tcolorbox}[
@@ -212,7 +213,7 @@
 			D'UN PRODUIT INFINI DE GROUPES FINIS.\\ }}
 \end{tcolorbox}
 
-
+\vspace{1cm}
 
 
 {\fontsize{12}{10}\selectfont
@@ -253,18 +254,7 @@ Sous la Direction de:
 \textbf{ Dr Gilbert MANTIKA , CC (FS/UMA)}
 \end{center}
 
-	\vspace{0,5cm}	
 
-Devant le jury composé de :
-\begin{center}
-	\textbf{Président : Pr. DONGHO Joseph},  MC (FS/UMA)
-\end{center}
-\begin{center}
-	\textbf{ Rapporteur : Dr. GILBERT MANTIKA },  CC (FS/UMA)
-\end{center}
-\begin{center}
-	\textbf{Examinateur : Pr. DIEKOUAM FOTSO L.E. }, MC (FS/UMA)
-\end{center}
 
 \begin{center}
 
@@ -326,12 +316,13 @@ Je souhaite également exprimer mes remerciements à :
 \begin{itemize}
 	\item À \textbf{Madame le Doyen de la Faculté des Sciences de l’Université de Maroua}, \textbf{Pr NGO BUM ELISABETH}, pour son engagement constant en faveur de la qualité de l’enseignement et pour l’attention bienveillante qu’elle nous a toujours accordée ;
 	
-	\item À \textbf{Dr GILBERT MANTIKA}, mon encadreur, pour son accompagnement, ses conseils avisés, sa disponibilité et son engagement constant tout au long de la réalisation de ce mémoire. Sa rigueur scientifique et sa bienveillance ont grandement contribué à la qualité de ce travail ;
+	\item À \textbf{Dr. GILBERT MANTIKA}, mon encadreur, pour son accompagnement, ses conseils avisés, sa disponibilité et son engagement constant tout au long de la réalisation de ce mémoire. Sa rigueur scientifique et sa bienveillance ont grandement contribué à la qualité de ce travail ;
 	
 	
-	\item À \textbf{Monsieur le Président du jury}, \textbf{Pr DONGHO JOSEPH}, Chef du Département de Mathématiques et Informatique, pour sa disponibilité, son encadrement académique rigoureux et ses précieux conseils tout au long de cette formation ;
+	\item À \textbf{Monsieur le Président du jury}, \textbf{Pr. DONGHO JOSEPH}, Chef du Département de Mathématiques et Informatique, pour sa disponibilité, son encadrement académique rigoureux et ses précieux conseils tout au long de cette formation ;
 	
-	\item À \textbf{Monsieur le Rapporteur}, \textbf{Pr LUC EMERY DIEKOUAM FOTSO}, pour la qualité de ses enseignements, ses encouragements soutenus et ses orientations constructives dans la réalisation de ce mémoire ;
+	\item À \textbf{Monsieur l'éxaminateur}, \textbf{Pr. DIEKOUAM FOTSO L.E.}, pour la qualité de ses enseignements, ses encouragements soutenus et ses orientations constructives dans la réalisation de ce mémoire ;
+
 	
 	\item À \textbf{Dr AMINATOU PECHA}, pour son accompagnement pédagogique et sa bienveillance constante ;
 	
@@ -1580,77 +1571,6 @@ Soient $X$ un groupe et $(X_{i}, \phi_{ij})_{i,j \in I}$ un système projectif d
 Si une limite projective d'un système projectif existe, elle est unique à isomorphisme près.
 \end{proposition}
 
-\textbf{\underline{Existence:}}\\
-Soit \((I, \leq)\) un ensemble ordonné filtrant.\\
-Considérons un système projectif \(\{X_i, \varphi_{ij}\}_{i, j \in I}\), où \(X_i\) sont des groupes finis, et \(\varphi_{ij} : X_j \to X_i\) sont des homomorphismes pour \(i \leq j\) vérifiant la compatibilité suivante :
-\[
-\begin{aligned}
-	&\varphi_{ii} = \text{id}_{X_i}, \\
-	&\varphi_{ik} = \varphi_{ij} \circ \varphi_{jk} \quad \text{pour tout} \quad i \leq j \leq k.
-\end{aligned}
-\]
-Nous cherchons à construire un objet \(X = \varprojlim X_i\) et des homomorphismes \(\pi_i : X \to X_i\) satisfaisant les conditions du système projectif.\\
-Définissons l'ensemble \(X\) par :
-
-\[
-X = \{(x_i)_{i \in I} \mid \forall i \leq j, \, \varphi_{ij}(x_j) = x_i\}.
-\]
-Cet ensemble est inclus dans \(\prod_{i \in I} X_i\) et vérifie la condition :\\
-\[
-\varphi_{ij}(x_j) = x_i \quad \text{pour tout} \quad i \leq j.
-\]
-Pour chaque \(i \in I\), définissons la projection \(\pi_i : X \to X_i\) par 
-\[
-\pi_i((x_j)_{j \in I}) = x_i.
-\]
-Cela définit un objet \(X\) avec des homomorphismes \(\pi_i\) satisfaisant \(\varphi_{ij} \circ \pi_j = \pi_i\) illustré par le diagramme suivant:
-
-\[
-\xymatrix{
-	X \ar[rr]^{\pi_{j}} \ar[dr]_{\pi_i} & & X_{j} \ar[dl]^{\varphi_{ij}} \\
-	& X_{i} &
-}
-\]
-
-
-\textbf{\underline{Propriété Universelle:}}\\
-Soit \(Y\) un autre objet avec des morphismes \(\psi_i : Y \to Y_i\) satisfaisant \(\varphi_{ij} \circ \psi_j = \psi_i\) pour tout \(i \leq j\). Définissons un morphisme \(\psi : Y \to X\) par :
-\[
-\psi(y) = (\psi_i(y))_{i \in I}.
-\]
-La famille \((\psi_i(y))\) est bien dans \(X\) car elle respecte les conditions de compatibilité. Ainsi, il existe un morphisme \(\psi : Y \to X\) tel que \(\pi_i \circ \psi = \psi_i\).
-
-\textbf{\underline{Unicité:}}\\
-Supposons que \(X\) et \(X'\) soient deux limites projectives du même système projectif \(\{X_i, \varphi_{ij}\}\).
-
-\begin{itemize}
-	\item Soit \(\pi_i : X \to X_i\) et \(\pi'_i : X' \to X_i\) les morphismes de projection correspondants pour chaque \(i \in I\), satisfaisant les conditions de commutativité \(\varphi_{ij} \circ \pi_j = \pi_i\) et \(\varphi_{ij} \circ \pi'_j = \pi'_i\) pour tous \(i \leq j\).
-	\item Par la propriété universelle de la limite projective \(X\), il existe un morphisme unique \(f : X' \to X\) tel que pour tout \(i \in I\), \(\pi_i \circ f = \pi'_i\).
-	\item De même, par la propriété universelle de \(X'\), il existe un morphisme unique \(g : X \to X'\) tel que pour tout \(i \in I\), \(\pi'_i \circ g = \pi_i\).
-\end{itemize}
-
-Considérons maintenant la composition \(g \circ f : X' \to X'\). C'est un morphisme de \(X'\) vers lui-même, et pour chaque \(i\), nous avons :
-\[
-\begin{aligned}
-	\pi'_i \circ (g \circ f) &= (\pi'_i \circ g) \circ f \\
-	&= \pi_i \circ f \\
-	&= \pi'_i.
-\end{aligned}
-\]
-Par la partie "unicité" de la propriété universelle de \(X'\), le morphisme identité \(\text{id}_{X'} : X' \to X'\) satisfait cette propriété. Ainsi, \(g \circ f = \text{id}_{X'}\).
-De même, \(f \circ g : X \to X\) est un morphisme de \(X\) vers lui-même, et pour chaque \(i\), nous avons :
-
-\[
-\begin{aligned}
-	\pi_i \circ (f \circ g) &= (\pi_i \circ f) \circ g \\
-	&= \pi'_i \circ g \\
-	&= \pi_i.
-\end{aligned}
-\]
-Encore une fois, par la partie "unicité" de la propriété universelle de \(X\), nous concluons que \(f \circ g = \text{id}_X\).
-Ainsi, \(f\) et \(g\) sont des isomorphismes mutuellement inverses, ce qui montre que \(X\) et \(X'\) sont isomorphes.
-Donc la limite projective est unique à isomorphisme près, car toute deux limites projectives d'un même système projectif sont isomorphes.
-
 
 \begin{mynotation}
 Une telle limite est notée $\varprojlim_{I} X_i$ ou  $\varprojlim_{i \in I} X_i$.
@@ -1920,7 +1840,28 @@ Une matrice de permutation de taille \( n \times n \) est une matrice obtenue de
 
 \begin{example}\
 	\begin{enumerate}
-		\item La représentation linéaire triviale définie par \(\forall g \in G, \ \rho(g) = \mathrm{Id}_V\).
+		\item La représentation linéaire triviale définie par \(\forall g \in G, \ \rho(g) = \mathrm{Id}_V\).\\
+	\textbf{\underline{Preuve:}}  \\		
+Soit \( \rho : G \to \mathrm{GL}(V) \) une représentation linéaire de \( G \) de degré \( 1 \), c’est-à-dire telle que \( \dim V = 1 \). 
+Dans ce cas, \( V \cong \mathbb{C} \), et le groupe général linéaire \( \mathrm{GL}(V) \) s’identifie à \( \mathbb{C}^\times \), le groupe multiplicatif des complexes non nuls. Ainsi, \( \rho \) peut être vu comme un morphisme de groupes :
+		\[
+		\rho : G \to \mathbb{C}^\times.
+		\]
+		
+		L'action de \( G \) sur \( V \) est donnée par multiplication scalaire :
+		\[
+		\rho(g)(v) = \lambda_g v, \quad \text{où } \lambda_g \in \mathbb{C}^\times \text{ et } v \in V.
+		\]
+		
+		Soit \( W \subseteq V \) un sous-espace vectoriel stable par \( \rho \), c’est-à-dire tel que \( \rho(g)(w) \in W \) pour tout \( g \in G \) et tout \( w \in W \).
+		
+		Or, comme \( \dim V = 1 \), les seuls sous-espaces vectoriels de \( V \) sont \( \{0\} \) et \( V \) lui-même.
+		
+		Donc, les seuls sous-espaces stables par \( \rho \) sont triviaux.
+		
+		Par définition, une représentation est dite irréductible si elle ne possède aucun sous-espace \( G \)-stable non trivial. Ainsi, \( \rho \) est irréductible
+		
+		
 		\item Représentation linéaire standard du groupe symétrique \( S_3 \) :\\
 		Nous définissons une représentation linéaire du groupe symétrique \( S_3 \) sur \( \mathbb{R}^3 \) en associant à chaque permutation \( \sigma \in S_3 \) une matrice de permutation \( \rho(\sigma) \). Les éléments de \( S_3 = \{e, (12), (13), (23), (123), (132)\} \) sont utilisés pour définir la représentation \( \rho : S_3 \to \mathrm{GL}(3, \mathbb{R}) \) comme suit:
 		
@@ -1986,7 +1927,16 @@ Une représentation \( (V,\rho)_{G}\) est dite unitaire si \( \rho \) prend ses 
 
 \begin{definition} \cite{serre1971representation} \\
 Soient \( (V, \rho)_{G} \) et \( (W, \psi)_{G} \) deux représentations linéaires. Un opérateur d'entrelacement, ou morphisme de représentations est une application linéaire \( \alpha : V \to W \) telle que \\
-\(\alpha \circ \rho(g) = \psi (g) \circ \alpha \), pour tout \( g \in G \).\\
+\(\alpha \circ \rho(g) = \psi (g) \circ \alpha \), pour tout \( g \in G \). Ce qui est illustré par le diagramme commutatif suivant: \\
+
+\[
+\begin{tikzcd}
+	V \arrow[r, "\rho(g)"] \arrow[d, "\alpha"'] & V \arrow[d, "\alpha"] \\
+	W \arrow[r, "\psi(g)"'] & W
+\end{tikzcd}
+\]
+
+
 On dit que \( \alpha \) est équivariante.\\
 Lorsque \( \alpha : V \to W \) est un isomorphisme, on dit que les représentations \( (V, \varphi)_{G} \) et \( (W, \psi)_{G} \) sont isomorphes.
 \end{definition}
@@ -2170,7 +2120,7 @@ Soient \( V_1 , V_2 \) et \(V_3\) trois \(\mathbb{K}\)-espaces vectoriels.
 	\end{enumerate}
 \end{definition}
 
-\begin{propriety}(\textbf{Propriété universelle}) \cite{greub2012linear}\\
+\begin{propriety}(\textbf{Propriété universelle}) \cite{greub2012linear} \label{pupt}\\
 	Soient \( E,F ,G \) et \(H\) quatre \(\mathbb{K}\)-espaces vectoriels et \(\otimes : E \times F \to G \) une application bilinéaire. \\
 	On dit que $\otimes$ satisfait la \textit{propriété universelle} si elle vérifie les conditions suivantes :
 	\begin{enumerate} [label=\roman*)]
@@ -2190,7 +2140,7 @@ Soient \( V_1 , V_2 \) et \(V_3\) trois \(\mathbb{K}\)-espaces vectoriels.
 
 
 \begin{definition} \cite{greub2012linear}\\
-	Le produit tensoriel de deux espaces vectoriels $E$ et $F$ est un couple $(G, \otimes)$, où $\otimes : E \times F \to G$ est une application bilinéaire vérifiant la propriété universelle.\\
+	Le produit tensoriel de deux espaces vectoriels $E$ et $F$ est un couple $(G, \otimes)$, où $\otimes : E \times F \to G$ est une application bilinéaire vérifiant la propriété universelle \ref{pupt}.\\
 	L'espace $G$ est noté $E \otimes F$.
 \end{definition}
 
@@ -2321,6 +2271,7 @@ Soient \( \rho^1: G_1 \to \mathrm{GL}(V_1) \) et \( \rho^2: G_2 \to \mathrm{GL}(
 	\]
 \end{definition}
 
+\vspace{2cm}
 
 Dans la suite sauf mention contraire, \( G \) désignera un groupe fini (pas forcément commutatif), noté multiplicativement avec pour élément neutre \( 1 \). La plupart des résultats utiliseront les propriétés des corps algébriquement clos de caractéristique zéro d'où nous supposerons par défaut le corps des nombres complexes $\mathbb{C}$. Les espaces vectoriels seront définis sur $\mathbb{C}$ et de dimension finie.
 
@@ -2514,7 +2465,10 @@ Soit \( \rho : G \rightarrow \mathrm{GL}(V) \) une représentation linéaire d'u
 	\]
 \end{propriety}
 
-	\textbf{1. Fermeture.} Soient \( \chi_1, \chi_2 \in \widehat{G} \), c’est-à-dire deux morphismes de groupes \( G \to \mathbb{C}^\times \). On définit :
+\textbf{\underline{Preuve:}}\\
+
+	\textbf{1. Fermeture.}\\
+Soient \( \chi_1, \chi_2 \in \widehat{G} \), c’est-à-dire deux morphismes de groupes \( G \to \mathbb{C}^\times \). On définit :
 \[
 (\chi_1 \cdot \chi_2)(g) := \chi_1(g) \cdot \chi_2(g), \quad \forall g \in G.
 \]
@@ -3998,64 +3952,6 @@ L'ensemble des caractères continus de $\widehat{\mathbb{Z}}$ est isomorphe à $
 	\]
 \end{theorem}
 
-\textbf{\underline{Preuve} :}\\
-Définissons une application :
-\[
-\Phi : \mathbb{Q}/\mathbb{Z} \to \operatorname{Hom}_{\text{cont}}(\widehat{\mathbb{Z}}, \mathbb{C}^\times).
-\]
-
-Soit $q \in \mathbb{Q}/\mathbb{Z}$. On peut l'écrire sous la forme $q = \frac{k}{n}$ avec $k \in \mathbb{Z}$ et $n \in \mathbb{N}^*$. Nous définissons alors un caractère :
-\[
-\chi_q : \widehat{\mathbb{Z}} \to \mathbb{C}^\times, \quad \chi_q(a) = e^{2i\pi q a}.
-\]
-
-\underline{Montrons que $\Phi$ est bien définie :}\\
-Soit \(q \in \mathbb{Q}/\mathbb{Z} \).\\
-\underline{Montrons que $\chi_q$ est un homomorphisme de groupes :}\\
-Soient $a, b \in \widehat{\mathbb{Z}}$.\\
-L'application exponentielle satisfait la relation :
-\[
-e^{2i\pi q (a + b)} = e^{2i\pi q a} e^{2i\pi q b}.
-\]
-Donc $\chi_q(a + b) = \chi_q(a) \chi_q(b)$, ce qui montre que $\chi_q$ est un homomorphisme de groupes.\\
-
-\underline{Montrons que $\chi_q$ est continu dans la topologie profinie :}\\
-La topologie de $\widehat{\mathbb{Z}}$ est la topologie profinie, définie comme la limite inverse des groupes $\mathbb{Z}/n\mathbb{Z}$. Nous avons $\chi_q(a) = e^{2i\pi q a}$. \\
-Comme l'application exponentielle est continue et que $q a$ est bien défini modulo $1$ (puisque $q \in \mathbb{Q}/\mathbb{Z}$), nous obtenons que $\chi_q$ est continu.
-
-
-\underline{Montrons que l'application $\Phi$ est injective :}\\
-Soit $q, q' \in \mathbb{Q}/\mathbb{Z}$ tels que $\chi_q = \chi_{q'}$. Cela signifie que :
-\[
-e^{2i\pi q a} = e^{2i\pi q' a}, \quad \forall a \in \widehat{\mathbb{Z}}.
-\]
-Prenons $a = 1 \in \mathbb{Z} \subseteq \widehat{\mathbb{Z}}$. Cela donne :
-\[
-e^{2i\pi q} = e^{2i\pi q'}.
-\]
-Cela implique que $q - q' \in \mathbb{Z}$, donc $q \equiv q' \mod \mathbb{Z}$. Or, par définition de $\mathbb{Q}/\mathbb{Z}$, cela signifie que $q = q'$.\\ 
-Ainsi, $\Phi$ est injective.
-
-\underline{Montrons que l'application $\Phi$ est surjective :}\\
-Soit $\chi \in \operatorname{Hom}_{\text{cont}}(\widehat{\mathbb{Z}}, \mathbb{C}^\times)$.  \\
-Nous devons montrer qu'il existe $q \in \mathbb{Q}/\mathbb{Z}$ tel que $\chi = \chi_q$.\\
-Le groupe $\widehat{\mathbb{Z}}$ est profini et engendré topologiquement par $1$. Ainsi, $\chi$ est entièrement déterminé par $\chi(1) \in \mathbb{C}^\times$.\\
-Puisque $\chi$ est un caractère continu et $\widehat{\mathbb{Z}}$ est la limite projective des $\mathbb{Z}/n\mathbb{Z}$, il existe une valeur $\chi(1)$ qui est une racine de l’unité :
-\[
-\chi(1) = e^{2i\pi q}, \quad \text{avec } q \in \mathbb{Q}/\mathbb{Z}.
-\]
-Vérifions que $\chi = \chi_q$\\
-Par construction, la seule possibilité est que $\chi$ soit donné par :
-\[
-\chi(a) = e^{2i\pi q a}.
-\]
-Cela montre que $\chi = \chi_q$ pour un certain $q \in \mathbb{Q}/\mathbb{Z}$. Ainsi, $\Phi$ est surjective.
-
-Il en resulte que $\Phi$ est un isomorphisme de groupes :
-\[
-\operatorname{Hom}_{\text{cont}}(\widehat{\mathbb{Z}}, \mathbb{C}^\times) \simeq \mathbb{Q}/\mathbb{Z}.
-\]
-
 
 \subsection{Représentations irréductibles de $\widehat{\mathbb{Z}}$}
 Chaque $\mathbb{Z}/n\mathbb{Z}$ est un groupe cyclique fini, et ses représentations irréductibles sont bien connues.\\
@@ -4158,8 +4054,6 @@ Le groupe $\mathbb{Q}/\mathbb{Z}$ est non dénombrable, ce qui prouve que $\wide
 \end{enumerate}
 	
 
-
-\newpage
 \section*{Conclusion}
 \addcontentsline{toc}{section}{Conclusion}
 Ce chapitre a exploré les interrelations profondes entre le produit tensoriel d'espaces vectoriels, les représentations linéaires de produits de groupes finis et les propriétés du complété profini $\widehat{\mathbb{Z}}$.
@@ -4190,7 +4084,7 @@ Une partie significative du mémoire a été dédiée à l'étude du produit ten
  L’étude du complété profini $\widehat{G}$ a permis de lier les propriétés algébriques et topologiques des groupes. Le cas particulier du complété profini de $\mathbb{Z}$ a été traité en détail, montrant la richesse de cette construction dans le contexte des représentations linéaires. Une voie naturelle serait d’étendre les concepts étudiés aux groupes localement compacts, en explorant leurs représentations unitaires et leurs applications en analyse harmonique. Les groupes profinis et leurs représentations trouvent des applications dans des domaines comme la cryptographie et la théorie des nombres. Cela pourrait constituer une extension pratique de ce travail. La simulation numérique des représentations linéaires des groupes infinis pourrait ouvrir de nouvelles perspectives, en permettant de tester expérimentalement certaines hypothèses.Nous avons donc  contribué à enrichir notre compréhension des représentations linéaires, en liant des notions abstraites à des constructions concrètes. Les résultats obtenus jettent les bases pour des recherches futures, aussi bien théoriques qu’appliquées, dans le domaine des mathématiques pures et de leurs applications.
 	
 }
-\addcontentsline{toc}{section}{CONCLUSION}
+\addcontentsline{toc}{section}{Conclusion}
 
 	
 }
