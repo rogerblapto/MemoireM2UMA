@@ -2195,11 +2195,52 @@ Soient \( V_1 , V_2 \) et \(V_3\) trois \(\mathbb{K}\)-espaces vectoriels.
 \end{definition}
 
 \begin{propriety} \cite{greub2012linear}\\
-	Le couple \( (E \otimes F, \otimes) \) est unique à un isomorphisme près.
+Le couple \( (E \otimes F, \otimes) \) est unique à un isomorphisme près.
 \end{propriety}
 
+\textbf{\underline{Preuve:}}  \\
+Nous voulons montrer que : si \( (T, \varphi) \) est un autre couple avec \( \varphi : E \times F \to T \) bilinéaire vérifiant la même propriété universelle, alors il existe un unique isomorphisme linéaire \( u : E \otimes F \to T \) tel que :
+\[
+u(e \otimes f) = \varphi(e, f), \quad \forall (e, f) \in E \times F.
+\]
+
+	Par définition, le couple \( (E \otimes F, \otimes) \) vérifie la propriété universelle suivante :
+
+\emph{Pour tout espace vectoriel \( G \) et toute application bilinéaire \( B : E \times F \to G \), il existe un unique morphisme linéaire \( \tilde{B} : E \otimes F \to G \) tel que \( \tilde{B}(e \otimes f) = B(e, f) \).}
+
+Soit maintenant \( (T, \varphi) \) un autre couple vérifiant la même propriété universelle.  
+On applique cette propriété dans deux directions :
+
+\textbf{Appliquons la propriété universelle de \( E \otimes F \) à \( B = \varphi \).}\\
+Il existe un unique morphisme linéaire \( u : E \otimes F \to T \) tel que :
+\[
+u(e \otimes f) = \varphi(e, f), \quad \forall (e,f) \in E \times F.
+\]
+
+\textbf{Appliquons également la propriété universelle de \( T \) à \( B = \otimes \).}\\
+Il existe un unique morphisme linéaire \( v : T \to E \otimes F \) tel que :
+\[
+v(\varphi(e, f)) = e \otimes f, \quad \forall (e,f) \in E \times F.
+\]
+
+\textbf{Montrons que \( u \) et \( v \) sont inverses.}\\
+Pour tout \( e \otimes f \in E \otimes F \), on a :
+\[
+(v \circ u)(e \otimes f) = v(u(e \otimes f)) = v(\varphi(e, f)) = e \otimes f,
+\]
+donc \( v \circ u = \mathrm{id}_{E \otimes F} \).\\
+Pour tout \( \varphi(e, f) \in T \), on a :
+\[
+(u \circ v)(\varphi(e, f)) = u(v(\varphi(e, f))) = u(e \otimes f) = \varphi(e, f),
+\]
+donc \( u \circ v = \mathrm{id}_T \).
+
+Ainsi, \( u \) est un isomorphisme, et il est unique par unicité dans la propriété universelle.
+
+
+
 \begin{definition} \cite{axler2024linear}\\
-	Si \( \dim E = n \) et \( \dim F = m \), alors la dimension du produit tensoriel \( E \otimes F \) est
+Si \( \dim E = n \) et \( \dim F = m \), alors la dimension du produit tensoriel \( E \otimes F \) est
 	\[
 	\dim(E \otimes F) = (\dim E) (\dim F) = nm.
 	\]
@@ -2225,8 +2266,48 @@ Soient \( V_1 , V_2 \) et \(V_3\) trois \(\mathbb{K}\)-espaces vectoriels.
 
 
 \begin{propriety} \cite{greub2012linear}\\
-	Si \(E\) et \(F\) sont deux espaces vectoriels, alors \(E \otimes F \ \cong \ F \otimes E.\)
+Si \(E\) et \(F\) sont deux espaces vectoriels, alors \(E \otimes F \ \cong \ F \otimes E.\)
 \end{propriety}
+
+\textbf{\underline{Preuve:}}  \\
+Nous construisons un isomorphisme linéaire entre \( E \otimes F \) et \( F \otimes E \), sans choisir de bases.
+
+Considérons l'application :
+\[
+\beta : E \times F \to F \otimes E, \quad (e, f) \mapsto f \otimes e.
+\]
+Elle est bilinéaire car la multiplication tensorielle est linéaire en chaque variable. Par la propriété universelle du produit tensoriel, cette application induit un unique morphisme linéaire :
+\[
+T : E \otimes F \to F \otimes E, \quad \text{défini par } T(e \otimes f) = f \otimes e.
+\]
+
+De façon symétrique, on définit :
+\[
+\gamma : F \times E \to E \otimes F, \quad (f, e) \mapsto e \otimes f,
+\]
+qui est également bilinéaire, et induit un morphisme linéaire :
+\[
+S : F \otimes E \to E \otimes F, \quad \text{défini par } S(f \otimes e) = e \otimes f.
+\]
+
+\textbf{Vérifions que \( T \) et \( S \) sont inverses.}
+
+Pour tout \( e \in E \), \( f \in F \) :
+\[
+(S \circ T)(e \otimes f) = S(f \otimes e) = e \otimes f,
+\]
+\[
+(T \circ S)(f \otimes e) = T(e \otimes f) = f \otimes e.
+\]
+Donc \( S \circ T = \mathrm{id}_{E \otimes F} \) et \( T \circ S = \mathrm{id}_{F \otimes E} \), ce qui prouve que \( T \) est un isomorphisme, avec inverse \( S \).
+
+Il vient que l'application \( T \) est un isomorphisme canonique et par conséquent,
+\[
+E \otimes F \cong F \otimes E.
+\]
+
+
+
 
 \subsubsection{Représentation linéaire d'un produit de deux groupes finis}
 
@@ -2339,8 +2420,6 @@ ce qui montre que $\chi_V$ est constante sur les classes de conjugaison de $G$.
 \end{remark}
 
 
-\newpage
-
 \begin{proposition} \cite{serre1971representation} \\
 Soient \( \rho_V : G \rightarrow \mathrm{GL}(V) \) et \( \rho_w : G \rightarrow \mathrm{GL}(W) \) deux représentations linéaires sur \(G\) de dégres \(n\) et \(m\) (\(n,m \in \mathbb{N^*}\)), et de Caractères \( \chi_V \) et \(\chi_W \)  respectivemet.On a :
 	\begin{enumerate}[label=\roman*)]
@@ -2380,8 +2459,49 @@ Le nombre de représentations linéaires irréductibles non-isomorphes deux à d
 
 
 \begin{proposition} \cite{renard2009groupes}\\
-Deux représentations linéaires d’un groupe \( G \) sont isomorphes si et seulement si elles ont le même caractère.
+Soient \( \rho, \rho' : G \to \mathrm{GL}(V), \mathrm{GL}(V') \) deux représentations complexes de dimension finie d’un groupe fini \( G \). Alors :
+\[
+\rho \cong \rho' \quad \Leftrightarrow \quad \chi_\rho = \chi_{\rho'},
+\]
+où \( \chi_\rho \) et \( \chi_{\rho'} \) sont les caractères des représentations \( \rho \) et \( \rho' \).
 \end{proposition}
+
+	\textbf{\underline{Preuve}:}\\
+Soient \( \rho, \rho' : G \to \mathrm{GL}(V), \mathrm{GL}(V') \) deux représentations complexes de dimension finie d’un groupe fini \( G \).\\
+\textbf{Sens direct} :\\
+Supposons que \( \rho \cong \rho' \). Il existe alors un isomorphisme d’espaces vectoriels \( T : V \to V' \) tel que :
+\[
+T \circ \rho(g) = \rho'(g) \circ T \quad \text{pour tout } g \in G.
+\]
+Cela implique que \( \rho(g) \) et \( \rho'(g) \) sont semblables, donc ont la même trace :
+\[
+\chi_\rho(g) = \mathrm{Tr}(\rho(g)) = \mathrm{Tr}(\rho'(g)) = \chi_{\rho'}(g),
+\]
+pour tout \( g \in G \). Ainsi, \( \chi_\rho = \chi_{\rho'} \).
+
+\vspace{1em}
+\textbf{Sens réciproque} : \\
+Supposons que \( \chi_\rho = \chi_{\rho'} \). par le théorème de Maschke, on peut écrire 
+\[
+\rho \cong \bigoplus_{i} n_i \rho_i, \quad \rho' \cong \bigoplus_{i} n_i' \rho_i,
+\]
+où les \( \rho_i \) sont des représentations irréductibles non isomorphes deux à deux, et \( n_i, n_i' \in \mathbb{N} \) sont les multiplicités.
+
+Le caractère d’une somme directe est la somme des caractères :
+\[
+\chi_\rho = \sum_i n_i \chi_i, \quad \chi_{\rho'} = \sum_i n_i' \chi_i,
+\]
+où \( \chi_i \) est le caractère de \( \rho_i \).
+
+Comme \( \chi_\rho = \chi_{\rho'} \) et que les caractères irréductibles \( \chi_i \) sont linéairement indépendants dans l’espace des fonctions de classe, on en déduit que :
+\[
+n_i = n_i' \quad \text{pour tout } i.
+\]
+
+Ainsi, \( \rho \cong \rho' \).
+
+
+
 
 \begin{propriety} \cite{renard2009groupes} \label{proprica}\\
 Soit \( \rho : G \rightarrow \mathrm{GL}(V) \) une représentation linéaire d'un groupe \(G\). L’ensemble des caractères de \( \rho \), noté \( \widehat{G} \), est défini comme :
@@ -2393,6 +2513,56 @@ Soit \( \rho : G \rightarrow \mathrm{GL}(V) \) une représentation linéaire d'u
 	(\chi_1 \cdot \chi_2)(g) := \chi_1(g) \cdot \chi_2(g), \quad \forall g \in G.
 	\]
 \end{propriety}
+
+	\textbf{1. Fermeture.} Soient \( \chi_1, \chi_2 \in \widehat{G} \), c’est-à-dire deux morphismes de groupes \( G \to \mathbb{C}^\times \). On définit :
+\[
+(\chi_1 \cdot \chi_2)(g) := \chi_1(g) \cdot \chi_2(g), \quad \forall g \in G.
+\]
+Pour montrer que \( \chi_1 \cdot \chi_2 \in \widehat{G} \), vérifions que c’est un morphisme :
+\begin{align*}
+	(\chi_1 \cdot \chi_2)(gh) 
+	&= \chi_1(gh)\, \chi_2(gh) \\
+	&= \chi_1(g)\chi_1(h)\, \cdot\, \chi_2(g)\chi_2(h) \\
+	&= (\chi_1(g)\chi_2(g))\, (\chi_1(h)\chi_2(h)) \\
+	&= (\chi_1 \cdot \chi_2)(g)\, (\chi_1 \cdot \chi_2)(h).
+\end{align*}
+
+
+\textbf{2. Associativité.} \\
+La multiplication dans \( \mathbb{C}^\times \) étant associative, on a pour \( \chi_1, \chi_2, \chi_3 \in \widehat{G} \) :
+\[
+((\chi_1 \cdot \chi_2) \cdot \chi_3)(g)
+= (\chi_1(g) \cdot \chi_2(g)) \cdot \chi_3(g)
+= \chi_1(g) \cdot (\chi_2(g) \cdot \chi_3(g))
+= (\chi_1 \cdot (\chi_2 \cdot \chi_3))(g).
+\]
+
+\textbf{3. Élément neutre.} \\
+L’application constante \( \mathbf{1}_G : G \to \mathbb{C}^\times \) définie par \( \mathbf{1}_G(g) = 1 \) pour tout \( g \in G \) est un morphisme de groupes (trivialement). Elle vérifie :
+\[
+(\chi \cdot \mathbf{1}_G)(g) = \chi(g) \cdot 1 = \chi(g), \quad \forall \chi \in \widehat{G}, \ \forall g \in G.
+\]
+
+\textbf{4. Inverses.} \\
+Pour \( \chi \in \widehat{G} \), définissons \( \chi^{-1} : G \to \mathbb{C}^\times \) par \( \chi^{-1}(g) = \chi(g)^{-1} \). On a :
+\[
+\chi^{-1}(gh) = (\chi(gh))^{-1} = (\chi(g)\chi(h))^{-1} = \chi(h)^{-1} \chi(g)^{-1} = \chi^{-1}(g)\chi^{-1}(h),
+\]
+(car \( \mathbb{C}^\times \) est abélien). Donc \( \chi^{-1} \in \widehat{G} \) et :
+\[
+(\chi \cdot \chi^{-1})(g) = \chi(g) \cdot \chi(g)^{-1} = 1 = \mathbf{1}_G(g).
+\]
+
+\textbf{5. Commutativité.}\\
+ Pour \( \chi_1, \chi_2 \in \widehat{G} \), et \( g \in G \), on a :
+\[
+(\chi_1 \cdot \chi_2)(g) = \chi_1(g)\chi_2(g) = \chi_2(g)\chi_1(g) = (\chi_2 \cdot \chi_1)(g).
+\]
+
+\noindent
+Ainsi, \( \widehat{G} \) est un groupe abélien pour la multiplication point par point.
+
+
 
 \section{Représentations linéaires irréductibles}
 \begin{definition}  \cite{serre1971representation} \\
@@ -2646,6 +2816,7 @@ Dans le cas ii), on a de même  $x^0_{i_2 i_1} = \frac{1}{n} \text{Tr}(h) \delta
 En identifiant les coefficients des $x_{j_2 j_1}$, on obtient:
 
 \begin{corollary} \cite{serre1971representation} \label{cor3}\\
+	
 Dans le cas ii), on a :
 \[
 \frac{1}{|G|} \sum_{t \in G} r_{i_2 j_2}(t^{-1}) r_{j_1 i_1}(t)
@@ -2712,6 +2883,40 @@ Le caractère irréductible est  le caractère associé à une représentation i
 \begin{propriety}\cite{renard2009groupes} \\
 Le degré d’un caractère irréductible est égal à la dimension de la représentation irréductible dont il est le caractère.
 \end{propriety}
+
+\textbf{\underline{Preuve:}}\\
+
+	Soit \( G \) un groupe fini, et soit \( \rho : G \to \mathrm{GL}(V) \) une représentation irréductible complexe de \( G \), où \( V \) est un espace vectoriel complexe de dimension finie.
+
+On note \( \chi_\rho : G \to \mathbb{C} \) le caractère associé à la représentation \( \rho \). Le \emph{degré} du caractère \( \chi_\rho \) est défini par sa valeur en l’élément neutre du groupe :
+\[
+\chi_\rho(1) = \chi_\rho(e),
+\]
+où \( e \) est l’élément neutre de \( G \).
+
+Par définition du caractère :
+\[
+\chi_\rho(g) = \mathrm{Tr}(\rho(g)) \quad \text{pour tout } g \in G.
+\]
+
+En particulier, pour \( g = e \), on a :
+\[
+\chi_\rho(e) = \mathrm{Tr}(\rho(e)).
+\]
+
+Or, comme \( \rho \) est une représentation, on a \( \rho(e) = \mathrm{Id}_V \), donc :
+\[
+\chi_\rho(e) = \mathrm{Tr}(\mathrm{Id}_V) = \dim V.
+\]
+
+Ainsi,
+\[
+\chi_\rho(1) = \dim V.
+\]
+
+Cela montre que le degré du caractère irréductible est égal à la dimension de la représentation irréductible.
+
+
 
 \begin{propriety} \cite{renard2009groupes} \label{propr0}\\	
 Soient \( \rho : G \rightarrow \mathrm{GL}(V) \) une représentation linéaire 
