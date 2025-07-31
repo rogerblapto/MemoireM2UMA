@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.7.20)  27 JUL 2025 18:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.7.20)  30 JUL 2025 15:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -770,9 +770,9 @@ xmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </home/rogerblapto/.texlive
 2025/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt0800.600pk> </home/rogerblapto/.
 texlive2025/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/rogerb
 lapto/.texlive2025/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx0800.600pk>
-Output written on CoorectionSOUNKOUA.pdf (1 page, 383670 bytes).
+Output written on CoorectionSOUNKOUA.pdf (1 page, 383351 bytes).
 PDF statistics:
- 323 PDF objects out of 1000 (max. 8388607)
+ 322 PDF objects out of 1000 (max. 8388607)
  56 compressed objects within 1 object stream
  2 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
